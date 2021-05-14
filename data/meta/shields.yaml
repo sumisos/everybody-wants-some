@@ -1,0 +1,87 @@
+info:
+  -
+    type: blog
+    title:
+    links:
+      -
+        href: https://github.com/sumisos/Blog/actions?query=workflow%3AAuto%2BDeploy
+        src: https://github.com/sumisos/Blog/workflows/Auto%20Deploy/badge.svg
+      -
+        href: https://github.com/sumisos/Blog
+        src: https://img.shields.io/github/last-commit/sumisos/Blog?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0&color=9cf
+      -
+        href: https://github.com/gohugoio/hugo
+        src: https://img.shields.io/badge/hugo-v0.83.1%2fextended-brightgreen.svg?logo=hugo&logoColor=fff
+      -
+        href: https://github.com/reuixiy/hugo-theme-meme
+        src: https://img.shields.io/badge/MemE-v4.5.0-blue.svg
+  -
+    type: server
+    title: API 1 - Rakuyo
+    links:
+      -
+        href: https://api.osrp.run
+        src: https://img.shields.io/badge/dynamic/json?color=00B0D8&label=Rakuyo&query=%24.data.version&url=https%3A%2F%2Fapi.osrp.run%2Fv1
+      -
+        href: https://api.osrp.run/v1
+        src: https://img.shields.io/website?down_color=lightgrey&down_message=offline&label=status&up_color=brightgreen&up_message=online&url=https%3A%2F%2Fapi.osrp.run&logo=nginx&logoColor=white
+      -
+        href: https://status.osrp.run/786164276
+        src: https://img.shields.io/uptimerobot/status/m786164276-1f024dc4cb6738ef909697ee?label=uptime
+      -
+        href: https://github.com/php/php-src
+        src: https://img.shields.io/badge/PHP-v7.4.10-blue?logo=php&logoColor=white
+      -
+        href: https://github.com/laravel/laravel
+        src: https://img.shields.io/badge/Laravel-v8.1.0-blue?logo=laravel&logoColor=white
+  -
+    type: server
+    title: API 2 - Tokio
+    links:
+      -
+        href: https://api.osrp.run
+        src: https://img.shields.io/badge/dynamic/json?color=00B0D8&label=Tokio&query=%24.data.version&url=https%3A%2F%2Fapi2.osrp.run%2Fv1
+      -
+        href: https://api2.osrp.run/v1
+        src: https://img.shields.io/website?down_color=lightgrey&down_message=offline&label=status&up_color=brightgreen&up_message=online&url=https%3A%2F%2Fapi.osrp.run&logo=nginx&logoColor=white
+      -
+        href: https://status.osrp.run/786164278
+        src: https://img.shields.io/uptimerobot/status/m786164278-fde2cd91d4dedae6cb4062a4?label=uptime
+      -
+        href: https://github.com/python/cpython
+        src: https://img.shields.io/badge/Python-v3.8.2-blue?logo=python&logoColor=white
+      -
+        href: https://github.com/tiangolo/fastapi
+        src: https://img.shields.io/badge/FastAPI-v0.61.1-blue?logo=fastapi&logoColor=white
+  -
+    type: game_server
+    title: Game Server - Don't Starve Together Dedicated Server
+    links:
+      -
+        href: /game/dst-server-lordran
+        src: https://img.shields.io/badge/Lordran-Let%27s_Starve_Together-00B0D8
+      -
+        href:
+        src: https://img.shields.io/badge/dst.game.osrp.run-21041-brightgreen
+      -
+        href: https://store.steampowered.com/app/322330/Dont_Starve_Together
+        src: https://img.shields.io/badge/Steam-Don%27t%20Starve%20Together-blue?logo=steam&logoColor=white
+      -
+        href: https://forums.kleientertainment.com/game-updates/dst
+        src: https://img.shields.io/badge/dynamic/json?color=blue&label=Server%20Version&query=%24.version&url=https%3A%2F%2Fapi3.osrp.run%2Fv1%2Fgame%2Fcheck%2Fdst
+  -
+    type: game_server
+    title: Game Server - Left 4 Dead 2
+    links:
+      -
+        href: /game/l4d2-server-raccoon
+        src: https://img.shields.io/badge/Raccoon-啾啾啾啾救救救队友呢救一下啊-00B0D8
+      -
+        href:
+        src: https://img.shields.io/badge/l4d2.game.osrp.run-14021-lightgrey
+      -
+        href: https://store.steampowered.com/app/550/Left_4_Dead_2
+        src: https://img.shields.io/badge/Steam-Left%204%20Dead%202-blue?logo=steam&logoColor=white
+      -
+        href: https://left4dead.fandom.com/wiki/Updates_(Left_4_Dead_2)
+        src: https://img.shields.io/badge/dynamic/json?color=blue&label=Server%20Version&query=%24.version&url=https%3A%2F%2Fapi3.osrp.run%2Fv1%2Fgame%2Fcheck%2Fl4d2

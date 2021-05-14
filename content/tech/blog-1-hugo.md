@@ -7,7 +7,7 @@ series: ["ews.ink"]
 related: true
 ---
 
-<a href="https://git-scm.com/downloads"><img src="https://img.shields.io/badge/git_version-v2.31.1-blue.svg?logo=git&logoColor=fff" alt="Git Verion" data-sticker></a> <a href="https://github.com/gohugoio/hugo/releases"><img src="https://img.shields.io/badge/hugo_version-v0.83.1%2fextended-blue.svg?logo=hugo&logoColor=fff" alt="Hugo Verion" data-sticker></a>
+<a href="https://git-scm.com/downloads"><img src="https://img.shields.io/badge/git_version-v2.31.1-blue.svg?logo=git&logoColor=fff" alt="Git Verion" data-sticker /></a> <a href="https://github.com/gohugoio/hugo/releases"><img src="https://img.shields.io/badge/hugo_version-v0.83.1%2fextended-blue.svg?logo=hugo&logoColor=fff" alt="Hugo Verion" data-sticker /></a>
 
 ## 全新安装
 ### 自行编译
