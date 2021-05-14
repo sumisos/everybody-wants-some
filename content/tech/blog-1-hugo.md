@@ -1,8 +1,8 @@
 ---
-title: "博客从零开始 #1 Hugo"
-subTitle: "Hugo 的基本使用"
+title: "Re:从零开始的博客生涯 #1 Hugo"
+subTitle: "Hugo 的基本用法"
 date: 2021-05-14T15:56:49+08:00
-tags: ["blog", "hugo"]
+tags: ["Blog", "Hugo"]
 series: ["ews.ink"]
 related: true
 ---

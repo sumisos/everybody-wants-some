@@ -1,8 +1,8 @@
 ---
-title: "博客从零开始 #3 Hugo Theme"
+title: "Re:从零开始的博客生涯 #3 Hugo Theme"
 subTitle: "使用 Hugo 主题"
 date: 2021-05-14T15:56:51+08:00
-tags: ["blog", "hugo"]
+tags: ["Blog", "Hugo"]
 series: ["ews.ink"]
 related: true
 ---

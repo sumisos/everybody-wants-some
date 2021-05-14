@@ -3,7 +3,7 @@
         {{if .title}} <h4>{{- .title -}}</h4> {{end}}
         {{ range .links }}
             {{if .href}} <a href="{{ .href }}"> {{end}}
-                <img src="{{ .src }}" data-sticker />
+            <img src="{{ .src }}" data-sticker />
             {{if .href}} </a> {{end}}
         {{ end }}
     </span>

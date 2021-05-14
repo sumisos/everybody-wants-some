@@ -1,8 +1,8 @@
 ---
-title: "博客从零开始 #4 Hugo Theme MemE"
+title: "Re:从零开始的博客生涯 #4 Theme MemE"
 subTitle: "改造 Hugo 主题 MemE"
 date: 2021-05-14T15:56:52+08:00
-tags: ["blog", "hugo"]
+tags: ["Blog", "Hugo"]
 series: ["ews.ink"]
 related: true
 ---
@@ -166,7 +166,7 @@ img[data-sticker] {
         {{if .title}} <h4>{{- .title -}}</h4> {{end}}
         {{ range .links }}
             {{if .href}} <a href="{{ .href }}"> {{end}}
-                <img src="{{ .src }}" data-sticker />
+            <img src="{{ .src }}" data-sticker />
             {{if .href}} </a> {{end}}
         {{ end }}
     </span>

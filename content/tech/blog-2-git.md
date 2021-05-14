@@ -1,8 +1,8 @@
 ---
-title: "博客从零开始 #2 Git"
+title: "Re:从零开始的博客生涯 #2 Git"
 subTitle: "引入 Git 版本管理"
 date: 2021-05-14T15:56:50+08:00
-tags: ["blog", "hugo"]
+tags: ["Blog", "Hugo", "Git"]
 series: ["ews.ink"]
 related: true
 ---
