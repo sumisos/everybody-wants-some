@@ -1,0 +1,9 @@
+# Chore
+.meta/
+
+# Local Source
+draft/
+resources/
+
+# Distribute
+public/
