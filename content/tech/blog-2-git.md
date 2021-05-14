@@ -7,7 +7,7 @@ series: ["ews.ink"]
 related: true
 ---
 
-[![](https://img.shields.io/badge/git_version-v2.31.1-blue.svg?logo=git&logoColor=fff)](https://git-scm.com/downloads) 
+<a href="https://git-scm.com/downloads"><img src="https://img.shields.io/badge/git_version-v2.31.1-blue.svg?logo=git&logoColor=fff" alt="Git Verion" data-sticker></a>
 
 ## 准备 git
 ### 配置 git 代理

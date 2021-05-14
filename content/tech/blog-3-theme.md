@@ -7,7 +7,7 @@ series: ["ews.ink"]
 related: true
 ---
 
-[![](https://img.shields.io/badge/hugo_version-v0.83.1%2fextended-blue.svg?logo=hugo&logoColor=fff)](https://github.com/gohugoio/hugo/releases) [![](https://img.shields.io/badge/MemE-v4.5.0-blue.svg)](https://github.com/reuixiy/hugo-theme-meme)
+<a href="https://github.com/gohugoio/hugo/releases"><img src="https://img.shields.io/badge/hugo_version-v0.83.1%2fextended-blue.svg?logo=hugo&logoColor=fff" alt="Hugo Verion" data-sticker></a> <a href="https://github.com/reuixiy/hugo-theme-meme"><img src="https://img.shields.io/badge/MemE-v4.5.0-blue.svg" alt="MemE Verion" data-sticker></a>
 
 ## 准备主题
 ### 添加 MemE 主题
@@ -28,6 +28,7 @@ $ hugo server -D
 ```
 
 ## 改造主题
+### 魔改图片缩放
 新建文件 `./layouts/partials/third-party/medium-zoom.html`，输入内容：
 ```html
 <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
