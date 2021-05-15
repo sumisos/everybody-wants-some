@@ -16,7 +16,7 @@ else {
 }
 $Script:CommandBlock = @"
 git switch main
-git merge dev --no-ff -m "$($commit_message)"
+git merge writting --no-ff -m "$($commit_message)"
 git push -u origin main
 git push gitee main
 git switch writting
