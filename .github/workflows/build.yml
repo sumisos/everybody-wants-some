@@ -3,7 +3,7 @@ name: Hugo Blog CI
 on:
   push:
     branches:
-    - writing
+    - main
 
 jobs:
   build:
@@ -30,16 +30,14 @@ jobs:
     - name: 4. Set Timezone & Generate Public Files
       # 设置时区为 UTC+8 否则生成网站的时间可能是世界协调时
       run: |
-        date
-        timedatectl set-timezone Asia/Shanghai
-        date
+        sudo timedatectl set-timezone Asia/Shanghai
         hugo --minify
 
-    - name: 5. Copy Dist Github Action Workflow File
-      run: |
-        mkdir -p public/.github/workflows/
-        cp .github/second_action/deploy.yml public/.github/workflows/deploy.yml
-        ls -a public
+    # - name: 5. Copy Dist Github Action Workflow File
+    #   run: |
+    #     mkdir -p public/.github/workflows/
+    #     cp .github/second_action/deploy.yml public/.github/workflows/deploy.yml
+    #     ls -a public
 
     # - name: 6. Deploy to Server via Rsync
     #   uses: burnett01/rsync-deployments@4.1
@@ -51,15 +49,15 @@ jobs:
     #     remote_user: ${{ secrets.DEPLOY_USER }}
     #     remote_key: ${{ secrets.DEPLOY_KEY }}
 
-    # - name: 6. Distribution
-    #   uses: peaceiris/actions-gh-pages@v3
-    #   with:
-    #     deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-    #     external_repository: ${{ secrets.ACTIONS_DEPLOY_REPO }}
-    #     publish_branch: main
-    #     publish_dir: ./public
-    #     exclude_assets: ''
-    #     cname: ${{ secrets.ACTIONS_DEPLOY_CNAME }}
-    #     commit_message: ${{ github.event.head_commit.message }}
-    #     user_name: 'github-actions[bot]'
-    #     user_email: 'github-actions[bot]@users.noreply.github.com'
+    - name: 6. Distribution to Github Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        external_repository: ${{ secrets.ACTIONS_DEPLOY_REPO }}
+        publish_branch: main
+        publish_dir: ./public
+        exclude_assets: ''
+        cname: ${{ secrets.ACTIONS_DEPLOY_CNAME }}
+        commit_message: ${{ github.event.head_commit.message }}
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
