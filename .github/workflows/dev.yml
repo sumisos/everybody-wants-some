@@ -16,22 +16,27 @@ jobs:
           fetch-depth: 0
 
     - name: 2. Read Hugo Verion
-      id: hugo-version
+      id: get-hugo-version
       run: |
-        HUGO_VERSION=$(cat "./data/meta/version.yaml" | grep hugo | grep -v '#' | awk '{print $2}' | sed 's/%2f.*$//g' | sed 's/v//g')
+        HUGO_VERSION=$(cat "data/meta/version.yaml" | grep hugo | grep -v '#' | awk '{print $2}' | sed 's/%2f.*$//g' | sed 's/v//g')
         echo "::set-output name=HUGO_VERSION::${HUGO_VERSION}"
 
-    # - name: 3. Setup Hugo
-    #   uses: peaceiris/actions-hugo@v2
-    #   with:
-    #     hugo-version: '${{ steps.hugo-version.outputs.HUGO_VERSION }}'
-    #     extended: true
+    - name: 3. Setup Hugo
+      id: setup-hugo
+      needs: get-hugo-version
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '${{ steps.get-hugo-version.outputs.HUGO_VERSION }}'
+        extended: true
 
-    # - name: 4. Generate Public Files
-    #   run: |
-    #     sudo timedatectl set-timezone Asia/Shanghai
-    #     date
-    #     hugo --minify
+    - name: 4. Set Timezone & Generate Public Files
+      # 设置时区为 UTC+8 否则生成网站的时间可能是世界协调时
+      needs: setup-hugo
+      run: |
+        date
+        sudo timedatectl set-timezone Asia/Shanghai
+        date
+    # hugo --minify
 
     # - name: 5. Copy Dist Github Action Workflow File
     #   run: |
