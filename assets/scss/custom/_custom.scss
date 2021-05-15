@@ -28,3 +28,8 @@ img[data-sticker] {
   // class="sticker" => data-sticker
   @extend img.sticker;
 }
+
+span.mahjong {
+  // 调整麻将 emoji 字体大小
+  font-size: 2em;
+}

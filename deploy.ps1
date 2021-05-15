@@ -24,4 +24,4 @@ git switch writing
 
 # Trap {"Trap Error: $($_.Exception.Message)"; Continue}
 Initialize-WorkingDirectory $Script:Workspace -DeletePath $Script:AutoDelete
-Invoke-Command $Script:CommandBlock -enableDebug
+Invoke-Command $Script:CommandBlock
