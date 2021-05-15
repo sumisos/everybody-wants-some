@@ -1,0 +1,63 @@
+name: Hugo Blog Auto Deploy 1 CI
+
+on:
+  push:
+    branches:
+    - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 1. Checkout Repo
+      uses: actions/checkout@v2
+      with:
+          submodules: true
+          fetch-depth: 0
+
+    - name: 2. Read Hugo Verion
+      id: hugo-version
+      run: |
+        HUGO_VERSION=$(cat "./data/meta/version.yaml" | grep hugo | grep -v '#' | awk '{print $2}' | sed 's/%2f.*$//g' | sed 's/v//g')
+        echo "::set-output name=HUGO_VERSION::${HUGO_VERSION}"
+
+    # - name: 3. Setup Hugo
+    #   uses: peaceiris/actions-hugo@v2
+    #   with:
+    #     hugo-version: '${{ steps.hugo-version.outputs.HUGO_VERSION }}'
+    #     extended: true
+
+    # - name: 4. Generate Public Files
+    #   run: |
+    #     sudo timedatectl set-timezone Asia/Shanghai
+    #     date
+    #     hugo --minify
+
+    # - name: 5. Copy Dist Github Action Workflow File
+    #   run: |
+    #     mkdir -p public/.github/workflows/
+    #     cp .github/second_action/deploy.yml public/.github/workflows/deploy.yml
+    #     ls -a public
+
+    # - name: 6. Deploy to Server via Rsync
+    #   uses: burnett01/rsync-deployments@4.1
+    #   with:
+    #     switches: -avzr --delete --exclude=".git" --exclude=".github" --exclude=.well-known
+    #     path: ./
+    #     remote_path: ${{ secrets.DEPLOY_TARGET }}
+    #     remote_host: ${{ secrets.DEPLOY_HOST }}
+    #     remote_user: ${{ secrets.DEPLOY_USER }}
+    #     remote_key: ${{ secrets.DEPLOY_KEY }}
+
+    # - name: 6. Distribution
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   with:
+    #     deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+    #     external_repository: ${{ secrets.ACTIONS_DEPLOY_REPO }}
+    #     publish_branch: main
+    #     publish_dir: ./public
+    #     exclude_assets: ''
+    #     cname: ${{ secrets.ACTIONS_DEPLOY_CNAME }}
+    #     commit_message: ${{ github.event.head_commit.message }}
+    #     user_name: 'github-actions[bot]'
+    #     user_email: 'github-actions[bot]@users.noreply.github.com'

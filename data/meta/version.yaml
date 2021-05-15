@@ -1,0 +1,4 @@
+hugo: v0.83.1%2fextended
+theme:
+  name: MemE
+  version: v4.5.0

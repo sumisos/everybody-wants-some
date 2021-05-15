@@ -1,21 +1,5 @@
 info:
   -
-    type: blog
-    title:
-    links:
-      -
-        href: https://github.com/sumisos/Blog/actions?query=workflow%3AAuto%2BDeploy
-        src: https://github.com/sumisos/Blog/workflows/Auto%20Deploy/badge.svg
-      -
-        href: https://github.com/sumisos/Blog
-        src: https://img.shields.io/github/last-commit/sumisos/Blog?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0&color=9cf
-      -
-        href: https://github.com/gohugoio/hugo
-        src: https://img.shields.io/badge/hugo-v0.83.1%2fextended-brightgreen.svg?logo=hugo&logoColor=fff
-      -
-        href: https://github.com/reuixiy/hugo-theme-meme
-        src: https://img.shields.io/badge/MemE-v4.5.0-blue.svg
-  -
     type: server
     title: API 1 - Rakuyo
     links:
