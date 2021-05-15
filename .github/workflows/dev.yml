@@ -31,15 +31,15 @@ jobs:
       # 设置时区为 UTC+8 否则生成网站的时间可能是世界协调时
       run: |
         date
-        sudo timedatectl set-timezone Asia/Shanghai
+        timedatectl set-timezone Asia/Shanghai
         date
-    # hugo --minify
+        hugo --minify
 
-    # - name: 5. Copy Dist Github Action Workflow File
-    #   run: |
-    #     mkdir -p public/.github/workflows/
-    #     cp .github/second_action/deploy.yml public/.github/workflows/deploy.yml
-    #     ls -a public
+    - name: 5. Copy Dist Github Action Workflow File
+      run: |
+        mkdir -p public/.github/workflows/
+        cp .github/second_action/deploy.yml public/.github/workflows/deploy.yml
+        ls -a public
 
     # - name: 6. Deploy to Server via Rsync
     #   uses: burnett01/rsync-deployments@4.1
