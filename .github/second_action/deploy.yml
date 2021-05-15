@@ -1,0 +1,23 @@
+name: Auto Deploy
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 1. Checkout Repo
+      uses: actions/checkout@v2
+
+    - name: 2. Deploy to Server via Rsync
+      uses: burnett01/rsync-deployments@4.1
+      with:
+        switches: -avzr --delete --exclude=".git" --exclude=".github" --exclude="CNAME" --exclude=".well-known"
+        path: ./
+        remote_path: ${{ secrets.DEPLOY_TARGET }}
+        remote_host: ${{ secrets.DEPLOY_HOST }}
+        remote_user: ${{ secrets.DEPLOY_USER }}
+        remote_key: ${{ secrets.DEPLOY_KEY }}
