@@ -3,7 +3,7 @@ title: "Git Commit Message 规范"
 subTitle: "Conventional Commits"
 date: 2020-10-28T19:10:36+08:00
 tags: ["Git", "Github"]
-series: ["Git"]
+series: ["范式"]
 related: true
 ---
 
