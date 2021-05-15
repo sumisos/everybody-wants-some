@@ -6,6 +6,9 @@ series: ["范式"]
 related: true
 ---
 
+## 总则
+~~《[如何编写无法维护的代码](https://coderlmn.github.io/frontEndCourse/unmaintainable.html)》~~  
+
 ## 后端
 ### PHP
 《[PHP 之道](http://laravel-china.github.io/php-the-right-way/#code_style_guide)》《[PSR 规范](https://learnku.com/laravel/t/2081/psr-specification-psr-4-automatic-loading-specification)》 [idea 插件](https://github.com/kalessil/phpinspectionsea)  
