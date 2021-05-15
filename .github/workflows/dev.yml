@@ -1,9 +1,9 @@
-name: Hugo Blog Auto Deploy 1 CI
+name: Hugo Blog CI
 
 on:
   push:
     branches:
-    - dev
+    - writing
 
 jobs:
   build:
