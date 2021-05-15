@@ -16,10 +16,10 @@ else {
 }
 $Script:CommandBlock = @"
 git switch main
-git merge writting --no-ff -m "$($commit_message)"
+git merge writing --no-ff -m "$($commit_message)"
 git push -u origin main
 git push gitee main
-git switch writting
+git switch writing
 "@
 
 # Trap {"Trap Error: $($_.Exception.Message)"; Continue}

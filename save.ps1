@@ -15,12 +15,12 @@ else {
   $commit_message = "$($extraMsg.Trim())"
 }
 $Script:CommandBlock = @"
-git switch writting
+git switch writing
 git add .
 git status
 git commit -m `"$($commit_message)`"
-git push -u origin writting
-git push gitee writting
+git push -u origin writing
+git push gitee writing
 "@
 
 # Trap {"Trap Error: $($_.Exception.Message)"; Continue}
