@@ -69,12 +69,26 @@ https://img.shields.io/endpoint?url=<URL>
 注意 `query` 字段取得的结果**会且只会**显示在**右侧**标签。  
 [JSON 路径验证](https://jsonpath.com/)  
 
-`json`、`xml`、`yaml` 依次为：  
+支持三种格式 `json`、`xml`、`yaml` 依次为（注意路径区别）：  
 ```
 https://img.shields.io/badge/dynamic/json?url=<URL>&label=<LABEL>&query=<$.DATA.SUBDATA>&color=<COLOR>&prefix=<PREFIX>&suffix=<SUFFIX>
 https://img.shields.io/badge/dynamic/xml?url=<URL>&label=<LABEL>&query=<//data/subdata>&color=<COLOR>&prefix=<PREFIX>&suffix=<SUFFIX>
 https://img.shields.io/badge/dynamic/yaml?url=<URL>&label=<LABEL>&query=<$.DATA.SUBDATA>&color=<COLOR>&prefix=<PREFIX>&suffix=<SUFFIX>
 ```
+
+### 整活
+新建一个 Repo，push 一个 `.json` 文件，可以把仓库当成简陋的接口用。比如：  
+```
+https://github.com/<用户名>/<仓库名>/raw/main/<文件名>.json
+```
+
+访问这个地址，响应就是 JSON 文件的内容。剩下不用我多说了 8。  
+
+配合 `shields.io` 的 `dynamic` 用法：  
+
+[![](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fgithub.com%2Fsumisos%2Fsumisos%2Fraw%2Fmain%2Fenv.yaml&label=echo&query=%24.echo.string1&color=important&prefix=%5B%20&suffix=%20%5D)](https://github.com/sumisos/sumisos/blob/main/env.yaml)
+
+> 当然直接用 [gist](https://gist.github.com/) 也可以。  
 
 ## 样式 Styles
 

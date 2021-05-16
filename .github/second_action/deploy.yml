@@ -12,6 +12,8 @@ jobs:
     - name: 1. Checkout Repo
       uses: actions/checkout@v2
 
+    # 已经使用 Cloudflare Pages 自动部署
+
     # - name: 2. Deploy to Server via Rsync
     #   uses: burnett01/rsync-deployments@4.1
     #   with:
