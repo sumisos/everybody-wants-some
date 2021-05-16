@@ -64,7 +64,7 @@ H --> |将整个分发仓库同步到你的服务器 / 对象存储| I(博客更
 ## 操作
 
 再复述一下 Github Action 如何使用：  
-在仓库根目录下建立 `.github/workflows` 文件夹，这个文件夹里配置正确符合语法的脚本文件 `.yml` 会根据条件自动执行。  
+在仓库根目录下建立 `./.github/workflows` 文件夹，这个文件夹里配置正确符合语法的脚本文件 `.yml` 会根据条件自动执行。  
 
 因此我们在写作仓库建立如下结构：  
 ```
@@ -73,77 +73,75 @@ Blog Repo/                  写作仓库根目录
 │ ├── workflows/            默认 Github Action 工作流 目录
 │ │ └── build.yml           写作仓库的 Action 执行的工作流文件
 │ └── second_action/
-│   └── sync.yml            分发仓库的 Action 执行的工作流文件
+│   └── dist.yml            分发仓库的 Action 执行的工作流文件
 └── ...
 ```
 
+新建文件 `./data/meta/version.yaml`，输入内容：  
+```yaml
+hugo: v0.83.1%2fextended
+theme:
+  name: MemE
+  version: v4.5.0
+```
+
+存储 Hugo 版本和主题版本等信息。  
+
 `build.yml` 文件的内容为：
 ```yml
-name: Hugo Blog CI # 本workflow名字 随便取
+name: Hugo Blog CI
 
-on: # hook 触发器
-  push: # 每次push时触发钩子
+on:
+  push:
     branches:
-    - master
-    # 每当master分支有push动作时 运行此workflow
+    - main
 
-jobs: # 具体有哪些任务
-  build: # 任务名 随便取
-    runs-on: ubuntu-latest # 申请何种系统的虚拟机
-    steps: # 本任务具体有哪些步骤
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
     - name: 1. Checkout Repo
-      # 第1步 clone本仓库到虚拟机上
       uses: actions/checkout@v2
       with:
-          submodules: true # Fetch Hugo themes
-          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+          submodules: true
+          fetch-depth: 0
 
-    - name: 2. Setup Hugo
-      # 第2步 在虚拟机上安装Hugo
+    - name: 2. Read Hugo Verion
+      id: hugo-version
+      run: |
+        HUGO_VERSION=$(cat "data/meta/version.yaml" | grep hugo | grep -v '#' | awk '{print $2}' | sed 's/%2f.*$//g' | sed 's/v//g')
+        echo "::set-output name=HUGO_VERSION::${HUGO_VERSION}"
+
+    - name: 3. Setup Hugo
       uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: '0.73.0' # Hugo 版本
-        extended: true # 是否安装扩展 视你的主题而定 一般来说true没问题
+        hugo-version: '${{ steps.hugo-version.outputs.HUGO_VERSION }}'
+        extended: true
 
-    - name: 3. Generate Public Files
-      # 第3步 编译生成静态文件
+    - name: 4. Set Timezone & Generate Public Files
+      # 设置时区为 UTC+8 否则生成网站的时间可能是世界协调时
       run: |
+        sudo timedatectl set-timezone Asia/Shanghai
         hugo --minify
 
-    - name: 4. Copy Dist Github Action Workflow File
-      # 重点 第4步 将准备好的分发仓库的workflow文件复制到public/目录下一起push
+    - name: 5. Copy Dist Github Action Workflow File
       run: |
         mkdir -p public/.github/workflows/
-        cp .github/second_action/sync.yml public/.github/workflows/sync.yml
+        cp .github/second_action/dist.yml public/.github/workflows/dist.yml
         ls -a public
 
-    # 如果要使用 peaceiris/actions-gh-pages@v3 携带分发仓库的workflow一起push的方法就不能用了
-    # 取消此步骤的注释 以直接在写作仓库的workflow中同步到生产环境
-    # - name: 4.5. Deploy to Server via Rsync
-    #   uses: burnett01/rsync-deployments@4.1
-    #   with:
-    #     switches: -avzr --delete --exclude=".git" --exclude=".github" --exclude=.well-known
-    #     path: ./
-    #     remote_path: ${{ secrets.DEPLOY_TARGET }}
-    #     remote_host: ${{ secrets.DEPLOY_HOST }}
-    #     remote_user: ${{ secrets.DEPLOY_USER }}
-    #     remote_key: ${{ secrets.DEPLOY_KEY }}
-
-    - name: 5. Distribution
-    # 第5步 将生成的静态文件push到分发仓库
-    # 2020.7.2 若使用 peaceiris/actions-gh-pages@v3 将无法push名为".github"的文件夹
-    # 因此继续沿用 v2.5.1 版本
-      uses: peaceiris/actions-gh-pages@v2.5.1
+    - name: 6. Distribution to Github Pages
+      uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        external_repository: 你的Github用户名/分发仓库名字
-        publish_branch: master
+        external_repository: ${{ secrets.ACTIONS_DEPLOY_REPO }}
+        publish_branch: main
         publish_dir: ./public
-      env: # v2.5.1版本特有的环境变量 v3版本中改为上面的with携带并重新命名
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        EXTERNAL_REPOSITORY: 你的Github用户名/分发仓库名字
-        PUBLISH_BRANCH: master
-        PUBLISH_DIR: ./public
+        exclude_assets: ''
+        cname: ${{ secrets.ACTIONS_DEPLOY_CNAME }}
+        commit_message: ${{ github.event.head_commit.message }}
+        user_name: 'Github-Actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
 ```
 
 差不多逐行注释了，如有不理解的地方对照注释即可。  
@@ -152,38 +150,34 @@ jobs: # 具体有哪些任务
 > 生成好密钥对，公钥放在 `分发仓库` 的 `Deploy keys` 项（记得勾上 `Allow write access` 不然虚拟机拿不到 push 权限），私钥放在 `写作仓库` 的 `Secrets` 项。  
 > 如果还有更基础的用法不清楚如何使用请自行搜索，此处不再赘述。  
 
-`sync.yml` 文件的内容为：  
+`dist.yml` 文件的内容为：  
 ```yml
 name: Hugo Blog CD
 
 on:
   push:
     branches:
-    - master
+    - main
 
 jobs:
-  sync:
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - name: 1. Checkout Repo
       uses: actions/checkout@v2
 
-    - name: 2. Deploy to Server via Rsync
-      uses: burnett01/rsync-deployments@4.1
-      with:
-        switches: -avzr --delete --exclude=".git" --exclude=".github" --exclude=.well-known
-        path: ./
-        # 绝对路径 比如/usr/www/wwwroot/blog
-        remote_path: ${{ secrets.DEPLOY_TARGET }}
-        # 主机地址 域名和IP都支持
-        # 注意如果使用了CDN的话必须填IP 否则按照域名解析不到真实服务器IP
-        remote_host: ${{ secrets.DEPLOY_HOST }}
-        # 用户名 建议不要使用root
-        remote_user: ${{ secrets.DEPLOY_USER }}
-        # 上面的用户SSH登录的私钥
-        remote_key: ${{ secrets.DEPLOY_KEY }}
+    # 强烈建议使用 Cloudflare Pages 自动部署
+
+    # - name: 2. Deploy to Server via Rsync
+    #   uses: burnett01/rsync-deployments@4.1
+    #   with:
+    #     switches: -avzr --delete --exclude=".git" --exclude=".github" --exclude="CNAME" --exclude=".well-known"
+    #     path: ./
+    #     remote_path: ${{ secrets.DEPLOY_TARGET }}
+    #     remote_host: ${{ secrets.DEPLOY_HOST }}
+    #     remote_user: ${{ secrets.DEPLOY_USER }}
+    #     remote_key: ${{ secrets.DEPLOY_KEY }}
 ```
-其实就是 `build.yml` 中的第 4.5 步。  
 
 如果博客托管的地方不是云服务器，而是存储桶或者别的什么对象存储服务的话，随便搜索一下一般都找得到对应的 Github Action Repo，按照正确语法自行替换即可。  
 

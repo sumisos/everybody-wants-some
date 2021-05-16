@@ -36,7 +36,7 @@ jobs:
     - name: 5. Copy Dist Github Action Workflow File
       run: |
         mkdir -p public/.github/workflows/
-        cp .github/second_action/deploy.yml public/.github/workflows/deploy.yml
+        cp .github/second_action/dist.yml public/.github/workflows/dist.yml
         ls -a public
 
     - name: 6. Distribution to Github Pages

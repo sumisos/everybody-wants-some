@@ -196,7 +196,7 @@ img {
 {{ end }}
 ```
 
-这个模版读取了站点数据 `$.Site.Data` 的 `meta` 目录下的 `shields` 文件中的 `info`项（即数据文件 `./data/meta/shields.yaml`）。所以新建文件 `./layouts/partials/meta/shields.html`，输入内容：  
+这个模版读取了站点数据 `$.Site.Data` 的 `meta` 目录下的 `shields` 文件中的 `info`项（即数据文件 `./data/meta/shields.yaml`）。所以新建文件 `./data/meta/shields.yaml`，输入内容：  
 ```yaml
 blog:
   -
