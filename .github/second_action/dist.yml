@@ -6,7 +6,7 @@ on:
     - main
 
 jobs:
-  deploy:
+  distribute:
     runs-on: ubuntu-latest
     steps:
     - name: 1. Checkout Repo

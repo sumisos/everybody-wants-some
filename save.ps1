@@ -2,6 +2,7 @@
 
 $Script:Workspace = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $Script:AutoDelete = "/public"  # 需要删除的文件夹写在这里即可 比如 /public/
+$Script:editBranch = "writing"
 
 $curtime = (Get-Date).ToString('yyyy-MM-dd HH:mm:ss')
 if ([String]::IsNullOrEmpty($args[0])) {
@@ -15,12 +16,12 @@ else {
   $commit_message = "$($extraMsg.Trim())"
 }
 $Script:CommandBlock = @"
-git switch writing
+git switch $($Script:editBranch)
 git add .
 git status
 git commit -m `"$($commit_message)`"
-git push -u origin writing
-git push gitee writing
+git push -u origin $($Script:editBranch)
+git push gitee $($Script:editBranch)
 "@
 
 # Trap {"Trap Error: $($_.Exception.Message)"; Continue}

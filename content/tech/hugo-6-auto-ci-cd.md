@@ -140,11 +140,9 @@ jobs:
         exclude_assets: ''
         cname: ${{ secrets.ACTIONS_DEPLOY_CNAME }}
         commit_message: ${{ github.event.head_commit.message }}
-        user_name: 'Github-Actions[bot]'
+        user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
 ```
-
-差不多逐行注释了，如有不理解的地方对照注释即可。  
 
 > `${{ secrets.XXX }}` 在仓库的 `Settings` 页面中的 `Secrets` 项里设置。  
 > 生成好密钥对，公钥放在 `分发仓库` 的 `Deploy keys` 项（记得勾上 `Allow write access` 不然虚拟机拿不到 push 权限），私钥放在 `写作仓库` 的 `Secrets` 项。  
@@ -160,7 +158,7 @@ on:
     - main
 
 jobs:
-  deploy:
+  distribute:
     runs-on: ubuntu-latest
     steps:
     - name: 1. Checkout Repo

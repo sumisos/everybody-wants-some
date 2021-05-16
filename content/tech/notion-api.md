@@ -25,14 +25,12 @@ $ npm install @notionhq/client
 ```
 
 ```JavaScript
-const Fs = require("fs");
 const { Client } = require("@notionhq/client");
+const config = require("./config.json");
 
-const cfg = JSON.parse(Fs.readFileSync("./config.json", "utf8"));
+const notion = new Client({ auth: config.NOTION_API_KEY });
 
-const notion = new Client({ auth: cfg.NOTION_API_KEY });
-
-const database_id = cfg.DATABASE[0].DATABASE_ID;
+const database_id = config.DATABASE[0].DATABASE_ID;
 
 async function search(filter) {
   const response = await notion.databases.retrieve({
