@@ -1,17 +1,21 @@
 {{ $version := $.Site.Data.meta.version }}
-<span style="display:block;text-align:center;">
-    <a href="https://github.com/sumisos/blog/actions?query=workflow%3AHugo%2BBlog%2BCD"><img src="https://github.com/sumisos/blog/workflows/Hugo%20Blog%20CD/badge.svg" data-sticker /></a>
-    <a href="https://github.com/sumisos/blog"><img src="https://img.shields.io/github/last-commit/sumisos/blog?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0&color=9cf" data-sticker /></a>
-    <a href="https://github.com/gohugoio/hugo"><img src="https://img.shields.io/badge/hugo-{{- $version.hugo -}}-brightgreen.svg?logo=hugo&logoColor=fff" data-sticker /></a>
-    <a href="https://github.com/reuixiy/hugo-theme-meme"><img src="https://img.shields.io/badge/{{- $version.theme.name -}}-{{- $version.theme.version -}}-blue.svg" data-sticker /></a>
+
+<span class="sticker" style="display:block;text-align:center;">
+    {{ range $.Site.Data.meta.shields.blog }}
+        {{if .href}} <a href="{{ .href }}"> {{end}}
+        <img src="{{ .src }}" />
+        {{if .href}} </a> {{end}}
+    {{ end }}
+    <a href="https://github.com/gohugoio/hugo"><img src="https://img.shields.io/badge/hugo-{{- $version.hugo -}}-blue.svg?logo=hugo&logoColor=fff" /></a>
+    <a href="https://github.com/reuixiy/hugo-theme-meme"><img src="https://img.shields.io/badge/{{- $version.theme.name -}}-{{- $version.theme.version -}}-blue.svg" /></a>
 </span>
 
-{{ range $.Site.Data.meta.shields.info }}
-    <span style="display:block;text-align:center;">
+{{ range $.Site.Data.meta.shields.other }}
+    <span class="sticker" style="display:block;text-align:center;">
         {{if .title}} <h4>{{- .title -}}</h4> {{end}}
         {{ range .links }}
             {{if .href}} <a href="{{ .href }}"> {{end}}
-            <img src="{{ .src }}" data-sticker />
+            <img src="{{ .src }}" />
             {{if .href}} </a> {{end}}
         {{ end }}
     </span>

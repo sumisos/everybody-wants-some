@@ -23,16 +23,14 @@ img.sticker {
   margin: auto;
 }
 
-span.sticker img {
-  // 同上
-  display: inline;
-  margin: auto;
-}
-
 img[data-sticker] {
   // 同上 实际中的另一种用法
   // class="sticker" => data-sticker
-  @extend img.sticker;
+  @extend .sticker;
+}
+
+span.sticker img {
+  @extend .sticker;
 }
 
 span.mahjong {

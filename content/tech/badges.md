@@ -65,7 +65,8 @@ https://img.shields.io/endpoint?url=<URL>
 举例：`https://shields.redsparr0w.com/2473/monday` ![](https://img.shields.io/endpoint?url=https://shields.redsparr0w.com/2473/monday)  
 
 ## 动态 Dynamic
-访问接口获取响应后按照写好的路径读取数据，不如 `endpoint` 用法省心，但胜在灵活，不必专门写固定格式的接口。  
+访问接口获取响应后按照写好的路径读取指定数据，不如 `endpoint` 用法省心，但胜在灵活，不必专门写固定格式的接口。  
+注意 `query` 字段取得的结果**会且只会**显示在**右侧**标签。  
 [JSON 路径验证](https://jsonpath.com/)  
 
 `json`、`xml`、`yaml` 依次为：  
@@ -97,3 +98,11 @@ https://img.shields.io/badge/dynamic/yaml?url=<URL>&label=<LABEL>&query=<$.DATA.
 |`?labelColor=abcdef`|![](https://img.shields.io/badge/style-desc-infomational?labelColor=abcdef)|自定义**左边**标签的背景色|
 |`?color=fedcba`|![](https://img.shields.io/badge/style-desc-infomational?color=fedcba)|自定义**右边**标签的背景色|
 |`?cacheSeconds=3600`|![](https://img.shields.io/badge/style-desc-infomational?cacheSeconds=3600)|自定义缓存时间 最小 300 更小会被忽略|
+
+## 其他玩法
+### 监控网站状态
+```
+https://img.shields.io/website?up_color=brightgreen&up_message=Online&down_color=lightgrey&down_message=Offline&label=<LABEL>&url=<URL>&logo=nginx
+```
+
+<img src="https://img.shields.io/website?up_color=brightgreen&up_message=Online&down_color=lightgrey&down_message=Offline&label=Server%20Status&url=https%3A%2F%2Fapi.osrp.run&logo=nginx" data-no-zoom />
