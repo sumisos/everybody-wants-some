@@ -16,21 +16,28 @@ img.no-zoom {
   // 详见 https://github.com/francoischalifour/medium-zoom#selectors
 }
 
-img.sticker {
+@mixin inline-image {
   // 禁用图片换行居中 便于直接在文中插入表情包
   // 已默认禁用图片点击缩放功能
   display: inline;
   margin: auto;
 }
 
-img[data-sticker] {
-  // 同上 实际中的另一种用法
-  // class="sticker" => data-sticker
-  @extend .sticker;
+img.sticker {
+  @include inline-image;
 }
 
-span.sticker img {
-  @extend .sticker;
+img[data-sticker] {
+  @include inline-image;
+}
+
+span.sticker {
+  display:block;
+  text-align:center;
+}
+
+img {
+  span.sticker & { @include inline-image; }
 }
 
 span.mahjong {

@@ -4,7 +4,6 @@ date: 2021-05-16T14:07:10+08:00
 tags: ["Note", "Notion"]
 series: ["Notion"]
 related: true
-draft: true
 ---
 
 <span class="sticker">[![](https://img.shields.io/badge/官方-API-info)](https://github.com/makenotion/notion-sdk-js) [![](https://img.shields.io/badge/非官方-API-info)](https://github.com/dragonman225/notionapi-agent) [![](https://img.shields.io/badge/Telegram%20Bot-Help-info)](https://github.com/reycn/notion-help-bot/)</span>

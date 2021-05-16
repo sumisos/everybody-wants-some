@@ -16,7 +16,7 @@ related: true
 <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
 
 <script>
-    mediumZoom(document.querySelectorAll('div.post-body img:not([data-no-zoom],[data-sticker],.no-zoom,.sticker)'), {
+    mediumZoom(document.querySelectorAll('div.post-body img:not(img[data-no-zoom], img[data-sticker], img.no-zoom, img.sticker, span img)'), {
         background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
     })
 </script>
@@ -42,17 +42,28 @@ img.no-zoom {
   // 详见 https://github.com/francoischalifour/medium-zoom#selectors
 }
 
-img.sticker {
+@mixin inline-image {
   // 禁用图片换行居中 便于直接在文中插入表情包
   // 已默认禁用图片点击缩放功能
   display: inline;
   margin: auto;
 }
 
+img.sticker {
+  @include inline-image;
+}
+
 img[data-sticker] {
-  // 同上 实际中的另一种用法
-  // class="sticker" => data-sticker
-  @extend img.sticker;
+  @include inline-image;
+}
+
+span.sticker {
+  display:block;
+  text-align:center;
+}
+
+img {
+  span.sticker & { @include inline-image; }
 }
 ```
 
@@ -161,12 +172,24 @@ img[data-sticker] {
 
 在这个文件中我们新增了 `meta/shields.html` 这个模版，其他都和原来的模版 `./themes/meme/layouts/partials/pages/homepage.html` 相同。所以新建文件 `./layouts/partials/meta/shields.html`，输入内容：  
 ```html
-{{ range $.Site.Data.meta.shields.info }}
-    <span style="display:block;text-align:center;">
+{{ $version := $.Site.Data.meta.version }}
+
+<span class="sticker">
+    {{ range $.Site.Data.meta.shields.blog }}
+        {{if .href}} <a href="{{ .href }}"> {{end}}
+        <img src="{{ .src }}" />
+        {{if .href}} </a> {{end}}
+    {{ end }}
+    <a href="https://github.com/gohugoio/hugo"><img src="https://img.shields.io/badge/hugo-{{- $version.hugo -}}-blue.svg?logo=hugo&logoColor=fff" /></a>
+    <a href="https://github.com/reuixiy/hugo-theme-meme"><img src="https://img.shields.io/badge/{{- $version.theme.name -}}-{{- $version.theme.version -}}-blue.svg" /></a>
+</span>
+
+{{ range $.Site.Data.meta.shields.other }}
+    <span class="sticker">
         {{if .title}} <h4>{{- .title -}}</h4> {{end}}
         {{ range .links }}
             {{if .href}} <a href="{{ .href }}"> {{end}}
-            <img src="{{ .src }}" data-sticker />
+            <img src="{{ .src }}" />
             {{if .href}} </a> {{end}}
         {{ end }}
     </span>
@@ -175,19 +198,26 @@ img[data-sticker] {
 
 这个模版读取了站点数据 `$.Site.Data` 的 `meta` 目录下的 `shields` 文件中的 `info`项（即数据文件 `./data/meta/shields.yaml`）。所以新建文件 `./layouts/partials/meta/shields.html`，输入内容：  
 ```yaml
-info:
+blog:
   -
-    type: blog
-    title:
+    href: https://github.com/gohugoio/hugo
+    src: https://img.shields.io/badge/hugo-v0.83.1%2fextended-blue.svg?logo=hugo&logoColor=fff
+  -
+    href: https://github.com/reuixiy/hugo-theme-meme
+    src: https://img.shields.io/badge/MemE-v4.5.0-blue.svg
+other:
+  -
+    type: server1
+    title: Demo
     links:
       -
-        href: https://github.com/gohugoio/hugo
-        src: https://img.shields.io/badge/hugo-v0.83.1%2fextended-brightgreen.svg?logo=hugo&logoColor=fff
+        href: https://github.com/python/cpython
+        src: https://img.shields.io/badge/Python-v3.8.2-blue?logo=python&logoColor=white
       -
-        href: https://github.com/reuixiy/hugo-theme-meme
-        src: https://img.shields.io/badge/MemE-v4.5.0-blue.svg
+        href: https://github.com/tiangolo/fastapi
+        src: https://img.shields.io/badge/FastAPI-v0.61.1-blue?logo=fastapi&logoColor=white
   -
-    type: server
+    type: server2
     title: Project
     links:
       -

@@ -1,6 +1,6 @@
 {{ $version := $.Site.Data.meta.version }}
 
-<span class="sticker" style="display:block;text-align:center;">
+<span class="sticker">
     {{ range $.Site.Data.meta.shields.blog }}
         {{if .href}} <a href="{{ .href }}"> {{end}}
         <img src="{{ .src }}" />
@@ -11,7 +11,7 @@
 </span>
 
 {{ range $.Site.Data.meta.shields.other }}
-    <span class="sticker" style="display:block;text-align:center;">
+    <span class="sticker">
         {{if .title}} <h4>{{- .title -}}</h4> {{end}}
         {{ range .links }}
             {{if .href}} <a href="{{ .href }}"> {{end}}
