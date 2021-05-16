@@ -114,8 +114,8 @@ Here are some ideas to get you started:
 * `card_width` - 手动设置卡片的宽度 _(number)_
 
 > ⚠️ **重要:**  
-> 如 [Percent Encoding](https://en.wikipedia.org/wiki/Percent-encoding) 所指定，语言名称应使用 uri 转义。  
-> (例: `c++` 应该是 `c%2B%2B`，`jupyter notebook` 应该是 `jupyter%20notebook`，诸如此类)  
+> 如 [Percent Encoding](https://en.wikipedia.org/wiki/Percent-encoding) 所指定，URL 路径应使用 uri 转义。  
+> （例：`c++` 应该是 `c%2B%2B`，`let's go` 应该是 `let%27s%20go`，诸如此类）  
 
 ## Wakatime
 [Wakatime](https://wakatime.com/) 是一个统计开发用时的小工具，以插件的形式支持各种 IDE。  
