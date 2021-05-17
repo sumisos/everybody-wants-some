@@ -5,12 +5,12 @@
 #   Description: Powershell 命令行执行工具
 #=================================================
 
-$Script:Version = "1.1.0"
+$Script:Version = "1.1.3"
 $Script:Updated = "2021-05-18"
 $Script:Workspace = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $Script:SaveCommand = "save"
 $Script:DistCommand = "dist"
-$Script:AutoDelete = "/public"  # 需要删除的文件夹写在这里即可 比如 /public/
+$Script:AutoDelete = ""  # 需要删除的文件夹写在这里即可 比如 /public/
 $Script:MainBranch = "main"  # 老仓库是master 后来Github搞政治正确废除了"奴隶制" Code Lives Matter!!
 $Script:EditBranch = "writing"
 
@@ -21,7 +21,7 @@ $Script:EditBranch = "writing"
 function Initialize-WorkingDirectory {
   [CmdletBinding()] Param (
     [Parameter(Mandatory = $true, Position = 1)] [string]$Workspace,
-    [Parameter(Mandatory = $true)] [string]$DeletePath
+    [string]$DeletePath
   )
   Set-Location $Workspace
   if (-not [String]::IsNullOrEmpty($DeletePath)) {
@@ -58,7 +58,10 @@ function Invoke-Command {
 $curtime = (Get-Date).ToString('yyyy-MM-dd HH:mm:ss')
 if ([String]::IsNullOrEmpty($args[0])) {
   $commit_message = ""
-  $Script:CommandBlock = "git status"
+  $Script:CommandBlock = @"
+git add .
+git status
+"@
 }
 else {
   if ($args.Count -eq 1) {
@@ -96,7 +99,10 @@ git switch $($Script:EditBranch)
     $Script:CommandBlock = $Script:DoDist
   }
   else {
-    $Script:CommandBlock = "git status"
+    $Script:CommandBlock = @"
+git add .
+git status
+"@
   }
 }
 

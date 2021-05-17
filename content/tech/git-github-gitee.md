@@ -76,7 +76,7 @@ $ git push -u origin main
 $ git push gitee main
 
 # 切换其他分支
-$ git git checkout -b develop
+$ git checkout -b develop
 $ git push -u origin develop
 $ git push gitee develop
 ```
