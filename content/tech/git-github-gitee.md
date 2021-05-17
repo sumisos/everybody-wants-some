@@ -64,11 +64,14 @@ $ ssh -T git@gitee.com
 ## 实际使用
 众所周知把本地分支推送到远程应该：  
 ```shell
-$ git push -u origin <分支名>
+$ git remote add origin git@github.com:[username]/[reponame].git
+$ git push -u origin [branch]
 ```
 
 所以同时使用 Gitee 的话：  
 ```shell
+$ git remote add gitee git@gitee.com:[username]/[reponame].git
+
 $ git push -u origin main
 $ git push gitee main
 
