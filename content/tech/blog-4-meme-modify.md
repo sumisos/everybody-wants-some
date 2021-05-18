@@ -1,5 +1,5 @@
 ---
-title: "Re:从零开始的博客生涯 #4 Theme MemE"
+title: "Re:从零开始的博客生涯 #4 魔改 MemE"
 subTitle: "改造 Hugo 主题 MemE"
 date: 2021-05-14T15:56:52+08:00
 tags: ["Blog", "Hugo"]

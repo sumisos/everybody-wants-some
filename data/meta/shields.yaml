@@ -2,6 +2,7 @@ blog:
   -
     href: https://github.com/sumisos/blog/actions?query=workflow%3AHugo%2BBlog%2BCD
     src: https://github.com/sumisos/blog/workflows/Hugo%20Blog%20CD/badge.svg
+    comment: Github Action Auto Deploy
   -
     href: https://github.com/sumisos/blog
     src: https://img.shields.io/github/last-commit/sumisos/blog?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0&color=9cf
@@ -13,9 +14,10 @@ other:
       -
         href: https://api.osrp.run
         src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi3.osrp.run%2Ftemp%2Fapi1%2Fversion
+        comment: API 1 Safound
       -
         href: https://stats.uptimerobot.com/kDgGlcnE2O
-        src: https://img.shields.io/uptimerobot/status/m786164276-1f024dc4cb6738ef909697ee?label=uptime
+        src: https://img.shields.io/uptimerobot/ratio/m788160174-4ee51ed2bf7fedf4d806a0ae?label=Uptime
       -
         href: https://github.com/python/cpython
         src: https://img.shields.io/badge/Python-v3.8.2-blue?logo=python&logoColor=fff
@@ -28,16 +30,17 @@ other:
     links:
       -
         href: https://api2.osrp.run
-        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi3.osrp.run%2Ftemp%2Fapi2%2Fversion
+        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi2.osrp.run%2Fv1%2Fversion
+        comment: API 2 Rakuyo
       -
         href: https://stats.uptimerobot.com/kDgGlcnE2O
-        src: https://img.shields.io/uptimerobot/ratio/m786164278-fde2cd91d4dedae6cb4062a4?label=uptime
+        src: https://img.shields.io/uptimerobot/ratio/m788160174-4ee51ed2bf7fedf4d806a0ae?label=Uptime
       -
         href: https://github.com/php/php-src
-        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi3.osrp.run%2Ftemp%2Fapi2%2Flang&logo=php&logoColor=fff
+        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi2.osrp.run%2Fv1%2Flang
       -
         href: https://github.com/laravel/laravel
-        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi3.osrp.run%2Ftemp%2Fapi2%2Fframe&logo=laravel&logoColor=fff
+        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi2.osrp.run%2Fv1%2Fframe
   -
     type: server
     title: API 3 - Golenil
@@ -45,9 +48,10 @@ other:
       -
         href: https://api3.osrp.run
         src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi3.osrp.run%2Fv1%2Fversion
+        comment: API 3 Golenil
       -
         href: https://stats.uptimerobot.com/kDgGlcnE2O
-        src: https://img.shields.io/uptimerobot/ratio/m788160174-4ee51ed2bf7fedf4d806a0ae
+        src: https://img.shields.io/uptimerobot/ratio/m788160174-4ee51ed2bf7fedf4d806a0ae?label=Uptime
       -
         href: https://github.com/nodejs/node
         src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi3.osrp.run%2Fv1%2Flang

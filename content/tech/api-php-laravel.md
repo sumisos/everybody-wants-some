@@ -1,563 +1,84 @@
 ---
-title: "API 重建计划 #2 Rakuyo"
-subTitle: "PHP Laravel API"
-date: 2021-05-18T01:26:50+08:00
+title: "PHP Web 框架 Laravel 的简单使用"
+subTitle: "API 最后的技术选型"
+date: 2020-09-07T15:29:44+08:00
 tags: ["PHP", "Laravel", "API"]
 series: ["API"]
 related: true
+toc: false
 ---
 
-[Laravel 中文文档](https://learnku.com/docs/laravel/8.x)
+其实没什么好选的，我估摸着这个项目最终并发不太可能高到「不得不换 Java 或者 Go」的情况。  
+所以在「满足作为一个 API 基本的要求」的情况下最优先的就是「快速开发」，那肯定是我~~朋友~~第一喜欢的 PHP了。  
 
-## 升级 Composer
-```shell
-$ composer self-update --2
+## 准备开发环境
+开发机是 Windows，从来没考虑过 VIM 写 PHP 是什么体验 ~~也不想尝试~~。  
+
+新机器需要重新搭建开发环境，我不想用 WAMP 或者 PHPStudy 之类的。  
+以前都用过，WAMP 实在臃肿，PHPStudy 还曝出过后门（虽然不是官方的，但不禁让人对官方的能力产生质疑）。  
+至于 Win 版宝塔，不是没用过，体验真的不行。  
+
+而且也完全没有必要，说白了我开发机上只要一个 PHP 和 Composer 而已，敲完代码直接丢内网树莓派上跑，设置好 PhpStorm 的自动部署就能做到随改随测。  
+
+## 开始安装
+安好 [PHP](https://windows.php.net/downloads/releases/) 和 [Composer](https://getcomposer.org/Composer-Setup.exe)。  
+
+**PHP 选「线程安全」还是「非线程安全 (NTS = Non-Thread Safe)」无所谓。**  
+Stack Overflow 上有两个相关问题：  
+
+1. **[PHP 里的线程安全和非线程安全到底是啥玩意？](https://stackoverflow.com/questions/1623914/what-is-thread-safe-or-non-thread-safe-in-php)**  
+如果只是把 PHP 当作 CGI 二进制程序/命令行/或者单线程（多进程）的其他环境，应该使用非线程安全（以提高运行效率）版本。  
+
+2. **[Windows 上用 PHP 选线程安全还是非线程安全？](https://stackoverflow.com/questions/7204758/php-thread-safe-and-non-thread-safe-for-windows)**  
+    * `Apache` + `LoadModule`: Thread Safe
+    * `Apache` + `FastCGI`: Non-Thread Safe
+    * `IIS`: Thread Safe
+    * `IIS` + `FastCGI`: Non-Thread Safe
+    > 我加一个 `Nginx`: Non-Thread Safe
+
+总结一下：  
+Linux 直接选「非线程安全」即可。  
+Win 就更不用说了，开发环境而已，跑得动就行，出问题再解决。[^1]  
+
+<blockquote>
+  <p><b>What does thread safety mean when downloading PHP?</b></p>
+  <p>Thread Safety means that binary can work in a multithreaded webserver context, such as Apache 2 on Windows. Thread Safety works by creating a local storage copy in each thread, so that the data won't collide with another thread.</p>
+  <p>So what do I choose? <b>If you choose to run PHP as a CGI binary, then you won't need thread safety</b>, because the binary is invoked at each request. For multithreaded webservers, such as IIS5 and IIS6, you should use the threaded version of PHP.</p>
+  <cite>——《<a href="https://www.php.net/manual/en/faq.obtaining.php">PHP 官方手册</a>》</cite>
+</blockquote>
+
+最终结论：无脑上「非线程安全」就完了。  
+
+确定自己已经安好 PHP 和 Composer：  
+```powerShell
+$ php -v
+PHP 7.4.10 (cli) (built: Sep  1 2020 16:52:39) ( ZTS Visual C++ 2017 x64 )
+Copyright (c) The PHP Group
+Zend Engine v3.4.0, Copyright (c) Zend Technologies
+
+$ composer -V
+Composer version 1.10.10 2020-08-03 11:35:19
 ```
 
-## 新建项目
-```shell
-$ composer global require laravel/installer
-$ laravel new "project name"
+创建 Laravel 项目：  
+```PowerShell
+$ composer create-project --prefer-dist laravel/laravel API
+
+$ php artisan -V
+Laravel Framework 7.27.0
+```
+
+> 2020.9.8 更新：Laravel 更了 v8.1.0，我已经升级了。  
+> Laravel 这是想追上 PHP 版本号啊。~~不对已经追上了~~  
+
+尝试在 `http://localhost:8000` 启动开发服务器：  
+```PowerShell
 $ php artisan serve
 ```
 
-> 将代码部署到服务器后需要 `composer install` 安装依赖。  
-> 安装依赖的前提是安装 `fileinfo` 扩展，并启用 `putenv` 和 `proc_open` 两个函数。  
-
-然后 `chmod -R 777 storage bootstrap/cache` 打开日志、缓存、sessions 等等杂项的写入权限，就能在生产环境上跑了。  
-
-## 配置优雅链接
-将 `运行目录` 设置为 `/public`，然后编辑 Nginx 的配置文件：  
-```
-location / {
-    try_files $uri $uri/ /index.php?$query_string;
-}
-```
-
-> 拉取仓库配置见前文《[API 重建计划 #1 Golenil](/tech/api-typescript-express)》，此处不再赘述。  
-
-## 引入 Laravel Octane
-虽然目前（2021.5.18）的 [Laravel Octane](https://github.com/laravel/octane) 不尽如人意，但毕竟是提升，有总比没有好。  
-
-### 升级 PHP 8
-Laravel Octane 需要 PHP 8。  
-升级过程参考 《[Ubuntu 20.04 / 18.04 下如何安装或更新至 PHP 8？](https://learnku.com/php/t/51997)》。  
-
-#### 更新软件源
-```shell
-$ sudo apt update && apt upgrade -y
-```
-
-#### 添加 PPA
-```shell
-$ sudo apt install software-properties-common
-$ sudo add-apt-repository ppa:ondrej/php
-$ sudo apt update
-```
-
-#### 安装 PHP 8
-```shell
-$ sudo apt install php8.0-fpm -y # Nginx
-$ sudo apt install php8.0 -y     # Apache
-```
-
-#### 安装常用扩展
-```shell
-$ sudo apt install php8.0-common php8.0-mysql php8.0-xml php8.0-curl php8.0-gd php8.0-imagick php8.0-cli php8.0-dev php8.0-imap php8.0-mbstring php8.0-opcache php8.0-soap php8.0-zip -y
-```
-
-### 安装 Laravel Octane
-```shell
-$ composer require laravel/octane
-```
-
-提示选引擎：  
-```
-➜ php artisan octane:install
-
- Which application server you would like to use?:
-  [0] roadrunner
-  [1] swoole
- >
-```
-我选强无敌的 [RoadRunner](https://github.com/spiral/roadrunner-binary) ~~Golang 天下第一~~。  
-
-新建配置文件 `.rr.yaml`：  
-```yaml
-######################################################################################
-#                       THIS IS SAMPLE OF THE CONFIGURATION                          #
-# IT'S NOT A DEFAULT CONFIGURATION, IT'S JUST A REFERENCE TO ALL OPTIONS AND PLUGINS #
-#       MORE DOCS CAN BE FOUND HERE: <https://roadrunner.dev/docs/intro-config>      #
-######################################################################################
-
-# Production usage guide: https://roadrunner.dev/docs/beep-beep-production
-
-# Hint: RR will replace any config options using reference to environment variables,
-# eg.: `option_key: ${ENVIRONMENT_VARIABLE_NAME}`.
-
-# Important: TCP port numbers for each plugin (rpc, http, etc) must be unique!
-
-# Remote Procedures Calling (docs: https://roadrunner.dev/docs/beep-beep-rpc)
-# Is used for connecting to RoadRunner server from your PHP workers.
-rpc:
-  # TCP address:port for listening.
-  #
-  # Default: "tcp://127.0.0.1:6001"
-  listen: tcp://127.0.0.1:6001
-
-# Application server settings (docs: https://roadrunner.dev/docs/php-worker)
-server:
-  # Worker starting command, with any required arguments.
-  #
-  # This option is required.
-  command: "php artisan octane:start --server=roadrunner --host=127.0.0.1 --port=8000"
-
-  # User name (not UID) for the worker processes. An empty value means to use the RR process user.
-  #
-  # Default: ""
-  user: ""
-
-  # Group name (not GID) for the worker processes. An empty value means to use the RR process user.
-  #
-  # Default: ""
-  group: ""
-
-  # Environment variables for the worker processes.
-  #
-  # Default: <empty map>
-  env:
-    - SOME_KEY: "SOME_VALUE"
-    - SOME_KEY2: "SOME_VALUE2"
-
-  # Worker relay can be: "pipes", TCP (eg.: tcp://127.0.0.1:6001), or socket (eg.: unix:///var/run/rr.sock).
-  #
-  # Default: "pipes"
-  relay: pipes
-
-  # Timeout for relay connection establishing (only for socket and TCP port relay).
-  #
-  # Default: 60s
-  relay_timeout: 60s
-
-# Logging settings (docs: https://roadrunner.dev/docs/beep-beep-logging)
-logs:
-  # Logging mode can be "development", "production" or "raw". Do not forget to change this value for production environment.
-  #
-  # Development mode (which makes DPanicLevel logs panic), uses a console encoder, writes to standard error, and
-  # disables sampling. Stacktraces are automatically included on logs of WarnLevel and above.
-  #
-  # Default: "development"
-  mode: development
-
-  # Logging level can be "panic", "error", "warn", "info", "debug".
-  #
-  # Default: "debug"
-  level: debug
-
-  # Encoding format can be "console" or "json" (last is preferred for production usage).
-  #
-  # Default: "console"
-  encoding: console
-
-  # Output can be file (eg.: "/var/log/rr_errors.log"), "stderr" or "stdout".
-  #
-  # Default: "stderr"
-  output: stderr
-
-  # Errors only output can be file (eg.: "/var/log/rr_errors.log"), "stderr" or "stdout".
-  #
-  # Default: "stderr"
-  err_output: stderr
-
-  # You can configure each plugin log messages individually (key is plugin name, and value is logging options in same
-  # format as above).
-  #
-  # Default: <empty map>
-  channels:
-    http:
-      mode: development
-      level: panic
-      encoding: console
-      output: stdout
-      err_output: stderr
-    server:
-      mode: production
-      level: info
-      encoding: json
-      output: stdout
-      err_output: stdout
-    rpc:
-      mode: raw
-      level: debug
-      encoding: console
-      output: stderr
-      err_output: stdout
-
-# KV plugin settings. Available drivers: boltdb, redis, memcached, memory.
-# Any number of sections can be defined here.
-kv:
-  # User defined name of the section
-  #
-  # Default: none
-  boltdb-south:
-    # Driver which should be used for the storage
-    #
-    # This option is required.
-    driver: boltdb
-    # Driver specific options. Dir - directory where to store db file.
-    #
-    # Default: "."
-    dir: "tests/rr-bolt"
-    # File name for the DB
-    #
-    # Default: "rr.db"
-    file: "rr.db"
-    # BoltDB bucket name
-    #
-    # Default: "rr"
-    bucket: "rr"
-    # Access permission for the DB file.
-    #
-    # Default: "0777"
-    permissions: 0666
-    # TTL keys check interval in seconds. It's safe to use 1 second here, but can be a little costly to performance.
-    #
-    # Default: "60" seconds
-    interval: 40
-
-  # User defined name of the section
-  #
-  # Default: none
-  us-central-kv:
-    # Driver which should be used for the storage
-    #
-    # Default: none
-    driver: memcached
-    # Driver specific section. Address of the memcached node.
-    #
-    # Default: "localhost:11211"
-    addr: [ "localhost:11211" ]
-
-  # User defined name of the section
-  #
-  # Default: none
-  fast-kv-fr:
-    # Driver which should be used for the storage.
-    #
-    # Default: none
-    driver: redis
-    # Redis specific section. If one address provided - single node client will be used.
-    #
-    #
-    # UniversalClient is an abstract client which - based on the provided options -
-    # can connect to either clusters, or sentinel-backed failover instances
-    # or simple single-instance servers. This can be useful for testing
-    # cluster-specific applications locally.
-    # if the number of addrs is 1 and master_name is empty, a single-node redis Client will be returned
-    # if the number of addrs is two or more, a ClusterClient will be returned
-    addrs:
-      - "localhost:6379"
-      # if a MasterName is passed a sentinel-backed FailoverClient will be returned
-    master_name: ""
-    username: ""
-    password: ""
-    db: 0
-    sentinel_password: ""
-    route_by_latency: false
-    route_randomly: false
-    dial_timeout: 0 # accepted values [1s, 5m, 3h]
-    max_retries: 1
-    min_retry_backoff: 0 # accepted values [1s, 5m, 3h]
-    max_retry_backoff: 0 # accepted values [1s, 5m, 3h]
-    pool_size: 0
-    min_idle_conns: 0
-    max_conn_age: 0 # accepted values [1s, 5m, 3h]
-    read_timeout: 0 # accepted values [1s, 5m, 3h]
-    write_timeout: 0 # accepted values [1s, 5m, 3h]
-    pool_timeout: 0 # accepted values [1s, 5m, 3h]
-    idle_timeout: 0 # accepted values [1s, 5m, 3h]
-    idle_check_freq: 0 # accepted values [1s, 5m, 3h]
-    read_only: false
-
-
-  # User defined name of the section
-  #
-  # Default: none
-  local-memory:
-    # In memory driver specific section
-    #
-    # Default: none
-    driver: memory
-    # TTL check interval in seconds
-    #
-    # Default: 60 seconds
-    interval: 1
-
-# HTTP plugin settings.
-http:
-  # Host and port to listen on (eg.: `127.0.0.1:8080`).
-  #
-  # This option is required.
-  address: 127.0.0.1:8080
-
-  # Maximal incoming request size in megabytes. Zero means no limit.
-  #
-  # Default: 0
-  max_request_size: 256
-
-  # Middlewares for the http plugin, order is important. Allowed values is: "headers", "gzip".
-  #
-  # Default value: []
-  middleware: [ "headers", "gzip" ]
-
-  # Allow incoming requests only from the following subnets (https://en.wikipedia.org/wiki/Reserved_IP_addresses).
-  #
-  # Default: ["10.0.0.0/8", "127.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16",  "::1/128", "fc00::/7", "fe80::/10"]
-  trusted_subnets: [
-      "10.0.0.0/8",
-      "127.0.0.0/8",
-      "172.16.0.0/12",
-      "192.168.0.0/16",
-      "::1/128",
-      "fc00::/7",
-      "fe80::/10",
-  ]
-
-  # File uploading settings.
-  uploads:
-    # Directory for file uploads. Empty value means to use $TEMP based on your OS.
-    #
-    # Default: ""
-    dir: "/tmp"
-
-    # Deny files with the following extensions to upload.
-    #
-    # Default: [".php", ".exe", ".bat"]
-    forbid: [ ".php", ".exe", ".bat", ".sh" ]
-
-  # Settings for "headers" middleware (docs: https://roadrunner.dev/docs/http-headers).
-  headers:
-    # Allows to control CORS headers. Additional headers "Vary: Origin", "Vary: Access-Control-Request-Method",
-    # "Vary: Access-Control-Request-Headers" will be added to the server responses. Drop this section for this
-    # feature disabling.
-    cors:
-      # Controls "Access-Control-Allow-Origin" header value (docs: https://mzl.la/2OgD4Qf).
-      #
-      # Default: ""
-      allowed_origin: "*"
-
-      # Controls "Access-Control-Allow-Headers" header value (docs: https://mzl.la/2OzDVvk).
-      #
-      # Default: ""
-      allowed_headers: "*"
-
-      # Controls "Access-Control-Allow-Methods" header value (docs: https://mzl.la/3lbwyXf).
-      #
-      # Default: ""
-      allowed_methods: "GET,POST,PUT,DELETE"
-
-      # Controls "Access-Control-Allow-Credentials" header value (docs: https://mzl.la/3ekJGaY).
-      #
-      # Default: false
-      allow_credentials: true
-
-      # Controls "Access-Control-Expose-Headers" header value (docs: https://mzl.la/3qAqgkF).
-      #
-      # Default: ""
-      exposed_headers: "Cache-Control,Content-Language,Content-Type,Expires,Last-Modified,Pragma"
-
-      # Controls "Access-Control-Max-Age" header value in seconds (docs: https://mzl.la/2PCSdvt).
-      #
-      # Default: 0
-      max_age: 600
-
-    # Automatically add headers to every request passed to PHP.
-    #
-    # Default: <empty map>
-    request:
-      input: "custom-header"
-
-    # Automatically add headers to every response.
-    #
-    # Default: <empty map>
-    response:
-      X-Powered-By: "RoadRunner"
-
-  # Settings for "static" middleware (docs: https://roadrunner.dev/docs/http-static).
-  static:
-    dir: "."
-    forbid: [""]
-    allow: [".txt", ".php"]
-    request:
-      input: "custom-header"
-    response:
-      output: "output-header"
-
-  # Workers pool settings.
-  pool:
-    # How many worker processes will be started. Zero (or nothing) means the number of logical CPUs.
-    #
-    # Default: 0
-    num_workers: 0
-
-    # Maximal count of worker executions. Zero (or nothing) means no limit.
-    #
-    # Default: 0
-    max_jobs: 64
-
-    # Timeout for worker allocation. Zero means no limit.
-    #
-    # Default: 60s
-    allocate_timeout: 60s
-
-    # Timeout for worker destroying before process killing. Zero means no limit.
-    #
-    # Default: 60s
-    destroy_timeout: 60s
-
-    # Supervisor is used to control http workers (previous name was "limit", docs:
-    # https://roadrunner.dev/docs/php-limit). "Soft" limits will not interrupt current request processing. "Hard"
-    # limit on the contrary - interrupts the execution of the request.
-    supervisor:
-      # How often to check the state of the workers.
-      #
-      # Default: 1s
-      watch_tick: 1s
-
-      # Maximum time worker is allowed to live (soft limit). Zero means no limit.
-      #
-      # Default: 0s
-      ttl: 0s
-
-      # How long worker can spend in IDLE mode after first using (soft limit). Zero means no limit.
-      #
-      # Default: 0s
-      idle_ttl: 10s
-
-      # Maximal worker memory usage in megabytes (soft limit). Zero means no limit.
-      #
-      # Default: 0
-      max_worker_memory: 128
-
-      # Maximal job lifetime (hard limit). Zero means no limit.
-      #
-      # Default: 0s
-      exec_ttl: 60s
-
-  # FastCGI frontend support.
-  fcgi:
-    # FastCGI connection DSN. Supported TCP and Unix sockets. An empty value disables this.
-    #
-    # Default: ""
-    address: tcp://0.0.0.0:7921
-
-  # HTTP/2 settings.
-  http2:
-    # HTTP/2 over non-encrypted TCP connection using H2C.
-    #
-    # Default: false
-    h2c: false
-
-    # Maximal concurrent streams count.
-    #
-    # Default: 128
-    max_concurrent_streams: 128
-
-# Application metrics in Prometheus format (docs: https://roadrunner.dev/docs/beep-beep-metrics). Drop this section
-# for this feature disabling.
-metrics:
-  # Prometheus client address (path /metrics added automatically).
-  #
-  # Default: "127.0.0.1:2112"
-  address: "127.0.0.1:2112"
-
-  # Application-specific metrics (published using an RPC connection to the server).
-  collect:
-    app_metric:
-      type: histogram
-      help: "Custom application metric"
-      labels: [ "type" ]
-      buckets: [ 0.1, 0.2, 0.3, 1.0 ]
-      # Objectives defines the quantile rank estimates with their respective absolute error (for summary only).
-      objectives:
-        - 1.4: 2.3
-        - 2.0: 1.4
-
-# Health check endpoint (docs: https://roadrunner.dev/docs/beep-beep-health). If response code is 200 - it means at
-# least one worker ready to serve requests. 500 - there are no workers ready to service requests.
-# Drop this section for this feature disabling.
-status:
-  # Host and port to listen on (eg.: `127.0.0.1:2114`). Use the following URL: http://127.0.0.1:2114/health?plugin=http
-  # Multiple plugins must be separated using "&" - http://127.0.0.1:2114/health?plugin=http&plugin=rpc where "http" and
-  # "rpc" are active (connected) plugins.
-  #
-  # This option is required.
-  address: 127.0.0.1:2114
-
-  # Response status code if a requested plugin not ready to handle requests
-  # Valid for both /health and /ready endpoints
-  #
-  # Default: 503
-  unavailable_status_code: 503
-
-# Automatically detect PHP file changes and reload connected services (docs:
-# https://roadrunner.dev/docs/beep-beep-reload). Drop this section for this feature disabling.
-reload:
-  # Sync interval.
-  #
-  # Default: "1s"
-  interval: 1s
-
-  # Global patterns to sync.
-  #
-  # Default: [".php"]
-  patterns: [ ".php" ]
-
-  # List of included for sync services (this is a map, where key name is a plugin name).
-  #
-  # Default: <empty map>
-  services:
-    http:
-      # Directories to sync. If recursive is set to true, recursive sync will be applied only to the directories in
-      # "dirs" section. Dot (.) means "current working directory".
-      #
-      # Default: []
-      dirs: [ "." ]
-
-      # Recursive search for file patterns to add.
-      #
-      # Default: false
-      recursive: true
-
-      # Ignored folders.
-      #
-      # Default: []
-      ignore: [ "vendor" ]
-
-      # Service specific file pattens to sync.
-      #
-      # Default: []
-      patterns: [ ".php", ".go", ".md" ]
-
-## RoadRunner internal container configuration (docs: https://github.com/spiral/endure).
-endure:
-  # How long to wait for stopping.
-  #
-  # Default: 30s
-  grace_period: 30s
-
-  # Print graph in the graphviz format to the stdout (paste here to visualize https://dreampuf.github.io)
-  #
-  # Default: false
-  print_graph: false
-
-  # Logging level. Possible values: "debug", "info", "warn", "error", "panic", "fatal".
-  #
-  # Default: "error"
-  log_level: error
-```
-
-```shell
-$ chmod +x ./rr
-$ ./rr serve
-```
+齐活。  
+
+[^1]: （很久以前）Win 上 IIS 以 CGI 方式运行 PHP 会非常慢，因为是 CGI 模式是建立在**多进程**的基础上的，每个请求都需要重新加载和卸载整个 PHP 环境，消耗巨大。  
+当时的解决方案是把 PHP 配置成 ISAPI（**多线程**），但这样做的话万一用到以 Linux 的**多进程**思想开发的 PHP 扩展，还是会搞崩 IIS。  
+后来，为了解决这个问题，微软给出了兼顾效率和安全的 FastCGI 方案，即允许 PHP 进程的并发以及重复利用。这种方案解决了以前 CGI 无限开进程消耗过大的问题，同时利用了「CGI 不存在线程安全问题」的优势。  
+脱离具体应用跨系统讨论进程和线程是一个很玄学的东西，如果不是立志于深耕操作系统方向的话不必深究。  

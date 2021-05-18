@@ -1,7 +1,7 @@
 ---
-title: "使用 Android 登录 linux: Termux 的简单使用"
+title: "Android 上的 Linux: Termux 的简单使用"
 date: 2021-05-17T09:45:48+08:00
-tags: ["linux", "运维", "SSH", "Termux"]
+tags: ["Linux", "运维", "SSH", "Termux"]
 series: ["运维"]
 related: true
 ---

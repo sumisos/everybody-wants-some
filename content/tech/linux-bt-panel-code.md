@@ -2,7 +2,7 @@
 title: "宝塔面板 Cheat Sheet"
 subTitle: "宝塔 Linux 面板命令大全"
 date: 2021-05-17T10:50:51+08:00
-tags: ["宝塔面板", "bt.cn"]
+tags: ["Linux", "运维", "JavaScript", "bt.cn"]
 series: ["运维"]
 related: true
 ---

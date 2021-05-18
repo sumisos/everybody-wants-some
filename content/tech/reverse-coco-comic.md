@@ -1,8 +1,8 @@
 ---
 title: "逆向技术学习与研究之 coco 漫画"
 date: 2021-03-31T18:11:52+08:00
-tags: ["Reverse Engineering", "comic"]
-series: ["Reverse Engineering"]
+tags: ["逆向", "Comic"]
+series: ["逆向"]
 related: true
 ---
 

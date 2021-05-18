@@ -1,5 +1,5 @@
 ---
-title: "使用 SSH 登录 Linux: SSH-Key 的简单使用"
+title: "SSH 登录 Linux: SSH-Key 的简单使用"
 date: 2021-05-17T09:22:48+08:00
 tags: ["Linux", "运维", "SSH"]
 series: ["运维"]

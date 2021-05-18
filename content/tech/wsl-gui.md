@@ -1,9 +1,9 @@
 ---
-title: "初试 Windows Subsystem for Linux GUI"
+title: "Windows Subsystem for Linux GUI 尝鲜"
 subTitle: "WSLg 使用体验真的绝了"
 date: 2021-05-08T01:37:49+08:00
 tags: ["WSL"]
-series: ["WSLg"]
+series: ["WSL"]
 related: true
 ---
 

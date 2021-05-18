@@ -1,7 +1,7 @@
 ---
 title: "《末日准备狂》早期版本简单攻略"
 date: 2021-03-19T21:11:52+08:00
-tags: ["Steam","生存", "三渲二"]
+tags: ["Steam","生存类游戏"]
 series: ["攻略"]
 related: true
 ---

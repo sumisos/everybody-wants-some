@@ -1,7 +1,7 @@
 ---
 title: "《Diablo3》S21 风暴试炼 猎魔人开荒及 Build"
 date: 2020-07-03T02:03:10+08:00
-tags: ["Diablo3", "Demon Hunter", "配装"]
+tags: ["Diablo3", "猎魔人", "配装"]
 related: true
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: "API 重建计划 #1 Golenil"
-subTitle: "TypeScript Express API"
+title: "API 重建计划 #1 TypeScript Express"
+subTitle: "TypeScript Express API Golenil"
 date: 2021-05-17T01:06:38+08:00
 tags: ["Node.js", "TypeScript", "Express", "API"]
 series: ["API"]
@@ -13,7 +13,7 @@ related: true
     <a href="https://github.com/ljlm0402/typescript-express-starter" target="_blank"><img src="https://img.shields.io/badge/ljlm0402-typescript--express--starter-blue?logo=github" alt="npm Downloads" /></a>
     <a href="http://npm.im/typescript-express-starter" target="_blank"><img src="https://img.shields.io/npm/v/typescript-express-starter" alt="npm Version" /></a>
     <a href="http://npm.im/typescript-express-starter" target="_blank"><img src="https://img.shields.io/npm/l/typescript-express-starter" alt="Package License" /></a>
-    <a href="http://npm.im/typescript-express-starter" target="_blank"><img src="https://img.shields.io/github/v/release/ljlm0402/typescript-express-starter" alt="Release Version" /></a></a>
+    <a href="http://npm.im/typescript-express-starter" target="_blank"><img src="https://img.shields.io/github/v/release/ljlm0402/typescript-express-starter" alt="Release Version" /></a>
 </span>
 
 ## 搭建脚手架
