@@ -20,12 +20,12 @@ related: true
 
 ### Windows 包管理器
 用**管理员权限**在 `Powershell` 运行 `Chocolatey`：  
-```shell
+```bash
 $ choco install hugo-extended -confirm
 ```
 
 或者用**管理员权限**在 `Powershell` 运行 `Scoop`：  
-```shell
+```bash
 $ scoop install hugo-extended
 ```
 
@@ -33,7 +33,7 @@ $ scoop install hugo-extended
 
 ### Mac 包管理器
 在 `Homebrew` 运行：  
-```shell
+```bash
 $ brew install hugo
 ```
 
@@ -46,18 +46,18 @@ $ brew install hugo
 ## 升级
 ### Windows
 用**管理员权限**在 `Powershell` 运行 `Chocolatey`：  
-```shell
+```bash
 $ choco upgrade hugo-extended -confirm
 ```
 
 或者用**管理员权限**在 `Powershell` 运行 `Scoop`：  
-```shell
+```bash
 $ scoop update hugo-extended
 ```
 
 ### Mac
 在 `Homebrew` 运行：  
-```shell
+```bash
 $ brew upgrade hugo
 ```
 
@@ -66,7 +66,7 @@ $ brew upgrade hugo
 
 ## 使用
 ### 生成新项目
-```shell
+```bash
 $ hugo new site hugo-demo
 $ cd hugo-demo
 ```
@@ -87,27 +87,58 @@ config.toml 配置文件
 ```
 
 ### 生成新文章
-```shell
+```bash
 $ hugo new posts/hello-world.md
 ```
 以预设格式（`hugo-demo\archetypes\default.md`）在正文目录（`hugo-demo\content\posts\`）生成名为 `hello-world.md` 的新文章。  
 
 ### 生成静态文件
-```shell
+```bash
 $ hugo
 ```
 然后将 `public` 文件夹直接放到任意 web 服务器（`nginx`/`Apache`/`Caddy` 等）即可成功运行。  
 
 ### 在本地运行 web 服务
-```shell
-$ hugo server -D -p 9527
+```bash
+$ hugo server -p 9527
 ```
 
-> 加上 `-D` 是呈现的网站包括草稿（即 `meta 头`、或者官方称之为 `Front Matter` 中的 `draft` 字段为 `true` 的文章）。  
 > 加上 `-p 9527` 是指定端口。  
 > 如果直接运行 `hugo server` 就是**不含草稿**并运行在**默认端口**（1313）的 web 服务。  
 
-然后用浏览器打开 [http://localhost:9527](http://localhost:9527) 或者 [http://127.0.0.1:9527](http://127.0.0.1:9527) （`localhost` = `127.0.0.1` = 本地）就能看到本地运行的网站了。  
+然后用浏览器打开 [http://localhost:9527](http://localhost:9527) 或者 [http://127.0.0.1:9527](http://127.0.0.1:9527) （「本地」= `localhost` = `127.0.0.1`）就能看到本地运行的网站了。  
 
-### 更多命令
-更多命令用法详见 [官方文档](https://www.gohugo.org/doc/overview/usage/)。  
+### 加载所有文章
+* `hugo` 生成静态文件，默认 `environment` 为 `production`（生产环境）  
+* `hugo server` 运行网站服务，默认 `environment` 为 `development`（开发环境）  
+
+简单地 `hugo server` 只会加载生产环境（`production`）会展示的文章。  
+
+加载 `.\content\` 目录下**所有** Markdown 文件（`*.md`）：  
+```bash
+$ hugo server -D -E -F
+```
+
+> 每篇文章都有 `meta header`（官方称之为 [`Front Matter`](https://gohugo.io/content-management/front-matter/)），可以定义该篇文章的元数据：  
+> 标题 / 标签 / 分类 / 是否为草稿 / 发表时间 / 过期时间 等各种信息。  
+
+* `-D` / `--buildDrafts` 加载草稿  
+* `-E` / `--buildExpired` 加载过期的文章  
+* `-F` / `--buildFuture` 加载未来的文章  
+  即文章的发表时间（你想写成什么时候都行）比**此时此刻**晚  
+
+### LiveReload
+Hugo 自带 [LiveReload](https://github.com/livereload/livereload-js)，加上**默认开启**的 `--watch` 监视文件变动，一旦文件被修改就会自动热重载。  
+但如果在本地绑定了域名（比如 `http://local.hugo`），访问这个域名时 `livereload.js` 可能会（错误地）尝试连接 `ws://local.hugo:[PORT]`。  
+
+> `[PORT]` 是 `hugo server -p` 指定的端口，不指定则默认为 `1313`。  
+
+这时可以用 `--liveReloadPort` 指定 `livereload.js` 连接 WebSocket 的端口：  
+```bash
+$ hugo server -p 9527 --liveReloadPort 80
+```
+
+如果本地绑定的域名和我一样是反代端口出来的，那么再访问 `http://local.hugo` 就能正确地根据文件变动实时重载了。  
+
+### 更多玩法
+更多命令用法详见 [官方文档](https://gohugo.io/commands)。  

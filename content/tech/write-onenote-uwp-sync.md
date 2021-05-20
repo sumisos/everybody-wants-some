@@ -21,7 +21,7 @@ toc: false
 
 ## 解决方法
 
-[知乎原文章](https://zhuanlan.zhihu.com/p/128926805) 提到的 [MSDN 文章](https://docs.microsoft.com/zh-cn/archive/blogs/fiddler/revisiting-fiddler-and-win8-immersive-applications) 已经失效了，但其实已经说得清楚了：  
+[知乎原文章](https://zhuanlan.zhihu.com/p/128926805) 提到的 [MSDN 文章](https://docs.microsoft.com/zh-cn/archive/blogs/fiddler/revisiting-fiddler-and-win8-immersive-applications) 已失效，但其实已经说得很清楚了：  
 
 > 很多 UWP 应用（包括 OneNote UWP）属于 `Immersive applications`，这种应用不是直接跑在本地上的，而是被放到一个 `AppContainer` 里跑。  
 
