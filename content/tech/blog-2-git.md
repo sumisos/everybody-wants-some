@@ -55,7 +55,7 @@ $ git push -u origin writing
 gitGraph:
 options
 {
-    "nodeSpacing": 90,
+    "nodeSpacing": 110,
     "nodeRadius": 9
 }
 end
@@ -76,7 +76,7 @@ merge newbranch
 
 一般使用分支的情况：  
 ```shell
-$ git checkout -branch feature
+$ git checkout -b feature
 ```
 
 ```
@@ -131,7 +131,12 @@ $ git log --graph --pretty=oneline --abbrev-commit
 也就是说 `--no-ff` 可以**隐藏被合并分支中的提交历史**，如果不想让开发 `被合并分支` 时产生的细碎 commit 扰乱 `主分支` 的提交历史就可以用。  
 但如果想在主分支上管理**每一个** commit，直接 merge 就好了。  
 
+另外，如果想忽略**任何**细碎的提交历史，即专注于主分支，直接根本完全 totally 不 care 其他分支，就要用到神奇的变基（`rebase`）[^1]了，懂的都懂这里就不 [细说](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%8F%98%E5%9F%BA) 了。  
+
 ## 扩展阅读
-《[Git 官方文档](https://git-scm.com/book/zh/v2/)》  
+《[Pro Git 中文版（第二版）](https://www.progit.cn/)》《[Git 官方文档](https://git-scm.com/book/zh/v2/)》  
 《[菜鸟教程](https://www.runoob.com/git/git-tutorial.html)》  
 《[阮一峰的 Wiki](https://www.liaoxuefeng.com/wiki/896043488029600)》  
+
+[^1]: 「<ruby><rb>变基</rb><rp>（</rp><rt>rebase</rt><rp>）</rp></ruby>」这个词就是字面意思（改**变基**底），但不是那种字面意思（**变**成**基**\*），望周知。  
+

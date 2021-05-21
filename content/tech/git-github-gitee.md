@@ -26,6 +26,10 @@ $ ssh-keygen -b 4096 -C 'apple@mail.com' -f ~/.ssh/gitee_ssh_key
 $ ssh-keygen -b 4096 -C 'banana@mail.com' -f ~/.ssh/github_ssh_key_2
 ```
 
+> 理论上应该可以共用同一对密钥吧，但是这样安全性就……  
+> 多~~敲几行~~复制粘贴几次又费不了多大劲，万一不小心把私钥暴露出去了，损失会小很多。  
+> 拿 RSA 密钥对撞库是我未曾设想的道路。  
+
 `vim ~/.ssh/config` 编辑配置文件：  
 ```
 # Default Github User(Github User apple@mail.com)
@@ -52,7 +56,8 @@ IdentityFile ~/.ssh/gitee_ssh_key
 git@github.com-2:<USERNAME>/<REPONAME>.git
 ```
 
-重点是里面的 `github.com-2` 应该对应 `config` 配置文件里的 `Host`，可以自行替换（比如换成 `p**nhub.com`）。  
+重点是里面的 `github.com-2` 应该对应 `config` 配置文件里的 `Host`。  
+可以自行替换。~~比如换成 `p**nhub.com`~~  
 
 设置完成后依次测试连通性：  
 ```shell
@@ -64,18 +69,18 @@ $ ssh -T git@gitee.com
 ## 实际使用
 众所周知把本地分支推送到远程应该：  
 ```shell
-$ git remote add origin git@github.com:[username]/[reponame].git
+$ git remote add origin git@github.com:[USERNAME]/[REPONAME].git
 $ git push -u origin [branch]
 ```
 
 所以同时使用 Gitee 的话：  
 ```shell
-$ git remote add gitee git@gitee.com:[username]/[reponame].git
+$ git remote add gitee git@gitee.com:[USERNAME]/[REPONAME].git
 
 $ git push -u origin main
 $ git push gitee main
 
-# 切换其他分支
+# 推送其他分支
 $ git checkout -b develop
 $ git push -u origin develop
 $ git push gitee develop

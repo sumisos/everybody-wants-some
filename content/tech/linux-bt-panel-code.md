@@ -133,14 +133,17 @@ service iptables save
 service iptables restart
 ```
 
+#### 此处官网的显示有问题
+多行代码块 `<pre>` [官网只显示一行](https://www.bt.cn/btcode.html#main)，真 nm 绝了，排版鬼才。  
+我还是爬出来才发现，官网 CentOS 6 和 7 的命令一样，但是分开写了两段。  
+确实是 bug，不过是前端显示 bug。  
+
 ### 修改面板端口，如要改成 8881（CentOS 7）
 ```
 echo '8881' > /www/server/panel/data/port.pl && /etc/init.d/bt restart
 firewall-cmd --permanent --zone=public --add-port=8881/tcp
 firewall-cmd --reload
 ```
-
-> 多行代码块 `<pre>` 官网只显示一行，真 nm 绝了，排版鬼才。  
 
 ### 强制修改 MySQL 管理密码，如要改成 123456
 ```
