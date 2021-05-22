@@ -1,6 +1,6 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-subTitle: "subtitle"
+subTitle: "This is a subtitle."
 date: {{ .Date }}
 tags: ["tag1", "tag2"]
 series: ["A series"]
