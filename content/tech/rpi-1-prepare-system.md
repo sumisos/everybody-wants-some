@@ -1,5 +1,5 @@
 ---
-title: "树莓派食用手册 #1 安装系统与存储卡技术漫谈"
+title: "树莓派食用手册 #1 安装 Debian x64 系统"
 date: 2018-11-25T19:11:00+08:00
 tags: ["树莓派", "运维", "Linux", "Debian", "硬件"]
 series: ["运维"]
@@ -81,6 +81,7 @@ related: true
 本文之后的内容都以默认使用 Debian Pi Aarch64 为准，官方系统仅供参考。  
 
 ## SSH 连接
+### 通用做法
 准备好 SSH 连接软件，「[Xshell](https://www.netsarang.com/zh/Xshell/)」都不惜违反广告法自称「业界最强大的 SSH 客户机」了，不过如果你依然愿意使用「[PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)」的话也没有问题。  
 
 ![查看网络属性](https://i.loli.net/2020/03/23/Zf3Q7xOAuhkc8MG.png)
@@ -107,7 +108,69 @@ PowerShell 运行 `arp -a`，应该会有一个 MAC 地址 `b8` 开头的动态 
 > 推荐用路由器给树莓派分配一个内网固定 IP，DHCP 每次自动分配的 IP 是随机的，只要不是太古早的路由器应该都有这个功能。  
 > 给树莓派 MAC 绑定固定 IP 方便以后直接使用，你不想每次连接都要这样折腾一遍吧。  
 
-## 默认root
+### Debian-Pi-Aarch64 特有福利
+根据 [官方文档](https://github.com/openfans-community-offical/Debian-Pi-Aarch64/blob/master/README.md#3-4-pre-configured-items) 我们得知烧录成功 Debian-Pi-Aarch64 的系统有几个预配置项。  
+烧录完的 TF 卡不要急着拔，打开 Windows 也能正常读写的 boot 盘。  
+
+编辑里面根目录下的 `wpa_supplicant.conf` 文件：  
+```
+country=CN
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+## ssid     无线 Wi-Fi 名称
+## psk      无线 Wi-Fi 密码
+## priority 优先级  数字越大越优先
+
+## WIFI 1 / 常驻 Wi-Fi ##
+network={
+    ssid="your-wifi1-ssid"
+    psk="wifi1-password"
+    priority=10
+    id_str="router"
+}
+
+## WIFI 2 / 备用 Wi-Fi ##
+network={
+    ssid="your-wifi2-ssid"
+    psk="wifi2-password"
+    priority=2
+    id_str="phone-hotspot"
+}
+```
+
+光是配置好这个文件**并不代表**就能开机直连 Wi-Fi 了，还要运行：  
+```bash
+$ systemctl disable network-manager
+```
+
+禁用掉原来的网络管理器，让这个配置文件生效。  
+
+那么问题就转变成了如何开机运行这一行指令，我有上中下三策。  
+
+下策：如果电脑是台式，把显示器和键盘接到树莓派上，那还要什么开机准备，直接上，配置好了再拔掉。  
+
+中策：其实显示器是多余的，如果你手边只有笔记本一时也找不到显示器，USB 键盘你应该有吧。烧录好系统，通电开机后稍等一会（等他自动扩展根分区并自动进行相关配置，期间会重启三次）。然后直接接上键盘盲打命令 `systemctl disable network-manager` <kbd>Enter</kbd> `reboot` <kbd>Enter</kbd> 不就完了。  
+
+上策：这些手段都不太聪明的样子。boot 盘里还有个叫 `rc-local` 的文件，这是开机自动运行的脚本。用文本编辑器打开：  
+```
+#!/bin/bash
+
+# Print the IP address
+_IP=$(hostname -I) || true
+if [ "$_IP" ]; then
+  printf "IP address is %s\n" "$_IP"
+fi
+
+echo "rc-local bash echo test."
+
+systemctl disable network-manager
+
+exit 0
+```
+编辑好了插入 TF 卡通电，然后打开路由器后台，坐等树莓派连上来就行了。  
+
+## 默认 root
 1. `sudo -i` 将当前用户从 pi 切换到 root  
 2. `cd ~` 进入 `/root` 工作目录  
 3. （可选）最好 `sudo passwd root` 设置 root 密码并**牢记**，忘记密码自行解决  

@@ -8,14 +8,22 @@ related: true
 ---
 
 ## 准备 WSL
-### 全新安装 WSL 2 镜像
+### 开启虚拟化
+`设置` - 搜索 `启用或关闭 Windows 功能`，勾上：  
+* `Hyper-V`  
+* `Windows Subsystem for Linux`  
+* `虚拟机平台`  
+
+确定，重启。  
+
+### 全新安装 WSL 2
 以**管理员权限**运行命令
 ```Powershell
 $ wsl --set-default-version 2
 $ wsl --install -d Ubuntu
 ```
 
-### 升级 WSL 2 镜像
+### 升级到 WSL 2
 如果已经安装了 WSL 1，需要升级到 WSL 2。
 
 运行命令
@@ -28,10 +36,13 @@ $ wsl --list -v
 $ wsl --set-version [distro_name] 2 # 注意自行替换 distro_name 成上一条命令对应发行版的 NAME
 ```
 
-## 升级 WSLg
+## 升级到 WSLg
 ```Powershell
 $ wsl --update
 ```
+
+> **注意**：只有 WSL 2 支持，WSL 1 不行。  
+> 系统版本好像要 build 21362+（<kbd>Win</kbd> + <kbd>R</kbd>，`winver`），反正我是把 Insider Preview 切到 dev 渠道升级系统，然后直接 `wsl --update` 就好了。  
 
 ## 实际体验
 本来我就是 WSL 重度用户，升级 GUI 简直挠到痒处。从此告别 VMware / VirtualBox。  
@@ -46,8 +57,11 @@ $ wsl --update
 
 目前开发没有在 Ubuntu 上装 IDE，我还是配合 VSCode 插件食用的，玩够了再说。  
 
-> **注意**：只有 WSL 2 支持，WSL 1 不行。  
-> 系统版本好像要 build 21362+（<kbd>Win</kbd>+<kbd>R</kbd>，`winver`），反正我是把 Insider Preview 切到 dev 渠道升级系统，然后直接 wsl --update 就好了。  
+另外，Linux 版 QQ 还能更拉垮一点吗？  
+至于我为什么想在 Linux 上用 QQ 腾讯心里没点逼数吗？TIM 就是什么好东西吗？  
+鹅厂的产品论良心程度，真的只比百度云毫不掩饰的丑恶吃相强得有限。  
+尤其那个 WeGame，什么不可燃垃圾。  
+起初全班只有我不用，毕业后据我所知只有可怜的 DNF 玩家还在用了。  
 
 ## 其他问题
 ### Windows 预览体验计划 一片空白

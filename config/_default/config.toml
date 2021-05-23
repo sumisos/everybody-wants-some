@@ -185,6 +185,11 @@ uglyURLs = false
     #     pre = "internal"
     #     post = "home"
     [[menu.main]]
+        url = "/tags/"
+        name = "标签"
+        weight = 1
+        pre = "internal"
+    [[menu.main]]
         url = "/tech/"
         name = "技术"
         weight = 2
