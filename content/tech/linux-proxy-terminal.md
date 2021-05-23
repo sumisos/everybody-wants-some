@@ -4,7 +4,6 @@ date: 2021-05-23T12:21:40+08:00
 tags: ["Linux", "运维", "zsh", "proxychains"]
 series: ["运维"]
 related: true
-draft: true
 ---
 
 ## proxychain-ng

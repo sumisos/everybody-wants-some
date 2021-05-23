@@ -9,8 +9,7 @@ related: true
 
 * <a href="/tech/storage-sd-card" target="_blank">存储卡标准</a>
 * 内存 DDR
-* USB
-* 雷电
+* <a href="/tech/interface-usb-standard" target="_blank">USB 和雷电协议</a>
 * 等等……
 
 某个行业前沿技术出现百家争鸣的场面，是因为行业领先组织（不一定是企业）都想抢标准。  
