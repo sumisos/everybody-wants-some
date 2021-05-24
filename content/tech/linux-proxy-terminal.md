@@ -110,13 +110,13 @@ $ vim ~/.zshrc
 ```
 
 #### 更换主题
-我最喜欢 [*agnoster*](https://github.com/agnoster/agnoster-zsh-theme)，就一个字，精致。  
+其实默认的 *robbyrussell* 就很棒，简洁大方。  
+
+不过我最喜欢 [*agnoster*](https://github.com/agnoster/agnoster-zsh-theme)，就一个字，精致。  
 用不同前景色背景色配合做出来的箭头形分隔符真的很有创意，设计感拉满。  
 ```bash
 ZSH_THEME="agnoster"
 ```
-
-其实默认的 *robbyrussell* 就很棒，简洁大方。  
 
 另外推荐 [*pure*](https://github.com/sindresorhus/pure)，清爽到性冷淡。  
 
@@ -151,7 +151,7 @@ alias px="proxychains4"
 # 如果装了 supervisorctl
 alias sv="supervisorctl"
 alias svcfg="vim /etc/supervisor/supervisord.conf"
-alias svr="supervisorctl update && supervisorctl reload"
+alias svr="supervisorctl update all && supervisorctl reload"
 
 # 对了 thefuck 也要特别为 zsh 配置
 eval $(thefuck --alias fuck)

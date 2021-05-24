@@ -36,13 +36,15 @@ The latest stable version of iTXTech MCL is x.x.x 获取最新MCL并询问是否
 Would you like to download it? (Y/N, default: Y) Y：下载，N：取消
 ```
 
-如果一直下不动，可以选择手动安装 JRE 11：  
+如果一直下不动，可以选择手动安装 JRE 11\*：  
 
-> 忘了在哪看到的，Mirai 某个组件似乎最低需要 11，虽然上面的 MCL Installer 说 8 - 15 都可以。  
+> \* 忘了在哪看到的，Mirai 某个组件似乎最低需要 11。  
+> （虽然上面的 MCL Installer 说 8 - 15 都可以。）  
 > JRE 是 Java 必需的运行环境，JDK 除了运行环境之外还有开发工具。  
+
 ```bash
 $ apt-get update && apt-get upgrade -y && apt install openjdk-11-jre-headless -y
-$ ./mcl-installer
+$ ./mcl-installer  # 再次运行 MCL Installer
 # 问 Would you like to install Java? (Y/N, default: Y) 的时候 n 就完了
 ```
 
@@ -98,7 +100,7 @@ accounts:
       protocol: ANDROID_PAD
 ```
 
-未设置时默认为 `ANDROID_PHONE`，换成 `ANDROID_PAD` 可以通过验证码登录。  
+未设置时默认登陆协议为 `ANDROID_PHONE`，换成 `ANDROID_PAD` 可以通过验证码登录。  
 
 如果 `mirai-login-solver-selenium` 无限报错的话：  
 ```bash

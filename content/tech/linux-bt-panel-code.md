@@ -12,7 +12,7 @@ related: true
 手动抄了十分钟才发现这也太长了，要抄到猴年马月去啊，蠢死了。  
 还是简单写个爬虫吧：  
 
-```JavaScript
+```javascript
 const axios = require("axios");
 const cheerio = require("cheerio");
 const fs = require("fs");
@@ -57,11 +57,11 @@ let spider = (url) => {
         }
       }
 
-      fs.writeFile("output.md", markdown.trim(), "utf8", (err) => {
+      fs.writeFile("btcode.md", markdown.trim(), "utf8", (err) => {
         if (err) {
           console.log("写入文件失败! 错误信息: " + err);
         } else {
-          console.log("已将爬取结果保存到 output.md");
+          console.log("已将爬取结果保存到 btcode.md");
         }
       });
     })
