@@ -20,7 +20,34 @@ mian viod（）
 
 ## 后端
 ### PHP
-《[PHP 之道](http://laravel-china.github.io/php-the-right-way/#code_style_guide)》《[PSR 规范](https://learnku.com/laravel/t/2081/psr-specification-psr-4-automatic-loading-specification)》 [idea 插件](https://github.com/kalessil/phpinspectionsea)  
+《[PHP 之道](http://laravel-china.github.io/php-the-right-way/#code_style_guide)》《[PSR 规范](https://learnku.com/docs/psr)》 [idea 插件](https://github.com/kalessil/phpinspectionsea)  
+```php
+<?php
+namespace Vendor\Package;
+
+use FooInterface;
+use BarClass as Bar;
+use OtherVendor\OtherPackage\BazClass;
+
+class Foo extends Bar implements FooInterface
+{
+    public function sampleMethod($a, $b = null)
+    {
+        if ($a === $b) {
+            bar();
+        } elseif ($a > $b) {
+            $foo->bar($arg1);
+        } else {
+            BazClass::bar($arg2, $arg3);
+        }
+    }
+
+    final public static function bar()
+    {
+        // 方法体
+    }
+}
+```
 
 ## 前端
 《[基于Vue的前端架构，我做了这15点](https://juejin.cn/post/6901466994478940168)》  

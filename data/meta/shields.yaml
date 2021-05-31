@@ -13,17 +13,17 @@ other:
     links:
       -
         href: https://api.osrp.run
-        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi3.osrp.run%2Ftemp%2Fapi1%2Fversion
+        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi2.osrp.run%2Fv1%2Ftemp%2Fapi1%2Fversion
         comment: API 1 Safound
       -
         href: https://stats.uptimerobot.com/kDgGlcnE2O
         src: https://img.shields.io/uptimerobot/ratio/m788160174-4ee51ed2bf7fedf4d806a0ae?label=Uptime
       -
         href: https://github.com/python/cpython
-        src: https://img.shields.io/badge/Python-v3.8.2-blue?logo=python&logoColor=fff
+        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi2.osrp.run%2Fv1%2Ftemp%2Fapi1%2Flang&logo=go&logoColor=fff
       -
-        href: https://github.com/tiangolo/fastapi
-        src: https://img.shields.io/badge/FastAPI-v0.61.1-blue?logo=fastapi&logoColor=fff
+        href: https://github.com/beego/beego
+        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi2.osrp.run%2Fv1%2Ftemp%2Fapi1%2Fframe
   -
     type: server
     title: API 2 - Rakuyo
@@ -37,10 +37,10 @@ other:
         src: https://img.shields.io/uptimerobot/ratio/m788160174-4ee51ed2bf7fedf4d806a0ae?label=Uptime
       -
         href: https://github.com/php/php-src
-        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi2.osrp.run%2Fv1%2Flang
+        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi2.osrp.run%2Fv1%2Flang&logo=php&logoColor=fff
       -
         href: https://github.com/laravel/laravel
-        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi2.osrp.run%2Fv1%2Fframe
+        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi2.osrp.run%2Fv1%2Fframe&logo=laravel&logoColor=fff
   -
     type: server
     title: API 3 - Golenil
@@ -59,6 +59,23 @@ other:
         href: https://github.com/expressjs/express
         src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi3.osrp.run%2Fv1%2Fframe
   -
+    type: server
+    title: API 4 - Beace
+    links:
+      -
+        href: https://api4.osrp.run
+        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi4.osrp.run%2Fv1%2Fversion
+        comment: API 4 Beace
+      -
+        href: https://stats.uptimerobot.com/kDgGlcnE2O
+        src: https://img.shields.io/uptimerobot/ratio/m788160174-4ee51ed2bf7fedf4d806a0ae?label=Uptime
+      -
+        href: https://github.com/python/cpython
+        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi4.osrp.run%2Fv1%2Flang&logo=python&logoColor=fff
+      -
+        href: https://github.com/tiangolo/fastapi
+        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi4.osrp.run%2Fv1%2Fframe&logo=fastapi&logoColor=fff
+  -
     type: game_server
     title: Game Server - Don't Starve Together
     links:
@@ -67,13 +84,13 @@ other:
         src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi3.osrp.run%2Fv1%2Fgame%2Fdst%2Fversion
       -
         href: https://stats.uptimerobot.com/kDgGlcnE2O
-        src: https://img.shields.io/badge/Status-down-critical?logo=icloud&logoColor=fff
+        src: https://img.shields.io/badge/Status-down-inactive?logo=icloud&logoColor=fff
       -
         href: https://store.steampowered.com/app/322330/Dont_Starve_Together
         src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi3.osrp.run%2Fv1%2Fgame%2Fdst%2Flatest&logo=steam
       -
         href:
-        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi3.osrp.run%2Fv1%2Fgame%2Fdst%2Furl
+        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi3.osrp.run%2Fv1%2Fgame%2Fdst%2Fserver
   -
     type: game_server
     title: Game Server - Left 4 Dead 2
@@ -83,10 +100,10 @@ other:
         src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi3.osrp.run%2Fv1%2Fgame%2Fl4d2%2Fversion
       -
         href: https://stats.uptimerobot.com/kDgGlcnE2O
-        src: https://img.shields.io/badge/Status-down-critical?logo=icloud&logoColor=fff
+        src: https://img.shields.io/badge/Status-down-inactive?logo=icloud&logoColor=fff
       -
         href: https://store.steampowered.com/app/550/Left_4_Dead_2
         src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi3.osrp.run%2Fv1%2Fgame%2Fl4d2%2Flatest&logo=steam
       -
         href:
-        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi3.osrp.run%2Fv1%2Fgame%2Fl4d2%2Furl
+        src: https://img.shields.io/endpoint?url=https%3A%2F%2Fapi3.osrp.run%2Fv1%2Fgame%2Fl4d2%2Fserver
