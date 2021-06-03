@@ -8,3 +8,4 @@ resources/
 
 # Distribute
 public/
+*.ps1
