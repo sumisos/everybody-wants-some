@@ -82,7 +82,7 @@ Cloudflare 文档给出三种解决方案：
 
 ### HSTS
 [这篇文章](https://support.cloudflare.com/hc/zh-cn/articles/204183088) 讲了什么是 HTTP Strict Transport Security，此处不再赘述。  
-总结就是一旦开启 HSTS 就没有后悔药吃了，如果不一直开启 HTTPS 直到 `max-age` 结束，网站就无法访问。  
+总之就是一旦开启 HSTS 就没有后悔药吃了，如果不一直开启 HTTPS 直到 `max-age` 结束，网站就无法访问。  
 
 ### 混合内容
 <ruby><rb>混合内容</rb><rp>（</rp><rt>Mixed Content</rt><rp>）</rp></ruby>就是同时混用 HTTP 和 HTTPS 资源。  

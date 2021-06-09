@@ -207,4 +207,4 @@ PermitRootLogin yes # 允许root直接登录
 2. 如果想把 `localhost` 的别名也改了，可以 `vim /etc/hosts` 把 `raspbian` 修改新的名字。  
 3. `reboot` 重启后生效。  
 
-[^1]: 桥水基金的<ruby><rb>雷</rb><rp>（</rp><rt>Raymond</rt><rp>）</rp></ruby>·<ruby><rb>达里奥</rb><rp>（</rp><rt>Dalio</rt><rp>）</rp></ruby>的名言：「如果你现在不觉得一年前的自己是个傻逼，说明你这一年没学到什么东西」。  
+[^1]: 桥水基金创始人<ruby><rb>雷</rb><rp>（</rp><rt>Raymond</rt><rp>）</rp></ruby>·<ruby><rb>达里奥</rb><rp>（</rp><rt>Dalio</rt><rp>）</rp></ruby>的名言：「如果你现在不觉得一年前的自己是个傻逼，说明你这一年没学到什么东西」。  

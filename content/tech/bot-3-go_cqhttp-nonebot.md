@@ -11,7 +11,7 @@ related: true
 简单调研了下现在的 QQ 机器人生态。  
 
 发现出了一个很有之前老版本机器人 feel 的 [先驱机器人](https://www.xianqubot.com/)，熟悉的味道令人唏嘘。  
-但生态这么封闭肯定不是我要到的东西。  
+但生态这么封闭肯定不是我要的东西。  
 
 继续看发现 [OneBot](https://github.com/botuniverse/onebot) 标准已经更新到 [v11](https://github.com/botuniverse/onebot/tree/master/v11/specs) 不说，连 v12 都有 [草案](https://github.com/botuniverse/onebot/blob/master/v12-draft/specs) 了。  
 
