@@ -4,43 +4,64 @@
 
 // 这样的注释编译时会忽略掉
 
-nav.nav {
+div.site-brand > a.brand {
+  font-size: 1.25rem;
+  color: var(--color-contrast-medium);
+}
+
+nav.nav > ul#menu {
   // 设置导航栏字体大小 默认的 80% 实在太小了
-  font-size: 1em;
+  font-size: 1.1rem;
+}
+
+kbd {
+  font-family: "Source Code Pro";
 }
 
 img.no-zoom {
-  // 禁用图片点击缩放
-  // 需要配合[自定义主题第三方插件功能] ./layouts/partials/third-party/medium-zoom.html 一起食用
+  // 禁用图片点击缩放 实际功能由额外组件实现 这里只是提醒有这个用法
+  // 该组件位于 ./layouts/partials/third-party/medium-zoom.html
   // 感谢 MemE 主题使用的图片缩放库 medium-zoom.js 支持 CSS 选择器
   // 详见 https://github.com/francoischalifour/medium-zoom#selectors
 }
 
 @mixin inline-image {
-  // 禁用图片换行居中 便于直接在文中插入表情包
+  // 禁用图片换行居中上下边距 便于直接在行文中插入表情包
   // 已默认禁用图片点击缩放功能
   display: inline;
-  margin: auto;
+  margin: 1px;
+  border: 0;
 }
 
-img.sticker {
+img.emoji, img[data-emoji] {
   @include inline-image;
+  max-height: 1.5rem; // 兼容在行文中 emoji 插入大小的表情包
 }
 
-img[data-sticker] {
+img.sticker, img[data-sticker], span.sticker img {
   @include inline-image;
 }
 
 span.sticker {
-  display:block;
-  text-align:center;
+  display: block;
+  text-align: center;
 }
 
-img {
-  span.sticker & { @include inline-image; }
+span.sticker a {
+  text-decoration: none;
+}
+
+span.handwriting {
+  // 手写字体
+  font-family: "Ma Shan Zheng";
 }
 
 span.mahjong {
   // 调整麻将 emoji 字体大小
-  font-size: 2em;
+  font-size: 3rem;
+}
+
+p.mermaid > svg {
+  // 修复 mermaid.js 绘制 SVG 时 画布容器高度过高的问题
+  height: 100%;
 }

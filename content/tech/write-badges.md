@@ -1,8 +1,8 @@
 ---
-title: "shields.io Badges 用法"
+title: "小徽章 shields.io Badges 用法"
 date: 2021-05-16T09:09:30+08:00
 tags: ["shields.io", "Badges", "Markdown"]
-series: ["Markdown"]
+series: ["Badges"]
 related: true
 ---
 

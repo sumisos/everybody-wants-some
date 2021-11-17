@@ -41,11 +41,11 @@ related: true
 ## 不要自动去除行尾多余的空格
 配置好正常用起来当然是很爽的，然后开始写 Markdown，感受到绝望\*了吗。  
 
-> \* Markdown 以行尾两个空格 `__` 作为换行符（软回车）。  
+> \* Markdown 以行尾两个空格 <code>&nbsp;&nbsp;</code> 作为换行符（软回车）。  
 > * 硬回车：换行并换段  
 > * 软回车：只换行，**不换段**  
 
-本来辛辛苦苦分好的段落，一保存文件全没了。  
+本来辛辛苦苦排好的段落，一保存文件全没了。  
 
 怎么办呢，那当然也是有解决办法的。  
 
@@ -68,10 +68,10 @@ related: true
 {
     // 前略
     "files.trimTrailingWhitespace": true,
-    "markdown.preview.breaks": true,
     "[markdown]": {
         "files.trimTrailingWhitespace": false
     },
+    "markdown.preview.breaks": true,
 }
 ```
 

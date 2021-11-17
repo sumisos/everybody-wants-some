@@ -117,3 +117,28 @@ related: true
 ```
 
 记录下 `[totp_secret]`，这个就是 Steam 令牌作为 TOTP 工具时的序列号。  
+
+## 编码复现
+之前用 Python 和 Go 复现过 Steam 令牌算法，其实就是标准的 TOTP 算法，不过最后生成验证码的时候用了一个取巧的小 trick。序列还是那个序列，但把原本的 6 位或 8 位纯数字验证码 hash 成了 5 位字母数字混合验证码而已。  
+
+```Python
+from time import time
+import pyotp
+from hmac import new as hmac_sha1
+from struct import pack, unpack
+
+
+def generate_steam_two_factor_code(secret: str):
+    totp = pyotp.parse_uri(f"otpauth://totp/Steam:whatever?secret={secret}&issuer=Steam")
+    # pyotp.OTP.byte_secret(totp) == base64.b64decode(shared_secret)
+    hasher = hmac_sha1(pyotp.OTP.byte_secret(totp), pack('>Q', int(time()) // 30), totp.digest)
+    hmac_hash = bytearray(hasher.digest())
+    start = ord(hmac_hash[19:20]) & 0xF
+    code_num = unpack('>I', hmac_hash[start:start + 4])[0] & 0x7fffffff
+    charset = '23456789BCDFGHJKMNPQRTVWXY'
+    steam_code = ''
+    for _ in range(5):
+        code_num, i = divmod(code_num, len(charset))
+        steam_code += charset[i]
+    return steam_code
+```

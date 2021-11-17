@@ -5,6 +5,9 @@ baseURL = "https://ews.ink/"
 title = "Everybody Wants Some"
 languageCode = "zh-CN"
 hasCJKLanguage = true
+# timeZone = "Asia/Shanghai"
+# Error: invalid timeZone for language "zh": The system cannot find the path specified.
+
 # 版权信息（支持 Markdown）
 copyright = "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)"
 
@@ -918,34 +921,30 @@ uglyURLs = false
     #      SVG，则可留空（""）品牌栏字体。
 
     # 品牌栏
-    fontFamilySiteBrand = "Lato, sans-serif"
+    fontFamilySiteBrand = "Rock Salt"
     # 菜单栏
     fontFamilyMenu = ""
     # 文章标题、文章副标题、列表标题、列表的年份和月份标题、相关文章标题、文章上下篇标题、表格的表头、定义列表中的术语
     fontFamilyTitle = ""
     # 分节标题、目录标题
-    # Comfortaa 圆体英文
     fontFamilyHeadings = ""
     # 代码、上标、文章元信息、文章更新徽章、文章的 Git 版本信息、极简页脚、不蒜子站点浏览计数
-    fontFamilyCode = "'Source Code Pro', monospace"
+    fontFamilyCode = "'Ubuntu Mono', 'Noto Sans SC', monospace"
     # 引用
-    fontFamilyQuote = ""
+    fontFamilyQuote = "Noto Sans SC"
     # 文章目录
     fontFamilyTOC = ""
     # 说明文字
-    fontFamilyCaption = "Source Code Pro"
+    fontFamilyCaption = "Noto Sans SC"
     # 页脚
-    fontFamilyFooter = "'Source Code Pro', monospace"
+    fontFamilyFooter = "'Source Code Pro', 'Noto Sans SC'"
     # 主体
     fontFamilyBody = "'IBM Plex Serif', 'Noto Serif SC', sans-serif"
 
     # 网络字体链接
-    fontsLink = "https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Comfortaa:ital,wght@0,400;0,500;0,700;1,400;1,700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Noto+Sans+SC:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Noto+Serif+SC:ital,wght@0,400;0,500;0,700;1,400;1,700&&display=swap"
-    # 说明：要想读者一定体验到你设置的字体，最好
-    #      采用网络字体。MemE 主题目前仅支持
-    #      Google Fonts 的链接，请前往
-    #      https://fonts.google.com/ 获取。
-    #      此项留空（""），则不会采用网络字体。
+    fontsLink = "https://fonts.googleapis.com/css2?family=Rock+Salt&family=Ma+Shan+Zheng&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@400;700&family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    # 网络字体 from https://fonts.google.com/
+    # 此项留空（""），则不会采用网络字体
 
     ######################################
     ## 字号（单位：px）

@@ -4,6 +4,7 @@ date: 2021-05-15T14:39:07+08:00
 tags: ["开发", "Code"]
 series: ["范式"]
 related: true
+draft: true
 ---
 
 ## 总则
@@ -51,6 +52,15 @@ class Foo extends Bar implements FooInterface
 
 ## 前端
 《[基于Vue的前端架构，我做了这15点](https://juejin.cn/post/6901466994478940168)》  
+《[京东凹凸实验室前端代码规范](https://guide.aotu.io/)》
+《[腾讯 TGideas 文档库](https://tgideas.qq.com/doc)》
+《[百度 JavaScript编码规范](https://github.com/ecomfe/spec/blob/master/javascript-style-guide.md)》
+《[JavaScript Standard Style](https://github.com/standard/standard)》
+《[Vue 官方风格指南](https://cn.vuejs.org/v2/style-guide/)》
+《[阮一峰 ES6 编程风格](http:/es6.ruanyifeng.com/#docs/style)》
+《代码整洁之道 Clean Code》
+《[ES lint](https://eslint.bootcss.com/)》
+《Pettier》
 
 ### JavaScript
 《[Airbnb JavaScript 代码范式](https://airbnb.io/javascript)》[Github](https://github.com/airbnb/javascript)  
