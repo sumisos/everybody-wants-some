@@ -4,18 +4,17 @@
 
 // 这样的注释编译时会忽略掉
 
-div.site-brand > a.brand {
-  font-size: 1.25rem;
-  color: var(--color-contrast-medium);
-}
-
 nav.nav > ul#menu {
-  // 设置导航栏字体大小 默认的 80% 实在太小了
   font-size: 1.1rem;
 }
 
 kbd {
+  background-color: var(--color-contrast-lower);
+  padding: .1rem .2rem;
+  border: .1rem solid var(--color-contrast-higher);
+  border-radius: .25rem;
   font-family: "Source Code Pro";
+  font-weight: bold;
 }
 
 img.no-zoom {
@@ -25,17 +24,15 @@ img.no-zoom {
   // 详见 https://github.com/francoischalifour/medium-zoom#selectors
 }
 
-@mixin inline-image {
-  // 禁用图片换行居中上下边距 便于直接在行文中插入表情包
-  // 已默认禁用图片点击缩放功能
+@mixin inline-image { // 禁用图片换行居中上下边距 便于直接在行文中插入表情包
   display: inline;
   margin: 1px;
   border: 0;
-}
+} // 已默认禁用图片点击缩放功能
 
 img.emoji, img[data-emoji] {
   @include inline-image;
-  max-height: 1.5rem; // 兼容在行文中 emoji 插入大小的表情包
+  max-height: 1.5rem; // 兼容在行文中插入 emoji 大小的表情包
 }
 
 img.sticker, img[data-sticker], span.sticker img {
@@ -43,7 +40,7 @@ img.sticker, img[data-sticker], span.sticker img {
 }
 
 span.sticker {
-  display: block;
+  display: flow-root;
   text-align: center;
 }
 
@@ -52,16 +49,13 @@ span.sticker a {
 }
 
 span.handwriting {
-  // 手写字体
-  font-family: "Ma Shan Zheng";
+  font-family: "Ma Shan Zheng"; // 手写字体
 }
 
 span.mahjong {
-  // 调整麻将 emoji 字体大小
-  font-size: 3rem;
+  font-size: 3rem; // 调整麻将 emoji 字体大小
 }
 
 p.mermaid > svg {
-  // 修复 mermaid.js 绘制 SVG 时 画布容器高度过高的问题
-  height: 100%;
+  height: 100%; // 修复 mermaid.js 绘制 SVG 时 画布容器高度过高的问题
 }

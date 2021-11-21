@@ -1,7 +1,7 @@
 ---
 title: "《缺氧》Mods 推荐"
 date: 2021-09-30T21:15:50+08:00
-tags: ["缺氧", "Klei"]
+tags: ["缺氧", "Klei", "mod"]
 series: ["策略游戏"]
 related: true
 ---

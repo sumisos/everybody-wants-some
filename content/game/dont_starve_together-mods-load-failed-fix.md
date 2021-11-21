@@ -1,7 +1,7 @@
 ---
 title: "《饥荒联机版》订阅的 Mod 加载失败问题"
 date: 2021-11-05T20:54:23+08:00
-tags: ["饥荒", "Klei"]
+tags: ["饥荒", "Klei", "mod"]
 series: ["生存游戏"]
 related: true
 ---

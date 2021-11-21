@@ -1,7 +1,7 @@
 ---
 title: "《饥荒联机版》Mods 推荐"
 date: 2021-10-31T18:40:14+08:00
-tags: ["饥荒", "Klei"]
+tags: ["饥荒", "Klei", "mod"]
 series: ["生存游戏"]
 related: true
 ---
