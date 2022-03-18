@@ -22,6 +22,10 @@ kbd {
   font-weight: bold;
 }
 
+details {
+  margin: 1rem 0;
+}
+
 summary:hover {
   cursor: pointer;
 }

@@ -1,5 +1,5 @@
 {{- if .Inner -}}
-  {{- $inner := trim .Inner "\r\n" | safeHTML -}}
+  {{- $inner := trim (replace .Inner "\r\n" "\n") "\n" | safeHTML -}}
   <div class="ygo-deck">
     {{- if .Params -}}
       {{- $title := .Get 0 -}}
@@ -10,7 +10,7 @@
         {{- with $url }}</a>{{ end -}}
       </div>
     {{- end -}}
-    {{- range split $inner "\r\n" -}}
+    {{- range split $inner "\n" -}}
       {{- if eq . "#main" -}}
         <div class="ygo-deck-title">主卡组</div>
       {{- else if eq . "#extra" -}}

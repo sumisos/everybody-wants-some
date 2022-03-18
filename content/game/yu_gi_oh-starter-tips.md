@@ -107,4 +107,4 @@ Sub 入库大法：`steam://subscriptioninstall/510121`。
 
 ### 工具开发
 
-开发中：「<a href="/game/yu_gi_oh-deck-code/" target="_blank">《游戏王》卡组构筑 ydk 格式代码处理</a>」
+开发中：《<a href="/game/yu_gi_oh-deck-code/" target="_blank">〈游戏王〉卡组构筑 ydk 格式代码处理</a>》
