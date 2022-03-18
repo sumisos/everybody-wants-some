@@ -1,0 +1,40 @@
+{{- /* Initialize. */ -}}
+{{- $name := "" -}}
+{{- $id := "" -}}
+{{- $type := "" -}}
+{{- $icon := "" -}}
+
+{{- if .Params -}}
+
+  {{- /* Get parameters, defend against string booleans. */ -}}
+  {{- if .IsNamedParams -}}
+    {{- $name = .Get "name" -}}
+    {{- $id = .Get "id" -}}
+    {{- $type = .Get "type" -}}
+    {{- $icon = .Get "icon" -}}
+  {{- else -}}
+    {{- $name = .Get 0 -}}
+    {{- $id = .Get 1 -}}
+    {{- $type = .Get 2 -}}
+    {{- /* if len .Params | lt 2 }}arg4={{ .Get 3 }}:{{ end */ -}}
+    {{- $icon = .Get 3 -}}
+  {{- end -}}
+  {{- /* TODO 处理 $type 和 $icon 的容错 */ -}}
+
+  {{- if $name -}}
+    <div class="{{- if eq $type "spell" }}ygo-card ygo-spell{{ else if eq $type "trap" }}ygo-card ygo-trap{{ else }}ygo-card ygo-monster{{ end -}}">
+      {{- with $id }}<a href="https://www.ygocdb.com/card/{{ . }}" target="_blank">{{ end -}}
+      <span class="ygo-card-cover">
+        {{- with $type }}<img src="/icons/ygo/{{ . }}.png" alt="YGO Card Attribute of {{ $name }}" />{{ end -}}
+        {{- $name -}}
+        {{- if (and (or (eq $type "spell") (eq $type "trap")) ($icon)) }}<img src="/icons/ygo/{{ $icon }}.png" alt="YGO Card Icon of {{ $name }}" />{{ end -}}
+      </span>
+      {{- with $id }}</a>{{ end -}}
+    </div>
+  {{- else -}}
+    <div class="ygo-card"><span class="ygo-card-cover">CARD NAME ERROR</span></div>
+  {{- end -}}
+
+{{- else -}}
+  <div class="ygo-card"><span class="ygo-card-cover">CARD INFO ERROR</span></div>
+{{- end -}}

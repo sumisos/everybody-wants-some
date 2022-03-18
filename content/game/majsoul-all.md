@@ -9,42 +9,42 @@ related: true
 ## 一番
 ### 立直（门前清限定）
 门前清状态下只要听牌即可立直，立直状态下和牌  
-<span class="mahjong">🀇🀈🀉🀜🀜🀜🀔🀕🀖🀀🀀🀀🀁&ensp;🀁</span>
+<span class="mahjong-big">🀇🀈🀉🀜🀜🀜🀔🀕🀖🀀🀀🀀🀁&ensp;🀁</span>
 
 ### 断幺九
 手牌中没有幺九牌（一万、九万、一筒、九筒、幺鸡、九条、风牌、三元牌）  
-<span class="mahjong">🀈🀉🀊🀋🀌🀍🀛🀛🀛🀓🀔🀕🀗&ensp;🀗</span>
+<span class="mahjong-big">🀈🀉🀊🀋🀌🀍🀛🀛🀛🀓🀔🀕🀗&ensp;🀗</span>
 
 ### 门前清自摸和（门前清限定）
-<span class="mahjong">🀇🀇🀇🀈🀉🀊🀛🀛🀛🀖🀗🀘🀃&ensp;🀃</span>
+<span class="mahjong-big">🀇🀇🀇🀈🀉🀊🀛🀛🀛🀖🀗🀘🀃&ensp;🀃</span>
 
 ### 役牌：自风牌
 包含自风刻子  
-<span class="mahjong">🀉🀉🀉🀜🀝🀞🀖🀗🀘🀂🀂🀂🀐&ensp;🀐</span>
+<span class="mahjong-big">🀉🀉🀉🀜🀝🀞🀖🀗🀘🀂🀂🀂🀐&ensp;🀐</span>
 
 ### 役牌：场风牌
 包含场风刻子  
-<span class="mahjong">🀉🀉🀉🀜🀝🀞🀖🀗🀘🀀🀀🀀🀐&ensp;🀐</span>
+<span class="mahjong-big">🀉🀉🀉🀜🀝🀞🀖🀗🀘🀀🀀🀀🀐&ensp;🀐</span>
 
 ### 役牌：三元牌
 包含白、发、中的刻子  
-<span class="mahjong">🀉🀉🀉🀜🀝🀞🀖🀗🀘🀆🀆🀆🀐&ensp;🀐</span>
+<span class="mahjong-big">🀉🀉🀉🀜🀝🀞🀖🀗🀘🀆🀆🀆🀐&ensp;🀐</span>
 
 ### 平和（门前清限定）
 4 组面子 + 非役牌的雀头 + 最后是顺子的两面听  
-<span class="mahjong">🀇🀈🀉🀋🀌🀍🀚🀛🀜🀕🀖🀘🀘&ensp;🀔</span>
+<span class="mahjong-big">🀇🀈🀉🀋🀌🀍🀚🀛🀜🀕🀖🀘🀘&ensp;🀔</span>
 
 ### 一杯口（门前清限定）
 2 组完全相同的顺子  
-<span class="mahjong">🀇🀇🀈🀈🀉🀉🀜🀜🀜🀟🀠🀡🀒&ensp;🀒</span>
+<span class="mahjong-big">🀇🀇🀈🀈🀉🀉🀜🀜🀜🀟🀠🀡🀒&ensp;🀒</span>
 
 ### 枪杠
 别家加杠的时候荣和（国士无双可以抢暗杠）  
 
 ### 岭上开花
 用摸到的岭上牌和牌  
-<span class="mahjong">🀗🀗🀗🀗</span><br />
-<span class="mahjong">🀈🀉🀊🀝🀝🀝🀒🀓🀔🀕 🀒</span>
+<span class="mahjong-big">🀗🀗🀗🀗</span><br />
+<span class="mahjong-big">🀈🀉🀊🀝🀝🀝🀒🀓🀔🀕 🀒</span>
 
 ### 海底摸月
 最后一张牌自摸和牌  
@@ -57,7 +57,7 @@ related: true
 
 ### 宝牌（算番不算役）
 宝牌指示牌的下一张牌  
-<span class="mahjong">🀒🀫🀫🀫🀫 🀓</span>
+<span class="mahjong-big">🀒🀫🀫🀫🀫 🀓</span>
 
 ### 赤宝牌（算番不算役）
 红五万，红五筒，红五条  
@@ -80,77 +80,77 @@ related: true
 
 ### 三色同刻
 三种数字牌都有相同数字的刻子  
-<span class="mahjong">🀉🀉🀉🀛🀛🀛🀒🀒🀒🀕🀖🀄🀄&ensp;🀔</span>
+<span class="mahjong-big">🀉🀉🀉🀛🀛🀛🀒🀒🀒🀕🀖🀄🀄&ensp;🀔</span>
 
 ### 三杠子
 一家开杠三次  
-<span class="mahjong">🀊🀊🀊🀊 🀑🀑🀑🀑 🀠🀠🀠🀠</span><br />
-<span class="mahjong">🀔🀕🀖🀄&ensp;🀄</span>
+<span class="mahjong-big">🀊🀊🀊🀊 🀑🀑🀑🀑 🀠🀠🀠🀠</span><br />
+<span class="mahjong-big">🀔🀕🀖🀄&ensp;🀄</span>
 
 ### 对对胡
 持有四组刻子（杠也算）  
-<span class="mahjong">🀊🀊🀊 🀑🀑🀑🀑</span><br />
-<span class="mahjong">🀠🀠🀠🀕🀕🀕🀀&ensp;🀀</span>
+<span class="mahjong-big">🀊🀊🀊 🀑🀑🀑🀑</span><br />
+<span class="mahjong-big">🀠🀠🀠🀕🀕🀕🀀&ensp;🀀</span>
 
 ### 三暗刻
 持有三组没有碰过的刻子  
-<span class="mahjong">🀉🀉🀉🀟🀟🀟🀒🀒🀒🀔🀕🀖🀀&ensp;🀀</span>
+<span class="mahjong-big">🀉🀉🀉🀟🀟🀟🀒🀒🀒🀔🀕🀖🀀&ensp;🀀</span>
 
 ### 小三元
 三元牌中有两种刻子和一种雀头  
-<span class="mahjong">🀈🀉🀊🀔🀕🀖🀅🀅🀅🀆🀆🀆🀄&ensp;🀄</span>
+<span class="mahjong-big">🀈🀉🀊🀔🀕🀖🀅🀅🀅🀆🀆🀆🀄&ensp;🀄</span>
 
 ### 混老头
 <mark>只有</mark>老头牌（一万、九万、一筒、九筒、幺鸡、九条）和字牌（风牌、三元牌）  
-<span class="mahjong">🀇🀇🀇🀏🀏🀏🀡🀡🀡🀐🀐🀐🀀&ensp;🀀</span>
+<span class="mahjong-big">🀇🀇🀇🀏🀏🀏🀡🀡🀡🀐🀐🀐🀀&ensp;🀀</span>
 
 ### 七对子（门前清限定）
 七组不同的对子  
-<span class="mahjong">🀇🀇🀈🀈🀛🀛🀞🀞🀠🀠🀖🀖🀃&ensp;🀃</span>
+<span class="mahjong-big">🀇🀇🀈🀈🀛🀛🀞🀞🀠🀠🀖🀖🀃&ensp;🀃</span>
 
 ### 混全带幺九（副露减一番）
 四组面子和雀头都<mark>含有</mark>老头牌和字牌  
-<span class="mahjong">🀇🀈🀉🀍🀎🀏🀟🀠🀡🀀🀀🀀🀅&ensp;🀅</span>
+<span class="mahjong-big">🀇🀈🀉🀍🀎🀏🀟🀠🀡🀀🀀🀀🀅&ensp;🀅</span>
 
 ### 一气贯通（副露减一番）
 同种数字牌组成 1 - 9 的顺子  
-<span class="mahjong">🀇🀈🀉🀊🀋🀌🀍🀎🀏🀙🀙🀙🀀&ensp;🀀</span>
+<span class="mahjong-big">🀇🀈🀉🀊🀋🀌🀍🀎🀏🀙🀙🀙🀀&ensp;🀀</span>
 
 ### 三色同顺（副露减一番）
 三种数字牌都有相同数字的顺子  
-<span class="mahjong">🀉🀊🀋🀒🀓🀔🀛🀜🀝🀕🀕🀕🀅&ensp;🀅</span>
+<span class="mahjong-big">🀉🀊🀋🀒🀓🀔🀛🀜🀝🀕🀕🀕🀅&ensp;🀅</span>
 
 ### 古役：五门齐
 四组面子和雀头分别是三种数字牌、风牌、三元牌  
-<span class="mahjong">🀋🀌🀍🀚🀛🀜🀓🀓🀓🀀🀀🀀🀆&ensp;🀆</span>
+<span class="mahjong-big">🀋🀌🀍🀚🀛🀜🀓🀓🀓🀀🀀🀀🀆&ensp;🀆</span>
 
 ### 古役：三连刻（又称一色三节高）
 刻子同花顺（允许碰 / 杠，不碰 / 杠属于复合三暗刻）  
-<span class="mahjong">🀇🀇🀇🀈🀈🀈🀉🀉🀉🀔🀕🀖🀂&ensp;🀂</span>
+<span class="mahjong-big">🀇🀇🀇🀈🀈🀈🀉🀉🀉🀔🀕🀖🀂&ensp;🀂</span>
 
 ## 三番
 ### 二杯口（门前清限定）
 两组一杯口  
-<span class="mahjong">🀝🀝🀞🀞🀟🀟🀒🀒🀓🀓🀔🀔🀁&ensp;🀁</span>
+<span class="mahjong-big">🀝🀝🀞🀞🀟🀟🀒🀒🀓🀓🀔🀔🀁&ensp;🀁</span>
 
 ### 纯全带幺九（副露减一番）
 四组面子和雀头都<mark>含有</mark>老头牌（跟混全带的区别是不带字牌）  
-<span class="mahjong">🀇🀈🀉🀍🀎🀏🀟🀠🀡🀘🀘🀘🀐&ensp;🀐</span>
+<span class="mahjong-big">🀇🀈🀉🀍🀎🀏🀟🀠🀡🀘🀘🀘🀐&ensp;🀐</span>
 
 ### 混一色（副露减一番）
 只包含一种数字牌，以及字牌的刻子（字牌只有刻子）和雀头  
-<span class="mahjong">🀇🀇🀇🀊🀋🀌🀌🀍🀎🀃🀃🀃🀄&ensp;🀄</span>
+<span class="mahjong-big">🀇🀇🀇🀊🀋🀌🀌🀍🀎🀃🀃🀃🀄&ensp;🀄</span>
 
 ### 古役：一色三同顺（副露减一番）
 三组完全相同的顺子（允许吃，不吃可以复合全带平和）  
-<span class="mahjong">🀇🀇🀇🀈🀈🀈🀉🀉🀉🀔🀕🀖🀠&ensp;🀠</span>
+<span class="mahjong-big">🀇🀇🀇🀈🀈🀈🀉🀉🀉🀔🀕🀖🀠&ensp;🀠</span>
 
 > 如果没有鸣牌（吃碰杠）导致手牌同时满足两种役种，则计分时按番高的算（一色三顺三番 > 三连刻两番），番数一样按符多的算（暗刻有符 > 顺子没符）。  
 
 ## 六番
 ### 清一色（副露减一番）
 只含有一种数字牌，不含字牌  
-<span class="mahjong">🀇🀈🀈🀉🀉🀊🀊🀋🀌🀏🀏🀏🀍&ensp;🀍</span>
+<span class="mahjong-big">🀇🀈🀈🀉🀉🀊🀊🀋🀌🀏🀏🀏🀍&ensp;🀍</span>
 
 ## 满贯
 ### 流局满贯
@@ -173,57 +173,57 @@ related: true
 
 ### 大三元
 包含三元牌的三组刻子  
-<span class="mahjong">🀐🀑🀒🀆🀆🀆🀅🀅🀅🀄🀄🀄🀡&ensp;🀡</span>
+<span class="mahjong-big">🀐🀑🀒🀆🀆🀆🀅🀅🀅🀄🀄🀄🀡&ensp;🀡</span>
 
 ### 四暗刻（门前清限定）
 没有碰的情况下四组面子都是刻子  
-<span class="mahjong">🀋🀋🀋🀎🀎🀎🀒🀒🀒🀓🀓🀓🀞&ensp;🀞</span>
+<span class="mahjong-big">🀋🀋🀋🀎🀎🀎🀒🀒🀒🀓🀓🀓🀞&ensp;🀞</span>
 
 ### 字一色
 只包含字牌  
-<span class="mahjong">🀀🀀🀀🀁🀁🀁🀃🀃🀃🀆🀆🀆🀅&ensp;🀅</span>
+<span class="mahjong-big">🀀🀀🀀🀁🀁🀁🀃🀃🀃🀆🀆🀆🀅&ensp;🀅</span>
 
 ### 绿一色
 只包含二条、三条、四条、六条、八条以及发牌（也可以不含发）  
-<span class="mahjong">🀑🀑🀑🀒🀒🀒🀕🀕🀕🀗🀗🀗🀅&ensp;🀅</span>
+<span class="mahjong-big">🀑🀑🀑🀒🀒🀒🀕🀕🀕🀗🀗🀗🀅&ensp;🀅</span>
 
 > emoji 的索子都不是纯绿色，但标准麻将这些索子应该是全绿的。  
 
 ### 清老头
 只包含老头牌  
-<span class="mahjong">🀇🀇🀇🀏🀏🀏🀘🀘🀘🀙🀙🀙🀐&ensp;🀐</span>
+<span class="mahjong-big">🀇🀇🀇🀏🀏🀏🀘🀘🀘🀙🀙🀙🀐&ensp;🀐</span>
 
 ### 国士无双（门前清限定）
 如果实在凑不齐十三面，能凑成这样也算国（只和红中，可以抢暗杠）  
-<span class="mahjong">🀇🀏🀐🀘🀙🀡🀡🀀🀁🀂🀃🀅🀆&ensp;🀄</span>
+<span class="mahjong-big">🀇🀏🀐🀘🀙🀡🀡🀀🀁🀂🀃🀅🀆&ensp;🀄</span>
 
 ### 小四喜
 三种风牌的刻子和剩下一种风牌的雀头  
-<span class="mahjong">🀙🀚🀛🀀🀀🀀🀁🀁🀁🀃🀃🀃🀂&ensp;🀂</span>
+<span class="mahjong-big">🀙🀚🀛🀀🀀🀀🀁🀁🀁🀃🀃🀃🀂&ensp;🀂</span>
 
 ### 四杠子
 一家开杠四次  
-<span class="mahjong">🀈🀈🀈🀈 🀝🀝🀝🀝 🀓🀓🀓🀓 🀁🀁🀁🀁</span><br />
-<span class="mahjong">🀅&ensp;🀅</span>
+<span class="mahjong-big">🀈🀈🀈🀈 🀝🀝🀝🀝 🀓🀓🀓🀓 🀁🀁🀁🀁</span><br />
+<span class="mahjong-big">🀅&ensp;🀅</span>
 
 ### 九莲宝灯（门前清限定）
 同一种数字牌 1112345678999 和其中任何一张数字牌  
-<span class="mahjong">🀙🀙🀙🀙🀚🀛🀜🀝🀞🀟🀠🀡🀡&ensp;🀡</span>
+<span class="mahjong-big">🀙🀙🀙🀙🀚🀛🀜🀝🀞🀟🀠🀡🀡&ensp;🀡</span>
 
 ### 古役：人和（门前清限定）
 第一巡，轮到自己摸牌之前无人鸣牌的情况下荣和  
 
 ### 古役：大车轮（门前清限定）
 筒子 2 - 8 组成的七对子  
-<span class="mahjong">🀚🀚🀛🀛🀜🀜🀝🀝🀞🀞🀟🀟🀠&ensp;🀠</span>
+<span class="mahjong-big">🀚🀚🀛🀛🀜🀜🀝🀝🀞🀞🀟🀟🀠&ensp;🀠</span>
 
 ### 古役：大竹林（门前清限定）
 索子 2 - 8 组成的七对子  
-<span class="mahjong">🀑🀑🀒🀒🀓🀓🀔🀔🀕🀖🀖🀗🀗&ensp;🀕</span>
+<span class="mahjong-big">🀑🀑🀒🀒🀓🀓🀔🀔🀕🀖🀖🀗🀗&ensp;🀕</span>
 
 ### 古役：大数邻（门前清限定）
 万子 2 - 8 组成的七对子  
-<span class="mahjong">🀈🀈🀉🀊🀊🀋🀋🀌🀌🀍🀍🀎🀎&ensp;🀉</span>
+<span class="mahjong-big">🀈🀈🀉🀊🀊🀋🀋🀌🀌🀍🀍🀎🀎&ensp;🀉</span>
 
 ### 古役：石上三年（门前清限定）
 「两立直 + 海底摸月」或「两立直 + 河底捞鱼」  
@@ -231,26 +231,26 @@ related: true
 ## 倍满（双倍役满）
 ### 四暗刻单骑（门前清限定）
 四组暗刻（没有碰过的刻子） + 雀头单骑听牌和牌  
-<span class="mahjong">🀈🀈🀈🀜🀜🀜🀡🀡🀡🀘🀘🀘🀌&ensp;🀌</span>
+<span class="mahjong-big">🀈🀈🀈🀜🀜🀜🀡🀡🀡🀘🀘🀘🀌&ensp;🀌</span>
 
 ### 国士无双十三面（门前清限定）
 十三张不同幺九牌和任何一张  
-<span class="mahjong">🀇🀏🀐🀘🀙🀡🀀🀁🀂🀃🀄🀅🀆&ensp;🀐</span>
+<span class="mahjong-big">🀇🀏🀐🀘🀙🀡🀀🀁🀂🀃🀄🀅🀆&ensp;🀐</span>
 
 > 十三面不是比普通国更高级吗，为啥反而不能抢暗杠了？  
 > 你都十三幺了哪还有给你抢的杠……只剩吃碰可以抢一抢，差不多得了。  
 
 ### 纯正九莲宝灯（门前清限定）
 普通九莲宝灯单和一张，纯正九莲宝灯和九张中任何一张  
-<span class="mahjong">🀙🀙🀙🀚🀛🀜🀝🀞🀟🀠🀡🀡🀡&ensp;🀞</span>
+<span class="mahjong-big">🀙🀙🀙🀚🀛🀜🀝🀞🀟🀠🀡🀡🀡&ensp;🀞</span>
 
 ### 大四喜
 包含四种风牌的刻子  
-<span class="mahjong">🀀🀀🀀🀁🀁🀁🀂🀂🀂🀃🀃🀃🀝&ensp;🀝</span>
+<span class="mahjong-big">🀀🀀🀀🀁🀁🀁🀂🀂🀂🀃🀃🀃🀝&ensp;🀝</span>
 
 ### 古役：大七星（门前清限定）
 七种字牌组成的七对子  
-<span class="mahjong">🀀🀀🀁🀁🀂🀂🀃🀃🀄🀄🀅🀆🀆&ensp;🀅</span>
+<span class="mahjong-big">🀀🀀🀁🀁🀂🀂🀃🀃🀄🀄🀅🀆🀆&ensp;🀅</span>
 
 ## 流局
 ### 四风连打
@@ -262,7 +262,7 @@ related: true
 ### 九种九牌
 第一巡，轮到自己之前无人鸣牌的情况下持有九种及以上的幺九牌 ~~这不国吗~~  
 
-<span class="mahjong">🀇🀏🀙🀠🀡🀒🀒🀓🀖🀘🀀🀂🀅&ensp;🀄</span>
+<span class="mahjong-big">🀇🀏🀙🀠🀡🀒🀒🀓🀖🀘🀀🀂🀅&ensp;🀄</span>
 
 > 简单算了一下九种九牌做国成功率不到二十分之一，还是放弃吧（当然你硬要追梦我也劝不住是吧）。  
 

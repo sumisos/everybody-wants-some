@@ -1,0 +1,29 @@
+{{- if .Inner -}}
+  {{- $inner := trim .Inner "\r\n" | safeHTML -}}
+  <div class="ygo-deck">
+    {{- if .Params -}}
+      {{- $title := .Get 0 -}}
+      {{- $url := .Get 1 -}}
+      <div class="ygo-deck-title ygo-deck-name">
+        {{- with $url }}<a href="{{- . -}}" target="_blank" rel="noopener noreferrer">{{ end -}}
+          {{- $title -}}
+        {{- with $url }}</a>{{ end -}}
+      </div>
+    {{- end -}}
+    {{- range split $inner "\r\n" -}}
+      {{- if eq . "#main" -}}
+        <div class="ygo-deck-title">主卡组</div>
+      {{- else if eq . "#extra" -}}
+        <div class="ygo-deck-title">额外卡组</div>
+      {{- else if eq . "!side" -}}
+        <div class="ygo-deck-title">副卡组</div>
+      {{- else if ne . "" -}}
+        <a href="https://ygocdb.com/card/{{- . -}}" target="_blank">
+          <img src="https://cdn.233.momobako.com/ygopro/pics/{{- . -}}.jpg!half" />
+        </a>
+      {{- else -}}
+        <span>&emsp;</span>
+      {{- end -}}
+    {{- end -}}
+  </div>
+{{- end -}}

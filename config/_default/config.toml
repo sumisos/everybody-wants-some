@@ -95,7 +95,7 @@ uglyURLs = false
 # 作者信息
 [author]
     # 名字
-    name = "Sumi"
+    name = "time2beat"
     # 邮箱
     email = "po@ews.ink"
     # 座右铭或简介
@@ -228,7 +228,7 @@ uglyURLs = false
         weight = 1
         pre = "external"
     [[menu.socials]]
-        url = "https://github.com/sumisos"
+        url = "https://github.com/time2beat"
         name = "Github"
         weight = 2
         pre = "external"
@@ -248,12 +248,12 @@ uglyURLs = false
         weight = 2
         pre = "internal"
     [[menu.links]]
-        url = "https://steamcommunity.com/id/sumisos/"
+        url = "https://steamcommunity.com/id/time2beat/"
         name = "Steam"
         weight = 3
         pre = "external"
     [[menu.links]]
-        url = "https://bgm.tv/user/sumisos"
+        url = "https://bgm.tv/user/time2beat"
         name = "Bangumi"
         weight = 4
         pre = "external"
@@ -1071,7 +1071,7 @@ uglyURLs = false
     #      的优先级高于此处
 
     # 仓库地址
-    repoURL = "https://github.com/sumisos/blog"
+    repoURL = "https://github.com/time2beat/blog"
     # 编辑地址
     repoEditURL = ""
 

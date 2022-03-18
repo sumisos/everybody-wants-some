@@ -1,0 +1,7 @@
+{{- if .Params -}}
+  <span style="color: {{- .Get 1 -}};">
+    {{- if eq (.Get 2) "bold" -}}<b>{{- end -}}
+      {{- .Get 0 -}}
+    {{- if eq (.Get 2) "bold" -}}</b>{{- end -}}
+  </span>
+{{- end -}}

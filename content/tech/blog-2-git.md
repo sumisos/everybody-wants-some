@@ -12,13 +12,25 @@ mermaid: true
 
 ## 准备 Git
 ### 配置 Git 代理
-```powershell
+```PowerShell
 $ git config --global http.proxy 'socks5://127.0.0.1:10808'
 ```
 
 ### 升级 Git
-```powershell
+```PowerShell
 $ git update-git-for-windows
+```
+
+### 配置别名
+
+```PowerShell
+$ git config --global alias.st status
+$ git config --global alias.co checkout
+$ git config --global alias.ci commit
+$ git config --global alias.br branch
+$ git config --global alias.unstage 'reset HEAD'
+$ git config --global alias.last 'log -1'
+$ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 ```
 
 ## 关联本地和远程的仓库
@@ -26,7 +38,7 @@ $ git update-git-for-windows
 
 Github 新建仓库，本地进入项目目录：  
 
-```Powershell
+```PowerShell
 $ git init
 $ git add .
 $ git commit -m "build: Initialize Hugo project"
@@ -39,7 +51,7 @@ $ git push -u origin main
 
 ## 分支管理
 ### 使用分支
-```Powershell
+```PowerShell
 $ git checkout -b writing
 # 进行写作
 $ git add .
