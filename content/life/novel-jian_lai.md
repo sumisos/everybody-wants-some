@@ -1,7 +1,7 @@
 ---
 title: "无剧透吐槽《剑来》"
 date: 2022-03-07T13:02:05+08:00
-tags: ["网文", "剑来"]
+tags: ["网文"]
 series: ["文学"]
 related: true
 dropCap: true

@@ -1,0 +1,14 @@
+{{- if .Params -}}
+<div>
+  <img src="{{- .Get 0 -}}" alt="{{- .Get 1 -}}" />
+  {{- if .Get 1 -}}
+    {{- with .Get 2 -}}
+      <a href="{{- . -}}" target="_blank" rel="noopener noreferrer">
+    {{- end -}}
+    <span class="sticker">{{- .Get 1 -}}</span>
+    {{- with .Get 2 -}}
+      </a>
+    {{- end -}}
+  {{- end -}}
+</div>
+{{- end -}}

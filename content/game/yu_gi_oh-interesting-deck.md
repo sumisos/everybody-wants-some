@@ -2,7 +2,7 @@
 title: "《游戏王》有趣构筑记录"
 subTitle: "记录碰到过的奇妙构筑"
 date: 2022-03-18T09:11:33+08:00
-tags: ["Yu-Gi-Oh", "构筑"]
+tags: ["Yu-Gi-Oh", "构筑", "OTK", "FTK", "真龙", "源数"]
 series: ["Yu-Gi-Oh"]
 related: true
 ---
@@ -72,7 +72,7 @@ related: true
 <details>
   <summary>被暴打的双子真龙</summary>
 
-{{< ygo-deck "双子 真龙" "" >}}
+{{< ygo-deck "直播☆双子 真龙" "" >}}
 #main
 23434538
 23434538
@@ -137,7 +137,7 @@ related: true
 <details>
   <summary>一个报社的棒子</summary>
 
-{{< ygo-deck "重坑 除外红莲兽" "" >}}
+{{< ygo-deck "重坑 除外 暴食兽 / 红莲兽" "" >}}
 #main
 63845230
 63845230
