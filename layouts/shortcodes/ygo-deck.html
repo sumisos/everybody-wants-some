@@ -1,28 +1,36 @@
 {{- if .Inner -}}
-  {{- $inner := trim (replace .Inner "\r\n" "\n") "\n" | safeHTML -}}
+  {{- $deck := split (trim (replace .Inner "\r\n" "\n") "\n" | safeHTML) "\n" -}}
   <div class="ygo-deck">
     {{- if .Params -}}
       {{- $title := .Get 0 -}}
       {{- $url := .Get 1 -}}
       <div class="ygo-deck-title ygo-deck-name">
-        {{- with $url }}<a href="{{- . -}}" target="_blank" rel="noopener noreferrer">{{ end -}}
+        {{- with $url -}}<a href="{{- . -}}" target="_blank" rel="noopener noreferrer">{{- end -}}
           {{- $title -}}
-        {{- with $url }}</a>{{ end -}}
+        {{- with $url -}}</a>{{- end -}}
       </div>
     {{- end -}}
-    {{- range split $inner "\n" -}}
-      {{- if eq . "#main" -}}
+    {{- range $deck -}}
+      {{- $card := trim . " " -}}
+      {{- if eq $card "#main" -}}
         <div class="ygo-deck-title">主卡组</div>
-      {{- else if eq . "#extra" -}}
+      {{- else if eq $card "#extra" -}}
         <div class="ygo-deck-title">额外卡组</div>
-      {{- else if eq . "!side" -}}
+      {{- else if eq $card "!side" -}}
         <div class="ygo-deck-title">副卡组</div>
-      {{- else if ne . "" -}}
-        <a href="https://ygocdb.com/card/{{- . -}}" target="_blank">
-          <img src="https://cdn.233.momobako.com/ygopro/pics/{{- . -}}.jpg!half" />
+      {{- else if eq $card "0" -}}
+        {{- /* <img class="sticker" src="https://sdfsdf.dev/55x80.png,black,black" /> */ -}}
+        <a style="pointer-events: none;">
+          <img style="width: 48.938px; height: 73.672px; margin: 1px; border: 3px solid black; " />
+        </a>
+      {{- else if eq $card "" -}}
+        <a style="pointer-events: none;">
+          <img style="width: 48.938px; height: 73.672px; margin: 1px; border: 3px dashed red; " />
         </a>
       {{- else -}}
-        <span>&emsp;</span>
+        <a href="https://ygocdb.com/card/{{- $card -}}" target="_blank">
+          <img src="https://cdn.233.momobako.com/ygopro/pics/{{- $card -}}.jpg!half" />
+        </a>
       {{- end -}}
     {{- end -}}
   </div>

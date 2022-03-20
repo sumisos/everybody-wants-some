@@ -1,5 +1,5 @@
 ---
-title: "《游戏王》NR 杯卡组构筑推荐"
+title: "《游戏王》MD 活动「NR 杯」卡组构筑推荐"
 subTitle: "N and R Rarity Festival"
 date: 2022-03-18T07:54:24+08:00
 tags: ["Yu-Gi-Oh", "活动", "构筑"]

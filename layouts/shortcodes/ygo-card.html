@@ -24,18 +24,18 @@
   {{- if $name -}}
     {{- if $type -}}
       <div class="{{- if eq $type "spell" }}ygo-card ygo-spell{{ else if eq $type "trap" }}ygo-card ygo-trap{{ else }}ygo-card ygo-monster{{ end -}}">
-        {{- with $id }}<a href="https://www.ygocdb.com/card/{{ . }}" target="_blank">{{ end -}}
+        {{- with $id -}}<a href="https://www.ygocdb.com/card/{{- . -}}" target="_blank">{{- end -}}
           <span class="ygo-card-cover">
-            <img src="/icons/ygo/{{ $type }}.png" alt="YGO Card Attribute of {{ $name }}" />
+            <img src="/icons/ygo/{{- $type -}}.png" alt="YGO Card Attribute of {{- $name -}}" />
             {{- $name -}}
             {{- if (and (or (eq $type "spell") (eq $type "trap")) ($icon)) }}<img src="/icons/ygo/{{ $icon }}.png" alt="YGO Card Icon of {{ $name }}" />{{ end -}}
           </span>
-        {{- with $id }}</a>{{ end -}}
+        {{- with $id -}}</a>{{- end -}}
       </div>
     {{- else -}}
-      {{- with $id }}<a href="https://www.ygocdb.com/card/{{ . }}" target="_blank">{{ end -}}
+      {{- with $id -}}<a href="https://www.ygocdb.com/card/{{- . -}}" target="_blank">{{- end -}}
         <b>{{- $name -}}</b>
-      {{- with $id }}</a>{{ end -}}
+      {{- with $id -}}</a>{{- end -}}
     {{- end -}}
   {{- else -}}
     <div class="ygo-card"><span class="ygo-card-cover">CARD NAME ERROR</span></div>
