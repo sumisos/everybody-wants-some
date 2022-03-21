@@ -1,6 +1,8 @@
 {{- if .Inner -}}
   {{- $deck := split (trim (replace .Inner "\r\n" "\n") "\n" | safeHTML) "\n" -}}
+
   <div class="ygo-deck">
+
     {{- if .Params -}}
       {{- $title := .Get 0 -}}
       {{- $url := .Get 1 -}}
@@ -10,6 +12,7 @@
         {{- with $url -}}</a>{{- end -}}
       </div>
     {{- end -}}
+
     {{- range $deck -}}
       {{- $card := trim . " " -}}
       {{- if eq $card "#main" -}}
@@ -23,15 +26,18 @@
         <a style="pointer-events: none;">
           <img style="width: 48.938px; height: 73.672px; margin: 1px; border: 3px solid black; " />
         </a>
-      {{- else if eq $card "" -}}
-        <a style="pointer-events: none;">
-          <img style="width: 48.938px; height: 73.672px; margin: 1px; border: 3px dashed red; " />
-        </a>
-      {{- else -}}
+      {{- else if len (findRE "^\\d+$" $card) -}}
         <a href="https://ygocdb.com/card/{{- $card -}}" target="_blank">
           <img src="https://cdn.233.momobako.com/ygopro/pics/{{- $card -}}.jpg!half" />
         </a>
+      {{- /* else if eq $card "" */ -}}
+      {{- else if not (hasPrefix $card "#") -}}
+        <a style="pointer-events: none;">
+          <img style="width: 48.938px; height: 73.672px; margin: 1px; border: 3px dashed red; " />
+        </a>
       {{- end -}}
     {{- end -}}
+
   </div>
+
 {{- end -}}

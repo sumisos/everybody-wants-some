@@ -205,13 +205,13 @@ A 站文章区风气这里不讨论，总归是自成风景；\
 第二、我需要 **完全自主** 的丰富的内容创作方式。\
 只要我想，除了技术以外没有别的条件限制我自由发挥。
 
-<span class="sticker">右键「检查」或<kbd>F12</kbd>可以看看以下内容本站是怎么做的</span>
+<span class="center">右键「检查」或<kbd>F12</kbd>可以看看以下内容本站是怎么做的</span>
 
-<div style="text-align: center;">{{< ygo-card 禁忌的一滴 24299458 spell sg >}}{{< ygo-card name="红色重启" id="23002292" type="trap" icon="fj" >}}</div>
+<div class="center">{{< ygo-card 禁忌的一滴 24299458 spell sg >}}{{< ygo-card name="红色重启" id="23002292" type="trap" icon="fj" >}}</div>
 
-<span class="mahjong-small">🀇🀏🀐🀘🀙🀡🀀🀁🀂🀃🀄🀅🀆&ensp;🀀</span>
+{{< mahjong 234m34678s567pFF 25s >}}
 
-<span class="sticker" style="font-size: 2rem;" >
+<span class="center" style="font-size: 2rem;" >
   <span class="handwriting">游戏王属性：</span>
   <span class="ygo-water handwriting">水</span>
   <span class="ygo-fire handwriting">炎</span>

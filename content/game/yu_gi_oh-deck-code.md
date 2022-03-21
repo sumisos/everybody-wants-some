@@ -13,23 +13,40 @@ related: true
 - 鼠标悬浮提示框参考：Steam Info「[出处：其乐论坛](https://keylol.com/t85959-1-1)」「[Greasy Fork](https://greasyfork.org/zh-CN/scripts/956-steam-info/code)」「[源码](https://steamdb.keylol.com/steam_info.js)」
 - Hugo：自定义 shortcode「[Shortcode 文档](https://gohugo.io/templates/shortcode-templates/#custom-shortcode-examples)」「[基本语法](https://gohugo.io/templates/introduction/)」「[函数](https://gohugo.io/functions/)」
 
-```Markdown
-这是一个 bug：`<div class="ygo-card" />` **首次**出现的时候 _前面的文本_ 会被视为一个段落 `<p/>` 进而导致自动换行，考虑使用双层 `<span/>` 嵌套尝试修复{{< ygo-card 禁忌的一滴 24299458 spell sg >}}测试文本测试文本测试文本测试文本{{< ygo-card name="青眼白龙" id="89631139" type="light" >}}测试文本测试文本测试文本测试文本测试文本测试文本测试文本{{< ygo-card name="红色重启" id="23002292" type="trap" icon="fj" >}}测试文本测试文本测试文本测试文本测试文本{{< ygo-card >}}测试文本测试文本测试文本测试测试文本
-```
+<details>
+  <summary>一个小 bug</summary>
+
+<pre>
+这是一个 bug：`&lt;div class="ygo-card" /&gt;` **首次**出现的时候 _前面的文本_ 会被视为一个段落 `&lt;p/&gt;` 进而导致自动换行，考虑使用双层 `&lt;span/&gt;` 嵌套尝试修复{{&lt; ygo-card 禁忌的一滴 24299458 spell sg &gt;}}测试文本测试文本测试文本测试文本{{&lt; ygo-card name="青眼白龙" id="89631139" type="light" &gt;}}测试文本测试文本测试文本测试文本测试文本测试文本测试文本{{&lt; ygo-card name="红色重启" id="23002292" type="trap" icon="fj" &gt;}}测试文本测试文本测试文本测试文本测试文本{{&lt; ygo-card &gt;}}测试文本测试文本测试文本测试测试文本
+</pre>
 
 这是一个 bug：`<div class="ygo-card" />` **首次**出现的时候 _前面的文本_ 会被视为一个段落 `<p/>` 进而导致自动换行，考虑使用双层 `<span/>` 嵌套尝试修复{{< ygo-card 禁忌的一滴 24299458 spell sg >}}测试文本测试文本测试文本测试文本{{< ygo-card name="青眼白龙" id="89631139" type="light" >}}测试文本测试文本测试文本测试文本测试文本测试文本测试文本{{< ygo-card name="红色重启" id="23002292" type="trap" icon="fj" >}}测试文本测试文本测试文本测试文本测试文本{{< ygo-card >}}测试文本测试文本测试文本测试测试文本
+
+</details>
 
 ## 需求
 
 > 考虑做成一个前端网站。这里临时用 JS 做可行性验证，到时候还是用 TS 写。
 
-- [x] 卡组格式转换 ydk ygm 等，类似 [ydk 和 ygm 转换](https://www.ygo-sem.cn/yrp/deck.aspx)
+- [x] ~~卡组格式转换 ydk ygm 等，类似 [ydk 和 ygm 转换](https://www.ygo-sem.cn/yrp/deck.aspx)~~
 - [ ] 从录像文件 `.yrp` 中提取卡组信息，类似「[ourygo 的](http://deck.ourygo.top/yrp/parse.html)」和「[ygo-sem 的](https://www.ygo-sem.cn/yrp/)」
-- [x] 展现卡图 类似[这样](http://deck.ourygo.top/ydk/show.html?ygotype=deck&v=1&d=FNhefVLXC2RMpY_w-43iOvy2SnXARcGDa4Gf-WWVKlHxmGQN9gbi5Y-FDdvkNIpufUXGkPmlV3n70HzV3OV58le_LRnThgSJlIImmKZAMuPJSqBUEax8yF1rIQy7GidRET65azdhGIVy2w4rI9b5cwTxrZ5JsWGN-uRnxrXZ0jdujdvkOJ9zVDCtMtezkT-6CuKtQso-yA) 和 [这样](https://srv.koishi.pro/deck.html)
-- [x] 点击卡组中的单卡跳转卡查页面
+- [x] ~~展现卡图，类似 [这样](http://deck.ourygo.top/ydk/show.html?ygotype=deck&v=1&d=FNhefVLXC2RMpY_w-43iOvy2SnXARcGDa4Gf-WWVKlHxmGQN9gbi5Y-FDdvkNIpufUXGkPmlV3n70HzV3OV58le_LRnThgSJlIImmKZAMuPJSqBUEax8yF1rIQy7GidRET65azdhGIVy2w4rI9b5cwTxrZ5JsWGN-uRnxrXZ0jdujdvkOJ9zVDCtMtezkT-6CuKtQso-yA) 和 [这样](https://srv.koishi.pro/deck.html)~~
+- [x] ~~点击卡组中的单卡跳转卡查页面~~
 - [ ] 不用 jq（我不想）实现鼠标浮（hover）在单卡上弹出悬浮对话框显示卡片详情
 - [ ] 批量转换卡名，支持切换中文、日文、英文，可部分选中，也提供一键复制按钮
 - [ ] 在线编辑卡组，类似 YGOPro 编辑卡组功能（或许可以用 godot 写成桌面端？）
+- [x] 原来做 [DLM](https://www.duellinksmeta.com/) 的现在做 MD 了（MDM）：「[Master Duel Meta - Deck Builder](https://www.masterduelmeta.com/deck-tester)」
+- [ ] 当然可以做爬虫，但有现成的可以抄，试着[抄现成](https://zhuanlan.zhihu.com/p/344885804)：
+  1. [拓王神 组卡器 2.2 - 对应 MD 1.02](https://www.bilibili.com/read/cv15370306)
+  2. [pyinstxtractor](https://github.com/extremecoders-re/pyinstxtractor) 把 `.exe` 反编译成 `.pyc`
+  3. [uncompyle6](https://github.com/rocky/python-uncompyle6) 把 `.pyc` 反编译成 `.py` 源文件
+  4. `https://www.masterduelmeta.com/saved-decks/6237f1a9ae690ec75fa5257d`
+
+```powershell
+$ python pyinstxtractor.py main.py
+$ pip install uncompyle6
+$ uncompyle6 main.pyc > main.py
+```
 
 ## ydk 卡组代码
 

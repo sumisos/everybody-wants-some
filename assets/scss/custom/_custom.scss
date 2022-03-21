@@ -13,13 +13,20 @@ nav.nav > ul#menu {
 }
 
 kbd {
-  margin: 0 0.25rem 0 0.25rem;
-  padding: 0 0.25rem 0 0.25rem;
-  background-color: var(--color-contrast-lower);
-  border: 0.125rem solid var(--color-contrast-higher);
+  display: inline-block;
+  margin: 0 0.25rem;
+  padding: 0.25rem;
+  border: 0.1rem solid #dbdbdb;
   border-radius: 0.25rem;
-  font-family: "Source Code Pro";
-  font-weight: bold;
+  border-bottom-color: #b5b5b5;
+  background-color: #fafafa;
+  -webkit-box-shadow: inset 0 -0.1rem 0 #b5b5b5;
+  box-shadow: inset 0 -0.1rem 0 #b5b5b5;
+  color: #4a4a4a;
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.8rem;
+  line-height: 1.25;
+  vertical-align: text-bottom;
 }
 
 details {
@@ -40,9 +47,14 @@ img.no-zoom {
 @mixin inline-image {
   // 禁用图片换行居中上下边距 便于直接在行文中插入表情包
   display: inline;
-  margin: 1px;
+  margin: 0.125rem;
   border: 0;
 } // 已默认禁用图片点击缩放功能
+
+@mixin center {
+  display: flow-root;
+  text-align: center;
+}
 
 img.emoji,
 img[data-emoji] {
@@ -58,9 +70,14 @@ div.ygo-deck img {
   @include inline-image;
 }
 
-span.sticker {
-  display: flow-root;
-  text-align: center;
+.center,
+span.sticker,
+div.mermaid {
+  @include center;
+}
+
+div.mermaid > svg {
+  height: 100%; // 修复 mermaid.js 绘制 SVG 时 画布容器高度过高的问题
 }
 
 span.sticker a,
@@ -70,16 +87,6 @@ div.ygo-card a {
 
 span.handwriting {
   font-family: "Ma Shan Zheng"; // 手写字体
-}
-
-span.mahjong-big {
-  font-size: 3rem; // 调整麻将 emoji 字体大小
-}
-
-span.mahjong-small {
-  display: flow-root;
-  text-align: center;
-  font-size: 2.25rem; // 调整麻将 emoji 字体大小
 }
 
 /* 游戏王相关 */
@@ -97,9 +104,8 @@ div.ygo-deck {
 }
 
 div.ygo-deck-title {
-  display: block;
+  @include center;
   margin: 1rem auto 0 auto;
-  text-align: center;
   font-family: "YGO Card Name", "Noto Serif SC";
   font-size: 1.5rem;
 }
@@ -181,12 +187,4 @@ span.ygo-light {
 span.ygo-dark {
   font-weight: bold;
   color: #500854;
-}
-
-div.mermaid {
-  text-align: center; // 居中显示
-}
-
-div.mermaid > svg {
-  height: 100%; // 修复 mermaid.js 绘制 SVG 时 画布容器高度过高的问题
 }

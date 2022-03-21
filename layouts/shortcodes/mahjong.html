@@ -1,0 +1,82 @@
+{{- if .Params -}}
+  {{- $mj := slice -}}
+  {{- $emoji_man := "🀇🀈🀉🀊🀋🀌🀍🀎🀏" -}}
+  {{- $emoji_suo := "🀐🀑🀒🀓🀔🀕🀖🀗🀘" -}}
+  {{- $emoji_ping := "🀙🀚🀛🀜🀝🀞🀟🀠🀡" -}}
+
+  {{- range first 2 .Params -}}
+
+    {{- $m := lower (replace (trim (chomp .) "\n-_") " " "") -}}
+    {{- $array := slice -}}
+
+    {{- if in $m "m" -}}
+      {{- $mj_man := split (strings.TrimSuffix "m" (index (findRE "\\d+m" $m) 0)) "" -}}
+      {{- range $man_zi := $mj_man -}}
+        {{- /* $man_zi = add $man_zi "万" */ -}}
+        {{- $index := int $man_zi -}}
+        {{- $man_zi = slicestr $emoji_man (sub $index 1) $index -}}
+        {{- $array = $array | append $man_zi -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- if in $m "s" -}}
+      {{- $mj_suo := split (strings.TrimSuffix "s" (index (findRE "\\d+s" $m) 0)) "" -}}
+      {{- range $suo_zi := $mj_suo -}}
+        {{- $index := int $suo_zi -}}
+        {{- $suo_zi = slicestr $emoji_suo (sub $index 1) $index -}}
+        {{- $array = $array | append $suo_zi -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- if in $m "p" -}}
+      {{- $mj_ping := split (strings.TrimSuffix "p" (index (findRE "\\d+p" $m) 0)) "" -}}
+      {{- range $ping_zi := $mj_ping -}}
+        {{- $index := int $ping_zi -}}
+        {{- $ping_zi = slicestr $emoji_ping (sub $index 1) $index -}}
+        {{- $array = $array | append $ping_zi -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- with split (replaceRE "\\d+m" "" (replaceRE "\\d+s" "" (replaceRE "\\d+p" "" $m))) "" -}}
+      {{- range $char := . -}}
+        {{- if eq $char "x" -}}
+          {{- $char = "🀫"  -}}
+        {{- else if eq $char "e" -}}
+          {{- $char = "🀀"  -}}
+        {{- else if eq $char "s" -}}
+          {{- $char = "🀁"  -}}
+        {{- else if eq $char "w" -}}
+          {{- $char = "🀂"  -}}
+        {{- else if eq $char "n" -}}
+          {{- $char = "🀃"  -}}
+        {{- else if eq $char "b" -}}
+          {{- $char = "🀆"  -}}
+        {{- else if eq $char "f" -}}
+          {{- $char = "🀅"  -}}
+        {{- else if eq $char "c" -}}
+          {{- $char = "🀄"  -}}
+        {{ end }}
+        {{- $array = $array | append $char -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- $mj = $mj | append (slice $array) -}}
+
+  {{- end -}}
+
+  <div class="mahjong center" style="margin: 1rem 0; font-size: 2rem;">
+    {{- range index $mj 0 -}}
+      {{- . -}}
+    {{- end -}}
+
+    {{- if and (gt (len $mj) 1) (eq (len (index $mj 0)) 13) -}}
+      <span style="margin: 0 0.25rem;">
+        {{- if eq (len (index $mj 1)) 1 -}}和{{- else -}}听{{- end -}}
+      </span>
+      {{- range (union (index $mj 1) slice) -}}
+        {{- . -}}
+      {{- end -}}
+    {{- end -}}
+  </div>
+
+{{- end -}}

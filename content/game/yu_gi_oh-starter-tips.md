@@ -64,13 +64,14 @@ S7 动画的剧情 & 画风也是，完全子供向（真·小学生）。开拓
 
 ### 常用链接
 
-|                      相关常用链接                      |            备注             |
-| :----------------------------------------------------: | :-------------------------: |
-|           [MyCard 萌卡](https://mycard.moe/)           | 游戏王全卡收录模拟器 YGOPro |
-|        [萌卡 YGOPro 社区](https://ygobbs.com/)         |         YGOPro 论坛         |
-|            [百鸽](https://www.ygocdb.com/)             | 汇总式卡查（包含裁定规则）  |
-|           [Our OCG](https://www.ourocg.cn/)            |        知名中文卡查         |
-| [Road of the King](https://roadoftheking.com/)（英文） |       赛事新闻、饼图        |
+|                        相关常用链接                         |               备注               |
+| :---------------------------------------------------------: | :------------------------------: |
+|             [MyCard 萌卡](https://mycard.moe/)              |   游戏王全卡收录模拟器 YGOPro    |
+|           [萌卡 YGOPro 社区](https://ygobbs.com/)           |           YGOPro 论坛            |
+|               [百鸽](https://www.ygocdb.com/)               |    汇总式卡查（包含裁定规则）    |
+|              [Our OCG](https://www.ourocg.cn/)              |           知名中文卡查           |
+|   [Road of the King](https://roadoftheking.com/)（英文）    |          赛事新闻、饼图          |
+| [Master Duel Meta](https://www.masterduelmeta.com/)（英文） | 《大师决斗》新闻、T 表、统计数据 |
 
 ## 进阶
 
