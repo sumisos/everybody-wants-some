@@ -4,6 +4,18 @@
 
 // 这样的注释编译时会忽略掉
 
+@mixin inline-image {
+  // 禁用图片换行居中上下边距 便于直接在行文中插入表情包
+  display: inline;
+  margin: 0.125rem;
+  border: 0;
+} // 已默认禁用图片点击缩放功能
+
+@mixin center {
+  display: flow-root;
+  text-align: center;
+}
+
 ::-webkit-scrollbar-thumb {
   border-radius: 0.25rem;
 }
@@ -37,23 +49,21 @@ summary:hover {
   cursor: pointer;
 }
 
+.center,
+span.sticker,
+div.mermaid {
+  @include center;
+}
+
+div.mermaid > svg {
+  height: 100%; // 修复 mermaid.js 绘制 SVG 时 画布容器高度过高的问题
+}
+
 img.no-zoom {
   // 禁用图片点击缩放 实际功能由额外组件实现 这里只是提醒有这个用法
   // 该组件位于 ./layouts/partials/third-party/medium-zoom.html
   // 感谢 MemE 主题使用的图片缩放库 medium-zoom.js 支持 CSS 选择器
   // 详见 https://github.com/francoischalifour/medium-zoom#selectors
-}
-
-@mixin inline-image {
-  // 禁用图片换行居中上下边距 便于直接在行文中插入表情包
-  display: inline;
-  margin: 0.125rem;
-  border: 0;
-} // 已默认禁用图片点击缩放功能
-
-@mixin center {
-  display: flow-root;
-  text-align: center;
 }
 
 img.emoji,
@@ -68,16 +78,6 @@ span.sticker img,
 div.ygo-card img,
 div.ygo-deck img {
   @include inline-image;
-}
-
-.center,
-span.sticker,
-div.mermaid {
-  @include center;
-}
-
-div.mermaid > svg {
-  height: 100%; // 修复 mermaid.js 绘制 SVG 时 画布容器高度过高的问题
 }
 
 span.sticker a,
@@ -97,10 +97,15 @@ span.handwriting {
 }
 
 div.ygo-deck {
-  margin: 1rem;
+  width: 37.125rem;
+  margin: 0 auto;
   padding: 0 1rem 1rem 1rem;
   border: 0.125rem solid var(--chroma-line-numbers-color);
   border-radius: 0.25rem;
+}
+
+div.ygo-deck-name {
+  font-size: 1.75rem;
 }
 
 div.ygo-deck-title {
@@ -110,12 +115,8 @@ div.ygo-deck-title {
   font-size: 1.5rem;
 }
 
-div.ygo-deck-name {
-  font-size: 1.75rem;
-}
-
 div.ygo-deck img {
-  max-height: 4.98rem;
+  max-width: 3.25rem;
 }
 
 div.ygo-card {
@@ -125,14 +126,14 @@ div.ygo-card {
   border-radius: 0.25rem;
 }
 
-span.ygo-card-cover {
+span.ygo-card-text {
   padding: 0.125rem;
   font-family: "YGO Card Name", "Noto Serif SC";
   font-size: 1.125rem;
 }
 
 div.ygo-monster {
-  /* 怪兽颜色 仪式 融合 同步 超量 连接 */
+  /* TODO: 怪兽颜色 仪式 融合 同步 超量 连接 */
   border: 0.125rem solid #b56542;
 }
 

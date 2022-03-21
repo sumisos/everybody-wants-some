@@ -22,9 +22,9 @@
       {{- else if eq $card "!side" -}}
         <div class="ygo-deck-title">副卡组</div>
       {{- else if eq $card "0" -}}
-        {{- /* <img class="sticker" src="https://sdfsdf.dev/55x80.png,black,black" /> */ -}}
+        {{- /* <img class="sticker" src="https://sdfsdf.dev/52x75.png,black,black" /> */ -}}
         <a style="pointer-events: none;">
-          <img style="width: 48.938px; height: 73.672px; margin: 1px; border: 3px solid black; " />
+          <img class="sticker" style="width: 46px; height: 69.391px; margin: 2px; border: 3px solid black; " />
         </a>
       {{- else if len (findRE "^\\d+$" $card) -}}
         <a href="https://ygocdb.com/card/{{- $card -}}" target="_blank">
@@ -33,7 +33,7 @@
       {{- /* else if eq $card "" */ -}}
       {{- else if not (hasPrefix $card "#") -}}
         <a style="pointer-events: none;">
-          <img style="width: 48.938px; height: 73.672px; margin: 1px; border: 3px dashed red; " />
+          <img class="sticker" style="width: 46px; height: 69.391px; margin: 2px; border: 3px dashed red; " />
         </a>
       {{- end -}}
     {{- end -}}
