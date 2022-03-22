@@ -80,13 +80,14 @@ div.ygo-deck img {
   @include inline-image;
 }
 
-span.sticker a,
-div.ygo-card a {
-  text-decoration: none; // 去掉图片贴纸集里空格的下划线
-}
-
 span.handwriting {
   font-family: "Ma Shan Zheng"; // 手写字体
+}
+
+span.sticker a,
+div.ygo-deck a,
+div.ygo-card a {
+  text-decoration: none; // 去掉图片贴纸集里空格的下划线
 }
 
 /* 游戏王相关 */
@@ -98,25 +99,28 @@ span.handwriting {
 
 div.ygo-deck {
   width: 37.125rem;
-  margin: 0 auto;
+  margin: 1rem auto;
   padding: 0 1rem 1rem 1rem;
   border: 0.125rem solid var(--chroma-line-numbers-color);
   border-radius: 0.25rem;
-}
-
-div.ygo-deck-name {
-  font-size: 1.75rem;
 }
 
 div.ygo-deck-title {
   @include center;
   margin: 1rem auto 0 auto;
   font-family: "YGO Card Name", "Noto Serif SC";
+}
+
+div.ygo-deck-title-big {
+  font-size: 1.75rem;
+}
+
+div.ygo-deck-title-small {
   font-size: 1.5rem;
 }
 
 div.ygo-deck img {
-  max-width: 3.25rem;
+  width: 3.25rem;
 }
 
 div.ygo-card {

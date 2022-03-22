@@ -28,25 +28,42 @@ related: true
 
 > 考虑做成一个前端网站。这里临时用 JS 做可行性验证，到时候还是用 TS 写。
 
-- [x] ~~卡组格式转换 ydk ygm 等，类似 [ydk 和 ygm 转换](https://www.ygo-sem.cn/yrp/deck.aspx)~~
-- [ ] 从录像文件 `.yrp` 中提取卡组信息，类似「[ourygo 的](http://deck.ourygo.top/yrp/parse.html)」和「[ygo-sem 的](https://www.ygo-sem.cn/yrp/)」
-- [x] ~~展现卡图，类似 [这样](http://deck.ourygo.top/ydk/show.html?ygotype=deck&v=1&d=FNhefVLXC2RMpY_w-43iOvy2SnXARcGDa4Gf-WWVKlHxmGQN9gbi5Y-FDdvkNIpufUXGkPmlV3n70HzV3OV58le_LRnThgSJlIImmKZAMuPJSqBUEax8yF1rIQy7GidRET65azdhGIVy2w4rI9b5cwTxrZ5JsWGN-uRnxrXZ0jdujdvkOJ9zVDCtMtezkT-6CuKtQso-yA) 和 [这样](https://srv.koishi.pro/deck.html)~~
-- [x] ~~点击卡组中的单卡跳转卡查页面~~
-- [ ] 不用 jq（我不想）实现鼠标浮（hover）在单卡上弹出悬浮对话框显示卡片详情
-- [ ] 批量转换卡名，支持切换中文、日文、英文，可部分选中，也提供一键复制按钮
-- [ ] 在线编辑卡组，类似 YGOPro 编辑卡组功能（或许可以用 godot 写成桌面端？）
-- [x] 原来做 [DLM](https://www.duellinksmeta.com/) 的现在做 MD 了（MDM）：「[Master Duel Meta - Deck Builder](https://www.masterduelmeta.com/deck-tester)」
-- [ ] 当然可以做爬虫，但有现成的可以抄，试着[抄现成](https://zhuanlan.zhihu.com/p/344885804)：
-  1. [拓王神 组卡器 2.2 - 对应 MD 1.02](https://www.bilibili.com/read/cv15370306)
-  2. [pyinstxtractor](https://github.com/extremecoders-re/pyinstxtractor) 把 `.exe` 反编译成 `.pyc`
-  3. [uncompyle6](https://github.com/rocky/python-uncompyle6) 把 `.pyc` 反编译成 `.py` 源文件
-  4. `https://www.masterduelmeta.com/saved-decks/6237f1a9ae690ec75fa5257d`
+<details>
+  <summary>Todo List</summary>
 
-```powershell
-$ python pyinstxtractor.py main.py
-$ pip install uncompyle6
-$ uncompyle6 main.pyc > main.py
-```
+- [x] 卡组格式转换 ydk ygm 等，类似「[YGO-Engine 的 ydk 和 ygm 转换](https://www.ygo-sem.cn/yrp/deck.aspx)」
+- [ ] 从录像文件 `.yrp` 中提取卡组信息，类似「[OURYGO 的](http://deck.ourygo.top/yrp/parse.html)」和「[YGO-Engine 的](https://www.ygo-sem.cn/yrp/)」
+- [x] 展现卡图，类似「[OURYGO 的](http://deck.ourygo.top/ydk/show.html?ygotype=deck&v=1&d=FNhefVLXC2RMpY_w-43iOvy2SnXARcGDa4Gf-WWVKlHxmGQN9gbi5Y-FDdvkNIpufUXGkPmlV3n70HzV3OV58le_LRnThgSJlIImmKZAMuPJSqBUEax8yF1rIQy7GidRET65azdhGIVy2w4rI9b5cwTxrZ5JsWGN-uRnxrXZ0jdujdvkOJ9zVDCtMtezkT-6CuKtQso-yA)」和「[Koishi 的](https://srv.koishi.pro/deck.html?name=%E7%94%B5%E5%AD%90%E9%BE%99.ydk&deck=4w1Sq5PWsaO2O23c11pO517NvTO7O71qd0TOAOA05HU0OD4KwknOFOF1oVbeOIOI2uCys0GwcjOM1sVqyOP17GijOS1P08S1s97AOV6hJdr4wGPtOYOY4gZM6ObOb1mVXY6LcrE0mWPaO06jJ8o66oC26V9WtOk5oYx16ykXJ5iRno0oL5x4UqN4Oq3l2Sc3cJ2M4fAu57GNDt5RmycOh25wlBOy6LPxTOS1clPwQ125Npbp7FrNhQ15Q152eeqLQ18Q180T5IH)」
+- [x] 点击卡组中的单卡跳转卡查页面
+- [ ] ~~不用 jq（我不想）实现鼠标浮（hover）在单卡上弹出悬浮对话框显示卡片详情~~
+- [ ] ~~在线编辑卡组，类似 YGOPro 编辑卡组功能（或许可以用 godot 写成桌面端？）~~
+- [x] 原来做 [DLM](https://www.duellinksmeta.com/) 的现在做 MD 了（MDM）：「[Master Duel Meta - Deck Builder](https://www.masterduelmeta.com/deck-tester)」\
+       完美实现我想要的所有需求（从录像提取卡组除外，待实现）
+- [ ] ~~获取 MDM 的卡组，当然可以做爬虫，但有现成的可以抄，试着抄现成~~：
+  1. 逆向目标：[拓王神 组卡器 2.2 - 对应 MD 1.02](https://www.bilibili.com/read/cv15370306) 里的 `masterduelmeta导出卡组.exe`
+  2. [pyinstxtractor](https://github.com/extremecoders-re/pyinstxtractor) 把 `.exe` 反编译成 `.pyc`
+  3. 由于每个 `.pyc` 文件都有 magic head，pyinstaller 生成 exe 的时候会把 pyc 的 magic 部分去掉，所以在反编译的时候需要自己补齐
+  4. 通过 `struct` 文件获取前 4 个字节（Python 编译的版本），加上 `00 00 00 00` 4 个字节（本来应该是时间戳，不重要）组成 magic head
+  5. 通过 [WinHex](http://www.x-ways.net/winhex/) 或者 [hexed.it](https://hexed.it/) 等工具把 magic head 重新写入 `.pyc` 文件开头
+  6. 发现 pyinstxtractor 生成 `.pyc` 的已经是还原了 magic head 后的版本了，~~我就是过期资料的受害者~~
+  7. [在线反编译 pyc](https://tool.lu/pyc/) 或者 [uncompyle6](https://github.com/rocky/python-uncompyle6)（不支持 Python 3.9 及以上，之前重装过电脑上只有 3.10，我还专门去装了个 3.8.6）把 `.pyc` / `.pyo` 反编译成 `.py` 源文件
+  8. 失败，原因不明。到目前为止沉没的时间成本已经够多了，该及时止损了，打住打住
+- [x] 自己写爬虫
+  1. 本来应该用异步请求库 [aiohttp](https://docs.aiohttp.org/en/stable/)，但没有大规模用途，临时用 [requests](https://docs.python-requests.org/zh_CN/latest/) 就够了
+  2. DLM 的反爬做得可以啊，赞叹（你以前不是爬过吗~~什么记忆只有 7 秒的弱智金鱼~~），静态网页只有 `<a class="image-wrapper svelte-152ds40 card-image-loading" /a>` 的占位符，具体内容后续动态加载，进一步使用 [Selenium](https://www.selenium.dev/documentation/) + [PhantomJS](https://phantomjs.org/download.html) 模拟浏览器加载 JS
+  3. 获得的 HTML 用 [Beautiful Soup 4](https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/)（以及 [lxml](https://lxml.de/) 提高效率）解析
+  4. 还原卡名，`from urllib.parse import unquote` 解码 url 编码
+  5. 卡片数据以前我是去 YGOPro 偷的根目录下的 `card.cdb`（sqlite3），现在正好手上一堆 MD 相关工具，基本人手一个转换好的 `cards.json`，直接用现成的了
+  6. 妈的优化做多了有点入脑了，老是满脑子效率，魔怔了属于是。随便写个脚本难道还能有百万吞吐？真的怪。直接 `json.loads(file.read())` 读成字典暴力遍历就完事了
+  7. 搞定，输入 MDM 网址，输出 ydk 格式卡组代码
+- [x] 顺手把批量转换卡名写了，支持将整个卡组切换为中文名、日文名、英文名\
+       ~~可部分选中，也提供一键复制按钮~~ 用脚本写的不考虑人机交互
+- [x] 爽到，从现在开始可以一行命令把 `masterduelmeta.com` 的卡组抄到博客来了\
+       最后还是重复造轮子了？\
+       没有哦，`masterduelmeta导出卡组.exe` 这个工具只能导出卡组，对其他格式毫无办法\
+       而我有导出任何卡组的需求，比如《<a href="/game/yu_gi_oh-n-and-r-deck/" target="_blank">「NR 杯」卡组构筑</a>》里用到的 [NR 杯禁限卡表](https://www.masterduelmeta.com/articles/news/march-2022/nr-festival-banlist)
+
+</details>
 
 ## ydk 卡组代码
 

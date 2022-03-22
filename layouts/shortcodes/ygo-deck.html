@@ -6,7 +6,7 @@
     {{- if .Params -}}
       {{- $title := .Get 0 -}}
       {{- $url := .Get 1 -}}
-      <div class="ygo-deck-title ygo-deck-name">
+      <div class="ygo-deck-title ygo-deck-title-big">
         {{- with $url -}}<a href="{{- . -}}" target="_blank" rel="noopener noreferrer">{{- end -}}
           {{- $title -}}
         {{- with $url -}}</a>{{- end -}}
@@ -16,11 +16,24 @@
     {{- range $deck -}}
       {{- $card := trim . " " -}}
       {{- if eq $card "#main" -}}
-        <div class="ygo-deck-title">主卡组</div>
+        <div class="ygo-deck-title ygo-deck-title-small">主卡组</div>
       {{- else if eq $card "#extra" -}}
-        <div class="ygo-deck-title">额外卡组</div>
-      {{- else if eq $card "!side" -}}
-        <div class="ygo-deck-title">副卡组</div>
+        <div class="ygo-deck-title ygo-deck-title-small">额外卡组</div>
+      {{- else if hasPrefix $card "!" -}}
+        {{- $title := slice "副卡组" "禁止卡 Forbidden（限 0）" "限制卡 Limited（限 1）" "准限制卡 Semi-Limited（限 2）" -}}
+        <div class="ygo-deck-title ygo-deck-title-small">
+          {{- if eq $card "!side" -}}
+            {{- index $title 0 -}}
+          {{- else if eq $card "!ban3" -}}
+            {{- index $title 1 -}}
+          {{- else if eq $card "!ban2" -}}
+            {{- index $title 2 -}}
+          {{- else if eq $card "!ban1" -}}
+            {{- index $title 3 -}}
+          {{- else -}}
+            {{- slicestr $card 1 -}}
+          {{- end -}}
+        </div>
       {{- else if eq $card "0" -}}
         {{- /* <img class="sticker" src="https://sdfsdf.dev/52x75.png,black,black" /> */ -}}
         <a style="pointer-events: none;">
