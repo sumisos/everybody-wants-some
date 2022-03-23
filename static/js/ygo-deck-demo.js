@@ -56,7 +56,7 @@ const base64 = [
  */
 const bin2base64 = (binary) => {
   // 补零 由于是二进制数直接转成 base64 编码 不存在进一步的冗余 所以不会出现 = 等号
-  if (binary.length % 12 !== 0) binary += "0".repeat(12 - (binary.length % 6));
+  if (binary.length % 12 !== 0) binary += "0".repeat(12 - (binary.length % 12));
   let base64_code = "";
   for (let i = 0; i < binary.length; i += 6) {
     base64_code += base64[parseInt(binary.slice(i, i + 6), 2)];
@@ -72,7 +72,7 @@ const bin2base64 = (binary) => {
  * @returns
  */
 const ydk2deck = (ydk) => {
-  const ydk_array = ydk.split("\n");
+  const ydk_array = ydk.trim().split("\n");
   let deck = { main: [], extra: [], side: [] };
   let step = 0;
   for (let i = 0; i < ydk_array.length; i++) {

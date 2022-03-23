@@ -296,7 +296,7 @@ const int2bin = (num, bit) => {
  */
 const bin2base64 = (binary) => {
   // 补零 由于是二进制数直接转成 base64 编码 不存在进一步的冗余 所以不会出现 = 等号
-  if (binary.length % 12 !== 0) binary += "0".repeat(12 - (binary.length % 6));
+  if (binary.length % 12 !== 0) binary += "0".repeat(12 - (binary.length % 12));
   const base64 = [
     // 懒得写 [A-Za-z0-9] 了 临时用自动生成顶顶
     // TODO 生产环境应该写死 以免每次运行都要遍历一遍(重新生成)
