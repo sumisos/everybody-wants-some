@@ -20,6 +20,10 @@
   border-radius: 0.25rem;
 }
 
+.header {
+  top: 0;
+}
+
 nav.nav > ul#menu {
   font-size: 1.1rem;
 }
@@ -41,18 +45,45 @@ kbd {
   vertical-align: text-bottom;
 }
 
+summary {
+  cursor: pointer;
+}
+
 details {
   margin: 1rem 0;
 }
 
-summary:hover {
-  cursor: pointer;
+details.collapse {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+}
+
+details.collapse summary {
+  font-weight: 700;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+}
+
+details[open].collapse {
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+details[open].collapse summary {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 0.5em;
 }
 
 .center,
 span.sticker,
 div.mermaid {
   @include center;
+}
+
+.center *,
+span.sticker {
+  vertical-align: middle;
 }
 
 div.mermaid > svg {
@@ -70,6 +101,10 @@ img.emoji,
 img[data-emoji] {
   @include inline-image;
   max-height: 1.5rem; // 兼容在行文中插入 emoji 大小的表情包
+}
+
+img.sticker {
+  vertical-align: text-bottom;
 }
 
 img.sticker,

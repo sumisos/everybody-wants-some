@@ -1,82 +1,173 @@
 {{- if .Params -}}
-  {{- $mj := slice -}}
-  {{- $emoji_man := "🀇🀈🀉🀊🀋🀌🀍🀎🀏" -}}
-  {{- $emoji_suo := "🀐🀑🀒🀓🀔🀕🀖🀗🀘" -}}
-  {{- $emoji_ping := "🀙🀚🀛🀜🀝🀞🀟🀠🀡" -}}
+  {{- $InputText := slice -}}
+  {{- $Fulu := "" -}}
+  {{- $DefaultStyle := "emoji" -}}
+  {{- if $.Page.Params.mahjong -}}{{- $DefaultStyle = "svg" -}}{{- end -}}
+  {{- $Style := $DefaultStyle -}}
+  {{- $Sort := "on" -}}
+  {{- if .IsNamedParams -}}
+    {{- $InputText = slice (.Get "main") -}}
+    {{- $InputText = $InputText | append (.Get "side") -}}
+    {{- $Style = .Get "style" | default $DefaultStyle -}}
+    {{- $Sort = .Get "sort" | default "on" -}}
+  {{- else -}}
+    {{- $InputText = first 2 .Params -}}
+    {{- $Fulu = .Get 2 -}}
+  {{- end -}}
 
-  {{- range first 2 .Params -}}
+  {{- $EMOJI := dict "MAN" "🀇🀈🀉🀊🀋🀌🀍🀎🀏" "PIN" "🀙🀚🀛🀜🀝🀞🀟🀠🀡" "SO" "🀐🀑🀒🀓🀔🀕🀖🀗🀘" "ZI" "🀀🀁🀂🀃🀆🀅🀄" -}}
+  {{- $RedExist := dict "man" false "pin" false "so" false -}}
+  {{- $Output := slice -}}
 
-    {{- $m := lower (replace (trim (chomp .) "\n-_") " " "") -}}
-    {{- $array := slice -}}
+  {{- range $InputText -}}
 
-    {{- if in $m "m" -}}
-      {{- $mj_man := split (strings.TrimSuffix "m" (index (findRE "\\d+m" $m) 0)) "" -}}
-      {{- range $man_zi := $mj_man -}}
-        {{- /* $man_zi = add $man_zi "万" */ -}}
-        {{- $index := int $man_zi -}}
-        {{- $man_zi = slicestr $emoji_man (sub $index 1) $index -}}
-        {{- $array = $array | append $man_zi -}}
+    {{- $input := lower (replace (trim (chomp .) "\n-_") " " "") -}}
+    {{- $groups := dict "man" slice "pin" slice "so" slice "zi" slice -}}
+
+    {{- range $suit := slice "m" "p" "s" "z" -}}
+
+      {{- /* 解析并铺平(为一维)牌型数组(单种: 万子 饼子 索子 字牌) $array_1 */ -}}
+      {{- $array_1 := slice -}}
+      {{- $pattern := add "\\d+" $suit -}}
+      {{- if gt (len (findRE $pattern $input)) 0 -}}
+        {{- range $slice := findRE $pattern $input -}}
+          {{- $temp := split (strings.TrimSuffix $suit (index (findRE $pattern $slice) 0)) "" -}}
+          {{- $array_1 = $array_1 | append $temp -}}
+        {{- end -}}
+        {{- $input = replaceRE $pattern "" $input -}}
       {{- end -}}
+
+      {{- $array_2 := slice -}}
+      {{- if len $array_1 -}}
+        {{- range $item := $array_1 -}}
+          {{- /* 数字牌后处理 标记赤宝牌 */ -}}
+          {{- if eq $item "0" -}}
+            {{- $item = "5" -}}
+            {{- if eq $suit "m" -}}
+              {{- $RedExist = merge $RedExist (dict "man" true) -}}
+            {{- else if eq $suit "p" -}}
+              {{- $RedExist = merge $RedExist (dict "pin" true) -}}
+            {{- else if eq $suit "s" -}}
+              {{- $RedExist = merge $RedExist (dict "so" true) -}}
+            {{- end -}}
+          {{- end -}}
+          {{- /* 处理为标准数字形式(1-9m/p/s,1-7z)的牌面 */ -}}
+          {{- $array_2 = $array_2 | append (add $item $suit) -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- /* 字牌后处理 处理剩余的字符形式牌面(字牌: E S W N P F C) */ -}}
+      {{- if eq $suit "z" -}}
+        {{- with $input -}}
+          {{- $temp := slice -}}
+          {{- range $char := split . "" -}}
+            {{- if eq $char "e" -}}
+              {{- $temp = $temp | append "1z" -}}
+            {{- else if eq $char "s" -}}
+              {{- $temp = $temp | append "2z" -}}
+            {{- else if eq $char "w" -}}
+              {{- $temp = $temp | append "3z" -}}
+            {{- else if eq $char "n" -}}
+              {{- $temp = $temp | append "4z" -}}
+            {{- else if or (eq $char "p") (eq $char "b") -}}
+              {{- $temp = $temp | append "5z" -}}
+            {{- else if eq $char "f" -}}
+              {{- $temp = $temp | append "6z" -}}
+            {{- else if eq $char "c" -}}
+              {{- $temp = $temp | append "7z" -}}
+            {{ end }}
+          {{- end -}}
+          {{- $array_2 = $array_2 | append $temp -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- /* 排序并写入字典 */ -}}
+      {{- $temp := $array_2 -}}
+      {{- if eq $Sort "on" -}}{{- $temp = sort $array_2 -}}{{- end -}}
+      {{- if eq $suit "m" -}}
+        {{- $groups = merge $groups (dict "man" $temp) -}}
+      {{- else if eq $suit "p" -}}
+        {{- $groups = merge $groups (dict "pin" $temp) -}}
+      {{- else if eq $suit "s" -}}
+        {{- $groups = merge $groups (dict "so" $temp) -}}
+      {{- else if eq $suit "z" -}}
+        {{- $groups = merge $groups (dict "zi" $temp) -}}
+      {{- end -}}
+
     {{- end -}}
 
-    {{- if in $m "s" -}}
-      {{- $mj_suo := split (strings.TrimSuffix "s" (index (findRE "\\d+s" $m) 0)) "" -}}
-      {{- range $suo_zi := $mj_suo -}}
-        {{- $index := int $suo_zi -}}
-        {{- $suo_zi = slicestr $emoji_suo (sub $index 1) $index -}}
-        {{- $array = $array | append $suo_zi -}}
-      {{- end -}}
-    {{- end -}}
-
-    {{- if in $m "p" -}}
-      {{- $mj_ping := split (strings.TrimSuffix "p" (index (findRE "\\d+p" $m) 0)) "" -}}
-      {{- range $ping_zi := $mj_ping -}}
-        {{- $index := int $ping_zi -}}
-        {{- $ping_zi = slicestr $emoji_ping (sub $index 1) $index -}}
-        {{- $array = $array | append $ping_zi -}}
-      {{- end -}}
-    {{- end -}}
-
-    {{- with split (replaceRE "\\d+m" "" (replaceRE "\\d+s" "" (replaceRE "\\d+p" "" $m))) "" -}}
-      {{- range $char := . -}}
-        {{- if eq $char "x" -}}
-          {{- $char = "🀫"  -}}
-        {{- else if eq $char "e" -}}
-          {{- $char = "🀀"  -}}
-        {{- else if eq $char "s" -}}
-          {{- $char = "🀁"  -}}
-        {{- else if eq $char "w" -}}
-          {{- $char = "🀂"  -}}
-        {{- else if eq $char "n" -}}
-          {{- $char = "🀃"  -}}
-        {{- else if eq $char "b" -}}
-          {{- $char = "🀆"  -}}
-        {{- else if eq $char "f" -}}
-          {{- $char = "🀅"  -}}
-        {{- else if eq $char "c" -}}
-          {{- $char = "🀄"  -}}
-        {{ end }}
-        {{- $array = $array | append $char -}}
-      {{- end -}}
-    {{- end -}}
-
-    {{- $mj = $mj | append (slice $array) -}}
+    {{- $Output = $Output | append $groups -}}
 
   {{- end -}}
 
-  <div class="mahjong center" style="margin: 1rem 0; font-size: 2rem;">
-    {{- range index $mj 0 -}}
-      {{- . -}}
+  {{- $count := slice -}}
+  {{- range $group := $Output -}}
+    {{- $temp := 0 -}}
+    {{- range $group -}}
+      {{- $temp = add $temp (len .) -}}
     {{- end -}}
+    {{- $count = $count | append $temp -}}
+  {{- end -}}
 
-    {{- if and (gt (len $mj) 1) (eq (len (index $mj 0)) 13) -}}
-      <span style="margin: 0 0.25rem;">
-        {{- if eq (len (index $mj 1)) 1 -}}和{{- else -}}听{{- end -}}
-      </span>
-      {{- range (union (index $mj 1) slice) -}}
-        {{- . -}}
+  {{- if or (gt (index $count 0) 1) (gt (index $count 1) 0) -}}<div class="mahjong center" style="margin: 1rem 0; font-size: 2.5rem;">{{- end -}}
+    {{- range $key, $value := index $Output 0 -}}
+      {{- range $code := $value -}}
+        {{- if eq $Style "img" -}}
+          <img class="sticker" src="https://sdfsdf.dev/36x52.png,beige,beige" title="{{- $code -}}" style="width: 36px; height: 52px; margin: 0 1px; border: 2px dashed red;" />
+        {{- else if eq $Style "emoji" -}}
+          {{- $i := int (slicestr $code 0 1) -}}
+          {{- $charset := "" -}}
+          {{- if eq $key "man" -}}
+            {{- $charset = $EMOJI.MAN -}}
+          {{- else if eq $key "pin" -}}
+            {{- $charset = $EMOJI.PIN -}}
+          {{- else if eq $key "so" -}}
+            {{- $charset = $EMOJI.SO -}}
+          {{- else if eq $key "zi" -}}
+            {{- $charset = $EMOJI.ZI -}}
+          {{- end -}}
+          {{- print (slicestr $charset (sub $i 1) $i) -}}
+        {{- else -}}
+          {{- if eq $code "5m" -}}
+            {{- if $RedExist.man -}}{{- $code = "0m" -}}{{- $RedExist = merge $RedExist (dict "man" false) -}}{{- end -}}
+          {{- else if eq $code "5p" -}}
+            {{- if $RedExist.pin -}}{{- $code = "0p" -}}{{- $RedExist = merge $RedExist (dict "pin" false) -}}{{- end -}}
+          {{- else if eq $code "5s" -}}
+            {{- if $RedExist.so -}}{{- $code = "0s" -}}{{- $RedExist = merge $RedExist (dict "so" false) -}}{{- end -}}
+          {{- end -}}
+          <svg class="tile" style="margin: 0 1px;"><use class="face" xlink:href="#mj-{{- $code -}}" /></svg>
+        {{- end -}}
       {{- end -}}
     {{- end -}}
-  </div>
+
+    {{- if index $count 1 -}}
+      {{- $side := index $Output 1 -}}
+      <span class="handwriting" style="margin: 0 0.25rem;">
+        {{- if index $count 1 -}}和{{- else -}}<br/>听{{- end -}}
+      </span>
+      {{- range $key, $value := $side -}}
+        {{- range $ting_pai := (uniq $value) -}}
+          {{- if eq $Style "img" -}}
+            <img class="sticker" src="https://sdfsdf.dev/36x52.png,beige,beige" title="{{- $ting_pai -}}" style="width: 36px; height: 52px; margin: 0 1px; border: 2px dashed red;" />
+          {{- else if and (eq $Style "emoji") (len $ting_pai) -}}
+            {{- $i := int (slicestr $ting_pai 0 1) -}}
+            {{- $charset := "" -}}
+            {{- if eq $key "man" -}}
+              {{- $charset = $EMOJI.MAN -}}
+            {{- else if eq $key "pin" -}}
+              {{- $charset = $EMOJI.PIN -}}
+            {{- else if eq $key "so" -}}
+              {{- $charset = $EMOJI.SO -}}
+            {{- else if eq $key "zi" -}}
+              {{- $charset = $EMOJI.ZI -}}
+            {{- end -}}
+            {{- print (slicestr $charset (sub $i 1) $i) -}}
+          {{- else -}}
+            <svg class="tile" style="margin: 0 1px;"><use class="face" xlink:href="#mj-{{- $ting_pai -}}" /></svg>
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- if or (gt (index $count 0) 1) (gt (index $count 1) 0) -}}</div>{{- end -}}
 
 {{- end -}}

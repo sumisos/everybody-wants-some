@@ -11,7 +11,10 @@
   mermaid.initialize(mermaidConfig);
 </script>
 
-{{- define "mermaid-theme" -}} {{- $theme := .Site.Params.mermaidTheme | default
-"default" -}} {{- if and .Site.Params.enableDarkMode (eq
-.Site.Params.defaultTheme "dark") -}} {{- $theme = .Site.Params.mermaidThemeDark
-| default "dark" -}} {{- end -}} {{- $theme -}} {{- end -}}
+{{- define "mermaid-theme" -}}
+  {{- $theme := .Site.Params.mermaidTheme | default "default" -}}
+  {{- if and .Site.Params.enableDarkMode (eq .Site.Params.defaultTheme "dark") -}}
+    {{- $theme = .Site.Params.mermaidThemeDark | default "dark" -}}
+  {{- end -}}
+  {{- $theme -}}
+{{- end -}}

@@ -2,27 +2,29 @@
   {{- $repo := .Get 0 -}}
 
   <a href="https://github.com/{{- $repo -}}">
-    {{- if ge (len .Params) 2 -}}
-      {{- $prop := .Get 1 -}}
-      {{- $image := "" -}}
-      {{- if eq $prop "tag" -}}
-        {{- $image = add "https://img.shields.io/github/v/tag/" $repo -}}
-        {{- $image = add $image "?label=" -}}
-        {{- $image = add $image (replace $repo "/" "%2F") -}}
-        {{- $image = add $image "&logo=github" -}}
-      {{- else if eq $prop "release" -}}
-        {{- $image = add "https://img.shields.io/github/v/release/" $repo -}}
-        {{- $image = add $image "?display_name=tag&label=" -}}
-        {{- $image = add $image (replace $repo "/" "%2F") -}}
-        {{- $image = add $image "&logo=github" -}}
-      {{- else -}}
-        {{- $image = add "https://img.shields.io/badge/GitHub-" (replace $repo "/" "%2F") -}}
-        {{- $image = add $image "-informational?logo=github" -}}
-      {{- end -}}
-      <img class="sticker" src="{{- $image -}}" alt="">
+    {{- $prop := .Get 1 -}}
+    {{- $image := "" -}}
+
+    {{- if eq $prop "text" -}}
+      <span>{{- $repo -}}</span>
+    {{- else if eq $prop "tag" -}}
+      {{- $image = add "https://img.shields.io/github/v/tag/" $repo -}}
+      {{- $image = add $image "?label=" -}}
+      {{- $image = add $image $repo -}}
+      {{- $image = add $image "&logo=github" -}}
+    {{- else if eq $prop "release" -}}
+      {{- $image = add "https://img.shields.io/github/v/release/" $repo -}}
+      {{- $image = add $image "?display_name=tag&label=" -}}
+      {{- $image = add $image $repo -}}
+      {{- $image = add $image "&logo=github" -}}
     {{- else -}}
-      <span>GitHub Repo:&ensp;{{- $repo -}}</span>
+      {{- $repo = replace (replace $repo "/" "%2F") " " "%20" -}}
+      {{- $repo = replace (replace $repo "-" "--") "_" "__" -}}
+      {{- $image = add "https://img.shields.io/badge/GitHub-" $repo -}}
+      {{- $image = add $image "-informational?logo=github" -}}
     {{- end -}}
+
+    {{- with $image -}}<img class="sticker" src="{{- . -}}" alt="">{{- end -}}
   </a>
 
 {{- end -}}

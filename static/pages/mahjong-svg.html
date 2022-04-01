@@ -1,0 +1,228 @@
+<html>
+  <head>
+    <title>Example SVG mahjong tiles</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+        font-size: 20px;
+      }
+      body {
+        max-width: 40rem;
+        margin: auto;
+        background: #f2f2f2;
+      }
+      body[horizontal] {
+        max-width: 80rem;
+      }
+      .line {
+        margin: 0.5rem 0;
+      }
+
+      .tile {
+        width: 40px;
+        height: 56px;
+      }
+      .rotate {
+        width: 56px;
+        height: 56px;
+        transform: rotate(-90deg) translate(-8px, 0);
+      }
+      .tenbo {
+        width: 156px;
+        height: 12px;
+      }
+      .face,
+      .back {
+        filter: url(#inset-shadow);
+      }
+      .back {
+        fill: #ffba1e;
+      }
+      .face {
+        fill: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="0" height="0">
+      <defs>
+        <filter id="inset-shadow">
+          <feoffset dx="0" dy="0"></feoffset>
+          <fegaussianblur
+            stddeviation="1.5"
+            result="offset-blur"
+          ></fegaussianblur>
+          <fecomposite
+            operator="out"
+            in="SourceGraphic"
+            in2="offset-blur"
+            result="inverse"
+          ></fecomposite>
+          <feflood
+            flood-color="black"
+            flood-opacity="1"
+            result="color"
+          ></feflood>
+          <fecomposite
+            operator="in"
+            in="color"
+            in2="inverse"
+            result="shadow"
+          ></fecomposite>
+          <fecomposite
+            operator="over"
+            in="shadow"
+            in2="SourceGraphic"
+          ></fecomposite>
+        </filter>
+      </defs>
+    </svg>
+    <div class="line">
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#1m"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#2m"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#3m"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#4m"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#5m"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#6m"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#7m"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#8m"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#9m"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#0m"></use>
+      </svg>
+    </div>
+    <div class="line">
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#1p"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#2p"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#3p"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#4p"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#5p"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#6p"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#7p"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#8p"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#9p"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#0p"></use>
+      </svg>
+    </div>
+    <div class="line">
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#1s"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#2s"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#3s"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#4s"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#5s"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#6s"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#7s"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#8s"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#9s"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#0s"></use>
+      </svg>
+    </div>
+    <div class="line">
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#e"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#s"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#w"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#n"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#p"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#f"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#c"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#b"></use>
+      </svg>
+    </div>
+    <div class="line">
+      <svg class="rotate">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#1m"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#2m"></use>
+      </svg>
+      <svg class="tile">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#3m"></use>
+      </svg>
+    </div>
+    <div class="line">
+      <svg class="tenbo">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#t100"></use>
+      </svg>
+      <svg class="tenbo">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#t1k"></use>
+      </svg>
+      <svg class="tenbo">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#t5k"></use>
+      </svg>
+      <svg class="tenbo">
+        <use class="face" xlink:href="/icons/mahjong-tiles.svg#t10k"></use>
+      </svg>
+    </div>
+  </body>
+</html>

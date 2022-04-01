@@ -2,7 +2,7 @@
 title: "《游戏王》卡组构筑 ydk 格式代码处理"
 subTitle: "开发中"
 date: 2022-03-16T12:17:08+08:00
-tags: ["Yu-Gi-Oh", "JavaScript"]
+tags: ["Yu-Gi-Oh", "JavaScript", "Hugo", "shortcode"]
 series: ["Yu-Gi-Oh"]
 related: true
 ---
