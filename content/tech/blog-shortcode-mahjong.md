@@ -168,11 +168,12 @@ mahjong: true
 当然也不会影响自动排序：
 
 <pre>
-{{&lt; mahjong 25z1s2p2z5z444pp555ss &gt;}}  # 正常使用基本上也碰不到这种反人类写法 这里只是为了展示兼容性
-{{&lt; mahjong 2444p1555s22zS55zP &gt;}}  # 排序后
+{{&lt; mahjong 12z3s4p5z6z777pp88ss &gt;}}  # 正常使用基本上也碰不到这种反人类写法 这里只是为了展示兼容性
+# 自动排序后等效于 ↓
+{{&lt; mahjong "4777p 388s 12z S 5z P 6z" &gt;}}  # 兼容空格 会自动忽略
 </pre>
 
-{{< mahjong 25z1s2p2z5z444pp555ss >}}
+{{< mahjong 12z3s4p5z6z777pp88ss >}}
 
 ### 听牌自动去重
 
@@ -291,15 +292,15 @@ mahjong: true
        这条是当年（2021）写下的备忘，参考的博客 [`blog.yami.love`](https://blog.yami.love/) 竟然被我熬死了，感叹。
 
 <pre>
-{{&lt; mahjong main="222678m234s3444p" side="235p" style="emoji" &gt;}}
-{{&lt; mahjong main="222678m234s3444p" side="235p" style="svg" &gt;}}
-{{&lt; mahjong main="222678m234s3444p" side="235p" style="img" &gt;}}  # 未完成
+{{&lt; mahjong main="222678m234s3444p" wait="235p" style="emoji" &gt;}}
+{{&lt; mahjong main="222678m234s3444p" wait="235p" style="svg" &gt;}}
+{{&lt; mahjong main="222678m234s3444p" wait="235p" style="img" &gt;}}  # 未完成
 # 不是我懒 主要是没必要了 SVG 各方面都超过图片素材太多
 </pre>
 
-{{< mahjong main="222678m234s3444p" side="235p" style="emoji" >}}
-{{< mahjong main="222678m234s3444p" side="235p" style="svg" >}}
-{{< mahjong main="222678m234s3444p" side="235p" style="img" >}}
+{{< mahjong main="222678m234s3444p" wait="235p" style="emoji" >}}
+{{< mahjong main="222678m234s3444p" wait="235p" style="svg" >}}
+{{< mahjong main="222678m234s3444p" wait="235p" style="img" >}}
 
 大功告成。
 
@@ -411,11 +412,20 @@ mahjong: true
 
   {{- end -}}
 
-  {{- if gt (len (index $InputText 0)) 2 -}}<div class="mahjong center" style="margin: 1rem 0; font-size: 2.5rem;">{{- end -}}
+  {{- $count := slice -}}
+  {{- range $group := $Output -}}
+    {{- $temp := 0 -}}
+    {{- range $group -}}
+      {{- $temp = add $temp (len .) -}}
+    {{- end -}}
+    {{- $count = $count | append $temp -}}
+  {{- end -}}
+
+  {{- if or (gt (index $count 0) 1) (gt (index $count 1) 0) -}}<div class="mahjong center" style="margin: 1rem 0; font-size: 2.5rem;">{{- end -}}
     {{- range $key, $value := index $Output 0 -}}
       {{- range $code := $value -}}
         {{- if eq $Style "img" -}}
-          <img class="sticker" src="https://sdfsdf.dev/36x52.png,beige,beige" style="width: 36px; height: 52px; margin: 0 1px; border: 2px dashed red;" alt="{{- $code -}}" />
+          <img class="sticker" src="https://sdfsdf.dev/36x52.png,beige,beige" title="{{- $code -}}" style="width: 36px; height: 52px; margin: 0 1px; border: 2px dashed red;" />
         {{- else if eq $Style "emoji" -}}
           {{- $i := int (slicestr $code 0 1) -}}
           {{- $charset := "" -}}
@@ -442,21 +452,15 @@ mahjong: true
       {{- end -}}
     {{- end -}}
 
-    {{- if gt (len $Output) 1 -}}
+    {{- if index $count 1 -}}
       {{- $side := index $Output 1 -}}
-      {{- $side_count := 0 -}}
-      {{- range $side -}}
-        {{- $side_count = add $side_count (len .) -}}
-      {{- end -}}
-      {{- if $side_count -}}
-        <span class="handwriting" style="margin: 0 0.25rem;">
-          {{- if eq $side_count 1 -}}和{{- else -}}<br/>听{{- end -}}
-        </span>
-      {{- end -}}
+      <span class="handwriting" style="margin: 0 0.25rem;">
+        {{- if eq (index $count 1) 1 -}}和{{- else -}}<br/>听{{- end -}}
+      </span>
       {{- range $key, $value := $side -}}
         {{- range $ting_pai := (uniq $value) -}}
           {{- if eq $Style "img" -}}
-            <img class="sticker" src="https://sdfsdf.dev/36x52.png,beige,beige" style="width: 36px; height: 52px; margin: 0 1px; border: 2px dashed red;" alt="{{- $ting_pai -}}" />
+            <img class="sticker" src="https://sdfsdf.dev/36x52.png,beige,beige" title="{{- $ting_pai -}}" style="width: 36px; height: 52px; margin: 0 1px; border: 2px dashed red;" />
           {{- else if and (eq $Style "emoji") (len $ting_pai) -}}
             {{- $i := int (slicestr $ting_pai 0 1) -}}
             {{- $charset := "" -}}
@@ -476,7 +480,7 @@ mahjong: true
         {{- end -}}
       {{- end -}}
     {{- end -}}
-  {{- if gt (len (index $InputText 0)) 2 -}}</div>{{- end -}}
+  {{- if or (gt (index $count 0) 1) (gt (index $count 1) 0) -}}</div>{{- end -}}
 
 {{- end -}}
 ```
@@ -487,59 +491,80 @@ mahjong: true
 
 - [x] ~~做了数量检测，如果不是 13 张直接无视第二个参数（附加的牌）~~\
        感觉有点多余，这样只有门前清能显示听和\
-       改成大于 13 也不行，杠了手牌就不止 13 张了；而且吃碰暂时也没办法体现
+       改成大于 13 也不行，杠了手牌就不止 13 张了\
+       ~~而且吃碰等鸣牌暂时也没办法体现~~（已实现）
 - [x] 实际测试完全是画蛇添足，改回来了
 
 ### 展示副露区
 
-- [ ] 特性 feat：展示副露区——吃、碰、大明杠、暗杠、加杠
+- [x] 展示副露区体现鸣牌：吃、碰、大明杠、暗杠、加杠
+
+|        吃        |        碰        |       大明杠        |       加杠       |    暗杠    |
+| :--------------: | :--------------: | :-----------------: | :--------------: | :--------: |
+| `#7m%0` r7 t9 t8 | `.6p%0` r6 t6 t6 | `-5s%0` r5 t5 t5 t5 | `+4z%0` d4 t4 t4 | `_7z` X77X |
+| `#7m%1` r8 t9 t7 | `.6p%1` t6 r6 t6 | `-5s%1` t5 r5 t5 t5 | `+4z%1` t4 d4 t4 |            |
+| `#7m%2` r9 t8 t7 | `.6p%2` t6 t6 r6 | `-5s%2` t5 t5 t5 r5 | `+4z%2` t4 t4 d4 |            |
 
 #### 吃
 
 <span class="center">
   <span style="margin: 0 0.5rem;">
-    <svg class="rotate"><use class="face" xlink:href="#mj-1m" /></svg>
-    <svg class="tile"><use class="face" xlink:href="#mj-3m" /></svg>
-    <svg class="tile"><use class="face" xlink:href="#mj-2m" /></svg>
+    <svg class="rotate"><use class="face" xlink:href="#mj-7m" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-9m" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-8m" /></svg>
   </span>
   <span style="margin: 0 0.5rem;">
-    <svg class="rotate"><use class="face" xlink:href="#mj-2m" /></svg>
-    <svg class="tile"><use class="face" xlink:href="#mj-3m" /></svg>
-    <svg class="tile"><use class="face" xlink:href="#mj-1m" /></svg>
+    <svg class="rotate"><use class="face" xlink:href="#mj-8m" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-9m" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-7m" /></svg>
   </span>
   <span style="margin: 0 0.5rem;">
-    <svg class="rotate"><use class="face" xlink:href="#mj-3m" /></svg>
-    <svg class="tile"><use class="face" xlink:href="#mj-2m" /></svg>
-    <svg class="tile"><use class="face" xlink:href="#mj-1m" /></svg>
+    <svg class="rotate"><use class="face" xlink:href="#mj-9m" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-8m" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-7m" /></svg>
   </span>
 </span>
+
+<pre>
+{{&lt; mahjong main="7788s" wait="7s" side="#7m%0 #6p%1 #5s%2" &gt;}}
+</pre>
+
+{{< mahjong main="7788s" wait="7s" side="#7m%0 #6p%1 #5s%2" >}}
+
+> 只可能吃上家，吃哪张的区别。
 
 #### 碰
 
 <span class="center">
   <span style="margin: 0 0.5rem;">
-    <svg class="rotate"><use class="face" xlink:href="#mj-1p" /></svg>
-    <svg class="tile"><use class="face" xlink:href="#mj-1p" /></svg>
-    <svg class="tile"><use class="face" xlink:href="#mj-1p" /></svg>
+    <svg class="rotate"><use class="face" xlink:href="#mj-6p" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-6p" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-6p" /></svg>
   </span>
   <span style="margin: 0 0.5rem;">
-    <svg class="tile"><use class="face" xlink:href="#mj-1p" /></svg>
-    <svg class="rotate"><use class="face" xlink:href="#mj-1p" /></svg>
-    <svg class="tile"><use class="face" xlink:href="#mj-1p" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-6p" /></svg>
+    <svg class="rotate"><use class="face" xlink:href="#mj-6p" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-6p" /></svg>
   </span>
   <span style="margin: 0 0.5rem;">
-    <svg class="tile"><use class="face" xlink:href="#mj-1p" /></svg>
-    <svg class="tile"><use class="face" xlink:href="#mj-1p" /></svg>
-    <svg class="rotate"><use class="face" xlink:href="#mj-1p" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-6p" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-6p" /></svg>
+    <svg class="rotate"><use class="face" xlink:href="#mj-6p" /></svg>
   </span>
 </span>
 
----
+<pre>
+{{&lt; mahjong main="7788s" wait="8s" side=".7m%0 .6p%1 .5s%2" &gt;}}
+</pre>
 
-- [ ] 处理明杠 `5s-`、暗杠 `1z_`、加杠 `6z+`
+{{< mahjong main="7788s" wait="8s" side=".7m%0 .6p%1 .5s%2" >}}
+
+> 只可能碰一种牌，碰哪家的区别。
 
 #### 大明杠
 
+- [ ] 目前杠没有对赤宝牌做额外处理
+
 <span class="center">
   <span style="margin: 0 0.5rem;">
     <svg class="rotate"><use class="face" xlink:href="#mj-5s" /></svg>
@@ -561,19 +586,18 @@ mahjong: true
   </span>
 </span>
 
-> 大明杠含赤宝牌的时候到底是怎么摆的？
+<pre>
+{{&lt; mahjong main="7788s" wait="7s" side="-7m%0 -6p%1 -5s%2" &gt;}}
+</pre>
 
-#### 暗杠
+{{< mahjong main="7788s" wait="7s" side="-7m%0 -6p%1 -5s%2" >}}
 
-<span class="center">
-  <svg class="tile"><use class="face" xlink:href="#mj-0z" /></svg>
-  <svg class="tile"><use class="face" xlink:href="#mj-1z" /></svg>
-  <svg class="tile"><use class="face" xlink:href="#mj-1z" /></svg>
-  <svg class="tile"><use class="face" xlink:href="#mj-0z" /></svg>
-</span>
+> 类似碰，只可能杠一种牌，杠哪家的区别。\
+> 另外鸣牌含赤宝牌的时候到底是怎么摆的？
 
 #### 加杠
 
+- [ ] 加杠需要额外处理（目前和大明杠一样）
 - [ ] 「加杠」纵向排列显示使用「[SVG 图案填充 - Pattern](https://www.cnblogs.com/lhweb15/p/5489699.html)」：`fill="url(#id)"`
 
 ```XML
@@ -590,23 +614,48 @@ mahjong: true
 
 <div class="center">
   <span style="margin: 0 0.5rem;">
-    <svg class="rotate double"><use class="face" xlink:href="#mj-6z" /></svg>
-    <svg class="rotate"><use class="face" xlink:href="#mj-6z" /></svg>
-    <svg class="tile"><use class="face" xlink:href="#mj-6z" /></svg>
-    <svg class="tile"><use class="face" xlink:href="#mj-6z" /></svg>
+    <svg class="rotate double"><use class="face" xlink:href="#mj-4z" /></svg>
+    <svg class="rotate"><use class="face" xlink:href="#mj-4z" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-4z" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-4z" /></svg>
   </span>
   <span style="margin: 0 0.5rem;">
-    <svg class="tile"><use class="face" xlink:href="#mj-6z" /></svg>
-    <svg class="rotate"><use class="face" xlink:href="#mj-6z" /></svg>
-    <svg class="rotate"><use class="face" xlink:href="#mj-6z" /></svg>
-    <svg class="tile"><use class="face" xlink:href="#mj-6z" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-4z" /></svg>
+    <svg class="rotate"><use class="face" xlink:href="#mj-4z" /></svg>
+    <svg class="rotate"><use class="face" xlink:href="#mj-4z" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-4z" /></svg>
   </span>
   <span style="margin: 0 0.5rem;">
-    <svg class="tile"><use class="face" xlink:href="#mj-6z" /></svg>
-    <svg class="tile"><use class="face" xlink:href="#mj-6z" /></svg>
-    <svg class="rotate"><use class="face" xlink:href="#mj-6z" /></svg>
-    <svg class="rotate"><use class="face" xlink:href="#mj-6z" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-4z" /></svg>
+    <svg class="tile"><use class="face" xlink:href="#mj-4z" /></svg>
+    <svg class="rotate"><use class="face" xlink:href="#mj-4z" /></svg>
+    <svg class="rotate"><use class="face" xlink:href="#mj-4z" /></svg>
   </span>
 </div>
+
+<pre>
+{{&lt; mahjong main="7788s" wait="8s" side="+7m%0 +6p%1 +5s%2" &gt;}}
+</pre>
+
+{{< mahjong main="7788s" wait="8s" side="+7m%0 +6p%1 +5s%2" >}}
+
+> 和碰一个原理。
+
+#### 暗杠
+
+<span class="center">
+  <svg class="tile"><use class="face" xlink:href="#mj-0z" /></svg>
+  <svg class="tile"><use class="face" xlink:href="#mj-7z" /></svg>
+  <svg class="tile"><use class="face" xlink:href="#mj-7z" /></svg>
+  <svg class="tile"><use class="face" xlink:href="#mj-0z" /></svg>
+</span>
+
+<pre>
+{{&lt; mahjong main="7788s" wait="7s" side="_7m _6p _5s" &gt;}}
+</pre>
+
+{{< mahjong main="7788s" wait="7s" side="_7m _6p _5s" >}}
+
+> 最省心的判定，甚至连赤宝牌都不用额外判定。
 
 <img src="https://i.loli.net/2021/11/11/jFbUQz6hypDP2Lv.png" title="TODO" data-sticker />

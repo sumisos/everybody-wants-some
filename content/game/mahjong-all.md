@@ -70,8 +70,7 @@ mahjong: true
 
 用摸到的岭上牌和牌。
 
-{{< mahjong 8888s >}}
-{{< mahjong 234m555p3456s 3s >}}
+{{< mahjong side="_8s" main="234m555p3456s" wait="3s" >}}
 
 ### 海底摸月
 
@@ -137,18 +136,13 @@ mahjong: true
 
 一家开杠三次。
 
-{{< mahjong 6666m >}}
-{{< mahjong 2222s >}}
-{{< mahjong 8888p >}}
-{{< mahjong 1145s 3s >}}
+{{< mahjong side="+6m%1 _2s -8p%2" main="1145s" wait="3s" >}}
 
 ### 对对胡
 
 持有四组刻子（杠也算）。
 
-{{< mahjong 333m >}}
-{{< mahjong 2222s >}}
-{{< mahjong 55p777sEE E >}}
+{{< mahjong side=".3m%2 -2s%1" main="55p777sEE" wait="E" >}}
 
 ### 三暗刻
 
@@ -293,7 +287,7 @@ mahjong: true
 
 只包含二条、三条、四条、六条、八条以及发牌（也可以不含发）。
 
-{{< mahjong main="22223466888sFF" side="6s" style="emoji" >}}
+{{< mahjong main="22223466888sFF" wait="6s" style="emoji" >}}
 
 > emoji 的索子都不是纯绿色，但标准麻将这些索子应该是全绿的。
 
@@ -321,11 +315,7 @@ mahjong: true
 
 一家开杠四次。
 
-{{< mahjong 2222m >}}
-{{< mahjong 0555s >}}
-{{< mahjong 5555z >}}
-{{< mahjong 4444p >}}
-{{< mahjong 6z 6z >}}
+{{< mahjong side="_2m +5s%2 -5z%0 _4p" main="6z" wait="6z" >}}
 
 ### 九莲宝灯（门前清限定）
 
