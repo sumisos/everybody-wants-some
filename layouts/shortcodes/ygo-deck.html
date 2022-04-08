@@ -6,7 +6,7 @@
     {{- if .Params -}}
       {{- $title := .Get 0 -}}
       {{- $url := .Get 1 -}}
-      <div class="ygo-deck-title ygo-deck-title-big">
+      <div class="ygo-deck-title">
         {{- with $url -}}<a href="{{- . -}}" target="_blank" rel="noopener noreferrer">{{- end -}}
           {{- $title -}}
         {{- with $url -}}</a>{{- end -}}
@@ -16,12 +16,12 @@
     {{- range $deck -}}
       {{- $card := trim . " " -}}
       {{- if eq $card "#main" -}}
-        <div class="ygo-deck-title ygo-deck-title-small">主卡组</div>
+        <div class="ygo-deck-subtitle">主卡组</div>
       {{- else if eq $card "#extra" -}}
-        <div class="ygo-deck-title ygo-deck-title-small">额外卡组</div>
+        <div class="ygo-deck-subtitle">额外卡组</div>
       {{- else if hasPrefix $card "!" -}}
         {{- $title := slice "副卡组" "禁止卡 Forbidden（限 0）" "限制卡 Limited（限 1）" "准限制卡 Semi-Limited（限 2）" -}}
-        <div class="ygo-deck-title ygo-deck-title-small">
+        <div class="ygo-deck-subtitle">
           {{- if eq $card "!side" -}}
             {{- index $title 0 -}}
           {{- else if eq $card "!ban3" -}}

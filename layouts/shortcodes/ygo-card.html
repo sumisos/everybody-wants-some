@@ -23,13 +23,13 @@
 
   {{- if $name -}}
     {{- if $type -}}
-      <div class="{{- if eq $type "spell" }}ygo-card ygo-spell{{ else if eq $type "trap" }}ygo-card ygo-trap{{ else }}ygo-card ygo-monster{{ end -}}">
+      <div class="ygo-card {{ if eq $type "spell" }}ygo-spell{{ else if eq $type "trap" }}ygo-trap{{ else }}ygo-monster{{ end }}">
         {{- with $id -}}<a href="https://www.ygocdb.com/card/{{- . -}}" target="_blank">{{- end -}}
+          <div class="icon icon-ygo-{{- $type -}}"></div>
           <span class="ygo-card-text">
-            <img src="/icons/ygo/{{- $type -}}.png" alt="YGO Card Attribute of {{- $name -}}" />
             {{- $name -}}
-            {{- if (and (or (eq $type "spell") (eq $type "trap")) ($icon)) }}<img src="/icons/ygo/{{ $icon }}.png" alt="YGO Card Icon of {{ $name }}" />{{ end -}}
           </span>
+          {{- if (and (or (eq $type "spell") (eq $type "trap")) ($icon)) }}<div class="icon icon-ygo-{{- $icon -}}"></div>{{ end -}}
         {{- with $id -}}</a>{{- end -}}
       </div>
     {{- else -}}

@@ -1,0 +1,56 @@
+// HTML 元素相关样式
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.25rem;
+}
+
+kbd {
+  display: inline-block;
+  margin: 0 0.25rem;
+  padding: 0.25rem;
+  border: 0.1rem solid #dbdbdb;
+  border-radius: 0.25rem;
+  border-bottom-color: #b5b5b5;
+  background-color: #fafafa;
+  -webkit-box-shadow: inset 0 -0.1rem 0 #b5b5b5;
+  box-shadow: inset 0 -0.1rem 0 #b5b5b5;
+  color: #4a4a4a;
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.8rem;
+  line-height: 1.25;
+  vertical-align: text-bottom;
+}
+
+code {
+  font-size: 1rem;
+}
+
+summary {
+  cursor: pointer;
+}
+
+details {
+  margin: 1rem 0;
+}
+
+details.collapse {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+}
+
+details.collapse summary {
+  font-weight: 700;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+}
+
+details[open].collapse {
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+details[open].collapse summary {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 0.5em;
+}

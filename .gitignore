@@ -5,7 +5,7 @@ sftp-config.json
 # Local Source
 draft/
 resources/
-draft-*
+_draft-*
 
 # Distribute
 public/

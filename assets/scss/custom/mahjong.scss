@@ -1,0 +1,163 @@
+// 麻将主题相关样式
+
+.mahjong {
+  margin: 1rem 0;
+  font-size: 2.5rem;
+}
+
+.mahjong-main {
+  margin: 0 0.5rem;
+}
+
+.mahjong-text {
+  font-family: "Ma Shan Zheng";
+  margin: 0 0.25rem;
+}
+
+// SVG 麻将牌
+
+.tile {
+  margin: 0 1px;
+  width: 2.5rem;
+  height: 3.5rem;
+}
+
+.rotate {
+  margin: 0 1px;
+  width: 3.5rem;
+  height: 3.5rem;
+  transform: rotate(-90deg) translate(-0.5rem, 0);
+}
+
+.tenbo {
+  width: 9.75rem;
+  height: 0.75rem;
+}
+
+.face,
+.back {
+  filter: url(#inset-shadow);
+}
+
+.back {
+  fill: #ffba1e;
+}
+
+.face {
+  fill: #ffffff;
+}
+
+// PNG CSS Sprites 麻将牌
+
+@mixin mahjong($index) {
+  @include sprite(("/icons/mahjong.png", $index * -47px, 0, 47px, 63px, 0.9));
+}
+
+.icon-mj-1m {
+  @include mahjong(0);
+}
+.icon-mj-2m {
+  @include mahjong(1);
+}
+.icon-mj-3m {
+  @include mahjong(2);
+}
+.icon-mj-4m {
+  @include mahjong(3);
+}
+.icon-mj-5m {
+  @include mahjong(4);
+}
+.icon-mj-6m {
+  @include mahjong(5);
+}
+.icon-mj-7m {
+  @include mahjong(6);
+}
+.icon-mj-8m {
+  @include mahjong(7);
+}
+.icon-mj-9m {
+  @include mahjong(8);
+}
+.icon-mj-1p {
+  @include mahjong(9);
+}
+.icon-mj-2p {
+  @include mahjong(10);
+}
+.icon-mj-3p {
+  @include mahjong(11);
+}
+.icon-mj-4p {
+  @include mahjong(12);
+}
+.icon-mj-5p {
+  @include mahjong(13);
+}
+.icon-mj-6p {
+  @include mahjong(14);
+}
+.icon-mj-7p {
+  @include mahjong(15);
+}
+.icon-mj-8p {
+  @include mahjong(16);
+}
+.icon-mj-9p {
+  @include mahjong(17);
+}
+.icon-mj-1s {
+  @include mahjong(18);
+}
+.icon-mj-2s {
+  @include mahjong(19);
+}
+.icon-mj-3s {
+  @include mahjong(20);
+}
+.icon-mj-4s {
+  @include mahjong(21);
+}
+.icon-mj-5s {
+  @include mahjong(22);
+}
+.icon-mj-6s {
+  @include mahjong(23);
+}
+.icon-mj-7s {
+  @include mahjong(24);
+}
+.icon-mj-8s {
+  @include mahjong(25);
+}
+.icon-mj-9s {
+  @include mahjong(26);
+}
+.icon-mj-1z {
+  @include mahjong(27);
+}
+.icon-mj-2z {
+  @include mahjong(28);
+}
+.icon-mj-3z {
+  @include mahjong(29);
+}
+.icon-mj-4z {
+  @include mahjong(30);
+}
+.icon-mj-5z {
+  @include mahjong(31);
+}
+.icon-mj-6z {
+  @include mahjong(32);
+}
+.icon-mj-7z {
+  @include mahjong(33);
+}
+.icon-mj-8z {
+  @include mahjong(34);
+}
+.icon-mj-9z {
+  @include mahjong(35);
+}

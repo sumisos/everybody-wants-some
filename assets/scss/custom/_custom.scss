@@ -4,231 +4,38 @@
 
 // 这样的注释编译时会忽略掉
 
-@mixin inline-image {
-  // 禁用图片换行居中上下边距 便于直接在行文中插入表情包
-  display: inline;
-  margin: 0.125rem;
-  border: 0;
-} // 已默认禁用图片点击缩放功能
-
-@mixin center {
-  display: flow-root;
-  text-align: center;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 0.25rem;
-}
+@import "./elements.scss"; // HTML 元素相关样式
+@import "./images.scss"; // 图片元素相关样式
+@import "./yu_gi_oh.scss"; // 游戏王主题相关样式
+@import "./mahjong.scss"; // 麻将主题相关样式
 
 .header {
-  top: 0;
+  top: 0; // 浮动 header 永远置顶
 }
 
 nav.nav > ul#menu {
-  font-size: 1.1rem;
-}
-
-kbd {
-  display: inline-block;
-  margin: 0 0.25rem;
-  padding: 0.25rem;
-  border: 0.1rem solid #dbdbdb;
-  border-radius: 0.25rem;
-  border-bottom-color: #b5b5b5;
-  background-color: #fafafa;
-  -webkit-box-shadow: inset 0 -0.1rem 0 #b5b5b5;
-  box-shadow: inset 0 -0.1rem 0 #b5b5b5;
-  color: #4a4a4a;
-  font-family: "Source Code Pro", monospace;
-  font-size: 0.8rem;
-  line-height: 1.25;
-  vertical-align: text-bottom;
-}
-
-code {
-  font-size: 1rem;
-}
-
-summary {
-  cursor: pointer;
-}
-
-details {
-  margin: 1rem 0;
-}
-
-details.collapse {
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  padding: 0.5em 0.5em 0;
-}
-
-details.collapse summary {
-  font-weight: 700;
-  margin: -0.5em -0.5em 0;
-  padding: 0.5em;
-}
-
-details[open].collapse {
-  padding: 0.5em;
-  margin-bottom: 0.5em;
-}
-
-details[open].collapse summary {
-  border-bottom: 1px solid #aaa;
-  margin-bottom: 0.5em;
+  font-size: 1.125rem; // 导航字体略微增大
 }
 
 .center,
 span.sticker,
 div.mermaid {
-  @include center;
+  @include center; // 内容水平居中
 }
 
 .center *,
 span.sticker {
-  vertical-align: middle;
+  vertical-align: middle; // 内容垂直居中
 }
 
-div.mermaid > svg {
-  height: 100%; // 修复 mermaid.js 绘制 SVG 时 画布容器高度过高的问题
-}
-
-img.no-zoom {
-  // 禁用图片点击缩放 实际功能由额外组件实现 这里只是提醒有这个用法
-  // 该组件位于 ./layouts/partials/third-party/medium-zoom.html
-  // 感谢 MemE 主题使用的图片缩放库 medium-zoom.js 支持 CSS 选择器
-  // 详见 https://github.com/francoischalifour/medium-zoom#selectors
-}
-
-img.emoji,
-img[data-emoji] {
-  @include inline-image;
-  max-height: 1.5rem; // 兼容在行文中插入 emoji 大小的表情包
-}
-
-img.sticker {
-  vertical-align: text-bottom;
-}
-
-img.sticker,
-img[data-sticker],
-span.sticker img,
-div.ygo-card img,
-div.ygo-deck img {
-  @include inline-image;
+span.sticker a {
+  text-decoration: none; // 去掉图片贴纸集里空格的下划线
 }
 
 span.handwriting {
   font-family: "Ma Shan Zheng"; // 手写字体
 }
 
-span.sticker a,
-div.ygo-deck a,
-div.ygo-card a {
-  text-decoration: none; // 去掉图片贴纸集里空格的下划线
-}
-
-/* 游戏王相关 */
-
-@font-face {
-  font-family: "YGO Card Name";
-  src: url("/fonts/ygo-card-name.ttf");
-}
-
-div.ygo-deck {
-  width: 37.125rem;
-  margin: 1rem auto;
-  padding: 0 1rem 1rem 1rem;
-  border: 0.125rem solid var(--chroma-line-numbers-color);
-  border-radius: 0.25rem;
-}
-
-div.ygo-deck-title {
-  @include center;
-  margin: 1rem auto 0 auto;
-  font-family: "YGO Card Name", "Noto Serif SC";
-}
-
-div.ygo-deck-title-big {
-  font-size: 1.75rem;
-}
-
-div.ygo-deck-title-small {
-  font-size: 1.5rem;
-}
-
-div.ygo-deck img {
-  width: 3.25rem;
-}
-
-div.ygo-card {
-  display: inline-block;
-  margin: 0.25rem;
-  border: 0.125rem solid var(--color-contrast-higher);
-  border-radius: 0.25rem;
-}
-
-span.ygo-card-text {
-  padding: 0.125rem;
-  font-family: "YGO Card Name", "Noto Serif SC";
-  font-size: 1.125rem;
-}
-
-div.ygo-monster {
-  /* TODO: 怪兽颜色 仪式 融合 同步 超量 连接 */
-  border: 0.125rem solid #b56542;
-}
-
-div.ygo-spell {
-  border: 0.125rem solid #008d73;
-}
-
-div.ygo-trap {
-  border: 0.125rem solid #a71675;
-}
-
-div.ygo-card img {
-  max-height: 1.5rem;
-  vertical-align: middle;
-}
-
-span.ygo-spell {
-  font-weight: bold;
-  color: #008d73;
-}
-
-span.ygo-trap {
-  font-weight: bold;
-  color: #a71675;
-}
-
-span.ygo-wind {
-  font-weight: bold;
-  color: #56b84f;
-}
-
-span.ygo-earth {
-  font-weight: bold;
-  color: #111312;
-}
-
-span.ygo-water {
-  font-weight: bold;
-  color: #0073af;
-}
-
-span.ygo-fire {
-  font-weight: bold;
-  color: #eb4221;
-}
-
-span.ygo-light {
-  font-weight: bold;
-  color: #f7df7f;
-}
-
-span.ygo-dark {
-  font-weight: bold;
-  color: #500854;
+div.mermaid > svg {
+  height: 100%; // 修复 mermaid.js 绘制 SVG 时 画布容器高度过高的问题
 }

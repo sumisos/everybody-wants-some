@@ -292,10 +292,9 @@ mahjong: true
        这条是当年（2021）写下的备忘，参考的博客 [`blog.yami.love`](https://blog.yami.love/) 竟然被我熬死了，感叹。
 
 <pre>
-{{&lt; mahjong main="222678m234s3444p" wait="235p" style="emoji" &gt;}}
-{{&lt; mahjong main="222678m234s3444p" wait="235p" style="svg" &gt;}}
-{{&lt; mahjong main="222678m234s3444p" wait="235p" style="img" &gt;}}  # 未完成
-# 不是我懒 主要是没必要了 SVG 各方面都超过图片素材太多
+{{&lt; mahjong main="222678m234s3444p" wait="235p" style="emoji" &gt;}}  # emoji 字符
+{{&lt; mahjong main="222678m234s3444p" wait="235p" style="svg" &gt;}}    # SVG 矢量图
+{{&lt; mahjong main="222678m234s3444p" wait="235p" style="img" &gt;}}    # PNG 图片
 </pre>
 
 {{< mahjong main="222678m234s3444p" wait="235p" style="emoji" >}}
@@ -312,19 +311,20 @@ mahjong: true
 ```HTML
 {{- if .Params -}}
   {{- $InputText := slice -}}
-  {{- $Fulu := "" -}}
+  {{- $Side := "" -}}
   {{- $DefaultStyle := "emoji" -}}
   {{- if $.Page.Params.mahjong -}}{{- $DefaultStyle = "svg" -}}{{- end -}}
   {{- $Style := $DefaultStyle -}}
   {{- $Sort := "on" -}}
   {{- if .IsNamedParams -}}
     {{- $InputText = slice (.Get "main") -}}
-    {{- $InputText = $InputText | append (.Get "side") -}}
+    {{- $InputText = $InputText | append (.Get "wait") -}}
+    {{- $Side = .Get "side" -}}
     {{- $Style = .Get "style" | default $DefaultStyle -}}
     {{- $Sort = .Get "sort" | default "on" -}}
   {{- else -}}
     {{- $InputText = first 2 .Params -}}
-    {{- $Fulu = .Get 2 -}}
+    {{- $Side = .Get 3 -}}
   {{- end -}}
 
   {{- $EMOJI := dict "MAN" "🀇🀈🀉🀊🀋🀌🀍🀎🀏" "PIN" "🀙🀚🀛🀜🀝🀞🀟🀠🀡" "SO" "🀐🀑🀒🀓🀔🀕🀖🀗🀘" "ZI" "🀀🀁🀂🀃🀆🀅🀄" -}}
@@ -422,6 +422,138 @@ mahjong: true
   {{- end -}}
 
   {{- if or (gt (index $count 0) 1) (gt (index $count 1) 0) -}}<div class="mahjong center" style="margin: 1rem 0; font-size: 2.5rem;">{{- end -}}
+
+    {{- /* 展示副露区 */ -}}
+    {{- with $Side -}}
+      {{- $input := split . " " -}}
+      {{- range $index, $item := $input -}}
+        <span style="margin: 0 0.5rem;">
+          {{- $type := slicestr $item 0 1 -}}
+          {{- $pai := slicestr $item 1 3 -}}
+          {{- $need := "" -}}
+          {{- if eq (len $item) 5 -}}{{- $need = slicestr $item 4 -}}{{- end -}}
+
+          {{- if eq $type "#" -}}
+            {{- /* 处理吃 TODO 改进显示顺序 */ -}}
+            {{- range $index := slice "0" "1" "2" -}}
+              {{- $new_pai := add (htmlEscape (add (int (slicestr $pai 0 1)) (int $index))) (slicestr $pai 1) -}}
+              {{- if eq $Style "img" -}}
+                <img class="sticker" src="https://sdfsdf.dev/36x52.png,beige,beige" title="{{- $new_pai -}}" style="width: 36px; height: 52px; margin: 0 1px; border: 2px dashed red;" />
+              {{- else if eq $Style "emoji" -}}
+                {{- $i := int (slicestr $new_pai 0 1) -}}
+                {{- $charset := "" -}}
+                {{- if eq (slicestr $new_pai 1) "m" -}}
+                  {{- $charset = $EMOJI.MAN -}}
+                {{- else if eq (slicestr $new_pai 1) "p" -}}
+                  {{- $charset = $EMOJI.PIN -}}
+                {{- else if eq (slicestr $new_pai 1) "s" -}}
+                  {{- $charset = $EMOJI.SO -}}
+                {{- else if eq (slicestr $new_pai 1) "z" -}}
+                  {{- $charset = $EMOJI.ZI -}}
+                {{- end -}}
+                {{- print (slicestr $charset (sub $i 1) $i) -}}
+              {{- else -}}
+                <svg class="{{- if eq $index $need -}}rotate{{- else -}}tile{{- end -}}"><use class="face" xlink:href="#mj-{{- $new_pai -}}" /></svg>
+              {{- end -}}
+            {{- end -}}
+          {{- else if eq $type "." -}}
+            {{- /* 处理碰 */ -}}
+            {{- range $index := slice "0" "1" "2" -}}
+              {{- if eq $Style "img" -}}
+                <img class="sticker" src="https://sdfsdf.dev/36x52.png,beige,beige" title="{{- $pai -}}" style="width: 36px; height: 52px; margin: 0 1px; border: 2px dashed red;" />
+              {{- else if eq $Style "emoji" -}}
+                {{- $i := int (slicestr $pai 0 1) -}}
+                {{- $charset := "" -}}
+                {{- if eq (slicestr $pai 1) "m" -}}
+                  {{- $charset = $EMOJI.MAN -}}
+                {{- else if eq (slicestr $pai 1) "p" -}}
+                  {{- $charset = $EMOJI.PIN -}}
+                {{- else if eq (slicestr $pai 1) "s" -}}
+                  {{- $charset = $EMOJI.SO -}}
+                {{- else if eq (slicestr $pai 1) "z" -}}
+                  {{- $charset = $EMOJI.ZI -}}
+                {{- end -}}
+                {{- print (slicestr $charset (sub $i 1) $i) -}}
+              {{- else -}}
+                <svg class="{{- if eq $index $need -}}rotate{{- else -}}tile{{- end -}}"><use class="face" xlink:href="#mj-{{- $pai -}}" /></svg>
+              {{- end -}}
+            {{- end -}}
+          {{- else if eq $type "-" -}}
+            {{- /* 处理大明杠 */ -}}
+            {{- range $index := slice "0" "1" "x" "2" -}}
+              {{- if eq $Style "img" -}}
+                <img class="sticker" src="https://sdfsdf.dev/36x52.png,beige,beige" title="{{- $pai -}}" style="width: 36px; height: 52px; margin: 0 1px; border: 2px dashed red;" />
+              {{- else if eq $Style "emoji" -}}
+                {{- $i := int (slicestr $pai 0 1) -}}
+                {{- $charset := "" -}}
+                {{- if eq (slicestr $pai 1) "m" -}}
+                  {{- $charset = $EMOJI.MAN -}}
+                {{- else if eq (slicestr $pai 1) "p" -}}
+                  {{- $charset = $EMOJI.PIN -}}
+                {{- else if eq (slicestr $pai 1) "s" -}}
+                  {{- $charset = $EMOJI.SO -}}
+                {{- else if eq (slicestr $pai 1) "z" -}}
+                  {{- $charset = $EMOJI.ZI -}}
+                {{- end -}}
+                {{- print (slicestr $charset (sub $i 1) $i) -}}
+              {{- else -}}
+                <svg class="{{- if eq $index $need -}}rotate{{- else -}}tile{{- end -}}"><use class="face" xlink:href="#mj-{{- $pai -}}" /></svg>
+              {{- end -}}
+            {{- end -}}
+          {{- else if eq $type "+" -}}
+            {{- /* 处理加杠 TODO 复杂判断 */ -}}
+            {{- range $index := slice "0" "1" "x" "2" -}}
+              {{- if eq $Style "img" -}}
+                <img class="sticker" src="https://sdfsdf.dev/36x52.png,beige,beige" title="{{- $pai -}}" style="width: 36px; height: 52px; margin: 0 1px; border: 2px dashed red;" />
+              {{- else if eq $Style "emoji" -}}
+                {{- $i := int (slicestr $pai 0 1) -}}
+                {{- $charset := "" -}}
+                {{- if eq (slicestr $pai 1) "m" -}}
+                  {{- $charset = $EMOJI.MAN -}}
+                {{- else if eq (slicestr $pai 1) "p" -}}
+                  {{- $charset = $EMOJI.PIN -}}
+                {{- else if eq (slicestr $pai 1) "s" -}}
+                  {{- $charset = $EMOJI.SO -}}
+                {{- else if eq (slicestr $pai 1) "z" -}}
+                  {{- $charset = $EMOJI.ZI -}}
+                {{- end -}}
+                {{- print (slicestr $charset (sub $i 1) $i) -}}
+              {{- else -}}
+                <svg class="{{- if eq $index $need -}}rotate{{- else -}}tile{{- end -}}"><use class="face" xlink:href="#mj-{{- $pai -}}" /></svg>
+              {{- end -}}
+            {{- end -}}
+          {{- else if eq $type "_" -}}
+            {{- /* 处理暗杠 */ -}}
+            {{- if eq $Style "img" -}}
+              {{- range slice 1 2 3 4 -}}
+              <img class="sticker" src="https://sdfsdf.dev/36x52.png,beige,beige" title="{{- $pai -}}" style="width: 36px; height: 52px; margin: 0 1px; border: 2px dashed red;" />
+              {{- end -}}
+            {{- else if eq $Style "emoji" -}}
+              {{- $i := int (slicestr $pai 0 1) -}}
+              {{- $charset := "" -}}
+              {{- if eq (slicestr $pai 1) "m" -}}
+                {{- $charset = $EMOJI.MAN -}}
+              {{- else if eq (slicestr $pai 1) "p" -}}
+                {{- $charset = $EMOJI.PIN -}}
+              {{- else if eq (slicestr $pai 1) "s" -}}
+                {{- $charset = $EMOJI.SO -}}
+              {{- else if eq (slicestr $pai 1) "z" -}}
+                {{- $charset = $EMOJI.ZI -}}
+              {{- end -}}
+              {{- range slice 1 2 3 4 -}}
+                {{- print (slicestr $charset (sub $i 1) $i) -}}
+              {{- end -}}
+            {{- else -}}
+              <svg class="tile"><use class="face" xlink:href="#mj-0z" /></svg><svg class="tile"><use class="face" xlink:href="#mj-{{- $pai -}}" /></svg><svg class="tile"><use class="face" xlink:href="#mj-{{- $pai -}}" /></svg><svg class="tile"><use class="face" xlink:href="#mj-0z" /></svg>
+            {{- end -}}
+          {{- end -}}
+          {{- if and (eq (len $input) 4) (eq $index 1) -}}<br/>{{- end -}}
+        </span>
+      {{- end -}}
+      <br/>
+    {{- end -}}
+
+    {{- /* 展示手牌 */ -}}
     {{- range $key, $value := index $Output 0 -}}
       {{- range $code := $value -}}
         {{- if eq $Style "img" -}}
@@ -447,11 +579,12 @@ mahjong: true
           {{- else if eq $code "5s" -}}
             {{- if $RedExist.so -}}{{- $code = "0s" -}}{{- $RedExist = merge $RedExist (dict "so" false) -}}{{- end -}}
           {{- end -}}
-          <svg class="tile" style="margin: 0 1px;"><use class="face" xlink:href="#mj-{{- $code -}}" /></svg>
+          <svg class="tile"><use class="face" xlink:href="#mj-{{- $code -}}" /></svg>
         {{- end -}}
       {{- end -}}
     {{- end -}}
 
+    {{- /* 展示听牌 */ -}}
     {{- if index $count 1 -}}
       {{- $side := index $Output 1 -}}
       <span class="handwriting" style="margin: 0 0.25rem;">
@@ -475,7 +608,7 @@ mahjong: true
             {{- end -}}
             {{- print (slicestr $charset (sub $i 1) $i) -}}
           {{- else -}}
-            <svg class="tile" style="margin: 0 1px;"><use class="face" xlink:href="#mj-{{- $ting_pai -}}" /></svg>
+            <svg class="tile"><use class="face" xlink:href="#mj-{{- $ting_pai -}}" /></svg>
           {{- end -}}
         {{- end -}}
       {{- end -}}
@@ -494,6 +627,8 @@ mahjong: true
        改成大于 13 也不行，杠了手牌就不止 13 张了\
        ~~而且吃碰等鸣牌暂时也没办法体现~~（已实现）
 - [x] 实际测试完全是画蛇添足，改回来了
+- [ ] 分离出副露区之后可以了，判定手牌数量是否合法 `len(main) % 3 == 1`\
+       据我所知 shortcode 没有取余操作：循环 `-3` 到 `<= 0`，判断 `if remain == -2` 即可
 
 ### 展示副露区
 

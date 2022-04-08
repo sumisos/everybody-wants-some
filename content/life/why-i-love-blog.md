@@ -5,6 +5,7 @@ date: 2022-02-13T10:04:39+08:00
 tags: ["博客", "Blog"]
 series: ["Blog"]
 related: true
+mahjong: true
 ---
 
 ## 为什么不把内容做成视频以便推广
@@ -207,30 +208,42 @@ A 站文章区风气这里不讨论，总归是自成风景；\
 
 <span class="center">右键「检查」或<kbd>F12</kbd>可以看看以下内容本站是怎么做的</span>
 
-<div class="center">{{< ygo-card 禁忌的一滴 24299458 spell sg >}}{{< ygo-card name="红色重启" id="23002292" type="trap" icon="fj" >}}</div>
+<details open="open">
+  <summary>分别以 emoji、SVG、PNG 三种方式显示的麻将牌</summary>
 
-{{< mahjong 234m34678s567pFF 25s >}}
+{{< mahjong main="1112345678999s" wait="123456789s" style="emoji" >}}
+{{< mahjong main="22223466888sFF" wait="F" style="svg" >}}
+{{< mahjong main="19m19p19s1234567z" wait="1z" style="img" >}}
 
-<span class="center" style="font-size: 2rem;" >
-  <span class="handwriting">游戏王属性：</span>
-  <span class="ygo-water handwriting">水</span>
-  <span class="ygo-fire handwriting">炎</span>
-  <span class="ygo-wind handwriting">风</span>
-  <span class="ygo-earth handwriting">地</span>
-  <span class="ygo-light handwriting">光</span>
-  <span class="ygo-dark handwriting">暗</span>
-</span>
+</details>
 
 <details open="open">
-  <summary>悲报：2022.3.13 森蚺 1 → 0</summary>
+  <summary>游戏王相关样式</summary>
+
+<div class="center" style="font-size: 1.5rem;" >
+  <img src="/icons/ygo-attribute.png" style="margin: 1rem auto;" />
+  <span class="handwriting">卡片属性</span>
+  <div class="icon icon-ygo-light"></div> | <div class="icon icon-ygo-dark"></div> | <div class="icon icon-ygo-wind"></div> | <div class="icon icon-ygo-earth"></div> | <div class="icon icon-ygo-water"></div> | <div class="icon icon-ygo-fire"></div> | <div class="icon icon-ygo-divine"></div> | <div class="icon icon-ygo-spell"></div> | <div class="icon icon-ygo-trap"></div>
+</div>
+
+<div class="center" style="font-size: 1.5rem;" >
+  <span class="handwriting">魔陷类型</span>
+  <div class="icon icon-ygo-sg"></div> | <div class="icon icon-ygo-ys"></div> | <div class="icon icon-ygo-zb"></div> | <div class="icon icon-ygo-cd"></div> | <div class="icon icon-ygo-yx"></div> | <div class="icon icon-ygo-fj"></div>
+</div>
+
+<div class="center">{{< ygo-card 禁忌的一滴 24299458 spell sg >}}{{< ygo-card name="红色重启" id="23002292" type="trap" icon="fj" >}}</div>
 
 {{< ygo-deck "无敌的红爹" >}}
+!悲报：2022.3.13 森蚺 1 → 0
 #main
 46986414
 74677422
 6172122
 #extra
 37818794
+!渲染失败的卡 & 占位的卡
+
+0
 {{< /ygo-deck >}}
 
 </details>

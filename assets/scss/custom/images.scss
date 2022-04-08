@@ -1,0 +1,38 @@
+// 图片元素相关样式
+
+img.no-zoom {
+  // 禁用图片点击缩放 实际功能由额外组件实现 这里只是提醒有这个用法
+  // 该组件位于 ./layouts/partials/third-party/medium-zoom.html
+  // 感谢 MemE 主题使用的图片缩放库 medium-zoom.js 支持 CSS 选择器
+  // 详见 https://github.com/francoischalifour/medium-zoom#selectors
+}
+
+img.sticker,
+img[data-sticker],
+span.sticker img,
+div.ygo-card img,
+div.ygo-deck img {
+  @include inline-image; // 行内图片样式
+}
+
+img.emoji,
+img[data-emoji] {
+  @include inline-image;
+  max-height: 1.5rem; // 兼容在行文中插入 emoji 大小的表情包
+}
+
+img.emoji,
+img.sticker {
+  vertical-align: text-bottom; // 行内图片对齐文字下端
+}
+
+// CSS Sprites
+
+.icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  border: none;
+  vertical-align: middle;
+  font-style: normal;
+}

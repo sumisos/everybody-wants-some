@@ -1,0 +1,129 @@
+// 游戏王主题相关样式
+
+@font-face {
+  font-family: "YGO Card Name";
+  src: url("/fonts/ygo-card-name.ttf");
+}
+
+div.ygo-deck a,
+div.ygo-card a {
+  text-decoration: none; // 去掉空格的下划线
+}
+
+// 卡组
+
+div.ygo-deck {
+  width: 37.125rem;
+  margin: 1rem auto;
+  padding: 0 1rem 1rem 1rem;
+  border: 0.125rem solid var(--chroma-line-numbers-color);
+  border-radius: 0.25rem;
+}
+
+@mixin ygo-deck-title {
+  @include center;
+  margin: 1rem auto 0 auto;
+  font-family: "YGO Card Name", "Noto Serif SC";
+}
+
+.ygo-deck-title {
+  @include ygo-deck-title;
+  font-size: 1.75rem;
+}
+
+.ygo-deck-subtitle {
+  @include ygo-deck-title;
+  font-size: 1.5rem;
+}
+
+.ygo-deck img {
+  width: 3.25rem;
+}
+
+// 卡片
+
+div.ygo-card {
+  display: inline-block;
+  margin: 0.25rem;
+  border: 0.125rem solid var(--color-contrast-higher);
+  border-radius: 0.25rem;
+}
+
+.ygo-card-text {
+  font-family: "YGO Card Name", "Noto Serif SC";
+  font-size: 1.25rem;
+}
+
+div.ygo-monster {
+  /* TODO: 怪兽颜色 仪式 融合 同步 超量 连接 */
+  border: 0.125rem solid #b56542;
+}
+
+div.ygo-spell {
+  border: 0.125rem solid #008d73;
+}
+
+div.ygo-trap {
+  border: 0.125rem solid #a71675;
+}
+
+// 卡片属性 icon
+
+@mixin ygo-attribute($index) {
+  @include sprite(
+    ("/icons/ygo-attribute.png", $index * -66px, 0, 66px, 66px, 0.5)
+  );
+}
+
+.icon-ygo-light {
+  @include ygo-attribute(0); // 光
+}
+.icon-ygo-dark {
+  @include ygo-attribute(1); // 暗
+}
+.icon-ygo-wind {
+  @include ygo-attribute(2); // 风
+}
+.icon-ygo-earth {
+  @include ygo-attribute(3); // 地
+}
+.icon-ygo-water {
+  @include ygo-attribute(4); // 水
+}
+.icon-ygo-fire {
+  @include ygo-attribute(5); // 火
+}
+.icon-ygo-divine {
+  @include ygo-attribute(6); // 神
+}
+.icon-ygo-spell {
+  @include ygo-attribute(7); // 魔法
+}
+.icon-ygo-trap {
+  @include ygo-attribute(8); // 陷阱
+}
+
+// 魔陷类型 icon
+
+@mixin ygo-cast($index) {
+  @include sprite(("/icons/ygo-cast.png", $index * -38px, 0, 38px, 38px, 0.75));
+}
+
+.icon-ygo-sg {
+  @include ygo-cast(0); // 速攻
+}
+.icon-ygo-ys {
+  @include ygo-cast(1); // 仪式
+}
+.icon-ygo-zb {
+  @include ygo-cast(2); // 装备
+}
+.icon-ygo-cd {
+  @include ygo-cast(3); // 场地
+}
+.icon-ygo-yx {
+  @include ygo-cast(4); // 永续
+}
+.icon-ygo-fj {
+  @include ygo-cast(5); // 反击
+}
