@@ -226,22 +226,21 @@ A 站文章区风气这里不讨论，总归是自成风景；\
   <div class="icon icon-ygo-light"></div> | <div class="icon icon-ygo-dark"></div> | <div class="icon icon-ygo-wind"></div> | <div class="icon icon-ygo-earth"></div> | <div class="icon icon-ygo-water"></div> | <div class="icon icon-ygo-fire"></div> | <div class="icon icon-ygo-divine"></div> | <div class="icon icon-ygo-spell"></div> | <div class="icon icon-ygo-trap"></div>
 </div>
 
-<div class="center" style="font-size: 1.5rem;" >
-  <span class="handwriting">魔陷类型</span>
-  <div class="icon icon-ygo-sg"></div> | <div class="icon icon-ygo-ys"></div> | <div class="icon icon-ygo-zb"></div> | <div class="icon icon-ygo-cd"></div> | <div class="icon icon-ygo-yx"></div> | <div class="icon icon-ygo-fj"></div>
+<div class="center handwriting" style="font-size: 1.5rem;" >
+  速攻 <div class="icon icon-ygo-sg"></div> / 仪式 <div class="icon icon-ygo-ys"></div> / 装备 <div class="icon icon-ygo-zb"></div> / 场地 <div class="icon icon-ygo-cd"></div> / 永续 <div class="icon icon-ygo-yx"></div> / 反击 <div class="icon icon-ygo-fj"></div>
 </div>
 
 <div class="center">{{< ygo-card 禁忌的一滴 24299458 spell sg >}}{{< ygo-card name="红色重启" id="23002292" type="trap" icon="fj" >}}</div>
 
 {{< ygo-deck "无敌的红爹" >}}
-!悲报：2022.3.13 森蚺 1 → 0
+!悲报: 2022.3.13 森蚺 1 → 0
 #main
 46986414
 74677422
 6172122
 #extra
 37818794
-!渲染失败的卡 & 占位的卡
+!渲染失败的卡 & 用来占位的卡
 
 0
 {{< /ygo-deck >}}

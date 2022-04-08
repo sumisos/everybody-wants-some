@@ -100,7 +100,7 @@ mahjong: true
 
 {{< mahjong 1234567z >}}
 
-字牌既可以用「`1z` \~ `7z`」的标准描述方式，也可以用表意更明显的特定字符形式表示：
+字牌既可以用「`1z` \~ `7z`」的标准描述方式，也可以用表意更明确的特定字符形式表示：
 
 <pre>
 {{&lt; mahjong 1z2z3z4z5z6z7z &gt;}}
@@ -115,12 +115,12 @@ mahjong: true
 「万子」，「饼子」，「索子」，「东风、南风、西风、北风、白板、发财、红中」。
 
 <pre>
-{{&lt; mahjong main="2176543z91m91s91p" sort="off" &gt;}}
-{{&lt; mahjong main="2176543z91m91s91p" sort="on" &gt;}}
+{{&lt; mahjong main="2716453z91m91s91p" sort="off" &gt;}}
+{{&lt; mahjong main="2716453z91m91s91p" sort="on" &gt;}}
 </pre>
 
-{{< mahjong main="2176543z91m91s91p" sort="off" >}}
-{{< mahjong main="2176543z91m91s91p" sort="on" >}}
+{{< mahjong main="2716453z91m91s91p" sort="off" >}}
+{{< mahjong main="2716453z91m91s91p" sort="on" >}}
 
 > 至于万、饼、索、字的「种类」顺序永远是自动排序的，这也没必要故意不排序吧。
 
@@ -191,7 +191,7 @@ mahjong: true
 - 如果附加的牌只有 1 张，自动视为和牌。
 - 如果有 2 张及以上，则视为听牌。（重复的牌作为听牌显示时会自动去重）
 
-这样就区分开了单听与和牌。
+这样就轻易区分开了单听与和牌。
 
 <pre>
 {{&lt; mahjong 1334455699pEEE 22p &gt;}}

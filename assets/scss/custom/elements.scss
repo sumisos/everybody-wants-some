@@ -54,3 +54,7 @@ details[open].collapse summary {
   border-bottom: 1px solid #aaa;
   margin-bottom: 0.5em;
 }
+
+span.sticker a {
+  text-decoration: none; // 去掉图片贴纸集里空格的下划线
+}
