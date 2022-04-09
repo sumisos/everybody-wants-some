@@ -3,9 +3,10 @@
 sftp-config.json
 
 # Local Source
+content/test*
 draft/
-resources/
 _draft-*
+resources/
 
 # Distribute
 public/

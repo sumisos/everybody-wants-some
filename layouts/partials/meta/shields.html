@@ -1,22 +1,22 @@
-{{ $version := $.Site.Data.meta.version }}
+{{- $theme_version := $.Site.Data.meta.version.theme -}}
 
 <span class="sticker">
-    {{ range $.Site.Data.meta.shields.blog }}
-        {{if .href }} <a href="{{- .href -}}" target="_blank"{{if .href }} title="{{- .comment -}}"{{end}}> {{end}}
+    {{- range $.Site.Data.meta.shields.blog -}}
+        {{- if .href -}} <a href="{{- .href -}}" target="_blank"{{- if .href -}} title="{{- .comment -}}"{{- end -}}> {{- end -}}
         <img src="{{- .src -}}" />
-        {{if .href }} </a> {{end}}
-    {{ end }}
-    <a href="https://github.com/gohugoio/hugo" target="_blank"><img src="https://img.shields.io/badge/hugo-{{- $version.hugo -}}-blue.svg?logo=hugo&logoColor=fff" /></a>
-    <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank"><img src="https://img.shields.io/badge/{{- $version.theme.name -}}-{{- $version.theme.version -}}-blue.svg" /></a>
+        {{- if .href -}} </a> {{- end -}}
+    {{- end -}}
+    <a href="https://github.com/gohugoio/hugo" target="_blank"><img src="https://img.shields.io/badge/hugo-{{- $.Site.Hugo.Version -}}%2fextended-blue.svg?logo=hugo&logoColor=fff" /></a>
+    <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank"><img src="https://img.shields.io/badge/{{- $theme_version.name -}}-{{- $theme_version.version -}}-blue.svg" /></a>
 </span>
 
-{{ range $.Site.Data.meta.shields.other }}
+{{- range $.Site.Data.meta.shields.other -}}
     <span class="sticker">
-        {{if .title}} <h4>{{- .title -}}</h4> {{end}}
-        {{ range .links }}
-            {{if .href }} <a href="{{- .href -}}" target="_blank"{{if .href }} title="{{- .comment -}}"{{end}}> {{end}}
+        {{- if .title -}} <h4>{{- .title -}}</h4> {{- end -}}
+        {{- range .links -}}
+            {{- if .href }} <a href="{{- .href -}}" target="_blank"{{- if .href }} title="{{- .comment -}}"{{- end -}}> {{- end -}}
             <img src="{{- .src -}}" />
-            {{if .href }} </a> {{end}}
-        {{ end }}
+            {{- if .href }} </a> {{- end -}}
+        {{- end -}}
     </span>
-{{ end }}
+{{- end -}}

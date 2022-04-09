@@ -222,12 +222,11 @@ A 站文章区风气这里不讨论，总归是自成风景；\
 
 <div class="center" style="font-size: 1.5rem;" >
   <img src="/icons/ygo-attribute.png" style="margin: 1rem auto;" />
-  <span class="handwriting">卡片属性</span>
-  <div class="icon icon-ygo-light"></div> | <div class="icon icon-ygo-dark"></div> | <div class="icon icon-ygo-wind"></div> | <div class="icon icon-ygo-earth"></div> | <div class="icon icon-ygo-water"></div> | <div class="icon icon-ygo-fire"></div> | <div class="icon icon-ygo-divine"></div> | <div class="icon icon-ygo-spell"></div> | <div class="icon icon-ygo-trap"></div>
+  <span class="handwriting">卡片属性</span>&nbsp;<div class="icon icon-ygo-light"></div>&nbsp;|&nbsp;<div class="icon icon-ygo-dark"></div>&nbsp;|&nbsp;<div class="icon icon-ygo-wind"></div>&nbsp;|&nbsp;<div class="icon icon-ygo-earth"></div>&nbsp;|&nbsp;<div class="icon icon-ygo-water"></div>&nbsp;|&nbsp;<div class="icon icon-ygo-fire"></div>&nbsp;|&nbsp;<div class="icon icon-ygo-divine"></div>&nbsp;|&nbsp;<div class="icon icon-ygo-spell"></div>&nbsp;|&nbsp;<div class="icon icon-ygo-trap"></div>
 </div>
 
 <div class="center handwriting" style="font-size: 1.5rem;" >
-  速攻 <div class="icon icon-ygo-sg"></div> / 仪式 <div class="icon icon-ygo-ys"></div> / 装备 <div class="icon icon-ygo-zb"></div> / 场地 <div class="icon icon-ygo-cd"></div> / 永续 <div class="icon icon-ygo-yx"></div> / 反击 <div class="icon icon-ygo-fj"></div>
+  速攻<div class="icon icon-ygo-sg"></div>&nbsp;/&nbsp;仪式<div class="icon icon-ygo-ys"></div>&nbsp;/&nbsp;装备<div class="icon icon-ygo-zb"></div>&nbsp;/&nbsp;场地<div class="icon icon-ygo-cd"></div>&nbsp;/&nbsp;永续<div class="icon icon-ygo-yx"></div>&nbsp;/&nbsp;反击<div class="icon icon-ygo-fj"></div>
 </div>
 
 <div class="center">{{< ygo-card 禁忌的一滴 24299458 spell sg >}}{{< ygo-card name="红色重启" id="23002292" type="trap" icon="fj" >}}</div>

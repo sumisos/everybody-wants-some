@@ -1,0 +1,44 @@
+links_list:
+  - topic: "调试 / 测试"
+    open: true
+    sites:
+      - title: "本地 Hugo 博客测试页面"
+        url: "http://localhost:1911/test/"
+        desc: "博客本地调试文章效果"
+  - topic: "搜索引擎"
+    open: true
+    sites:
+      - title: "萌搜"
+        url: "https://mengso.com/?q=fuck"
+        desc: "我当墙内谷歌用的，有时候要得紧能应急"
+      - title: "DuckDuckGo"
+        url: "https://duckduckgo.com/"
+        desc: "你 TM 管我搜了什么？"
+  - topic: "生产力工具"
+    open: false
+    sites:
+      - title: "Figma"
+        url: "https://www.figma.com/"
+        desc: "在线作图"
+  - topic: "文档"
+    open: false
+    sites:
+      - title: "Godot"
+        url: "https://docs.godotengine.org/"
+  - topic: "前端"
+    open: false
+    sites:
+      - title: "Spacing.js"
+        url: "https://spacingjs.com/"
+        desc: "浏览器直接测量 CSS 元素"
+  - topic: "后端"
+    open: false
+    sites:
+      - title: "DB-TUTORIAL"
+        url: "https://turnon.gitee.io/db-tutorial/"
+        desc: "数据库"
+  - topic: "运维"
+    open: false
+    sites:
+      - title: "Cloudflare"
+        url: "https://dash.cloudflare.com/"
