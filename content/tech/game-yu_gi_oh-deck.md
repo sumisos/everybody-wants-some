@@ -13,7 +13,7 @@ related: true
 - 鼠标悬浮提示框参考：Steam Info「[出处：其乐论坛](https://keylol.com/t85959-1-1)」「[Greasy Fork](https://greasyfork.org/zh-CN/scripts/956-steam-info/code)」「[源码](https://steamdb.keylol.com/steam_info.js)」
 - Hugo：自定义 shortcode「[Shortcode 文档](https://gohugo.io/templates/shortcode-templates/#custom-shortcode-examples)」「[基本语法](https://gohugo.io/templates/introduction/)」「[函数](https://gohugo.io/functions/)」
 
-<details>
+<details class="collapse"> 
   <summary>一个小 bug</summary>
 
 <pre>
@@ -28,7 +28,7 @@ related: true
 
 > 考虑做成一个前端网站。这里临时用 JS 做可行性验证，到时候还是用 TS 写。
 
-<details>
+<details class="collapse"> 
   <summary>Todo List</summary>
 
 - [x] 卡组格式转换 ydk ygm 等，类似「[YGO-Engine 的 ydk 和 ygm 转换](https://www.ygo-sem.cn/yrp/deck.aspx)」

@@ -13,7 +13,7 @@ related: true
 每次活动必有自爆卡车刷分，<a href="/game/yu_gi_oh-demolition-truck/" target="_blank">之前超量杯就写过</a>。\
 不过这次 NR 杯有专门的禁限卡表，ban 掉了常用的自爆用卡。
 
-<details open="open">
+<details class="collapse" open="open">
   <summary>NR 杯（2022.3.23）禁限卡表</summary>
 
 {{< ygo-deck "NR 杯（2022.3.23）禁限卡表" "https://www.masterduelmeta.com/articles/news/march-2022/nr-festival-banlist" >}}
@@ -97,7 +97,7 @@ related: true
 
 然而该自爆还是能自爆。
 
-<details>
+<details class="collapse"> 
   <summary>卡组构筑</summary>
 
 {{< ygo-deck "全 NR 一言不合就自爆" "https://www.bilibili.com/video/BV1yL411P7sV" >}}
@@ -170,7 +170,7 @@ C 方案
 
 ## 自称最强的威风炼装
 
-<details>
+<details class="collapse"> 
   <summary>卡组构筑</summary>
 
 {{< ygo-deck "全 NR 威风妖怪 炼装勇士" "https://www.bilibili.com/video/BV1Mq4y1v7og" >}}
@@ -257,7 +257,7 @@ C 方案
 有堆墓？那加上 3 张 {{< ygo-card "堕武者" 68989981 >}} 算你 40 抽 4 好吧。祝好运。<br/>
 这 40 抽 4 是**保**（甚至不是上手）其中 1 张 key 卡记得吗？你还要想别的办法保证大哥和仪式。
 
-<details>
+<details class="collapse"> 
   <summary>卡组构筑</summary>
 
 {{< ygo-deck "全 NR 不知火 复仇死者" "https://www.bilibili.com/video/BV1Yb4y1p7zk" >}}
@@ -372,7 +372,7 @@ C 方案
 
 ## 英雄
 
-<details>
+<details class="collapse"> 
   <summary>卡组构筑</summary>
 
 {{< ygo-deck "全 NR 融合 英雄" "https://www.bilibili.com/video/BV1LY411n7oN" >}}
@@ -444,7 +444,7 @@ C 方案
 
 ## 三形金字塔
 
-<details>
+<details class="collapse"> 
   <summary>卡组构筑</summary>
 
 {{< ygo-deck "全 NR 三形金字塔" "/game/yu_gi_oh-triamid/" >}}
@@ -513,7 +513,7 @@ C 方案
 
 ## 无限起动 龙影神
 
-<details>
+<details class="collapse"> 
   <summary>卡组构筑</summary>
 
 {{< ygo-deck "全 NR 无限起动 龙影神" "https://www.bilibili.com/video/BV1BL411A7m7" >}}
@@ -606,7 +606,7 @@ C 方案
 
 ## 暗黑界 未界域 龙影神
 
-<details>
+<details class="collapse"> 
   <summary>卡组构筑</summary>
 
 {{< ygo-deck "全 NR 暗黑界 未界域 龙影神" "https://www.bilibili.com/video/BV1qL4y1T7Kq" >}}

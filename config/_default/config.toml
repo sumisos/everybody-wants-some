@@ -228,13 +228,13 @@ uglyURLs = false
         weight = 1
         pre = "external"
     [[menu.socials]]
-        url = "https://github.com/time2beat"
-        name = "Github"
+        url = "https://t.me/time2beat"
+        name = "Telegram"
         weight = 2
         pre = "external"
     [[menu.socials]]
-        url = "https://t.me/sum1sos"
-        name = "Telegram"
+        url = "https://discord.gg/X5jdmuXfgq"
+        name = "Discord"
         weight = 3
         pre = "external"
     [[menu.links]]
@@ -248,14 +248,19 @@ uglyURLs = false
         weight = 2
         pre = "internal"
     [[menu.links]]
+        url = "https://github.com/time2beat"
+        name = "Github"
+        weight = 3
+        pre = "external"
+    [[menu.links]]
         url = "https://steamcommunity.com/id/time2beat/"
         name = "Steam"
-        weight = 3
+        weight = 4
         pre = "external"
     [[menu.links]]
         url = "https://bgm.tv/user/time2beat"
         name = "Bangumi"
-        weight = 4
+        weight = 5
         pre = "external"
 
 
@@ -931,7 +936,7 @@ uglyURLs = false
     # 代码、上标、文章元信息、文章更新徽章、文章的 Git 版本信息、极简页脚、不蒜子站点浏览计数
     fontFamilyCode = "'Ubuntu Mono', 'Noto Sans SC', monospace"
     # 引用
-    fontFamilyQuote = "Noto Sans SC"
+    fontFamilyQuote = "'ZCOOL KuaiLe', 'Noto Sans SC', sans-serif"  # 无衬线
     # 文章目录
     fontFamilyTOC = ""
     # 说明文字
@@ -939,10 +944,10 @@ uglyURLs = false
     # 页脚
     fontFamilyFooter = "'Source Code Pro', 'Noto Sans SC'"
     # 主体
-    fontFamilyBody = "'IBM Plex Serif', 'Noto Serif SC', sans-serif"
+    fontFamilyBody = "'IBM Plex Serif', 'Noto Serif SC', serif"  # 衬线
 
     # 网络字体链接
-    fontsLink = "https://fonts.googleapis.com/css2?family=Rock+Salt&family=Ma+Shan+Zheng&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@400;700&family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    fontsLink = "https://fonts.googleapis.com/css2?family=Rock+Salt&family=Ma+Shan+Zheng&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@400;700&family=Source+Code+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=ZCOOL+KuaiLe&display=swap"
     # 网络字体 from https://fonts.google.com/
     # 此项留空（""），则不会采用网络字体
 

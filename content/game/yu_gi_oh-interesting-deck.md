@@ -7,7 +7,7 @@ series: ["Yu-Gi-Oh"]
 related: true
 ---
 
-<details>
+<details class="collapse">
   <summary>战华（三国）</summary>
 
 {{< ygo-deck "战华" "" >}}
@@ -72,7 +72,7 @@ related: true
 
 </details>
 
-<details>
+<details class="collapse">
   <summary>除外 + 烧血 阴间卡组</summary>
 
 {{< ygo-deck "魔兽的大饵 + 异次元炸药 OTK" "" >}}
@@ -196,7 +196,7 @@ related: true
 
 </details>
 
-<details>
+<details class="collapse">
   <summary>高浓度 魔偶甜点 可爱的妹卡</summary>
 
 {{< ygo-deck "一看就未完成的 魔偶甜点" "" >}}
@@ -259,7 +259,7 @@ related: true
 
 </details>
 
-<details>
+<details class="collapse"> 
   <summary>魔术师展开 凶饿毒 复制 独立夜莺 FTK</summary>
 
 {{< ygo-deck "魔术师 独立夜莺 凶饿毒 FTK" "https://www.bilibili.com/video/BV1mS4y137aJ" >}}
@@ -319,7 +319,7 @@ related: true
 
 </details>
 
-<details>
+<details class="collapse"> 
 <summary>点火展开 转晶 + No.33 炸 究极幻神 FTK</summary>
 
 {{< ygo-deck "No.33 究极幻神 FTK" "" >}}
@@ -381,7 +381,7 @@ related: true
 
 </details>
 
-<details>
+<details class="collapse"> 
   <summary>被暴打的双子真龙</summary>
 
 {{< ygo-deck "直播☆双子 真龙" "" >}}
@@ -446,7 +446,7 @@ related: true
 
 </details>
 
-<details>
+<details class="collapse"> 
   <summary>一个报社的棒子</summary>
 
 {{< ygo-deck "重坑 除外 暴食兽 / 红莲兽" "" >}}
@@ -511,7 +511,7 @@ related: true
 
 </details>
 
-<details>
+<details class="collapse"> 
   <summary>霍普雷普霍普雷</summary>
 
 {{< ygo-deck "魂 霍普" "" >}}
@@ -576,7 +576,7 @@ related: true
 
 </details>
 
-<details>
+<details class="collapse"> 
   <summary>有手就行的源数</summary>
 
 {{< ygo-deck "源数 OTK" "https://bbs.nga.cn/read.php?tid=30645552" >}}

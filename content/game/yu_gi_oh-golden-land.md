@@ -105,7 +105,7 @@ DD 乌鸦，刨坟很多时候都有用，比如内战。
 
 ## 示例构筑
 
-<details open="open">
+<details class="collapse" open="open">
   <summary>十二国</summary>
 
 {{< ygo-deck "黄金国 十二国" "" >}}
@@ -175,7 +175,7 @@ DD 乌鸦，刨坟很多时候都有用，比如内战。
 
 </details>
 
-<details>
+<details class="collapse">
   <summary>超融合 纯国</summary>
 
 {{< ygo-deck "黄金国 纯国" "" >}}
@@ -245,7 +245,7 @@ DD 乌鸦，刨坟很多时候都有用，比如内战。
 
 </details>
 
-<details>
+<details class="collapse">
   <summary>教导国</summary>
 
 {{< ygo-deck "黄金国 教导国" "" >}}
@@ -315,7 +315,7 @@ DD 乌鸦，刨坟很多时候都有用，比如内战。
 
 </details>
 
-<details>
+<details class="collapse">
   <summary>教导国 40 卡</summary>
 
 {{< ygo-deck "黄金国 40 卡 教导国" "" >}}

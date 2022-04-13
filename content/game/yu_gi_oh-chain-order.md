@@ -77,8 +77,7 @@ sequenceDiagram
 结果显而易见：<ruby><rb><span style="color:#b8521c">~~_无中生有_~~</span></rb><rp>（</rp><rt>c1</rt><rp>）</rp></ruby> ← <ruby><rb><span style="color:#1c81b8">**无懈可击**</span></rb><rp>（</rp><rt>c2</rt><rp>）</rp></ruby> ← <ruby><rb><span style="color:#b8521c">~~_无懈可击_~~</span></rb><rp>（</rp><rt>c3</rt><rp>）</rp></ruby> ← <ruby><rb><span style="color:#1c81b8">**无懈可击**</span></rb><rp>（</rp><rt>c4</rt><rp>）</rp></ruby>，抽不了卡。\
 总结一下，蓝色两个无懈均生效，<ruby><rb><span style="color:#1c81b8">第一个无懈</span></rb><rp>（</rp><rt>c2</rt><rp>）</rp></ruby>无效了橙色<ruby><rb><span style="color:#b8521c">先发的无中生有</span></rb><rp>（</rp><rt>c1</rt><rp>）</rp></ruby>，<ruby><rb><span style="color:#1c81b8">第二个无懈</span></rb><rp>（</rp><rt>c4</rt><rp>）</rp></ruby>无效了橙色<ruby><rb><span style="color:#b8521c">后发的无懈</span></rb><rp>（</rp><rt>c3</rt><rp>）</rp></ruby>。
 
-这并不是什么难得一见的场景。\
-你手里有「`无中生有` × 1 + `无懈可击` × 1」，我手里有「`无懈可击` × 2」，打成这样再正常不过。
+这并不是什么难得一见的场景。你手里有「_无中生有_ × 1 + _无懈可击_ × 1」，我手里有「_无懈可击_ × 2」，打成这样再正常不过。
 
 ## 总结
 

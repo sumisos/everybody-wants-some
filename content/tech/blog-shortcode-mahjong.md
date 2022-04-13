@@ -30,7 +30,7 @@ mahjong: true
 然后本来想用 SVG 矢量图，没什么好说的，SVG 天下第一。\
 转念一想，麻将有 9 × 3 + 4 + 3 = 34 种花色，当然要用 CSS Sprite 优化，那不如就用图片。
 
-<details>
+<details class="collapse"> 
   <summary>麻将图片素材预览</summary>
 
 > 以下图片素材来自「[麻雀王国](https://mj-king.net/sozai/)」
@@ -230,7 +230,7 @@ mahjong: true
 
 可操作性有了，需要的 <a href="/pages/mahjong-svg.html" target="_blank">麻将 SVG 素材</a> 也找到了。
 
-<details>
+<details class="collapse">
   <summary>麻将 SVG 素材预览</summary>
 
 > 以下 SVG 素材来自 {{< github "WarL0ckNet/tile-art" >}}

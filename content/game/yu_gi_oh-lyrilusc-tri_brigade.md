@@ -124,7 +124,7 @@ LL 铁后攻是很难突破，而且先攻吃到陨石是很难受的，陨石 /
 
 ## 示例构筑
 
-<details open="open">
+<details class="collapse" open="open">
   <summary>正常 LL 铁</summary>
   
 {{< ygo-deck "LL 铁兽" "" >}}
@@ -189,7 +189,7 @@ LL 铁后攻是很难突破，而且先攻吃到陨石是很难受的，陨石 /
 
 </details>
 
-<details>
+<details class="collapse"> 
   <summary>不带抗战 LL 铁（不推荐）</summary>
 
 {{< ygo-deck "没抗战没大鸟的 LL 铁" "https://www.bilibili.com/read/cv15083840" >}}

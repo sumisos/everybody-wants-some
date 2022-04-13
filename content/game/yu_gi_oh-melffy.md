@@ -18,7 +18,7 @@ related: true
 这是{{< ygo-card "铁兽战线 凶鸟之施莱格" 99726621 >}}。\
 这是{{< ygo-card "未来No.0 未来龙皇 霍普" 26973555 >}}！
 
-<details>
+<details class="collapse"> 
   <summary>这里是<b>天霆号！！阿宙斯！！！</b></summary>
 
 {{< img-desc "https://cdn.233.momobako.com/ygopro/pics/90448279.jpg" "俺はガンダムで行く！" "https://www.ygocdb.com/card/90448279" >}}
@@ -136,7 +136,7 @@ related: true
 
 ## 示例构筑
 
-<details open="open">
+<details class="collapse" open="open">
   <summary>纯本家毛毛</summary>
 
 {{< ygo-deck "纯童话动物" "https://www.bilibili.com/video/BV1cu411d7o2?t=470.9" >}}
@@ -203,7 +203,7 @@ related: true
 
 </details>
 
-<details>
+<details class="collapse"> 
   <summary>铁兽毛毛</summary>
 
 {{< ygo-deck "铁兽战线 童话动物" "https://www.bilibili.com/video/BV1cu411d7o2?t=481.4" >}}

@@ -208,7 +208,7 @@ A 站文章区风气这里不讨论，总归是自成风景；\
 
 <span class="center">右键「检查」或<kbd>F12</kbd>可以看看以下内容本站是怎么做的</span>
 
-<details open="open">
+<details class="collapse" open="open">
   <summary>分别以 emoji、SVG、PNG 三种方式显示的麻将牌</summary>
 
 {{< mahjong main="1112345678999s" wait="123456789s" style="emoji" >}}
@@ -217,7 +217,7 @@ A 站文章区风气这里不讨论，总归是自成风景；\
 
 </details>
 
-<details open="open">
+<details class="collapse" open="open">
   <summary>游戏王相关样式</summary>
 
 <div class="center" style="font-size: 1.5rem;" >
