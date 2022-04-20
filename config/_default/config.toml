@@ -228,7 +228,7 @@ uglyURLs = false
         weight = 1
         pre = "external"
     [[menu.socials]]
-        url = "https://t.me/time2beat"
+        url = "https://t.me/ewsio"
         name = "Telegram"
         weight = 2
         pre = "external"

@@ -4,6 +4,15 @@ blog:
     comment: Github Action Auto Deploy
   - href: https://github.com/time2beat/blog
     src: https://img.shields.io/github/last-commit/time2beat/blog?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0&color=9cf
+social:
+  - href: https://discord.gg/X5jdmuXfgq
+    src: https://img.shields.io/discord/482578656229720084?label=Discord&logo=discord&logoColor=fff
+  - href: https://t.me/ewsos
+    src: https://img.shields.io/badge/Telegram-%40ewsos-brightgreen?logo=telegram
+  - href: https://github.com/time2beat
+    src: https://img.shields.io/badge/GitHub-time2beat-blue?logo=github
+  - href: https://steamcommunity.com/profiles/76561198186170037
+    src: https://img.shields.io/badge/Steam-time2beat-brightgreen?logo=steam
 other:
   - type: server
     title: API 1 - Maq

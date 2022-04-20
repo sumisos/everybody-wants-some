@@ -10,6 +10,4 @@ smallCaps: false
 type: navigation
 ---
 
----
-
-<span class="sticker">![](https://s2.loli.net/2022/04/09/tb5IL9wHau6DTZp.jpg)</span>
+<div style="display: none;"></div>

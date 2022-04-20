@@ -10,6 +10,15 @@
     <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank"><img src="https://img.shields.io/badge/{{- $theme_version.name -}}-{{- $theme_version.version -}}-blue.svg" /></a>
 </span>
 
+<span class="sticker">
+    <h3>Social Link</h3>
+    {{- range $.Site.Data.meta.shields.social -}}
+        {{- if .href -}} <a href="{{- .href -}}" target="_blank"{{- if .href -}} title="{{- .comment -}}"{{- end -}}> {{- end -}}
+        <img src="{{- .src -}}" />
+        {{- if .href -}} </a> {{- end -}}
+    {{- end -}}
+</span>
+
 {{- range $.Site.Data.meta.shields.other -}}
     <span class="sticker">
         {{- if .title -}} <h4>{{- .title -}}</h4> {{- end -}}

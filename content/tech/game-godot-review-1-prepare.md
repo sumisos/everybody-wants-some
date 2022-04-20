@@ -6,6 +6,7 @@ tags: ["Godot"]
 series: ["游戏开发"]
 related: true
 mermaid: true
+katex: true
 ---
 
 隔了数月再捡起 Godot 居然觉得无所适从，找不到从何下手。\
@@ -369,7 +370,7 @@ func _init():
 
 无论渲染时间长短（进而导致{{< ruby "渲染帧速率" "FPS / 帧数" >}}高低），随着现实时间的推移同步进行一致性更新的（我称之为后端物理帧）——就是 `_physics_process()` 处理数据的时机。
 
-而 `delta` 这个参数表示 {{< ruby "deltatime" "增量时间" >}}，指「上一帧到这一帧经过的时间」。\
+而 `delta` 这个参数表示 {{< ruby "deltatime" "增量时间" >}}（$ \Delta t $），指「上一帧到这一帧经过的时间」。\
 通过 deltatime 动态调整游戏的表现，就能做到（避免 _掉帧_ 发生）：\
 无论游戏后端运算速率的快慢，最后展现出来玩家感受到的观感是平滑且一致的。
 
@@ -404,6 +405,7 @@ while true:
 	my_method()
 	$Timer.start()  # Timer 节点设置为 1 / 2.5 / 10 秒就随你高兴了
 	yield($Timer, "timeout")
+	# 这里确实需要, 其他非必要情况不推荐使用 yield, 能用信号实现就尽量用信号替代
 ```
 
 ### `_input(event)` 和 `_unhandled_input(event)` 该用哪个
@@ -411,7 +413,9 @@ while true:
 两者都可以用来接收并处理单独的输入事件。二者的区别在于：如果按键、鼠标点击等事件没有被 `_input()` 回调或用户界面组件处理，`_unhandled_input()` 方法才会收到这个事件。
 
 游戏中的输入通常是使用 `_unhandled_input()` 处理的。\
-而 `_input()` 回调可以用来在 `_unhandled_input()` 获取前拦截并处理输入事件。
+而 `_input()` 回调可以用来在 `_unhandled_input()` 获取前拦截并处理输入事件\*。
+
+> \* 比如鼠标输入就应该尽量使用 `_input()` 而不是 `_unhandled_input()`，以免被奇奇怪怪的 UI 组件拦截进而导致操作失灵。
 
 ```GDScript
 func _unhandled_input(event):
@@ -421,7 +425,7 @@ func _unhandled_input(event):
 				print(get_process_delta_time())
 ```
 
-为了保证最佳性能，尽可能避免在上面说的 `_process()` 或 `_physics_process()` 里高频率轮询检查输入——不管实际有没有输入，它们都会触发检查（浪费巨量资源）。\
+为了保证最佳性能，尽可能避免在上面说的 `_process()` 或 `_physics_process()` 里高频率轮询检查玩家输入——不管实际有没有输入，它们都会触发检查（浪费巨量资源）。\
 而 `_input()` 或 `_unhandled_input()` 只会在引擎实际检测到存在输入的帧上触发。
 
 当然了，如果的确需要 deltatime 的话，你可以根据实际需求来获取对应的 deltatime。
@@ -518,7 +522,7 @@ PlayerVariables.health -= 10
 我没当成脚本；我是当成「即时可见的调试器」（所见即所得）用的。不过需要注意两点：
 
 1. 如果你写了 bug，由于立刻运行，bug 会传染给编辑器，可能导致编辑器崩溃。\
-   （比如涉及 `queue_free()`，一定要小心再小心，**极其谨慎**。）\
+   （比如涉及 `queue_free()`，一定要**极其谨慎**，小心再小心。）\
    解决方案：主要逻辑写完测过没问题再在文件开头加上 tool 慢慢~~调教~~ 调试。
 2. 如果你状态不太好（加班太久神智不清），可能会忘记编辑器和实际运行之间是有区别的。\
    （然后你 debug 半天死活没有效果差点疯掉，最后发现是编辑器和游戏的代码弄混了。）\

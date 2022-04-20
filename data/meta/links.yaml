@@ -17,6 +17,9 @@ links_list:
   - topic: "生产力工具"
     open: false
     sites:
+      - title: "Mirror List"
+        url: "https://www.library.ac.cn/"
+        desc: "国内可用镜像"
       - title: "Figma"
         url: "https://www.figma.com/"
         desc: "在线作图"
@@ -37,6 +40,9 @@ links_list:
       - title: "DB-TUTORIAL"
         url: "https://turnon.gitee.io/db-tutorial/"
         desc: "数据库"
+      - title: "Rust 语言圣经"
+        url: "https://course.rs/"
+        desc: "Rust"
   - topic: "运维"
     open: false
     sites:
