@@ -23,6 +23,12 @@ links_list:
       - title: "Figma"
         url: "https://www.figma.com/"
         desc: "在线作图"
+      - title: "Latex 在线：吴文中 数学公式编辑器"
+        url: "https://latex.91maths.com/"
+        desc: "Latex 公式可视化在线编辑"
+      - title: "KaTeX 官网 Demo"
+        url: "https://katex.org/#demo"
+        desc: "KaTeX 公式在线编辑"
   - topic: "文档"
     open: false
     sites:

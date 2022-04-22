@@ -6,6 +6,7 @@ series: ["Mahjong"]
 related: true
 mahjong: true
 mermaid: true
+katex: true
 ---
 
 ## 牌种一览
@@ -269,3 +270,56 @@ _宝牌_、_里宝牌_、_赤宝牌_ 都是 **算番 不算役** 的。\
 立直振听**无法被解除**（因为不能换听牌了）。换言之，立直振听你就只能指望**自摸**了。\
 这种情况在游戏里一般是手贱点错导致的，线下则是看错了。\
 所以立直后反正又不用动脑了，要认真盯好啊。
+
+## 点数计算
+
+### 符数合计
+
+|           牌型            |                    符数                    |
+| :-----------------------: | :----------------------------------------: |
+|           底符            |                   20 符                    |
+|        门前清荣和         |                  + 10 符                   |
+|           自摸            |                   + 2 符                   |
+|  边张 / 嵌张 / 单骑雀头   |                   + 2 符                   |
+| 三元牌 / 场风 / 自风 雀头 |                   + 2 符                   |
+|       明刻（么九）        |              + 2 符 (+ 4 符)               |
+|       暗刻（么九）        |              + 4 符 (+ 8 符)               |
+|       明杠（么九）        |              + 8 符 (+ 16 符)              |
+|       暗杠（么九）        |             + 16 符 (+ 32 符)              |
+| 七对子 / 国士无双(十三么) |                  + 25 符                   |
+|          总符数           | 累加后个位{{< ruby "进位" "ceil" >}}到十位 |
+
+### 基本点数
+
+{{< ruby "基本点数" "basic" >}} 根据 总符数 `m` 和翻数 `n` 共同决定，具体计算公式为：
+
+$$
+\begin{cases}
+\text{basic} = m \times 2^{n + 2} \& \text{if } n \leqslant 4 \\\\
+\text{basic} = 2000 \& \text{if } n = 5, \text{满贯} \\\\
+\text{basic} = 3000 \& \text{if } 6 \leqslant n \leqslant 7, \text{跳满} \\\\
+\text{basic} = 4000 \& \text{if } 8 \leqslant n \leqslant 10, \text{倍满} \\\\
+\text{basic} = 6000 \& \text{if } 11 \leqslant n \leqslant 12, \text{三倍满} \\\\
+\text{basic} = 8000 \& \text{if } n \geqslant 13, \text{役满}
+\end{cases}
+$$
+
+### 最终点数
+
+{{< ruby "最终点数" "points" >}} 根据 {{< ruby "基本点数" "basic" >}}、庄闲、{{< ruby "本场数" "session" >}}、{{< ruby "立直棒" "richi" >}} 共同决定：
+
+- 庄闲：
+  - 庄家：基本点数 × 6
+  - 闲家：基本点数 × 4
+- 本场数：庄家和牌 / 无人和牌（流局）则加一本场（本场数 + 1）
+- 立直棒数量：场上存在的立直棒数量（详见<a href="/game/mahjong-new/#%E7%AB%8B%E7%9B%B4-1" target="_blank">立直介绍</a>）\
+   注意：流局无法回收自己的立直棒，而是会顺延到下一局；终场流局则归首位所有。
+
+具体计算公式为：
+
+$$
+\begin{cases}
+\text{points} = \text{basic} \times 6 + 300 \times \text{session} + 1000 \times \text{richi} \& \text{if } \text{玩家} = \text{庄家} \\\\
+\text{points} = \text{basic} \times 4 + 300 \times \text{session} + 1000 \times \text{richi} \& \text{if } \text{玩家} = \text{闲家}
+\end{cases}
+$$

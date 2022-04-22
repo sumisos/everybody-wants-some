@@ -32,6 +32,10 @@ span.sticker {
   font-family: "Ma Shan Zheng"; // 手写字体
 }
 
+span.katex span {
+  font-family: "IBM Plex Serif", "Noto Serif SC", serif;
+}
+
 div.mermaid > svg {
   height: 100%; // 修复 mermaid.js 绘制 SVG 时 画布容器高度过高的问题
 }
