@@ -23,12 +23,15 @@ links_list:
       - title: "Figma"
         url: "https://www.figma.com/"
         desc: "在线作图"
+      - title: "CSS Sprites Generator"
+        url: "https://www.toptal.com/developers/css/sprite-generator/"
+        desc: "在线生成 CSS Sprites 图片"
       - title: "Latex 在线：吴文中 数学公式编辑器"
         url: "https://latex.91maths.com/"
-        desc: "Latex 公式可视化在线编辑"
+        desc: "在线可视化编辑 Latex 公式"
       - title: "KaTeX 官网 Demo"
         url: "https://katex.org/#demo"
-        desc: "KaTeX 公式在线编辑"
+        desc: "在线编辑 KaTeX 公式"
   - topic: "文档"
     open: false
     sites:
