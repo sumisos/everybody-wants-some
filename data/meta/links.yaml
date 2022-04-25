@@ -32,6 +32,9 @@ links_list:
       - title: "KaTeX 官网 Demo"
         url: "https://katex.org/#demo"
         desc: "在线编辑 KaTeX 公式"
+      - title: "Regulex"
+        url: "https://jex.im/regulex/"
+        desc: "在线可视化编辑正则表达式"
   - topic: "文档"
     open: false
     sites:

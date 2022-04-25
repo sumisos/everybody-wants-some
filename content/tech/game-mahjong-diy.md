@@ -5,6 +5,7 @@ date: 2022-04-02T22:47:45+08:00
 tags: ["Godot", "Mahjong"]
 series: ["游戏开发"]
 related: true
+mahjong: true
 mermaid: true
 katex: true
 ---
@@ -30,27 +31,37 @@ katex: true
 
 ## Roadmap 路线图
 
-- `v0.1.0-alpha.1` **雏形**
-  1. [x] 基础 UI 交互界面
-  2. [x] 便于自动排序、且兼容赤宝牌的数据结构设计
-  3. [x] 配牌生成 & 牌序记录
-  4. [x] 序列化（字符串 → 牌序对象）和反序列化（对象 → 牌序字符串）
-  5. [x] md5 验证牌山确保牌序未被篡改（参考[雀姬](https://www.queji.tw/cardsmd5/)）[^md5]
-  6. [x] 根据牌序计算四家手牌
-  7. [x] 根据牌序计算宝牌指示器（杠宝）、里宝牌（杠里宝）、岭上牌、海底牌
-  8. [x] 发牌 / 打牌 / 摸牌
-  9. [x] 记录摸切历史（进张、舍张记录）
-  10. [x] <kbd>Esc</kbd> 开启 debug 控制台功能（配牌预览 山牌 / 王牌）
-  11. [x] 动态渲染手牌和宝牌指示器
-  12. [x] 鸣牌判定
-  13. [x] GitHub Action 自动编译
-- `v0.1.0-alpha.2` **建设基础设施以支持正常游玩**
-  1. [x] 单元测试类
-  2. [x] 优化发牌函数，降低耦合程度（不再与人数绑定，动态人数也可以正确发牌）
-  3. [x] 更新图片、音效素材并重新设计 UI 布局
-  4. [ ] 完成鸣牌功能（包括加杠 / 暗杠）
-  5. [ ] 完成和牌判定
-  6. [ ] 完成主游戏循环（轮流 turn 摸切）
+> 稍微回头看了下，写得太随意了，根本没有任何组织性，想到哪里写到哪里。\
+> Roadmap 既没有提纲挈领，也基本没有前瞻性，完全就是流水帐。重写重写。
+
+重新设计项目架构：
+
+- 麻将基础类 `MahjongBase`：麻将相关基础功能
+  1. [x] 生成 `new_tile_walls()` 使用公平洗牌算法（打乱顺序）洗好的牌堆
+  2. [x] 解析字符串牌面 序列化与反序列化 `serialize()` / `deserialize()` 以便 md5 验证
+  3. [x] 根据牌序按人数和游戏方式发放手牌 `deal_tiles()` 并在此基础上计算出山牌
+  4. [x] 根据牌序和开杠数量 `get_dora()` 计算对应的宝牌指示器 / 里宝牌 / 岭上牌 / 海底牌
+  5. [ ] 判断一副手牌 `can_win()` 是否能和
+  6. [ ] 判断一副手牌 `is_ready()` 是否已经听牌
+  7. [ ] 计算一副手牌 `get_shanten()` 的向听数
+  8. [ ] 评估一副手牌 `estimate_hand_value()` 的得分（符数、翻数、役种、基本点数）
+- 麻将游戏类 `MahjongGame`：麻将游戏所需功能
+  1. [ ] 生成（记录）牌谱
+- 麻将游戏 Server 服务端 `BoardHost`：游戏主持人，负责裁定（联机则把这部分放到云端）
+  1. [ ] {{< ruby "读写牌谱" "Play Log" >}}：手牌、山牌、宝牌、余牌、荒牌流局、摸切记录、鸣牌记录
+  2. [ ] 记录{{< ruby "对局信息" "Round Info" >}}：场风、本场数、点棒（立直）数、座位（自风）、点数
+- 麻将游戏 Client 客户端 `PlaySpace`：用户接口（UI）提供交互
+  1. [ ] 读取已知牌谱，并进行渲染
+  2. [ ] 接受用户输入（玩家操作）
+  3. [ ] 排序手牌
+  4. [ ] 听牌提示
+
+<h3>版本目标</h3>
+
+- `v0.1.0-alpha.1` **雏形**\
+   能动：可以输入，处理完输入后有反馈，像个游戏的样子
+- `v0.1.0-alpha.2` **完善基础设施**\
+   能打麻将：可以正常游玩（指获得一局完整的游戏体验）
 - `v0.1.0-alpha.3` **完成人机 AI**
   1. [ ] 思考 AI 如何介入游戏：com 玩家数据拥有 AI？还是 AI 拥有 com 玩家数据？
   2. [ ] 会打牌
@@ -86,14 +97,17 @@ katex: true
 <details class="collapse">
   <summary><code>v0.1.0-alpha.1a</code> feat: basic ui</summary>
 
-- [x] 兼容赤宝牌的数据结构设计
-- [x] 自动排序手牌
-- [x] 配牌生成 md5 验证牌山
+- [x] 便于自动排序、且兼容赤宝牌的数据结构设计
+- [x] 配牌生成 & 牌序记录
+- [x] 序列化（字符串 → 牌序对象）和反序列化（对象 → 牌序字符串）
+- [x] md5 验证牌山确保牌序未被篡改（参考[雀姬](https://www.queji.tw/cardsmd5/)）[^md5]
 - [x] 基本 UI 交互界面
-- [x] 手牌 / 宝牌 / 里宝 / 岭上 / 海底计算
+- [x] 根据牌序计算四家手牌
+- [x] 根据牌序计算宝牌指示器（杠宝）、里宝牌（杠里宝）、岭上牌、海底牌
 - [x] 发牌 / 打牌 / 摸牌
-- [x] <kbd>Esc</kbd> 开启 debug 控制台功能
-- [x] 配牌预览 山牌 / 王牌
+- [x] 记录摸切历史（进张、舍张记录）
+- [x] <kbd>Esc</kbd> 开启 debug 控制台功能（配牌预览 山牌 / 王牌）
+- [x] 动态渲染手牌和宝牌指示器
 - [x] 鸣牌判定
 
 </details>
@@ -104,7 +118,7 @@ katex: true
 - [x] 部署 SSH-Key `ssh-keygen -b 4096 -C "ACTIONS_DEPLOY_KEY" -f actions_deploy_key`
 - [x] 找到合适的 action 脚本 <a href="https://github.com/marketplace/actions/godot-ci" target="_blank"><img class="emoji" src="https://img.shields.io/badge/GitHub_Actions-godot--ci-informational?logo=github" /></a>
 - [x] 修改脚本以适配本项目
-- [x] 打通自动部署工作流 <a href="https://time2beat.github.io/mahjong-game/" target="_blank"><img class="emoji" src="https://img.shields.io/badge/GitHub_Pages-Mahjong_Fruit-success?logo=github" /></a>
+- [x] 打通自动部署工作流 <a href="https://time2beat.github.io/mahjong-game/" target="_blank"><img class="emoji" src="https://img.shields.io/badge/GitHub_Pages-Mahjong_Fruit-success?logo=github" /></a> 由 GitHub Action 自动编译
 - [x] 枚举：役种 / 流局类型
 
 </details>
@@ -112,15 +126,22 @@ katex: true
 <details class="collapse">
   <summary><code>v0.1.0-alpha.2a</code> feat: basic game</summary>
 
-- [x] 单元测试 hook
-- [x] 优化发牌函数，降低耦合程度：手牌和山牌计算现在最低兼容 2 个玩家\
+- [x] feat: 单元测试 hook
+- [x] feat: 优化发牌函数，降低耦合程度：手牌和山牌计算现在最低兼容 2 个玩家\
        （而且不止可以发 13 张，即使发 7 张，各玩家的手牌和山牌也是正确的。）
-- [x] 更新了图片素材（资源来自 [麻雀の画像・素材 - 来夢来人](https://www.civillink.net/fsozai/majan.html)）
-- [x] 新增了音效（资源来自 [天鳳用オリジナル SE: アンコロキング blog](http://ancoro.way-nifty.com/blog/se.html)）
-- [x] 重绘了 UI 布局，现在的界面更合理了
-- [ ] 完成鸣牌功能（包括加杠 / 暗杠）{{< color-text "doing" "red" bold >}}
-- [ ] 完成和牌判定
-- [ ] 完成主游戏循环（轮流 turn 摸切）
+- [x] feat: 渲染别家手牌信息
+- [x] feat: Debug 控制台添加透视功能
+- [x] feat: 新增了简单的标题界面和调试界面
+- [ ] feat: 完成鸣牌功能（包括加杠 / 暗杠）{{< color-text "doing" "red" bold >}} 已完成按钮功能和渲染副露区
+- [ ] feat: 完成和牌判定
+- [ ] feat: 完成主游戏循环（轮流 turn 摸切）
+- [x] feat: 新增了音效（资源来自 [天鳳用オリジナル SE: アンコロキング blog](http://ancoro.way-nifty.com/blog/se.html)）
+- [x] style: 更新了图片素材（资源来自 [麻雀の画像・素材 - 来夢来人](https://www.civillink.net/fsozai/majan.html)）
+- [x] fix: 更新了牌背的渲染方式：着色器染色 → 直接更换素材帧\
+       现在理论上不可能（作弊）**看穿**牌背（因为它本来就是{{< ruby "一张单独" "不携带数据" >}}的 **背面** 牌）。\
+       ~~以前取消着色器就可以直接透视牌面了。~~
+- [x] fix: 重绘了 UI 布局，添加了对局信息：东一局 / 本场数 / 点棒数 / 余牌数 / 各家点数
+- [x] fix: 现在可以正确渲染赤宝牌了（以前计算是正确的，但显示为普通五万 / 饼 / 索）
 
 </details>
 
@@ -135,10 +156,10 @@ katex: true
 - 「[天鳳 | 最高峰の対戦麻雀サイト](https://tenhou.net/)」流程设计参考
 - 「[4chan /mjg/ Repository](https://repo.riichi.moe/)」麻将相关的各种资料 / 资源
 - {{< github "yuanfengyun/qipai_algorithm" >}} 各种语言的棋牌相关算法
-- {{< github "kobalab/Majiang" >}} [HTML5 在线麻将](https://kobalab.net/majiang/)（交互参考）
+- {{< github "kobalab/Majiang" >}} [HTML5 在线日麻](https://kobalab.net/majiang/)（交互参考）
 - {{< github "MahjongRepository/mahjong" >}} 日麻相关 Python 库
 - {{< github "EndlessCheng/mahjong-helper" >}} 日麻助手（计算牌效，支持天凤 / 雀魂，AI 算法参考）
-- {{< github "Equim-chan/akochan-reviewer" >}} 天凤 / 雀魂复盘工具
+- {{< github "Equim-chan/akochan-reviewer" >}} [天凤 / 雀魂复盘工具](https://akochan.ekyu.moe/) 链接
 - {{< github "zyr17/MajsoulPaipuAnalyzer" >}} 雀魂牌谱分析工具
 - {{< github "MajsoulPlus/majsoul-plus" >}} 雀魂加强版客户端
 
@@ -189,6 +210,8 @@ katex: true
 : 而编号仍然按照代码习惯从 0 到 3 ——共计 4 位，代表四张同种麻将牌。
 : 所有枚举值都是 `100 < x < 500` 的 {{< ruby "整型" "int" >}}，也保证了尽量小的运算量。
 : 而且有些语言本来就不支持枚举字符串（`9m/9p/9s/7z`），这个设计也保证了通用性。
+: 这个设计还有个好处就是排序手牌变得非常简单，直接按值从小到大排就行了。
+: 天然兼容赤宝牌，无需任何额外判断。
 
 枚举不同的牌
 : 在运算过程中还会经常碰到要遍历 34 种不同麻将牌的需求。
@@ -224,6 +247,22 @@ flowchart LR
 3. 起手完毕，翻开第 1 张宝牌指示器（倒第 5 张）。
 4. 庄家打出第一张牌，正常轮流摸切。
 
+### 序列化与反序列化
+
+反序列化为字符串后会**损失**每一张牌**自己**的具体位置信息，不过牌种位置信息还在。\
+比方说 `152, 153, 150, 151` 反序列化后就是 `5m0m5m5m`。\
+只有特别处理过的 {{< mahjong 0m >}} 的位置信息还在，别的普通 {{< mahjong 5m >}} 具体 **一对一** 的位置信息都在转换过程中损失了。重新序列化 `5m0m5m5m` 变成 `150, 153, 151, 152`，已经不是原来的序列了。
+
+但实际上对游戏本身 **并没有影响**。\
+因为实际游戏过程中是不会关心「一张五万本来是第几张五万」的：\
+「我只和上局 **第三张** 打出的 _七饼_，别的 _七饼_ 我不和」这不是有病吗。
+
+洗牌时枚举每一张进行打乱顺序，是为了保证公平，不会出现意外的偏差（比如避免和上一局的牌序发生某些关联）。洗完之后同一种牌具体的排序就不再重要了，损失掉也没关系，只要保证赤宝牌的位置信息没损失就行了。
+
+以字符串序列化的牌序，同一种牌永远是 `0, 1, 2, 3` 这样排序，尾号为 3 的牌永远沉底——\
+只有{{< color-text "赤宝牌" "red" bold >}}特殊处理，洗完它在哪里它就一直在那里，序列化和反序列化不会对它产生影响。\
+所以起始手牌可能存在赤宝牌，这是符合事实逻辑的。
+
 ### 关于鸣牌
 
 同时鸣牌如何判定？
@@ -236,26 +275,36 @@ flowchart LR
 
 鸣牌如何标记？（和牌不需要标记，除非是「血战」玩法）
 
-|    吃     |   碰   |     加杠     | 大明杠 |  暗杠  |
-| :-------: | :----: | :----------: | :----: | :----: |
-| 吃第 1 张 | 碰上家 | 碰上家后加杠 | 杠上家 | 不求人 |
-| 吃第 2 张 | 碰对家 | 碰对家后加杠 | 杠对家 |        |
-| 吃第 3 张 | 碰下家 | 碰下家后加杠 | 杠下家 |        |
-
-吃只可能吃上家，因此只有 `_ 2 3` / `1 _ 3` / `1 2 _` 吃哪组的问题。
+> 吃只可能吃上家，因此只有 `_ 2 3` / `1 _ 3` / `1 2 _` 吃哪组的问题。
 
 ```GDScript
-var fulu: Dictionary = {  # 副露 示例数据结构
+var meld: Dictionary = {  # 副露 示例数据结构
   "type": CALL.CHOW,  # 枚举鸣牌类型
-  "data": [],  # 具体牌面
-  "mark": -1,  # 特殊标记的位置 吃不需要特殊标记 位置信息就足够了
-}                           # 比如 123 213 312
-                            # 碰 / 杠才需要, 比如 222 需要标记哪张是碰过来的
+  "have": [],  # 拥有的牌
+  "pick": [],  # 捡回的牌
+  "mark": 0,   # 特殊标记的位置  吃不需要特殊标记 位置信息就足够了
+}                              # 比如 123 213 312
+                               # 碰 / 杠才需要, 比如 222 需要标记哪张是碰过来的
 ```
+
+> 其实 `type` 都不需要，保留只是为了提高容错。
+
+|                             吃                             |           碰            |                          加杠                           |                         大明杠                          |                                          暗杠                                           |
+| :--------------------------------------------------------: | :---------------------: | :-----------------------------------------------------: | :-----------------------------------------------------: | :-------------------------------------------------------------------------------------: |
+|                         吃第 1 张                          |       碰下家 `#1`       |                   碰下家后 `#1` 加杠                    |                       杠下家 `#3`                       |                                         不求人                                          |
+|                         吃第 2 张                          |       碰对家 `#2`       |                   碰对家后 `#2` 加杠                    |                       杠对家 `#2`                       |                                                                                         |
+|                         吃第 3 张                          |       碰上家 `#3`       |                   碰上家后 `#3` 加杠                    |                       杠上家 `#1`                       |                                                                                         |
+| have 2 pick 1<br>{{< color-text "no repeat" "red" bold >}} | have 2 pick 1<br>repeat | have 2 pick {{< color-text "2" "red" bold >}}<br>repeat | have {{< color-text "3" "red" bold >}} pick 1<br>repeat | have {{< color-text "4" "red" bold >}} pick {{< color-text "0" "red" bold >}}<br>repeat |
+|                          `m13-2`                           |        `p50-5_2`        |                       `s55-05_3`                        |                       `m550-5_1`                        |                                         `z7777`                                         |
+
+> 本来 `m550=5#1` 这样更具代表性的符号可读性更强，换成 `-_` 是为了保证 URL 编码后的兼容性。
+
+正则也很简单——`/^([mpsz]{1})(\d{2,4})-?(\d{0,4})_?(\d?)$/ig`（[可视化](<https://jex.im/regulex/#!flags=ig&re=%5E(%5Bmpsz%5D%7B1%7D)(%5Cd%7B2%2C4%7D)-%3F(%5Cd%7B0%2C4%7D)_%3F(%5Cd%3F)%24>)）。\
+匹配到的四组分别是：花色、拥有的牌（`have`）、捡回的牌（`pick`）、鸣牌目标（`mark`）。
 
 ### 和牌判定
 
-详见《<a href="/tech/game-mahjong-check-win-algorism" target="_blank">麻将和牌判定算法及相关实现</a>》一文。
+详见《<a href="/tech/game-mahjong-algorithm" target="_blank">麻将和牌判定算法及相关实现</a>》一文。
 
 ### 听牌判定
 
