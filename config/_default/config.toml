@@ -6,6 +6,8 @@ title = "Everybody Wants Some"
 languageCode = "zh-CN"
 hasCJKLanguage = true
 # timeZone = "Asia/Shanghai"
+# timeZone = "CN"
+# TODO 待修复
 # Error: invalid timeZone for language "zh": The system cannot find the path specified.
 
 # 版权信息（支持 Markdown）
@@ -49,6 +51,9 @@ uglyURLs = false
 
 # URL 结构
 [permalinks]
+    tech = "/:section/:filename/"  # 使用 :slug (== :title) 会显示为标题(带汉字)
+    game = "/:section/:filename/"
+    life = "/:section/:filename/"
     categories = "/categories/:slug/"
     tags = "/tags/:slug/"
 

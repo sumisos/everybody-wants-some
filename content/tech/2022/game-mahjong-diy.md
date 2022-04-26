@@ -36,12 +36,12 @@ katex: true
 
 重新设计项目架构：
 
-- 麻将基础类 `MahjongBase`：麻将相关基础功能
+- 麻将通用基类 `MahjongBase`：麻将相关基础功能
   1. [x] 生成 `new_tile_walls()` 使用公平洗牌算法（打乱顺序）洗好的牌堆
   2. [x] 解析字符串牌面 序列化与反序列化 `serialize()` / `deserialize()` 以便 md5 验证
   3. [x] 根据牌序按人数和游戏方式发放手牌 `deal_tiles()` 并在此基础上计算出山牌
   4. [x] 根据牌序和开杠数量 `get_dora()` 计算对应的宝牌指示器 / 里宝牌 / 岭上牌 / 海底牌
-  5. [ ] 判断一副手牌 `can_win()` 是否能和
+  5. [x] 判断一副手牌 `can_win()` 是否能和
   6. [ ] 判断一副手牌 `is_ready()` 是否已经听牌
   7. [ ] 计算一副手牌 `get_shanten()` 的向听数
   8. [ ] 评估一副手牌 `estimate_hand_value()` 的得分（符数、翻数、役种、基本点数）
@@ -51,9 +51,9 @@ katex: true
   1. [ ] {{< ruby "读写牌谱" "Play Log" >}}：手牌、山牌、宝牌、余牌、荒牌流局、摸切记录、鸣牌记录
   2. [ ] 记录{{< ruby "对局信息" "Round Info" >}}：场风、本场数、点棒（立直）数、座位（自风）、点数
 - 麻将游戏 Client 客户端 `PlaySpace`：用户接口（UI）提供交互
-  1. [ ] 读取已知牌谱，并进行渲染
-  2. [ ] 接受用户输入（玩家操作）
-  3. [ ] 排序手牌
+  1. [x] 读取已知牌谱，并进行渲染
+  2. [x] 接受用户输入（玩家操作）
+  3. [x] 排序手牌
   4. [ ] 听牌提示
 
 <h3>版本目标</h3>
@@ -123,7 +123,7 @@ katex: true
 
 </details>
 
-<details class="collapse">
+<details class="collapse" open="open">
   <summary><code>v0.1.0-alpha.2a</code> feat: basic game</summary>
 
 - [x] feat: 单元测试 hook
@@ -132,8 +132,10 @@ katex: true
 - [x] feat: 渲染别家手牌信息
 - [x] feat: Debug 控制台添加透视功能
 - [x] feat: 新增了简单的标题界面和调试界面
+- [x] feat: 完成单独的「模拟发牌」调试界面
+- [x] feat: 完成单独的「手牌分析」调试界面（目前只有和牌判断，更多功能待补充）
+- [x] feat: 完成和牌判定
 - [ ] feat: 完成鸣牌功能（包括加杠 / 暗杠）{{< color-text "doing" "red" bold >}} 已完成按钮功能和渲染副露区
-- [ ] feat: 完成和牌判定
 - [ ] feat: 完成主游戏循环（轮流 turn 摸切）
 - [x] feat: 新增了音效（资源来自 [天鳳用オリジナル SE: アンコロキング blog](http://ancoro.way-nifty.com/blog/se.html)）
 - [x] style: 更新了图片素材（资源来自 [麻雀の画像・素材 - 来夢来人](https://www.civillink.net/fsozai/majan.html)）
@@ -159,7 +161,7 @@ katex: true
 - {{< github "kobalab/Majiang" >}} [HTML5 在线日麻](https://kobalab.net/majiang/)（交互参考）
 - {{< github "MahjongRepository/mahjong" >}} 日麻相关 Python 库
 - {{< github "EndlessCheng/mahjong-helper" >}} 日麻助手（计算牌效，支持天凤 / 雀魂，AI 算法参考）
-- {{< github "Equim-chan/akochan-reviewer" >}} [天凤 / 雀魂复盘工具](https://akochan.ekyu.moe/) 链接
+- {{< github "Equim-chan/akochan-reviewer" >}} [天凤 / 雀魂复盘工具](https://akochan.ekyu.moe/)
 - {{< github "zyr17/MajsoulPaipuAnalyzer" >}} 雀魂牌谱分析工具
 - {{< github "MajsoulPlus/majsoul-plus" >}} 雀魂加强版客户端
 
@@ -299,7 +301,7 @@ var meld: Dictionary = {  # 副露 示例数据结构
 
 > 本来 `m550=5#1` 这样更具代表性的符号可读性更强，换成 `-_` 是为了保证 URL 编码后的兼容性。
 
-正则也很简单——`/^([mpsz]{1})(\d{2,4})-?(\d{0,4})_?(\d?)$/ig`（[可视化](<https://jex.im/regulex/#!flags=ig&re=%5E(%5Bmpsz%5D%7B1%7D)(%5Cd%7B2%2C4%7D)-%3F(%5Cd%7B0%2C4%7D)_%3F(%5Cd%3F)%24>)）。\
+正则也很简单——`/^([mpsz]{1})(\d{2,4})-?(\d{0,2})_?(\d?)$/ig`（[可视化](<https://jex.im/regulex/#!flags=i&re=%5E(%5Bmpsz%5D%7B1%7D)(%5Cd%7B2%2C4%7D)-%3F(%5Cd%7B0%2C2%7D)_%3F(%5Cd%3F)%24>)）。\
 匹配到的四组分别是：花色、拥有的牌（`have`）、捡回的牌（`pick`）、鸣牌目标（`mark`）。
 
 ### 和牌判定
