@@ -19,7 +19,8 @@ nav.nav > ul#menu {
 
 .center,
 span.sticker,
-div.mermaid {
+div.mermaid,
+div.goat {
   @include center; // 内容水平居中
 }
 

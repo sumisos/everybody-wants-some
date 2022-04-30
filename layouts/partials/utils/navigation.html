@@ -1,31 +1,32 @@
-{{- $data := $.Site.Data.meta.links.links_list -}} {{- range $links := $data -}}
-<details class="collapse" {{ if $links.open }} open="open" {{ end }}>
-  <summary>{{- $links.topic -}}</summary>
+{{- $data := $.Site.Data.meta.links.links_list -}}
+{{- range $links := $data -}}
+  <details class="collapse" {{ if $links.open }} open="open" {{ end }}>
+    <summary>{{- $links.topic -}}</summary>
 
-  <table>
-    <thead>
-      <tr>
-        <th style="text-align: center">Website</th>
-        <th style="text-align: center">Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{- range $site := $links.sites -}}
-      <tr>
-        <td style="text-align: center">
-          <a
-            href="{{- $site.url | safeURL -}}"
-            target="_blank"
-            rel="noopener noreferrer"
-            >{{- $site.title -}}</a
-          >
-        </td>
-        <td style="text-align: center">
-          {{ with $site.desc | safeHTML }}{{- . -}}{{ end }}
-        </td>
-      </tr>
-      {{- end -}}
-    </tbody>
-  </table>
-</details>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center">Website</th>
+          <th style="text-align: center">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{- range $site := $links.sites -}}
+        <tr>
+          <td style="text-align: center">
+            <a
+              href="{{- $site.url | safeURL -}}"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{- $site.title | safeHTML -}}
+            </a>
+          </td>
+          <td style="text-align: center">
+            {{ with $site.desc | safeHTML }}{{- . -}}{{ end }}
+          </td>
+        </tr>
+        {{- end -}}
+      </tbody>
+    </table>
+  </details>
 {{- end -}}

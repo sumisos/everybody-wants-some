@@ -79,7 +79,8 @@
                             {{ range .Pages.GroupByDate "January" }}
                                 {{ $.Scratch.Delete "month" }}
                                 {{ if $.Site.Params.i18nMonth }}
-                                    {{ $month := i18n (lower .Key) }}
+                                    {{ $month := i18n (lower .Key) | default .Key }}
+                                    {{- /* i18n 没有正确回退 不知道跟更新了 0.97.2 有没有关系 */ -}}
                                     {{ $.Scratch.Set "month" $month }}
                                 {{ else }}
                                     {{ $.Scratch.Set "month" .Key }}

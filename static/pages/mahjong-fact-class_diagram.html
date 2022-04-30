@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>日麻游戏《雀实》UML 类图设计</title>
+    <style>
+      div.mermaid {
+        /* font-family: 'trebuchet ms', verdana, arial; */
+        font-family: "Courier New", Courier, monospace !important;
+        text-align: center;
+      }
+      div.mermaid > svg {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mermaid">
+      classDiagram
+      class MahjongBase {
+        +tid_to_sid(tile_id: int)$ int
+        +tid_to_code(tile_id: int)$ String
+        +humanize(tiles_info: Object)$
+        +serialize(tiles_sequence: String)$ PoolIntArray
+        +deserialize(tiles_bytes: PoolIntArray)$ String
+        +serialize_meld(melds_sequence: String)$ Array~MahjongMeld~
+        +deserialize_meld(melds: Array~MahjongMeld~)$ String
+        +new_tiles_wall(tiles_sequence: String = "")$ PoolIntArray
+        +deal_hand(tiles_sequence: PoolIntArray, player_seat: int, player_count: int = 4)$ Array~MahjongHand~
+        +get_ace_info(ace_type: ACE, kan_count: int = 0)$ Array~int~
+      }
+
+      class ACE {
+        ACE_DORA_OUTER
+        ACE_DORA_INNER
+        ACE_RINSHAN
+        ACE_SEAFLOOR
+      }
+      MahjongBase o-- ACE : Aggregation
+
+      class SEAT {
+        SEAT_EAST
+        SEAT_SOUTH
+        SEAT_WEST
+        SEAT_NORTH
+      }
+      MahjongBase o-- SEAT : Aggregation
+
+      class CALL {
+        CALL_RICHI
+        CALL_CHII
+        CALL_PON
+        CALL_KAN
+        CALL_RON
+      }
+      MahjongBase o-- CALL : Aggregation
+
+      class MahjongGame {
+        -player_count_limit: int
+        -full_tiles_wall: PoolIntArray
+        -remain_tiles_wall: PoolIntArray
+        -player_hands: Array~MahjongHand~
+        #kan_count: int
+        #discard_history: Array~PoolIntArray~
+        +room_rule: RULE
+        +player_list: Array~int~
+        +get_tiles_wall_md5() int
+        +get_ace_tiles(ace_type: ACE) Array~int~
+        +get_tiles_count() int
+        +deal_hand_to(player_seat: int) Array~MahjongHand~
+        +deal_a_tile_to(player_seat: int, player_count: int = 4) bool
+        +discard_a_tile_by(player_seat: int, tile_id: int) bool
+        +call_meld(player_seat: int, meld: MahjongMeld) bool
+      }
+      MahjongBase <|-- MahjongGame : Inheritance
+
+      class MahjongMeld {
+        #type: CALL
+        #have: Array~int~
+        #pick: Array~int~
+        #from: SEAT
+      }
+      MahjongBase o-- MahjongMeld : Aggregation
+
+      class MahjongHand {
+        -tiles: PoolIntArray
+        #melds: Array~MahjongMeld~
+        +get_tiles() Array~int~
+        +draw(tile_id: int) bool
+        +discard(tile_id: int) bool
+        +is_full() bool
+        +can_win(win_tile_id: int = -1) bool
+        +get_call_options(pick_tile_id: int) Array~MahjongMeld~
+      }
+      MahjongBase o-- MahjongHand : Aggregation
+      MahjongHand "1" --> "*" MahjongMeld : own
+
+      class RULE {
+        RULE_4P_ONLY_EAST
+        RULE_4P_ONLY_SOUTH
+        RULE_4P_EAST_SOUTH
+        RULE_3P_ONLY_EAST
+        RULE_3P_ONLY_SOUTH
+      }
+      MahjongGame o-- RULE : Aggregation
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+  </body>
+</html>

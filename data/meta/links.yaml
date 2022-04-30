@@ -23,6 +23,9 @@ links_list:
       - title: "Figma"
         url: "https://www.figma.com/"
         desc: "在线作图"
+  - topic: "文案"
+    open: false
+    sites:
       - title: "CSS Sprites Generator"
         url: "https://www.toptal.com/developers/css/sprite-generator/"
         desc: "在线生成 CSS Sprites 图片"
@@ -35,11 +38,18 @@ links_list:
       - title: "Regulex"
         url: "https://jex.im/regulex/"
         desc: "在线可视化编辑正则表达式"
+      - title: "Mermaid Live Editor"
+        url: "https://mermaid-js.github.io/mermaid-live-editor/"
+        desc: '在线预览流程图编辑器（<a href="https://mermaid-js.github.io/" target="_blank">官方文档</a>）'
+      - title: "Diagon"
+        url: "https://arthursonzogni.com/Diagon/"
+        desc: 'ASCII 制图 配合 <a href="https://github.com/blampe/goat" target="_blank">GoAT</a> 食用风味更佳'
   - topic: "文档"
     open: false
     sites:
-      - title: "Godot"
+      - title: "Godot 官方文档"
         url: "https://docs.godotengine.org/"
+        desc: "Godot 游戏引擎"
   - topic: "前端"
     open: false
     sites:
@@ -60,3 +70,18 @@ links_list:
     sites:
       - title: "Cloudflare"
         url: "https://dash.cloudflare.com/"
+  - topic: "游戏开发"
+    open: false
+    sites:
+      - title: "itch.io"
+        url: "https://itch.io/"
+        desc: "独立游戏天堂"
+      - title: "Kenney"
+        url: "https://www.kenney.nl/assets"
+        desc: "免费素材"
+      - title: "CraftPix"
+        url: "https://craftpix.net/"
+        desc: "免费 2D 游戏素材"
+      - title: "Game UI Database"
+        url: "https://www.gameuidatabase.com/"
+        desc: "抄 UI"

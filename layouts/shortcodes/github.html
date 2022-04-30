@@ -1,30 +1,41 @@
 {{- if .Params -}}
   {{- $repo := .Get 0 -}}
+  {{- $style := .Get 1 | default "normal" -}}
+  {{- $assign_tag := .Get 2 | default "list" -}}
+  {{- $a_href := add "https://github.com/" $repo -}}
+  {{- $img_src := "" -}}
 
-  <a href="https://github.com/{{- $repo -}}">
-    {{- $prop := .Get 1 -}}
-    {{- $image := "" -}}
-
-    {{- if eq $prop "text" -}}
-      <span>{{- $repo -}}</span>
-    {{- else if eq $prop "tag" -}}
-      {{- $image = add "https://img.shields.io/github/v/tag/" $repo -}}
-      {{- $image = add $image "?label=" -}}
-      {{- $image = add $image $repo -}}
-      {{- $image = add $image "&logo=github" -}}
-    {{- else if eq $prop "release" -}}
-      {{- $image = add "https://img.shields.io/github/v/release/" $repo -}}
-      {{- $image = add $image "?display_name=tag&label=" -}}
-      {{- $image = add $image $repo -}}
-      {{- $image = add $image "&logo=github" -}}
+  {{- if eq $style "release" -}}
+    {{- $a_href = add $a_href "/releases" -}}
+    {{- $img_src = add "https://img.shields.io/github/v/release/" $repo -}}
+    {{- $img_src = add (add (add $img_src "?display_name=tag&label=") $repo) "&logo=github" -}}
+  {{- else if eq $style "tag" -}}
+    {{- if eq $assign_tag "list" -}}
+      {{- $a_href = add $a_href "/tags" -}}
+      {{- $img_src = add "https://img.shields.io/github/v/tag/" $repo -}}
+      {{- $img_src = add $img_src "?label=" -}}
+      {{- $img_src = add $img_src $repo -}}
+      {{- $img_src = add $img_src "&logo=github" -}}
     {{- else -}}
-      {{- $repo = replace (replace $repo "/" "%2F") " " "%20" -}}
-      {{- $repo = replace (replace $repo "-" "--") "_" "__" -}}
-      {{- $image = add "https://img.shields.io/badge/GitHub-" $repo -}}
-      {{- $image = add $image "-informational?logo=github" -}}
+      {{- $repo_urlcode := replace (replace (replace (replace $repo "/" "%2F") " " "%20") "-" "--") "_" "__" -}}
+      {{- $assign_tag = replace (replace (replace (replace $assign_tag "/" "%2F") " " "%20") "-" "--") "_" "__" -}}
+      {{- $a_href = add (add (add "https://github.com/" $repo) "/releases/tag/") $assign_tag -}}
+      {{- $img_src = add (add "https://img.shields.io/badge/" $repo_urlcode) "-" -}}
+      {{- $img_src = add $img_src $assign_tag -}}
+      {{- $img_src = add $img_src "-informational?logo=github" -}}
     {{- end -}}
+  {{- else -}}
+    {{- $repo_urlcode := replace (replace (replace (replace $repo "/" "%2F") " " "%20") "-" "--") "_" "__" -}}
+    {{- $img_src = add "https://img.shields.io/badge/GitHub-" $repo_urlcode -}}
+    {{- $img_src = add $img_src "-informational?logo=github" -}}
+  {{- end -}}
 
-    {{- with $image -}}<img class="sticker" src="{{- . -}}" alt="">{{- end -}}
+  <a href="{{- $a_href -}}">
+    {{- if eq $style "text" -}}
+      <span>{{- $repo -}}</span>
+    {{- else -}}
+      <img class="sticker" src="{{- $img_src -}}" alt="{{- $repo -}}">
+    {{- end -}}
   </a>
 
 {{- end -}}
