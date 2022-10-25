@@ -127,7 +127,8 @@ LL 铁后攻是很难突破，而且先攻吃到陨石是很难受的，陨石 /
 <details class="collapse" open="open">
   <summary>正常 LL 铁</summary>
   
-{{< ygo-deck "LL 铁兽" "" >}}
+```ydk
+#LL 铁兽
 #main
 24508238
 34550857
@@ -185,14 +186,15 @@ LL 铁后攻是很难突破，而且先攻吃到陨石是很难受的，陨石 /
 72330894
 86066372
 99726621
-{{< /ygo-deck >}}
+```
 
 </details>
 
 <details class="collapse"> 
   <summary>不带抗战 LL 铁（不推荐）</summary>
 
-{{< ygo-deck "没抗战没大鸟的 LL 铁" "https://www.bilibili.com/read/cv15083840" >}}
+```ydk
+#没抗战没大鸟的 LL 铁 https://www.bilibili.com/read/cv15083840
 #main
 34550857
 34550857
@@ -252,7 +254,7 @@ LL 铁后攻是很难突破，而且先攻吃到陨石是很难受的，陨石 /
 52331012
 86066372
 99726621
-{{< /ygo-deck >}}
+```
 
 </details>
 
@@ -421,3 +423,7 @@ LL 铁后攻是很难突破，而且先攻吃到陨石是很难受的，陨石 /
 > - [【LL 铁兽基本运营思路】-新手向](https://www.bilibili.com/video/BV1X64y197Xr)
 > - [游戏王 Master duel LL 铁兽卡组介绍及构筑分享之其一（新手向）](https://www.bilibili.com/video/BV1hT4y1y7Lg)
 > - [【全网最细】抒情歌鸲 LL 卡组展开 COMBO 全集（含所有可动展开式+变式，检索羽毛吹雪方法及吃坑应对）](https://www.bilibili.com/video/BV16L4y1n7Zr)
+
+```
+
+```

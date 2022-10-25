@@ -63,8 +63,3 @@
 {{- else -}}
     <script src="{{ $script.RelPermalink }}"></script>
 {{- end }}
-
-{{- /* 麻将 SVG */ -}}
-{{- if .Params.mahjong | default .Site.Params.enableMahjong -}}
-    {{- partial "utils/mahjong-svg.html" . -}}
-{{- end -}}

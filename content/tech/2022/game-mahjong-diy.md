@@ -6,7 +6,6 @@ tags: ["Godot", "Mahjong"]
 series: ["游戏开发"]
 related: true
 mahjong: true
-mermaid: true
 katex: true
 ---
 
@@ -25,7 +24,6 @@ katex: true
 ## Reference 参考资料
 
 - 「[麻将 - 维基百科](https://en.wikipedia.org/wiki/Mahjong)」规则参考、变量 / 函数命名参考
-- 「[麻将基本术语中英文对照表](https://www.xqbase.com/other/mahjongg_english.htm)」变量 / 函数命名参考
 - 「[麻雀 和了判定（役の判定） アルゴリズム](http://hp.vector.co.jp/authors/VA046927/mjscore/mjalgorism.html)」和牌判定算法参考
 - 「[麻雀の数学](http://www10.plala.or.jp/rascalhp/mjmath.htm)」相关数学概念认知
 - 「[麻雀の役一覧（出現確率ランキング順）](http://www2.odn.ne.jp/~cbm15900/html/y99.html)」相关数学概念认知补充
@@ -88,7 +86,7 @@ flowchart LR
 +-----+-----+-----+ | 杠 宝 | 杠 宝 | 杠 宝 | 杠 宝 | 宝 牌 | | 岭 上 | +-----+
 | 预 备 | 预 备 |       | 4   | 3   | 2   | 1   |     | | 3   |
 | 海 底 | 海 底 | +-----+-----+-----+-----+-----+-----+ +-----+-----+
-| 4   | 2   | | 推 入 | 杠   | 杠   | 杠   | 杠   |     | |     |     |
+| 4   | 2   | | 推 入 | 杠   | 杠   | 杠   | 杠   | 杠   | |     |     |
 +-----+-----+ | 王 牌 | 里 宝 | 里 宝 | 里 宝 | 里 宝 | 宝 牌 | | 岭 上 | 岭 上 |
               |     | D   | C   | B   | A   |     | | 4   | 2   |
               +-----+-----+-----+-----+-----+-----+ +-----+-----+
@@ -270,6 +268,10 @@ sequenceDiagram
 > 加载完 `Assembly.LoadFile("mahjong.dll")` 就可以 `GDNative.call_native()` 直接调用。
 
 转念一想，算法都有了，用什么语言又有什么区别呢？
+
+### 向听数计算
+
+[日麻百科（向听数计算）](https://www.bilibili.com/read/cv12887274)
 
 ### 序列化与反序列化
 

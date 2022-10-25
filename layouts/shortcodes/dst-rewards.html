@@ -1,0 +1,35 @@
+{{- $count := 0 -}}
+
+{{- range $rewards_type := $.Site.Data.game.dont_starve_together_rewards.rewards -}}
+
+  <h3>{{- $rewards_type.obtain_method -}}（共 {{ len $rewards_type.list }} 种）</h3>
+
+  {{- range $reward := $rewards_type.list -}}
+
+    {{- $count = add $count 1 -}}
+
+    {{- if eq $rewards_type.obtain_method "直播掉落" -}}
+      <h4>第 {{ $reward.index }} 期 直播掉落</h4>
+    {{- else -}}
+      <hr>
+    {{- end -}}
+
+    <img class="no-zoom" src="{{- $reward.img_src -}}" alt="" />
+
+    <dl>
+      <dt>{{- $reward.skin_name -}}</b>（{{- $reward.skin_name_en -}}）</dt>
+      <dd><b>{{- $reward.item_name }}</b> 皮肤</dd>
+      <dd>
+        <a href="{{- $reward.url -}}" target="_blank" rel="noopener noreferrer">
+          发布于 {{ $reward.date }}
+        </a>
+      </dd>
+    </dl>
+
+    {{- $reward.description | markdownify -}}
+
+  {{- end -}}
+
+{{- end -}}
+
+合计共 {{ $count }} 个奖励皮肤。

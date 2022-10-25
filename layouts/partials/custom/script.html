@@ -1,0 +1,22 @@
+{{ if .Page.Store.Get "hasMermaid" }}
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
+  <script>
+    let mermaidConfig = {
+      startOnLoad: true,
+      flowchart: {
+        useMaxWidth: false,
+        htmlLabels: true,
+      },
+      theme: '{{ template "mermaid-theme" . }}',
+    };
+    mermaid.initialize(mermaidConfig);
+  </script>
+{{ end }}
+
+{{ if .Page.Store.Get "hasMahjong" }}
+  <script src="/js/mahjong.js"></script>
+{{ end }}
+
+{{ if .Page.Store.Get "hasYGO" }}
+  <script src="/js/yugioh-deck.js"></script>
+{{ end }}

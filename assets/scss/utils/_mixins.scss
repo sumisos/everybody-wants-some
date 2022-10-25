@@ -37,6 +37,28 @@
   text-align: center;
 }
 
+// 卡片阴影
+
+@mixin card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  will-change: transform;
+  word-wrap: break-word;
+  backface-visibility: hidden;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #41403e;
+  border-color: lighten(#868e96, 35%);
+  box-shadow: 15px 28px 25px -18px hsla(0, 0, 0%, 0.2);
+  transition: all 235ms ease 0s;
+
+  &:hover {
+    box-shadow: 2px 8px 8px -5px hsla(0, 0, 0%, 0.3);
+    transform: translate3d(0, 2px, 0);
+  }
+}
+
 // CSS Sprites
 
 @mixin sprite-image($img_src) {

@@ -13,11 +13,26 @@ div.ygo-card a {
 // 卡组
 
 div.ygo-deck {
-  width: 37.125rem;
+  @include card();
   margin: 1rem auto;
-  padding: 0 1rem 1rem 1rem;
-  border: 0.125rem solid var(--chroma-line-numbers-color);
-  border-radius: 0.25rem;
+  padding: 1rem;
+  font-family: "YGO Card Name";
+}
+
+div.ygo-deck h2 {
+  margin: 0 auto;
+}
+
+div.ygo-deck h4 {
+  margin: 1.5rem 0 0.5rem 0;
+  font-weight: normal;
+}
+
+div.ygo-deck svg image:not(.unclickable):hover {
+  // transition: all 235ms ease 0s;
+  // transform: translate(-28.75px, -32.5px) scale(1.25, 1.25);
+  // transform-origin: center center;
+  cursor: pointer;
 }
 
 @mixin ygo-deck-title {

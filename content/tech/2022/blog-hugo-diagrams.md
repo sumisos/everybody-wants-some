@@ -5,7 +5,6 @@ date: 2022-04-30T15:18:44+08:00
 tags: ["Blog", "Hugo", "GoAT", "Mermaid"]
 series: ["Hugo"]
 related: true
-mermaid: true
 ---
 
 ## GoAT（Go ASCII Tool）
@@ -1430,7 +1429,10 @@ o-----------------------------------*
 {{ end }}
 ```
 
-然后博客文章 Front Matter 加上 `mermaid: true`。正文正常写 mermaid.js 格式的代码就行了。
+然后正文正常写 [mermaid.js](https://mermaid-js.github.io/mermaid/#/) 格式的代码就行了。
+
+> 有些博客主题已经自带 Mermaid 了，不过它们的实现也许需要 Front Matter 加 `mermaid: true` 来手动引入 JS。\
+> 但上述方法是不需要手动修改 Front Matter 的，而是通过读写 `.Page.Store` 来动态检查文章是否包含 mermaid 代码块，有就自动引入 JS（即按需引入），简单便捷。
 
 <pre>
 ```mermaid

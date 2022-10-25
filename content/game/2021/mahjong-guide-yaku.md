@@ -1,5 +1,5 @@
 ---
-title: "日麻役种一览"
+title: "「有空一起放铳」的日麻攻防教室 附录 役种"
 date: 2021-03-18T23:07:20+08:00
 tags: ["Mahjong"]
 series: ["Mahjong"]

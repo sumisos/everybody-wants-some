@@ -1,0 +1,667 @@
+rewards:
+  - obtain_method: "直播掉落"
+    list:
+      - index: 1
+        url: "https://forums.kleientertainment.com/forums/topic/95912-dont-starve-together-twitch-drops/"
+        date: "2018.9.28"
+        img_src: "https://items.kleientertainment.com/images/DST/BIRDCAGE_CIRCUS/small"
+        item_name: "鸟笼"
+        skin_name: "神奇的杂耍"
+        skin_name_en: "The Amazing Sideshow"
+        collection: "SIDE SHOW COLLECTION"
+        description: ""
+        owned: false
+      - index: 2
+        url: "https://forums.kleientertainment.com/forums/topic/96298-new-twitch-drops-available-now-the-magnificent-rainometer/"
+        date: "2018.10.10"
+        img_src: "https://items.kleientertainment.com/images/DST/RAINOMETER_CIRCUS/small"
+        item_name: "雨量计"
+        skin_name: "华丽的雨量计"
+        skin_name_en: "The Magnificent Rainometer"
+        collection: "SIDE SHOW COLLECTION"
+        description: ""
+        owned: false
+      - index: 3
+        url: "https://forums.kleientertainment.com/forums/topic/97413-amazing-ringmaster-hat-collection-available-now/"
+        date: "2018.10.25"
+        img_src: "https://items.kleientertainment.com/images/DST/TOPHAT_CIRCUS/small"
+        item_name: "高礼帽"
+        skin_name: "神奇驯兽师帽"
+        skin_name_en: "Amazing Ringmaster Hat"
+        collection: "SIDE SHOW COLLECTION"
+        description: ""
+        owned: false
+      - index: 4
+        url: "https://forums.kleientertainment.com/forums/topic/98159-equestrienne-headdress-twitch-drops-available-now-now-in-dont-starve-too/"
+        date: "2018.11.8"
+        img_src: "https://items.kleientertainment.com/images/DST/FEATHERHAT_CIRCUS/small"
+        item_name: "羽毛帽"
+        skin_name: "女骑手头饰"
+        skin_name_en: "Equestrienne Headdress"
+        collection: "SIDE SHOW COLLECTION"
+        description: ""
+        owned: false
+      - index: 5
+        url: "https://forums.kleientertainment.com/forums/topic/99300-the-thermal-strength-measurer-set-is-available-now/"
+        date: "2018.12.6"
+        img_src: "https://items.kleientertainment.com/images/DST/WINTEROMETER_CIRCUS/small"
+        item_name: "温度测量仪"
+        skin_name: "热强度测量器"
+        skin_name_en: "Thermal Strength Measurer"
+        collection: "SIDE SHOW COLLECTION"
+        description: ""
+        owned: false
+      - index: 6
+        url: "https://forums.kleientertainment.com/forums/topic/100083-the-umbrella-the-big-top-set-is-now-on-twitchtv/"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/UMBRELLA_CIRCUS/small"
+        item_name: "雨伞"
+        skin_name: "马戏团伞顶"
+        skin_name_en: "Big Top Umbrella"
+        collection: "SIDE SHOW COLLECTION"
+        description: ""
+        owned: false
+      - index: 7
+        url: "https://forums.kleientertainment.com/forums/topic/100497-the-spectacular-stationary-wayfinder-set-available-thursday-on-twitchtv/"
+        date: "2018.12.13"
+        img_src: "https://items.kleientertainment.com/images/DST/ARROWSIGN_POST_CIRCUS/small"
+        item_name: "指路木牌"
+        skin_name: "壮观的固定寻路器"
+        skin_name_en: "Spectacular Stationary Wayfinder"
+        collection: "SIDE SHOW COLLECTION"
+        description: ""
+        owned: false
+      - index: 8
+        url: "https://forums.kleientertainment.com/forums/topic/101379-the-worlds-greatest-big-top-tent-is-coming-to-twitchtv/"
+        date: "2019.1.3"
+        img_src: "https://items.kleientertainment.com/images/DST/TENT_CIRCUS/small"
+        item_name: "帐篷"
+        skin_name: "世界之最大顶篷"
+        skin_name_en: "World's Greatest Big Top Tent"
+        collection: "SIDE SHOW COLLECTION"
+        description: ""
+        owned: false
+      - index: 9
+        url: "https://forums.kleientertainment.com/forums/topic/103872-new-twitch-drops-available-now-amazing-snowball-juggler/"
+        date: "2019.3.15"
+        img_src: "https://items.kleientertainment.com/images/DST/FIRESUPPRESSOR_CIRCUS/small"
+        item_name: "雪球发射器"
+        skin_name: "雪球杂耍器"
+        skin_name_en: "Amazing Snowball Juggler"
+        collection: "SIDE SHOW COLLECTION"
+        description: ""
+        owned: false
+      - index: 10
+        url: "https://forums.kleientertainment.com/forums/topic/105767-new-twitch-drops-now-live-the-metamorphosed-flame/"
+        date: "2019.5.7"
+        img_src: "https://items.kleientertainment.com/images/DST/HEATROCK_FIRE/small"
+        item_name: "暖石"
+        skin_name: "变形火焰"
+        skin_name_en: "Metamorphosed Flame"
+        collection: "CRYSTALLINE COLLECTION"
+        description: "已于 2021.1.8 复刻 [直播掉落](https://forums.kleientertainment.com/forums/topic/125835-encore-streaming-drops-available-now-the-metamorphosed-flame/)"
+        owned: false
+      - index: 11
+        url: "https://forums.kleientertainment.com/forums/topic/109073-july-25th-new-twitch-drops-the-crystaline-icebox/"
+        date: "2019.7.20"
+        img_src: "https://items.kleientertainment.com/images/DST/ICEBOX_CRYSTAL/small"
+        item_name: "冰箱"
+        skin_name: "水晶冰箱"
+        skin_name_en: "Crystalline Ice Box"
+        collection: "CRYSTALLINE COLLECTION"
+        description: "已于 2021.1.15 复刻 [直播掉落](https://forums.kleientertainment.com/forums/topic/126108-encore-streaming-drops-available-now-the-crystalline-ice-box/)"
+        owned: false
+      - index: 12
+        url: "https://forums.kleientertainment.com/forums/topic/111543-new-streaming-drops-available-now-the-radiant-star-and-prismatic-moon-callers-staff/"
+        date: "2019.9.12"
+        img_src: "https://items.kleientertainment.com/images/DST/STARSTAFF_CRYSTAL/small"
+        item_name: "唤星者魔杖"
+        skin_name: "光芒唤星者魔杖"
+        skin_name_en: "Radiant Star Caller's Staff"
+        collection: "CRYSTALLINE COLLECTION"
+        description: "已于 2021.1.22 复刻 [直播掉落](https://forums.kleientertainment.com/forums/topic/126338-encore-streaming-drops-available-now-the-radiant-star-callers-staff/)"
+        owned: false
+      - index: 13
+        url: "https://forums.kleientertainment.com/forums/topic/112955-new-streaming-drops-available-now-the-bone-chilling-firepit/"
+        date: "2019.10.25"
+        img_src: "https://items.kleientertainment.com/images/DST/COLDFIREPIT_TEETH/small"
+        item_name: "吸热火坑"
+        skin_name: "刺骨严寒火坑"
+        skin_name_en: "Bone-Chilling Firepit"
+        collection: "HALLOWED NIGHTS COLLECTION"
+        description: ""
+        owned: false
+      - index: 14
+        url: "https://forums.kleientertainment.com/forums/topic/114193-new-streaming-drops-available-now-the-klaus-cap/"
+        date: "2019.12.12"
+        img_src: "https://items.kleientertainment.com/images/DST/BEEFALOHAT_KLAUS/small"
+        item_name: "牛角帽"
+        skin_name: "克劳斯帽"
+        skin_name_en: "Klaus Cap"
+        collection: "WINTER COLLECTION"
+        description: ""
+        owned: false
+      - index: 15
+        url: "https://forums.kleientertainment.com/forums/topic/115177-new-streaming-drops-available-now-the-glass-eyebrella/"
+        date: "2020.1.24"
+        img_src: "https://items.kleientertainment.com/images/DST/EYEBRELLAHAT_CRYSTAL/small"
+        item_name: "眼球伞"
+        skin_name: "玻璃眼球伞"
+        skin_name_en: "Glass Eyebrella"
+        collection: "CRYSTALLINE COLLECTION"
+        description: "已于 2021.1.29 复刻 [直播掉落](https://forums.kleientertainment.com/forums/topic/126531-encore-streaming-drops-available-now-the-glass-eyebrella/)"
+        owned: false
+      - index: 16
+        url: "https://forums.kleientertainment.com/forums/topic/116541-new-streaming-drops-available-now-the-crystallized-cabinet/"
+        date: "2020.3.20"
+        img_src: "https://items.kleientertainment.com/images/DST/WARDROBE_CRYSTAL/small"
+        item_name: "衣柜"
+        skin_name: "水晶衣柜"
+        skin_name_en: "Crystallized Cabinet"
+        collection: "CRYSTALLINE COLLECTION"
+        description: "已于 2021.2.5 复刻 [直播掉落](https://forums.kleientertainment.com/forums/topic/126685-encore-streaming-drops-available-now-the-crystallized-cabinet/)"
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/116952-new-streaming-drops-available-now-salt-box-shaker/"
+        date: "2020.4.2"
+        img_src: "https://items.kleientertainment.com/images/DST/SALTBOX_SHAKER/small"
+        item_name: "盐盒"
+        skin_name: "盐罐"
+        skin_name_en: "Salt Box Shaker"
+        collection: "FOOL'S COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/117564-new-streaming-drops-available-now-the-crystalline-honeydome/"
+        date: "2020.4.24"
+        img_src: "https://items.kleientertainment.com/images/DST/BEEBOX_CRYSTAL/small"
+        item_name: "蜂箱"
+        skin_name: "水晶穹顶蜂巢"
+        skin_name_en: "Crystalline Honeydome"
+        collection: "CRYSTALLINE COLLECTION"
+        description: "已于 2021.2.12 复刻 [直播掉落](https://forums.kleientertainment.com/forums/topic/126974-encore-streaming-drops-available-now-the-crystalline-honeydome/)"
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/118567-new-streaming-drops-available-now-the-crystalline-furnace/"
+        date: "2020.5.29"
+        img_src: "https://items.kleientertainment.com/images/DST/DRAGONFLYFURNACE_CRYSTAL/small"
+        item_name: "龙鳞火炉"
+        skin_name: "水晶火炉"
+        skin_name_en: "Crystalline Furnace"
+        collection: "CRYSTALLINE COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/119068-new-streaming-drops-available-now-the-salt-lamp/"
+        date: "2020.6.16"
+        img_src: "https://items.kleientertainment.com/images/DST/LANTERN_CRYSTAL/small"
+        item_name: "提灯"
+        skin_name: "盐灯"
+        skin_name_en: "Salt Lamp"
+        collection: "CRYSTALLINE COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/120113-new-streaming-drops-available-now-the-enchanted-crystal/"
+        date: "2020.7.17"
+        img_src: "https://items.kleientertainment.com/images/DST/RESEARCHLAB3_CRYSTAL/small"
+        item_name: "暗影操控器"
+        skin_name: "附魔水晶"
+        skin_name_en: "Enchanted Crystal"
+        collection: "CRYSTALLINE COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/121074-new-streaming-drops-available-now-the-sorcerers-staff/"
+        date: "2020.8.21"
+        img_src: "https://items.kleientertainment.com/images/DST/TELESTAFF_CRYSTAL/small"
+        item_name: "传送魔杖"
+        skin_name: "巫师法杖"
+        skin_name_en: "Sorcerer's Staff"
+        collection: "CRYSTALLINE COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/121976-new-streaming-drops-available-now-the-sorcerers-circle/"
+        date: "2020.9.25"
+        img_src: "https://items.kleientertainment.com/images/DST/TELEBASE_CRYSTAL/small"
+        item_name: "传送焦点"
+        skin_name: "巫师魔环"
+        skin_name_en: "Sorcerer's Circle"
+        collection: "CRYSTALLINE COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/124929-new-streaming-drops-available-now-the-winter-wardrobe/"
+        date: "2020.12.16"
+        img_src: "https://items.kleientertainment.com/images/DST/WARDROBE_YULE/small"
+        item_name: "衣柜"
+        skin_name: "冬季衣柜"
+        skin_name_en: "Winter Wardrobe"
+        collection: "MERRYMAKER COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/122667-new-streaming-drops-available-now-the-terrible-ooze-machine/"
+        date: "2020.10.23"
+        img_src: "https://items.kleientertainment.com/images/DST/RESEARCHLAB_GREEN/small"
+        item_name: "科学机器"
+        skin_name: "恐怖漏液机器"
+        skin_name_en: "Terrible Ooze Machine"
+        collection: "HALLOWED NIGHTS COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/128289-new-streaming-drops-available-now-the-smitening-rod/"
+        date: "2021.3.26"
+        img_src: "https://items.kleientertainment.com/images/DST/LIGHTNING_ROD_NAUTICAL/small"
+        item_name: "避雷针"
+        skin_name: "惩戒避雷针"
+        skin_name_en: "Smite'ning Rod"
+        collection: "NAUTICAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/129648-new-streaming-drops-available-now-the-briny-salt-box/"
+        date: "2021.5.6"
+        img_src: "https://items.kleientertainment.com/images/DST/SALTBOX_NAUTICAL/small"
+        item_name: "盐盒"
+        skin_name: "海水盐盒"
+        skin_name_en: "Briny Salt Box"
+        collection: "NAUTICAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/131148-new-streaming-drops-available-now-the-rockjaw-sail/"
+        date: "2021.6.25"
+        img_src: "https://items.kleientertainment.com/images/DST/MAST_NAUTICAL/small"
+        item_name: "桅杆"
+        skin_name: "岩石大白鲨风帆"
+        skin_name_en: "Rockjaw Sail"
+        collection: "NAUTICAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/123831-new-streaming-drops-available-now-the-arcane-crystalarium/"
+        date: "2020.11.27"
+        img_src: "https://items.kleientertainment.com/images/DST/RESEARCHLAB2_CRYSTAL/small"
+        item_name: "炼金引擎"
+        skin_name: "神秘水晶"
+        skin_name_en: "Arcane Crystalarium"
+        collection: "CRYSTALLINE COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/132619-new-streaming-drops-available-now-the-fishy-bat/"
+        date: "2021.8.13"
+        img_src: "https://items.kleientertainment.com/images/DST/HAMBAT_NAUTICAL/small"
+        item_name: "火腿棒"
+        skin_name: "海鱼棒"
+        skin_name_en: "Fishy Bat"
+        collection: "NAUTICAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/133450-new-streaming-drops-available-now-the-skittersquid-helm/"
+        date: "2021.9.10"
+        img_src: "https://items.kleientertainment.com/images/DST/STEERINGWHEEL_NAUTICAL/small"
+        item_name: "方向舵套装"
+        skin_name: "鱿鱼方向舵"
+        skin_name_en: "Skittersquid Helm"
+        collection: "NAUTICAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/134610-new-streaming-drops-available-now-the-monstrous-horror/"
+        date: "2021.10.22"
+        img_src: "https://items.kleientertainment.com/images/DST/RESEARCHLAB3_MONSTER/small"
+        item_name: "暗影操控器"
+        skin_name: "恐怖怪兽"
+        skin_name_en: "Monstrous Horror"
+        collection: "HALLOWED NIGHTS COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/135389-new-streaming-drops-available-now-the-shellbound-deck-illuminator/"
+        date: "2021.11.19"
+        img_src: "https://items.kleientertainment.com/images/DST/MASTUPGRADELAMP_NAUTICAL/small"
+        item_name: "甲板照明灯"
+        skin_name: "贝壳甲板照明仪"
+        skin_name_en: "Shellbound Deck Illuminator"
+        collection: "NAUTICAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/136236-new-streaming-drops-available-now-the-topsy-turvy-treehouse/"
+        date: "2021.12.17"
+        img_src: "https://items.kleientertainment.com/images/DST/RABBITHOUSE_YULE/small"
+        item_name: "兔屋"
+        skin_name: "倒挂树屋"
+        skin_name_en: "Topsy-Turvy Treehouse"
+        collection: "MERRYMAKER COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/137156-new-streaming-drops-available-now-the-conch-torch/"
+        date: "2022.1.28"
+        img_src: "https://items.kleientertainment.com/images/DST/TORCH_NAUTICAL/small"
+        item_name: "火炬"
+        skin_name: "海螺火炬"
+        skin_name_en: "Conch Torch"
+        collection: "NAUTICAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/138551-new-streaming-drops-available-now-the-serpentine-storm-eater/"
+        date: "2022.3.25"
+        img_src: "https://items.kleientertainment.com/images/DST/MASTUPGRADE_LIGHTNINGROD_NAUTICAL/small"
+        item_name: "避雷导线"
+        skin_name: "巨蛇风暴吞噬者"
+        skin_name_en: "Serpentine Storm Eater"
+        collection: "NAUTICAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/139736-new-streaming-drops-available-now-the-silver-tuna-tin/"
+        date: "2022.4.29"
+        img_src: "https://items.kleientertainment.com/images/DST/FISHBOX_NAUTICAL/small"
+        item_name: "锡鱼罐"
+        skin_name: "银金枪鱼罐"
+        skin_name_en: "Silver Tuna Tin"
+        collection: "NAUTICAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/140635-new-streaming-drops-available-now-the-rusty-anchor/"
+        date: "2022.6.3"
+        img_src: "https://items.kleientertainment.com/images/DST/ANCHOR_NAUTICAL/small"
+        item_name: "锚"
+        skin_name: "生锈船锚"
+        skin_name_en: "Rusty Anchor"
+        collection: "NAUTICAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "https://forums.kleientertainment.com/forums/topic/141346-new-streaming-drops-available-now-the-abandoned-ship/"
+        date: "2022.7.1"
+        img_src: "https://items.kleientertainment.com/images/DST/BOAT_NAUTICAL/small"
+        item_name: "船"
+        skin_name: "弃船"
+        skin_name_en: "Abandoned Ship"
+        collection: "NAUTICAL COLLECTION"
+        description: ""
+        owned: false
+  - obtain_method: "登录奖励"
+    list:
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/FIREPIT_HOLE_ALT/small"
+        item_name: "火坑"
+        skin_name: "无底洞"
+        skin_name_en: "Bottomless Pit"
+        collection: "GENERAL COLLECTION"
+        description: "2016 年 联机版发售 第一周购买 赠品"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/REVIVER_CUPID_ALT/small"
+        item_name: "告密的心"
+        skin_name: "天使之心"
+        skin_name_en: "Cherub's Heart"
+        collection: "HEART COLLECTION"
+        description: "2017 年 2 月 情人节 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/FEET_SLIPPERS_ROOSTER_WHITE_PURE/small"
+        item_name: "非物品"
+        skin_name: "咯咯响的拖鞋"
+        skin_name_en: "Clucky Slippers"
+        collection: "LUNAR NEW YEAR COLLECTION"
+        description: "2017 年 2 月 火鸡之年 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/WINTERHAT_ROOSTER_ALT/small"
+        item_name: "冬帽"
+        skin_name: "咯咯响的冬季帽"
+        skin_name_en: "Clucky Winter Hat"
+        collection: "LUNAR NEW YEAR COLLECTION"
+        description: "2017 年 2 月 火鸡之年 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/LANTERN_WINTER_ALT/small"
+        item_name: "提灯"
+        skin_name: "冬季盛宴提灯"
+        skin_name_en: "Winter's Feast Lantern"
+        collection: "WINTER COLLECTION"
+        description: "2018 年 冬季盛宴 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/REVIVER_CUPID_3ALT/small"
+        item_name: "告密的心"
+        skin_name: "木桩扎心"
+        skin_name_en: "Staked Heart"
+        collection: "HEART COLLECTION"
+        description: "2019 年 2 月 情人节 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/MAST_ROSE_ALT/small"
+        item_name: "桅杆"
+        skin_name: "玫瑰风帆"
+        skin_name_en: "Roseate Sail"
+        collection: "ROSE COLLECTION"
+        description: "2019 年 8 月 旧神归来 改潮换代 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/REVIVER_CUPID_2ALT/small"
+        item_name: "告密的心"
+        skin_name: "利刃穿心"
+        skin_name_en: "Daggered Heart"
+        collection: "HEART COLLECTION"
+        description: "2018 年 2 月 情人节 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/BEEFALOHAT_PIGKING_ALT/small"
+        item_name: "牛角帽"
+        skin_name: "猪王帽"
+        skin_name_en: "Pig King Hat"
+        collection: "YEAR OF THE PIG KING COLLECTION"
+        description: "2019 年 1 月 猪王年 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/PICKAXE_SCYTHE_ALT/small"
+        item_name: "鹤嘴锄"
+        skin_name: "生锈镰刀"
+        skin_name_en: "Rusted Scythe"
+        collection: "HALLOWED NIGHTS COLLECTION"
+        description: "2019 年 10 月 万圣节 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/OCEANFISHINGROD_ICE_ALT/small"
+        item_name: "海钓竿"
+        skin_name: "寒冰钓竿"
+        skin_name_en: "Ice Fishing Rod"
+        collection: "WINTER COLLECTION"
+        description: "2019 年 12 月 冬季盛宴 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/TORCH_CARRAT_ALT/small"
+        item_name: "火炬"
+        skin_name: "胡萝卜鼠火炬"
+        skin_name_en: "Carrat Torch"
+        collection: "YEAR OF THE CARRAT COLLECTION"
+        description: "2020 年 1 月 胡萝卜鼠年 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/REVIVER_CUPID_4ALT/small"
+        item_name: "告密的心"
+        skin_name: "被偷去的心"
+        skin_name_en: "Stolen Heart"
+        collection: "HEART COLLECTION"
+        description: "2020 年 2 月 情人节 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/MAST_CRABKING_ALT/small"
+        item_name: "桅杆"
+        skin_name: "帝王蟹风帆"
+        skin_name_en: "Crab King Sail"
+        collection: "GENERAL COLLECTION"
+        description: "2020 年 4 月 旧神归来 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/LANTERN_MUMMY_ALT/small"
+        item_name: "提灯"
+        skin_name: "怪兽提灯"
+        skin_name_en: "Monstrous Lantern"
+        collection: "HALLOWED NIGHTS COLLECTION"
+        description: "2020 年 10 月 万圣节 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/WALL_STONE_ANCIENT_ALT/small"
+        item_name: "石墙"
+        skin_name: "远古石墙"
+        skin_name_en: "Ancient Stone Wall"
+        collection: "GENERAL COLLECTION"
+        description: "2020 年 10 月 万圣节 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/WALL_RUINS_THULECITE_ALT/small"
+        item_name: "铥矿墙"
+        skin_name: "远古装饰墙"
+        skin_name_en: "Ancient Ornamental Wall"
+        collection: "GENERAL COLLECTION"
+        description: "2020 年 10 月 万圣节 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/SADDLE_BASIC_YOTBALT/small"
+        item_name: "鞍具"
+        skin_name: "喜庆鞍具"
+        skin_name_en: "Festive Saddle"
+        collection: "GENERAL COLLECTION"
+        description: "2021 年 2 月 皮弗娄牛年 登录奖励"
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/TREASURECHEST_CUPIDALT/small"
+        item_name: "箱子"
+        skin_name: "可爱的箱子"
+        skin_name_en: "Lovely Chest"
+        collection: "GENERAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/LANTERN_FLOWER_ALT/small"
+        item_name: "提灯"
+        skin_name: "纸灯笼"
+        skin_name_en: "Paper Lantern"
+        collection: "GENERAL COLLECTION"
+        description: "2021 年 5 月 旧神归来 登录奖励"
+        owned: false
+  - obtain_method: "其他"
+    list:
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/ENDTABLE_CAWNIVAL_ALT/small"
+        item_name: "茶几 / 舞台之手"
+        skin_name: "鸦年华茶几"
+        skin_name_en: "Cawnival Endtable"
+        collection: "GENERAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/PERDLING_POLLYROGERS/small"
+        item_name: "小火鸡"
+        skin_name: "小鹦鹉"
+        skin_name_en: "Parrotlet"
+        collection: "GENERAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/WATERMELONHAT_BANANA/small"
+        item_name: "西瓜帽"
+        skin_name: "香蕉头巾"
+        skin_name_en: "Banandana"
+        collection: "GENERAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/FIREPIT_KILN_ALT/small"
+        item_name: "火坑"
+        skin_name: "石窑"
+        skin_name_en: "Stone Kiln"
+        collection: "GENERAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/DRAGONFLYCHEST_KRAKEN/small"
+        item_name: "龙鳞宝箱"
+        skin_name: "利维坦箱子"
+        skin_name_en: "Leviathan Chest"
+        collection: "NAUTICAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/TORCH_PILLAR_ALT/small"
+        item_name: "火炬"
+        skin_name: "雕刻石制火炬"
+        skin_name_en: "Carved Stone Torch"
+        collection: "GENERAL COLLECTION"
+        description: ""
+        owned: false
+      - index: 0
+        url: "官方论坛发布链接"
+        date: ""
+        img_src: "https://items.kleientertainment.com/images/DST/WINTERHAT_FANCY_PUPPYALT/small"
+        item_name: "冬帽"
+        skin_name: "小狗针织帽"
+        skin_name_en: "Knitted Puppy Hat"
+        collection: "YEAR OF THE VARG COLLECTION"
+        description: ""
+        owned: false

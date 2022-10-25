@@ -96,7 +96,8 @@ related: true
 |                          防展开                           |                                                                                                         |
 |    {{< ygo-card "原始生命态 尼比鲁" 27204311 light >}}    |                                            对方召唤 5 次清场                                            |
 
-{{< ygo-deck "泛用手坑" >}}
+```ydk
+#泛用手坑
 #main
 23434538
 14558127
@@ -113,7 +114,7 @@ related: true
 94145021
 73642296
 59438930
-{{< /ygo-deck >}}
+```
 
 - 泛用手坑：{{< ygo-card "G" 23434538 >}}、{{< ygo-card "灰" 14558127 >}}、{{< ygo-card "墓指" 24224830 >}}、{{< ygo-card "丝袜" 97268402 >}}、{{< ygo-card "泡影" 10045474 >}}
 - 全时点手坑：{{< ygo-card "圣枪" 34267821 >}}、{{< ygo-card "异次元乌鸦" 24508238 >}}（配合 {{< ygo-card "独角兽" 44155002 >}} 控制手牌数量）
@@ -139,7 +140,8 @@ related: true
 <details class="collapse" open="open">
   <summary>纯本家毛毛</summary>
 
-{{< ygo-deck "纯童话动物" "https://www.bilibili.com/video/BV1cu411d7o2?t=470.9" >}}
+```ydk
+#纯童话动物 https://www.bilibili.com/video/BV1cu411d7o2?t=470.9
 #main
 24508238
 82888408
@@ -197,16 +199,17 @@ related: true
 26847978
 86066372
 99726621
-{{< /ygo-deck >}}
+```
 
 初动点：{{< ygo-card "河狸" 68353324 >}}、{{< ygo-card "救援猫" 14878871 >}}、{{< ygo-card "怀柔" 72537897 >}}。
 
 </details>
 
-<details class="collapse"> 
+<details class="collapse">
   <summary>铁兽毛毛</summary>
 
-{{< ygo-deck "铁兽战线 童话动物" "https://www.bilibili.com/video/BV1cu411d7o2?t=481.4" >}}
+```ydk
+#铁兽战线 童话动物 https://www.bilibili.com/video/BV1cu411d7o2?t=481.4
 #main
 24508238
 14816857
@@ -264,7 +267,7 @@ related: true
 86066372
 99726621
 99726621
-{{< /ygo-deck >}}
+```
 
 初动点：{{< ygo-card "马" 87209160 >}}、{{< ygo-card "牛" 50810455 >}}、{{< ygo-card "救援猫" 14878871 >}}、{{< ygo-card "怀柔" 72537897 >}}。
 
@@ -289,3 +292,7 @@ related: true
   1.  {{< ygo-card "救援猫" 14878871 >}} 随便拉两只 2 星超量素材，叠成 <ruby><rb>{{< ygo-card "森之童话动物家族" 30439101 >}}</rb><rp>（</rp><rt>~~没在吃饭的~~ 全家福</rt><rp>）</rp></ruby>（也是 R2）。
   2.  {{< ygo-card "全家福" 30439101 >}} 拔素材检索 {{< ygo-card "童话动物的追逐游戏" 37256135 >}} 苏生墓地的本家 R2。
   3.  两只 R2 叠成 {{< ygo-card "未来No.0 未来皇 霍普" 65305468 >}}，继续上叠成 {{< ygo-card "龙皇" 26973555 >}}。
+
+```
+
+```

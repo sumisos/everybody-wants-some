@@ -1,0 +1,46 @@
+{{- $RarityColor := slice "#d1876d" "#edeef1" "#ebd16f" -}}
+{{- $CountAll := 0 -}}
+{{- $CountGot := 0 -}}
+{{- $CountBronze := 0 -}}
+{{- $CountSilver := 0 -}}
+{{- $CountGold := 0 -}}
+{{- range $kind := $.Site.Data.game.maj_soul.achievements -}}
+  {{- $count := 0 -}}
+  {{- range $achievement := $kind.list -}}
+  {{- $CountAll = add $CountAll 1 -}}
+    {{- if $achievement.completed -}}
+      {{- $CountGot = add $CountGot 1 -}}
+      {{- $count = add $count 1 -}}
+      {{- if eq $achievement.difficulty 2 -}}
+        {{- $CountGold = add $CountGold 1 -}}
+      {{- else if eq $achievement.difficulty 1 -}}
+        {{- $CountSilver = add $CountSilver 1 -}}
+      {{- else -}}
+        {{- $CountBronze = add $CountBronze 1 -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  <details class="collapse">
+    <summary>
+      「{{- $kind.topic -}}」{{ $count }}/{{ len $kind.list }}
+      {{ if (not $kind.disable_percent) }}（完成进度 {{ div (math.Round (mul (div $count (float (len $kind.list))) 1000)) 10.0 -}}%）{{ end }}
+    </summary>
+    <p>
+      <ul>
+        {{- range $achievement := $kind.list -}}
+          <li>
+            <input {{ if $achievement.completed }}checked{{ end }} disabled type="checkbox">
+            <span style="padding: 0.1rem 0.5rem; border-radius: 0.25rem;background-color: #425c7e; color: {{ index $RarityColor $achievement.difficulty }}; font-weight: bold;">
+              {{- $achievement.name -}}
+            </span><br/>
+            <em>{{- $achievement.description | markdownify -}}</em>
+            {{ if $achievement.completed }}<span style="margin-left: 0.5rem; color: #06ff5e;">已完成</span>{{ end }}
+          </li>
+        {{- end -}}
+      </ul>
+    </p>
+  </details>
+{{- end -}}
+<div class="center">
+  达成成就：「金 {{ $CountGold }}」「银 {{ $CountSilver }}」「铜 {{ $CountBronze }}」（总计：{{ $CountGot }} / <del>{{ $CountAll }}</del> 407）
+</div>

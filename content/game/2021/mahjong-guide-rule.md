@@ -1,5 +1,5 @@
 ---
-title: "日麻新手入门简易指南"
+title: "「有空一起放铳」的日麻攻防教室 #2 简介篇"
 date: 2021-03-18T22:47:20+08:00
 tags: ["Mahjong"]
 series: ["Mahjong"]

@@ -16,7 +16,8 @@ related: true
 <details class="collapse" open="open">
   <summary>NR 杯（2022.3.23）禁限卡表</summary>
 
-{{< ygo-deck "NR 杯（2022.3.23）禁限卡表" "https://www.masterduelmeta.com/articles/news/march-2022/nr-festival-banlist" >}}
+```ydk
+#NR 杯（2022.3.23）禁限卡表 https://www.masterduelmeta.com/articles/news/march-2022/nr-festival-banlist
 !ban3
 !所有 SR 卡和 UR 卡 以及
 35112613
@@ -89,7 +90,7 @@ related: true
 87910978
 75539614
 47679935
-{{< /ygo-deck >}}
+```
 
 </details>
 
@@ -97,10 +98,11 @@ related: true
 
 然而该自爆还是能自爆。
 
-<details class="collapse"> 
+<details class="collapse">
   <summary>卡组构筑</summary>
 
-{{< ygo-deck "全 NR 一言不合就自爆" "https://www.bilibili.com/video/BV1yL411P7sV" >}}
+```ydk
+#全 NR 一言不合就自爆 https://www.bilibili.com/video/BV1yL411P7sV
 #main
 19665973
 19665973
@@ -142,7 +144,7 @@ related: true
 92512625
 92512625
 92512625
-{{< /ygo-deck >}}
+```
 
 </details>
 
@@ -170,10 +172,11 @@ C 方案
 
 ## 自称最强的威风炼装
 
-<details class="collapse"> 
+<details class="collapse">
   <summary>卡组构筑</summary>
 
-{{< ygo-deck "全 NR 威风妖怪 炼装勇士" "https://www.bilibili.com/video/BV1Mq4y1v7og" >}}
+```ydk
+#全 NR 威风妖怪 炼装勇士 https://www.bilibili.com/video/BV1Mq4y1v7og
 #main
 60473572
 60473572
@@ -231,7 +234,7 @@ C 方案
 52119435
 61728808
 61728808
-{{< /ygo-deck >}}
+```
 
 </details>
 
@@ -257,10 +260,11 @@ C 方案
 有堆墓？那加上 3 张 {{< ygo-card "堕武者" 68989981 >}} 算你 40 抽 4 好吧。祝好运。<br/>
 这 40 抽 4 是**保**（甚至不是上手）其中 1 张 key 卡记得吗？你还要想别的办法保证大哥和仪式。
 
-<details class="collapse"> 
+<details class="collapse">
   <summary>卡组构筑</summary>
 
-{{< ygo-deck "全 NR 不知火 复仇死者" "https://www.bilibili.com/video/BV1Yb4y1p7zk" >}}
+```ydk
+#全 NR 不知火 复仇死者 https://www.bilibili.com/video/BV1Yb4y1p7zk
 #main
 70491682
 67267333
@@ -317,7 +321,7 @@ C 方案
 50277355
 50277355
 52119435
-{{< /ygo-deck >}}
+```
 
 </details>
 
@@ -372,10 +376,11 @@ C 方案
 
 ## 英雄
 
-<details class="collapse"> 
+<details class="collapse">
   <summary>卡组构筑</summary>
 
-{{< ygo-deck "全 NR 融合 英雄" "https://www.bilibili.com/video/BV1LY411n7oN" >}}
+```ydk
+#全 NR 融合 英雄 https://www.bilibili.com/video/BV1LY411n7oN
 #main
 20721928
 20721928
@@ -438,16 +443,17 @@ C 方案
 14087893
 53582587
 59123194
-{{< /ygo-deck >}}
+```
 
 </details>
 
 ## 三形金字塔
 
-<details class="collapse"> 
+<details class="collapse">
   <summary>卡组构筑</summary>
 
-{{< ygo-deck "全 NR 三形金字塔" "/game/yu_gi_oh-triamid/" >}}
+```ydk
+#全 NR 三形金字塔 /game/yu_gi_oh-triamid/
 #main
 44440058
 48519867
@@ -505,7 +511,7 @@ C 方案
 52119435
 5402805
 32986898
-{{< /ygo-deck >}}
+```
 
 </details>
 
@@ -513,10 +519,11 @@ C 方案
 
 ## 无限起动 龙影神
 
-<details class="collapse"> 
+<details class="collapse">
   <summary>卡组构筑</summary>
 
-{{< ygo-deck "全 NR 无限起动 龙影神" "https://www.bilibili.com/video/BV1BL411A7m7" >}}
+```ydk
+#全 NR 无限起动 龙影神 https://www.bilibili.com/video/BV1BL411A7m7
 #main
 35645105
 35645105
@@ -582,7 +589,7 @@ C 方案
 26708437
 88667504
 68630939
-{{< /ygo-deck >}}
+```
 
 </details>
 
@@ -606,10 +613,11 @@ C 方案
 
 ## 暗黑界 未界域 龙影神
 
-<details class="collapse"> 
+<details class="collapse">
   <summary>卡组构筑</summary>
 
-{{< ygo-deck "全 NR 暗黑界 未界域 龙影神" "https://www.bilibili.com/video/BV1qL4y1T7Kq" >}}
+```ydk
+#全 NR 暗黑界 未界域 龙影神 https://www.bilibili.com/video/BV1qL4y1T7Kq
 #main
 7623640
 7623640
@@ -667,7 +675,7 @@ C 方案
 49725936
 15844566
 32986898
-{{< /ygo-deck >}}
+```
 
 </details>
 
@@ -703,3 +711,7 @@ C 方案
 | :--------------------------------: | :--: | :------------------------------------: |
 | {{< ygo-card "蟑螂柱" 17535764 >}} | 3 星 | 检索{{< ygo-card "天蛾人" 52350806 >}} |
 | {{< ygo-card "影依兽" 3717252 >}}  | 5 星 |                  抽 1                  |
+
+```
+
+```

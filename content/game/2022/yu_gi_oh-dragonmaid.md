@@ -85,7 +85,8 @@ related: true
 
 ## 示例卡组
 
-{{< ygo-deck "龙女仆" "https://www.bilibili.com/video/BV1Zq4y187YL" >}}
+```ydk
+#龙女仆 https://www.bilibili.com/video/BV1Zq4y187YL
 #main
 23434538
 23434538
@@ -143,7 +144,7 @@ related: true
 24361622
 31833038
 85289965
-{{< /ygo-deck >}}
+```
 
 ## 对局技巧 Tips
 
@@ -211,3 +212,7 @@ MD 还没出红爹，那没事了。
 3. 墓地的 [**整理**](https://www.ygocdb.com/card/57416183) 发效果除外，苏生墓地的 [**客厅龙女**](https://www.ygocdb.com/card/88453933)
 4. 用 [**主动撞针龙**](https://www.ygocdb.com/card/73539069) 和 [**客厅龙女**](https://www.ygocdb.com/card/88453933) LINK 出 [**天球之圣刻印**](https://www.ygocdb.com/card/24361622)
 5. 后面都一样
+
+```
+
+```

@@ -1,0 +1,4 @@
+{{ if or (.Page.Store.Get "hasMahjong") (.Params.mahjong | default .Site.Params.enableMahjong) }}
+  {{ partial "utils/svg-sprites/mahjong-tiles.html" }}
+  <!-- script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script -->
+{{ end }}

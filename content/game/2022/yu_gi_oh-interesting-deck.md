@@ -10,7 +10,8 @@ related: true
 <details class="collapse">
   <summary>战华（三国）</summary>
 
-{{< ygo-deck "战华" "" >}}
+```ydk
+#战华
 #main
 23434538
 23434538
@@ -68,14 +69,15 @@ related: true
 4280258
 86066372
 98127546
-{{< /ygo-deck >}}
+```
 
 </details>
 
 <details class="collapse">
   <summary>除外 + 烧血 阴间卡组</summary>
 
-{{< ygo-deck "魔兽的大饵 + 异次元炸药 OTK" "" >}}
+```ydk
+#魔兽的大饵 + 异次元炸药 OTK
 #main
 23898021
 23898021
@@ -117,9 +119,10 @@ related: true
 48814566
 48814566
 48814566
-{{< /ygo-deck >}}
+```
 
-{{< ygo-deck "55 卡 贪比 除外卡组" "" >}}
+```ydk
+#55 卡 贪比 除外卡组
 #main
 19665973
 19665973
@@ -192,14 +195,15 @@ related: true
 78144171
 88754763
 85289965
-{{< /ygo-deck >}}
+```
 
 </details>
 
 <details class="collapse">
   <summary>高浓度 魔偶甜点 可爱的妹卡</summary>
 
-{{< ygo-deck "一看就未完成的 魔偶甜点" "" >}}
+```ydk
+#一看就未完成的 魔偶甜点
 #main
 91350799
 91350799
@@ -255,14 +259,15 @@ related: true
 96150936
 96150936
 96150936
-{{< /ygo-deck >}}
+```
 
 </details>
 
-<details class="collapse"> 
+<details class="collapse">
   <summary>魔术师展开 凶饿毒 复制 独立夜莺 FTK</summary>
 
-{{< ygo-deck "魔术师 独立夜莺 凶饿毒 FTK" "https://www.bilibili.com/video/BV1mS4y137aJ" >}}
+```ydk
+#魔术师 独立夜莺 凶饿毒 FTK https://www.bilibili.com/video/BV1mS4y137aJ
 #main
 51531505
 54941203
@@ -315,14 +320,15 @@ related: true
 16691074
 24094258
 70369116
-{{< /ygo-deck >}}
+```
 
 </details>
 
-<details class="collapse"> 
+<details class="collapse">
 <summary>点火展开 转晶 + No.33 炸 究极幻神 FTK</summary>
 
-{{< ygo-deck "No.33 究极幻神 FTK" "" >}}
+```ydk
+#No.33 究极幻神 FTK
 #main
 24131534
 24131534
@@ -377,14 +383,15 @@ related: true
 71095768
 70369116
 52119435
-{{< /ygo-deck >}}
+```
 
 </details>
 
-<details class="collapse"> 
+<details class="collapse">
   <summary>被暴打的双子真龙</summary>
 
-{{< ygo-deck "直播☆双子 真龙" "" >}}
+```ydk
+#直播☆双子 真龙
 #main
 23434538
 23434538
@@ -442,14 +449,15 @@ related: true
 65330383
 29479265
 86066372
-{{< /ygo-deck >}}
+```
 
 </details>
 
-<details class="collapse"> 
+<details class="collapse">
   <summary>一个报社的棒子</summary>
 
-{{< ygo-deck "重坑 除外 暴食兽 / 红莲兽" "" >}}
+```ydk
+#重坑 除外 暴食兽 / 红莲兽
 #main
 63845230
 63845230
@@ -507,14 +515,15 @@ related: true
 4280258
 86066372
 98127546
-{{< /ygo-deck >}}
+```
 
 </details>
 
-<details class="collapse"> 
+<details class="collapse">
   <summary>霍普雷普霍普雷</summary>
 
-{{< ygo-deck "魂 霍普" "" >}}
+```ydk
+#魂 霍普
 #main
 23434538
 23434538
@@ -572,14 +581,15 @@ related: true
 63767246
 90448279
 95134948
-{{< /ygo-deck >}}
+```
 
 </details>
 
-<details class="collapse"> 
+<details class="collapse">
   <summary>有手就行的源数</summary>
 
-{{< ygo-deck "源数 OTK" "https://bbs.nga.cn/read.php?tid=30645552" >}}
+```ydk
+#源数 OTK https://bbs.nga.cn/read.php?tid=30645552
 #main
 42352091
 42352091
@@ -645,6 +655,6 @@ related: true
 25955749
 5318639
 8267140
-{{< /ygo-deck >}}
+```
 
 </details>

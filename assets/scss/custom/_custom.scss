@@ -9,6 +9,15 @@
 @import "./yu_gi_oh.scss"; // 游戏王主题相关样式
 @import "./mahjong.scss"; // 麻将主题相关样式
 
+.hidden {
+  display: none;
+	position: absolute;
+	overflow: hidden;
+	pointer-events: none;
+	width: 0;
+	height: 0;
+}
+
 .header {
   top: 0; // 浮动 header 永远置顶
 }

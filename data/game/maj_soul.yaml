@@ -1,0 +1,1506 @@
+achievements:
+  # 成就完成难度 0-铜-bronze 1-银-silver 2-金-gold
+
+  - topic: "成长之旅"
+    list:
+      - name: "四象-白银起点"
+        difficulty: 0
+        description: "四人麻将段位达到雀士1星"
+        completed: true
+      - name: "四象-金耀奋进"
+        difficulty: 0
+        description: "四人麻将段位达到雀杰1星"
+        completed: true
+      - name: "四象-翠玉试炼"
+        difficulty: 1
+        description: "四人麻将段位达到雀豪1星"
+        completed: true
+      - name: "四象-王座鏖战"
+        difficulty: 2
+        description: "四人麻将段位达到雀圣1星"
+        completed: false
+      - name: "☆四方一统☆"
+        difficulty: 2
+        description: "四人麻将段位达到魂天"
+        completed: false
+      - name: "三垣-白银起点"
+        difficulty: 0
+        description: "三人麻将段位达到雀士1星"
+        completed: true
+      - name: "三垣-金耀奋进"
+        difficulty: 0
+        description: "三人麻将段位达到雀杰1星"
+        completed: false
+      - name: "三垣-翠玉试炼"
+        difficulty: 1
+        description: "三人麻将段位达到雀豪1星"
+        completed: false
+      - name: "三垣-王座鏖战"
+        difficulty: 2
+        description: "三人麻将段位达到雀圣1星"
+        completed: false
+      - name: "☆三元归一☆"
+        difficulty: 2
+        description: "三人麻将段位达到魂天"
+        completed: false
+
+  - topic: "连胜之道"
+    list:
+      - name: "四象-旗开得胜"
+        difficulty: 0
+        description: "段位场中，四人麻将获得1次第一名"
+        completed: true
+      - name: "四象-破竹之势"
+        difficulty: 1
+        description: "段位场中，四人麻将连续获得3次第一名"
+        completed: true
+      - name: "四象-绝好调"
+        difficulty: 2
+        description: "段位场中，四人麻将连续获得5次第一名"
+        completed: false
+      - name: "四象-无忧角"
+        difficulty: 0
+        description: "段位场中，四人麻将获得1次前两名"
+        completed: true
+      - name: "四象-游刃有余"
+        difficulty: 1
+        description: "段位场中，四人麻将连续获得5次前两名"
+        completed: true
+      - name: "四象-常胜将军"
+        difficulty: 2
+        description: "段位场中，四人麻将连续获得10次前两名"
+        completed: false
+      - name: "四象-走为上"
+        difficulty: 0
+        description: "段位场中，四人麻将获得1次前三名"
+        completed: true
+      - name: "四象-审时度势"
+        difficulty: 0
+        description: "段位场中，四人麻将连续获得5次前三名"
+        completed: true
+      - name: "四象-无败传说"
+        difficulty: 1
+        description: "段位场中，四人麻将连续获得10次前三名"
+        completed: true
+      - name: "三垣-旗开得胜"
+        difficulty: 0
+        description: "段位场中，三人麻将获得1次第一名"
+        completed: true
+      - name: "三垣-破竹之势"
+        difficulty: 1
+        description: "段位场中，三人麻将连续获得3次第一名"
+        completed: true
+      - name: "三垣-绝好调"
+        difficulty: 2
+        description: "段位场中，三人麻将连续获得5次第一名"
+        completed: true
+      - name: "三垣-走为上"
+        difficulty: 0
+        description: "段位场中，三人麻将获得1次前两名"
+        completed: true
+      - name: "三垣-审时度势"
+        difficulty: 0
+        description: "段位场中，三人麻将连续获得5次前两名"
+        completed: true
+      - name: "三垣-无败传说"
+        difficulty: 1
+        description: "段位场中，三人麻将连续获得10次前两名"
+        completed: true
+
+  - topic: "星罗云布"
+    list:
+      - name: "万事不求人"
+        difficulty: 0
+        description: "段位场中，和出役种「门前清自摸和」"
+        completed: true
+      - name: "立直"
+        difficulty: 0
+        description: "段位场中，和出役种「立直」"
+        completed: true
+      - name: "这个杠不成立！"
+        difficulty: 0
+        description: "段位场中，和出役种「抢杠」"
+        completed: false
+      - name: "高岭之花"
+        difficulty: 0
+        description: "段位场中，和出役种「岭上开花」"
+        completed: true
+      - name: "好圆的月都在海底"
+        difficulty: 0
+        description: "段位场中，和出役种「海底摸月」"
+        completed: true
+      - name: "好吃的鱼都在河里"
+        difficulty: 0
+        description: "段位场中，和出役种「河底捞鱼」"
+        completed: true
+      - name: "玉肤"
+        difficulty: 0
+        description: "段位场中，和出役种「役牌 白」"
+        completed: true
+      - name: "青丝"
+        difficulty: 0
+        description: "段位场中，和出役种「役牌 发」"
+        completed: true
+      - name: "红唇"
+        difficulty: 0
+        description: "段位场中，和出役种「役牌 中」"
+        completed: true
+      - name: "一方通行"
+        difficulty: 0
+        description: "段位场中，和出役种「役牌:门风牌」"
+        completed: true
+      - name: "四方旅人"
+        difficulty: 0
+        description: "段位场中，和出役种「役牌:场风牌」"
+        completed: true
+      - name: "断幺喵！"
+        difficulty: 0
+        description: "段位场中，和出役种「断幺九」"
+        completed: true
+      - name: "复读机器"
+        difficulty: 0
+        description: "段位场中，和出役种「一杯口」"
+        completed: true
+      - name: "内心平和"
+        difficulty: 0
+        description: "段位场中，和出役种「平和」"
+        completed: true
+      - name: "奇怪的东西混了进来"
+        difficulty: 0
+        description: "段位场中，和出役种「混全带幺九」"
+        completed: true
+      - name: "☆123456789☆"
+        difficulty: 0
+        description: "段位场中，和出役种「一气贯通」"
+        completed: true
+      - name: "读起来就是很帅气"
+        difficulty: 0
+        description: "段位场中，和出役种「三色同顺」"
+        completed: true
+      - name: "役满失败的补偿"
+        difficulty: 0
+        description: "段位场中，和出役种「两立直」"
+        completed: true
+      - name: "没见过的孩子呢"
+        difficulty: 0
+        description: "段位场中，和出役种「三色同刻」"
+        completed: false
+      - name: "邪恶混乱"
+        difficulty: 0
+        description: "段位场中，和出役种「三杠子」"
+        completed: false
+      - name: "碰碰碰喵"
+        difficulty: 0
+        description: "段位场中，和出役种「对对和」"
+        completed: true
+      - name: "一刻之遥"
+        difficulty: 0
+        description: "段位场中，和出役种「三暗刻」"
+        completed: true
+      - name: "有没有被吓到"
+        difficulty: 0
+        description: "段位场中，和出役种「小三元」"
+        completed: false
+      - name: "字牌真讨厌"
+        difficulty: 0
+        description: "段位场中，和出役种「混老头」"
+        completed: false
+      - name: "好事成双"
+        difficulty: 0
+        description: "段位场中，和出役种「七对子」"
+        completed: true
+      - name: "纯洁无暇"
+        difficulty: 0
+        description: "段位场中，和出役种「纯全带幺九」"
+        completed: true
+      - name: "从左往右打"
+        difficulty: 0
+        description: "段位场中，和出役种「混一色」"
+        completed: true
+      - name: "说好的七对子呢"
+        difficulty: 0
+        description: "段位场中，和出役种「二杯口」"
+        completed: false
+      - name: "搞不懂在听什么牌"
+        difficulty: 0
+        description: "段位场中，和出役种「清一色」"
+        completed: true
+      - name: "预知未来"
+        difficulty: 0
+        description: "段位场中，和出役种「一发」"
+        completed: true
+      - name: "闪闪发光"
+        difficulty: 0
+        description: "段位场中，和出役种「宝牌」"
+        completed: true
+      - name: "闪闪发红光"
+        difficulty: 0
+        description: "段位场中，和出役种「红宝牌」"
+        completed: true
+      - name: "隐藏的闪闪发光"
+        difficulty: 0
+        description: "段位场中，和出役种「里宝牌」"
+        completed: true
+      - name: "公开的闪闪发光"
+        difficulty: 0
+        description: "段位场中，和出役种「拔北宝牌」"
+        completed: true
+      - name: "你的听牌毫无意义"
+        difficulty: 0
+        description: "段位场中，完成「流局满贯」"
+        completed: false
+      - name: "我的10000点呢？"
+        difficulty: 0
+        description: "段位场中，和出役种「立直」10次"
+        completed: true
+      - name: "我的100000点呢？"
+        difficulty: 0
+        description: "段位场中，和出役种「立直」100次"
+        completed: true
+      - name: "预知命运"
+        difficulty: 0
+        description: "段位场中，和出役种「一发」10次"
+        completed: true
+      - name: "量子计算机"
+        difficulty: 0
+        description: "段位场中，和出役种「一发」100次"
+        completed: false
+      - name: "身心平和"
+        difficulty: 0
+        description: "段位场中，和出役种「平和」10次"
+        completed: true
+      - name: "世界平和"
+        difficulty: 0
+        description: "段位场中，和出役种「平和」100次"
+        completed: true
+      - name: "断幺喵喵！！"
+        difficulty: 0
+        description: "段位场中，和出役种「断幺九」10次"
+        completed: true
+      - name: "断幺喵喵喵！！！"
+        difficulty: 0
+        description: "段位场中，和出役种「断幺九」100次"
+        completed: true
+      - name: "从左往右打就可以了"
+        difficulty: 0
+        description: "段位场中，和出役种「混一色」10次"
+        completed: true
+      - name: "只要从左往右打就可以了"
+        difficulty: 0
+        description: "段位场中，和出役种「混一色」100次"
+        completed: false
+      - name: "完全搞不懂在听什么牌"
+        difficulty: 0
+        description: "段位场中，和出役种「清一色」10次"
+        completed: false
+      - name: "东风的祈愿Ⅰ"
+        difficulty: 0
+        description: "段位场中，和出役牌东5次"
+        completed: true
+      - name: "东风的祈愿Ⅱ"
+        difficulty: 0
+        description: "段位场中，和出役牌东50次"
+        completed: true
+      - name: "东风的祈愿Ⅲ"
+        difficulty: 0
+        description: "段位场中，和出役牌东100次"
+        completed: false
+      - name: "南风的温暖Ⅰ"
+        difficulty: 0
+        description: "段位场中，和出役牌南5次"
+        completed: true
+      - name: "南风的温暖Ⅱ"
+        difficulty: 0
+        description: "段位场中，和出役牌南50次"
+        completed: false
+      - name: "南风的温暖Ⅲ"
+        difficulty: 0
+        description: "段位场中，和出役牌南100次"
+        completed: false
+      - name: "西风的狂野Ⅰ"
+        difficulty: 0
+        description: "段位场中，和出役牌西5次"
+        completed: true
+      - name: "西风的狂野Ⅱ"
+        difficulty: 0
+        description: "段位场中，和出役牌西50次"
+        completed: false
+      - name: "西风的狂野Ⅲ"
+        difficulty: 0
+        description: "段位场中，和出役牌西100次"
+        completed: false
+      - name: "北风的凛冽Ⅰ"
+        difficulty: 0
+        description: "段位场中，和出役牌北5次"
+        completed: true
+      - name: "北风的凛冽Ⅱ"
+        difficulty: 0
+        description: "段位场中，和出役牌北50次"
+        completed: false
+      - name: "北风的凛冽Ⅲ"
+        difficulty: 0
+        description: "段位场中，和出役牌北100次"
+        completed: false
+      - name: "皙肤凝脂Ⅰ"
+        difficulty: 0
+        description: "段位场中，和出役牌白5次"
+        completed: true
+      - name: "皙肤凝脂Ⅱ"
+        difficulty: 0
+        description: "段位场中，和出役牌白50次"
+        completed: false
+      - name: "皙肤凝脂Ⅲ"
+        difficulty: 0
+        description: "段位场中，和出役牌白100次"
+        completed: false
+      - name: "青丝如绢Ⅰ"
+        difficulty: 0
+        description: "段位场中，和出役牌发5次"
+        completed: true
+      - name: "青丝如绢Ⅱ"
+        difficulty: 0
+        description: "段位场中，和出役牌发50次"
+        completed: false
+      - name: "青丝如绢Ⅲ"
+        difficulty: 0
+        description: "段位场中，和出役牌发100次"
+        completed: false
+      - name: "皓齿红唇Ⅰ"
+        difficulty: 0
+        description: "段位场中，和出役牌中5次"
+        completed: true
+      - name: "皓齿红唇Ⅱ"
+        difficulty: 0
+        description: "段位场中，和出役牌中50次"
+        completed: true
+      - name: "皓齿红唇Ⅲ"
+        difficulty: 0
+        description: "段位场中，和出役牌中100次"
+        completed: false
+      - name: "四方风神"
+        difficulty: 2
+        description: "完成「东风的祈愿Ⅲ」「南风的温暖Ⅲ」「西风的狂野Ⅲ」「北风的凛冽Ⅲ」4个成就"
+        completed: false
+      - name: "倾国之颜"
+        difficulty: 2
+        description: "完成「皙肤凝脂Ⅲ」「青丝如绢Ⅲ」「皓齿红唇Ⅲ」3个成就"
+        completed: false
+      - name: "1番常规役种制霸！"
+        difficulty: 1
+        description: "段位场中，达成所有1番役种"
+        completed: false
+      - name: "2番常规役种制霸！"
+        difficulty: 1
+        description: "段位场中，达成所有2番役种"
+        completed: false
+      - name: "3+番常规役种制霸！"
+        difficulty: 1
+        description: "段位场中，达成所有3+番役种"
+        completed: false
+
+  - topic: "天选之证"
+    list:
+      - name: "天之加护"
+        difficulty: 1
+        description: "段位场中，和出役满「天和」"
+        completed: false
+      - name: "地之佑护"
+        difficulty: 1
+        description: "段位场中，和出役满「地和」"
+        completed: false
+      - name: "三位一体"
+        difficulty: 1
+        description: "段位场中，和出役满「大三元」"
+        completed: false
+      - name: "胸有城府"
+        difficulty: 1
+        description: "段位场中，和出役满「四暗刻」"
+        completed: false
+      - name: "一色通行"
+        difficulty: 1
+        description: "段位场中，和出役满「字一色」"
+        completed: false
+      - name: "世界巨树"
+        difficulty: 1
+        description: "段位场中，和出役满「绿一色」"
+        completed: false
+      - name: "五芒光辉"
+        difficulty: 1
+        description: "段位场中，和出役满「清老头」"
+        completed: false
+      - name: "国士无双"
+        difficulty: 1
+        description: "段位场中，和出役满「国士无双」"
+        completed: false
+      - name: "风神祈愿"
+        difficulty: 1
+        description: "段位场中，和出役满「小四喜」"
+        completed: false
+      - name: "十八罗汉"
+        difficulty: 1
+        description: "段位场中，和出役满「四杠子」"
+        completed: false
+      - name: "九择其一"
+        difficulty: 1
+        description: "段位场中，和出役满「九莲宝灯」"
+        completed: false
+      - name: "九九归一"
+        difficulty: 1
+        description: "段位场中，和出役满「纯正九莲宝灯」"
+        completed: false
+      - name: "一击必杀"
+        difficulty: 1
+        description: "段位场中，和出役满「四暗刻单骑」"
+        completed: false
+      - name: "全屏听牌"
+        difficulty: 1
+        description: "段位场中，和出役满「国士无双十三面」"
+        completed: false
+      - name: "风神召唤"
+        difficulty: 1
+        description: "段位场中，和出役满「大四喜」"
+        completed: false
+      - name: "团结之力"
+        difficulty: 1
+        description: "段位场中，和出累计役满"
+        completed: false
+      - name: "祈愿降临"
+        difficulty: 1
+        description: "段位场中，和出役满（含累计役满）1次"
+        completed: false
+      - name: "天选之人"
+        difficulty: 2
+        description: "段位场中，达成所有役满"
+        completed: false
+
+  - topic: "千锤百炼"
+    list:
+      - name: "龙之诞生"
+        difficulty: 0
+        description: "段位场中，荣和10次"
+        completed: true
+      - name: "龙之吐息"
+        difficulty: 0
+        description: "段位场中，荣和100次"
+        completed: true
+      - name: "龙之低语"
+        difficulty: 0
+        description: "段位场中，荣和1000次"
+        completed: false
+      - name: "凤之诞生"
+        difficulty: 0
+        description: "段位场中，自摸和10次"
+        completed: true
+      - name: "凤之吐息"
+        difficulty: 0
+        description: "段位场中，自摸和100次"
+        completed: true
+      - name: "凤之低语"
+        difficulty: 0
+        description: "段位场中，自摸和1000次"
+        completed: false
+      - name: "初阵"
+        difficulty: 0
+        description: "完成1局段位场对局"
+        completed: true
+      - name: "独当一面"
+        difficulty: 0
+        description: "完成10局段位场对局"
+        completed: true
+      - name: "百战练磨"
+        difficulty: 1
+        description: "完成100局段位场对局"
+        completed: true
+      - name: "千锤百炼"
+        difficulty: 2
+        description: "完成1000局段位场对局"
+        completed: false
+      - name: "四象-初阵"
+        difficulty: 0
+        description: "完成1局段位场四人麻将"
+        completed: true
+      - name: "四象-独当一面"
+        difficulty: 0
+        description: "完成10局段位场四人麻将"
+        completed: true
+      - name: "四象-百战练磨"
+        difficulty: 1
+        description: "完成100局段位场四人麻将"
+        completed: true
+      - name: "四象-千锤百炼"
+        difficulty: 2
+        description: "完成1000局段位场四人麻将"
+        completed: false
+      - name: "三垣-初阵"
+        difficulty: 0
+        description: "完成1局段位场三人麻将"
+        completed: true
+      - name: "三垣-独当一面"
+        difficulty: 0
+        description: "完成10局段位场三人麻将"
+        completed: true
+      - name: "三垣-百战练磨"
+        difficulty: 1
+        description: "完成100局段位场三人麻将"
+        completed: false
+      - name: "三垣-千锤百炼"
+        difficulty: 2
+        description: "完成1000局段位场三人麻将"
+        completed: false
+      - name: "东风战-初阵"
+        difficulty: 0
+        description: "完成1局段位场东风战（四人东/三人东）"
+        completed: true
+      - name: "东风战-独当一面"
+        difficulty: 0
+        description: "完成10局段位场东风战（四人东/三人东）"
+        completed: true
+      - name: "东风战-百战练磨"
+        difficulty: 1
+        description: "完成100局段位场东风战（四人东/三人东）"
+        completed: true
+      - name: "东风战-千锤百炼"
+        difficulty: 2
+        description: "完成1000局段位场东风战（四人东/三人东）"
+        completed: false
+      - name: "半庄战-初阵"
+        difficulty: 0
+        description: "完成1局段位场半庄战（四人南/三人南）"
+        completed: true
+      - name: "半庄战-独当一面"
+        difficulty: 0
+        description: "完成10局段位场半庄战（四人南/三人南）"
+        completed: true
+      - name: "半庄战-百战练磨"
+        difficulty: 1
+        description: "完成100局段位场半庄战（四人南/三人南）"
+        completed: false
+      - name: "半庄战-千锤百炼"
+        difficulty: 2
+        description: "完成1000局段位场半庄战（四人南/三人南）"
+        completed: false
+      - name: "四象-豪快的一位Ⅰ"
+        difficulty: 0
+        description: "段位场中，四人麻将获得第1名5次"
+        completed: true
+      - name: "四象-豪快的一位Ⅱ"
+        difficulty: 1
+        description: "段位场中，四人麻将获得第1名50次"
+        completed: true
+      - name: "四象-豪快的一位Ⅲ"
+        difficulty: 2
+        description: "段位场中，四人麻将获得第1名500次"
+        completed: false
+      - name: "四象-拼搏的二位Ⅰ"
+        difficulty: 0
+        description: "段位场中，四人麻将获得第2名5次"
+        completed: true
+      - name: "四象-拼搏的二位Ⅱ"
+        difficulty: 1
+        description: "段位场中，四人麻将获得第2名50次"
+        completed: true
+      - name: "四象-拼搏的二位Ⅲ"
+        difficulty: 2
+        description: "段位场中，四人麻将获得第2名500次"
+        completed: false
+      - name: "四象-努力的三位Ⅰ"
+        difficulty: 0
+        description: "段位场中，四人麻将获得第3名5次"
+        completed: true
+      - name: "四象-努力的三位Ⅱ"
+        difficulty: 1
+        description: "段位场中，四人麻将获得第3名50次"
+        completed: true
+      - name: "四象-努力的三位Ⅲ"
+        difficulty: 2
+        description: "段位场中，四人麻将获得第3名500次"
+        completed: false
+      - name: "四象-这也是难免的事Ⅰ"
+        difficulty: 0
+        description: "段位场中，四人麻将获得第4名5次"
+        completed: true
+      - name: "四象-这也是难免的事Ⅱ"
+        difficulty: 0
+        description: "段位场中，四人麻将获得第4名50次"
+        completed: true
+      - name: "三垣-豪快的一位Ⅰ"
+        difficulty: 0
+        description: "段位场中，三人麻将获得第1名5次"
+        completed: true
+      - name: "三垣-豪快的一位Ⅱ"
+        difficulty: 1
+        description: "段位场中，三人麻将获得第1名50次"
+        completed: false
+      - name: "三垣-豪快的一位Ⅲ"
+        difficulty: 2
+        description: "段位场中，三人麻将获得第1名500次"
+        completed: false
+      - name: "三垣-拼搏的二位Ⅰ"
+        difficulty: 0
+        description: "段位场中，三人麻将获得第2名5次"
+        completed: true
+      - name: "三垣-拼搏的二位Ⅱ"
+        difficulty: 1
+        description: "段位场中，三人麻将获得第2名50次"
+        completed: false
+      - name: "三垣-拼搏的二位Ⅲ"
+        difficulty: 2
+        description: "段位场中，三人麻将获得第2名500次"
+        completed: false
+      - name: "三垣-这也是难免的事Ⅰ"
+        difficulty: 0
+        description: "段位场中，三人麻将获得第3名5次"
+        completed: true
+      - name: "三垣-这也是难免的事Ⅱ"
+        difficulty: 0
+        description: "段位场中，三人麻将获得第3名50次"
+        completed: false
+      - name: "东风之力Ⅰ"
+        difficulty: 0
+        description: "段位场中，起家东方位获得第1名1次"
+        completed: true
+      - name: "东风之力Ⅱ"
+        difficulty: 0
+        description: "段位场中，起家东方位获得第1名10次"
+        completed: true
+      - name: "东风之力Ⅲ"
+        difficulty: 1
+        description: "段位场中，起家东方位获得第1名100次"
+        completed: false
+      - name: "南风之力Ⅰ"
+        difficulty: 0
+        description: "段位场中，起家南方位获得第1名1次"
+        completed: true
+      - name: "南风之力Ⅱ"
+        difficulty: 0
+        description: "段位场中，起家南方位获得第1名10次"
+        completed: true
+      - name: "南风之力Ⅲ"
+        difficulty: 1
+        description: "段位场中，起家南方位获得第1名100次"
+        completed: false
+      - name: "西风之力Ⅰ"
+        difficulty: 0
+        description: "段位场中，起家西方位获得第1名1次"
+        completed: true
+      - name: "西风之力Ⅱ"
+        difficulty: 0
+        description: "段位场中，起家西方位获得第1名10次"
+        completed: true
+      - name: "西风之力Ⅲ"
+        difficulty: 1
+        description: "段位场中，起家西方位获得第1名100次"
+        completed: false
+      - name: "北风之力Ⅰ"
+        difficulty: 0
+        description: "段位场中，起家北方位获得第1名1次"
+        completed: true
+      - name: "北风之力Ⅱ"
+        difficulty: 0
+        description: "段位场中，起家北方位获得第1名10次"
+        completed: true
+      - name: "北风之力Ⅲ"
+        difficulty: 1
+        description: "段位场中，起家北方位获得第1名100次"
+        completed: false
+      - name: "全风位制霸"
+        difficulty: 2
+        description: "完成「东风之力Ⅲ」「南风之力Ⅲ」「西风之力Ⅲ」「北风之力Ⅲ」4个成就"
+        completed: false
+      - name: "力量的束缚Ⅰ"
+        difficulty: 0
+        description: "段位场中，和出满贯1次"
+        completed: true
+      - name: "力量的束缚Ⅱ"
+        difficulty: 0
+        description: "段位场中，和出满贯10次"
+        completed: true
+      - name: "力量的束缚Ⅲ"
+        difficulty: 0
+        description: "段位场中，和出满贯100次"
+        completed: true
+      - name: "枷锁的挣脱Ⅰ"
+        difficulty: 0
+        description: "段位场中，和出跳满1次"
+        completed: true
+      - name: "枷锁的挣脱Ⅱ"
+        difficulty: 0
+        description: "段位场中，和出跳满10次"
+        completed: true
+      - name: "枷锁的挣脱Ⅲ"
+        difficulty: 0
+        description: "段位场中，和出跳满100次"
+        completed: false
+      - name: "全开的火力Ⅰ"
+        difficulty: 0
+        description: "段位场中，和出倍满1次"
+        completed: true
+      - name: "全开的火力Ⅱ"
+        difficulty: 0
+        description: "段位场中，和出倍满10次"
+        completed: true
+      - name: "全开的火力Ⅲ"
+        difficulty: 1
+        description: "段位场中，和出倍满100次"
+        completed: false
+      - name: "寸止的艺术Ⅰ"
+        difficulty: 0
+        description: "段位场中，和出三倍满1次"
+        completed: true
+      - name: "寸止的艺术Ⅱ"
+        difficulty: 0
+        description: "段位场中，和出三倍满10次"
+        completed: false
+      - name: "寸止的艺术Ⅲ"
+        difficulty: 1
+        description: "段位场中，和出三倍满100次"
+        completed: false
+      - name: "初次见面"
+        difficulty: 0
+        description: "完成1局友人场对局"
+        completed: false
+      - name: "休闲普通场-初阵"
+        difficulty: 0
+        description: "完成1局休闲普通场对局"
+        completed: false
+
+  - topic: "牌桌见闻"
+    list:
+      - name: "四象-原点的守护者Ⅰ"
+        difficulty: 0
+        description: "段位场中，四人麻将终局点数25000点以上1次"
+        completed: true
+      - name: "四象-原点的守护者Ⅱ"
+        difficulty: 0
+        description: "段位场中，四人麻将终局点数25000点以上10次"
+        completed: true
+      - name: "四象-原点的守护者Ⅲ"
+        difficulty: 0
+        description: "段位场中，四人麻将终局点数25000点以上100次"
+        completed: true
+      - name: "四象-双倍原点的强欲Ⅰ"
+        difficulty: 0
+        description: "段位场中，四人麻将终局点数50000点以上1次"
+        completed: true
+      - name: "四象-双倍原点的强欲Ⅱ"
+        difficulty: 0
+        description: "段位场中，四人麻将终局点数50000点以上10次"
+        completed: true
+      - name: "四象-双倍原点的强欲Ⅲ"
+        difficulty: 1
+        description: "段位场中，四人麻将终局点数50000点以上100次"
+        completed: false
+      - name: "四象-三倍原点的野望Ⅰ"
+        difficulty: 0
+        description: "段位场中，四人麻将终局点数75000点以上1次"
+        completed: false
+      - name: "四象-三倍原点的野望Ⅱ"
+        difficulty: 0
+        description: "段位场中，四人麻将终局点数75000点以上10次"
+        completed: false
+      - name: "四象-四倍原点的统治Ⅰ"
+        difficulty: 1
+        description: "段位场中，四人麻将终局点数100000点以上1次"
+        completed: false
+      - name: "四象-四倍原点的统治Ⅱ"
+        difficulty: 1
+        description: "段位场中，四人麻将终局点数100000点以上10次"
+        completed: false
+      - name: "三垣-原点的守护者Ⅰ"
+        difficulty: 0
+        description: "段位场中，三人麻将终局点数35000点以上1次"
+        completed: true
+      - name: "三垣-原点的守护者Ⅱ"
+        difficulty: 0
+        description: "段位场中，三人麻将终局点数35000点以上10次"
+        completed: true
+      - name: "三垣-原点的守护者Ⅲ"
+        difficulty: 0
+        description: "段位场中，三人麻将终局点数35000点以上100次"
+        completed: false
+      - name: "三垣-双倍原点的强欲Ⅰ"
+        difficulty: 0
+        description: "段位场中，三人麻将终局点数70000点以上1次"
+        completed: true
+      - name: "三垣-双倍原点的强欲Ⅱ"
+        difficulty: 0
+        description: "段位场中，三人麻将终局点数70000点以上10次"
+        completed: false
+      - name: "三垣-三倍原点的野望Ⅰ"
+        difficulty: 1
+        description: "段位场中，三人麻将终局点数105000点以上1次"
+        completed: false
+      - name: "三垣-三倍原点的野望Ⅱ"
+        difficulty: 1
+        description: "段位场中，三人麻将终局点数105000点以上10次"
+        completed: false
+      - name: "龙王的加护"
+        difficulty: 0
+        description: "段位场中，单次和牌使用4个以上宝牌（含表里红拔北宝牌）"
+        completed: true
+      - name: "龙王的宠爱"
+        difficulty: 0
+        description: "段位场中，单次和牌使用8个以上宝牌（含表里红拔北宝牌）"
+        completed: true
+      - name: "龙王的降临"
+        difficulty: 1
+        description: "段位场中，单次和牌使用12个以上宝牌（含表里红拔北宝牌）"
+        completed: false
+      - name: "龙王的过载"
+        difficulty: 2
+        description: "段位场中，单次和牌使用13个以上宝牌（含表里红拔北宝牌）"
+        completed: false
+      - name: "龙之观察者"
+        difficulty: 0
+        description: "段位场中，和牌时累计使用宝牌10个（含表里红拔北宝牌）"
+        completed: true
+      - name: "龙骑士100"
+        difficulty: 1
+        description: "段位场中，和牌时累计使用宝牌100个（含表里红拔北宝牌）"
+        completed: true
+      - name: "驯龙高手"
+        difficulty: 2
+        description: "段位场中，和牌时累计使用宝牌1000个（含表里红拔北宝牌）"
+        completed: true
+
+  - topic: "良好市民"
+    list:
+      - name: "欢迎来到雀魂"
+        difficulty: 0
+        description: "首次登录游戏"
+        completed: true
+      - name: "累计登录3天纪念"
+        difficulty: 0
+        description: "累计登录游戏3天"
+        completed: true
+      - name: "累计登录7天纪念"
+        difficulty: 0
+        description: "累计登录游戏7天"
+        completed: true
+      - name: "累计登录15天纪念"
+        difficulty: 0
+        description: "累计登录游戏15天"
+        completed: true
+      - name: "累计登录30天纪念"
+        difficulty: 0
+        description: "累计登录游戏30天"
+        completed: true
+      - name: "累计登录60天纪念"
+        difficulty: 0
+        description: "累计登录游戏60天"
+        completed: true
+      - name: "累计登录100天纪念"
+        difficulty: 1
+        description: "累计登录游戏100天"
+        completed: false
+      - name: "累计登录200天纪念"
+        difficulty: 1
+        description: "累计登录游戏200天"
+        completed: false
+      - name: "累计登录365天纪念"
+        difficulty: 1
+        description: "累计登录游戏365天"
+        completed: false
+      - name: "累计登录730天纪念"
+        difficulty: 1
+        description: "累计登录游戏730天"
+        completed: false
+      - name: "累计登录1000天纪念"
+        difficulty: 2
+        description: "累计登录游戏1000天"
+        completed: false
+      - name: "连续登录三日纪念"
+        difficulty: 0
+        description: "连续3天登录游戏"
+        completed: true
+      - name: "连续登录一周纪念"
+        difficulty: 0
+        description: "连续7天登录游戏"
+        completed: true
+      - name: "连续登录半月纪念"
+        difficulty: 0
+        description: "连续15天登录游戏"
+        completed: true
+      - name: "连续登录一月纪念"
+        difficulty: 1
+        description: "连续30天登录游戏"
+        completed: false
+      - name: "连续登录两月纪念"
+        difficulty: 1
+        description: "连续60天登录游戏"
+        completed: false
+      - name: "连续登录一百天纪念"
+        difficulty: 2
+        description: "连续100天登录游戏"
+        completed: false
+
+  - topic: "神社贵宾"
+    list:
+      - name: "初次寻觅纪念"
+        difficulty: 0
+        description: "寻觅1次"
+        completed: true
+      - name: "祈愿之心"
+        difficulty: 1
+        description: "寻觅10次"
+        completed: true
+      - name: "一百次的祈愿"
+        difficulty: 1
+        description: "寻觅100次"
+        completed: false
+      - name: "请多指教"
+        difficulty: 0
+        description: "添加1位好友"
+        completed: false
+      - name: "凑齐一桌了！"
+        difficulty: 0
+        description: "添加3位好友"
+        completed: false
+      - name: "社交能手"
+        difficulty: 0
+        description: "添加10位好友"
+        completed: false
+      - name: "凿壁偷光"
+        difficulty: 0
+        description: "首次查看牌谱"
+        completed: true
+      - name: "孜孜不倦"
+        difficulty: 0
+        description: "查看10次牌谱"
+        completed: true
+      - name: "这个，不需要呢"
+        difficulty: 0
+        description: "奉纳1个礼物（仓库-礼物-礼品奉纳）"
+        completed: true
+      - name: "都给你好了"
+        difficulty: 0
+        description: "奉纳10个礼物（仓库-礼物-礼品奉纳）"
+        completed: true
+      - name: "批发量大从优"
+        difficulty: 0
+        description: "奉纳100个礼物（仓库-礼物-礼品奉纳）"
+        completed: true
+      - name: "装扮收集者Ⅰ"
+        difficulty: 0
+        description: "首次获得装扮"
+        completed: true
+      - name: "装扮收集者Ⅱ"
+        difficulty: 0
+        description: "获得10种不同装扮"
+        completed: false
+      - name: "装扮收集者Ⅲ"
+        difficulty: 0
+        description: "获得100种不同装扮"
+        completed: false
+      - name: "服饰收集者Ⅰ"
+        difficulty: 0
+        description: "首次获得服饰（含契约服饰）"
+        completed: false
+      - name: "服饰收集者Ⅱ"
+        difficulty: 0
+        description: "获得10种服饰（含契约服饰）"
+        completed: false
+      - name: "服饰收集者Ⅲ"
+        difficulty: 0
+        description: "获得100种服饰（含契约服饰）"
+        completed: false
+      - name: "首次惠顾杂货屋"
+        difficulty: 0
+        description: "在杂货屋购买1次（商家-杂货屋）"
+        completed: true
+      - name: "杂货屋的常客"
+        difficulty: 0
+        description: "在杂货屋购买10次（商家-杂货屋）"
+        completed: true
+      - name: "首次惠顾祈愿屋"
+        difficulty: 0
+        description: "在祈愿屋购买1次（商家-祈愿屋）"
+        completed: false
+      - name: "祈愿屋的常客"
+        difficulty: 0
+        description: "在祈愿屋购买10次（商家-祈愿屋）"
+        completed: false
+      - name: "首次惠顾星之屋"
+        difficulty: 0
+        description: "在星之屋购买1次（商家-星之屋）"
+        completed: false
+      - name: "星之屋的常客"
+        difficulty: 0
+        description: "在星之屋购买10次（商家-星之屋）"
+        completed: false
+      - name: "首次惠顾福袋屋"
+        difficulty: 0
+        description: "在福袋屋购买1次（商家-福袋屋）"
+        completed: true
+      - name: "福袋屋的常客"
+        difficulty: 0
+        description: "在福袋屋购买10次（商家-福袋屋）"
+        completed: true
+      - name: "首次惠顾服饰屋"
+        difficulty: 0
+        description: "在服饰屋购买1次（商家-服饰屋）"
+        completed: false
+      - name: "服饰屋的常客"
+        difficulty: 0
+        description: "在服饰屋购买10次（商家-服饰屋）"
+        completed: false
+
+  - topic: "森罗万象"
+    disable_percent: true
+    list:
+      - name: "新面孔"
+        difficulty: 0
+        description: "累计获得10万铜币"
+        completed: true
+      - name: "初来乍到"
+        difficulty: 0
+        description: "累计获得50万铜币"
+        completed: true
+      - name: "雀庄常客"
+        difficulty: 0
+        description: "累计获得100万铜币"
+        completed: true
+      - name: "流连忘返"
+        difficulty: 1
+        description: "累计获得500万铜币"
+        completed: false
+      - name: "千人千面"
+        difficulty: 0
+        description: "累计获得5个称号"
+        completed: false
+      - name: "成就收集者Ⅰ"
+        difficulty: 0
+        description: "累计获得10个成就"
+        completed: true
+      - name: "成就收集者Ⅱ"
+        difficulty: 0
+        description: "累计获得50个成就"
+        completed: true
+      - name: "成就收集者Ⅲ"
+        difficulty: 1
+        description: "累计获得100个成就"
+        completed: true
+      - name: "成就收集者Ⅳ"
+        difficulty: 1
+        description: "累计获得200个成就"
+        completed: false
+      - name: "神秘成就（求生欲）"
+        difficulty: 0
+        description: "？？？？？？（段位场中，终局点数为0点）"
+        completed: false
+      - name: "神秘成就（双黄蛋）"
+        difficulty: 1
+        description: "？？？？？？（十连寻觅时，获得2个雀士）"
+        completed: false
+      - name: "神秘成就（奇迹的集结）"
+        difficulty: 2
+        description: "？？？？？？（十连寻觅时，获得3个以上雀士）"
+        completed: false
+      - name: "神秘成就（目不暇接）"
+        difficulty: 0
+        description: "？？？？？？（十连寻觅时，获得2个装扮）"
+        completed: false
+      - name: "神秘成就（琳琅满目）"
+        difficulty: 1
+        description: "？？？？？？（十连寻觅时，获得3个以上装扮）"
+        completed: false
+      - name: "累计登录2000天纪念"
+        difficulty: 2
+        description: "累计登录游戏2000天"
+        completed: false
+      - name: "累计登录3000天纪念"
+        difficulty: 2
+        description: "累计登录游戏3000天"
+        completed: false
+
+  - topic: "千客万来"
+    disable_percent: true
+    list:
+      - name: "好感度Ⅰ纪念"
+        difficulty: 0
+        description: "任意雀士的好感度达到1心以上"
+        completed: true
+      - name: "好感度Ⅱ纪念"
+        difficulty: 0
+        description: "任意雀士的好感度达到2心以上"
+        completed: true
+      - name: "好感度Ⅲ纪念"
+        difficulty: 0
+        description: "任意雀士的好感度达到3心以上"
+        completed: true
+      - name: "好感度Ⅳ纪念"
+        difficulty: 0
+        description: "任意雀士的好感度达到4心以上"
+        completed: false
+      - name: "好感度Ⅴ纪念"
+        difficulty: 0
+        description: "任意雀士的好感度达到5心以上"
+        completed: false
+      - name: "旅人的心意"
+        difficulty: 0
+        description: "首次向雀士赠送礼物"
+        completed: false
+      - name: "一心一意"
+        difficulty: 0
+        description: "首次契约雀士"
+        completed: false
+      - name: "与藤田佳奈的邂逅"
+        difficulty: 0
+        description: "获得雀士藤田佳奈"
+        completed: false
+      - name: "与三上千织的邂逅"
+        difficulty: 0
+        description: "获得雀士三上千织"
+        completed: false
+      - name: "与相原舞的邂逅"
+        difficulty: 0
+        description: "获得雀士相原舞"
+        completed: false
+      - name: "与抚子的邂逅"
+        difficulty: 0
+        description: "获得雀士抚子"
+        completed: false
+      - name: "与八木唯的邂逅"
+        difficulty: 0
+        description: "获得雀士八木唯"
+        completed: false
+      - name: "与九条璃雨的邂逅"
+        difficulty: 0
+        description: "获得雀士九条璃雨"
+        completed: false
+      - name: "与泽尼娅的邂逅"
+        difficulty: 0
+        description: "获得雀士泽尼娅"
+        completed: false
+      - name: "与卡维的邂逅"
+        difficulty: 0
+        description: "获得雀士卡维"
+        completed: false
+      - name: "与四宫夏生的邂逅"
+        difficulty: 0
+        description: "获得雀士四宫夏生"
+        completed: false
+      - name: "与汪次郎的邂逅"
+        difficulty: 0
+        description: "获得雀士汪次郎"
+        completed: false
+      - name: "与一之濑空的邂逅"
+        difficulty: 0
+        description: "获得雀士一之濑空"
+        completed: false
+      - name: "与明智英树的邂逅"
+        difficulty: 0
+        description: "获得雀士明智英树"
+        completed: false
+      - name: "与轻库娘的邂逅"
+        difficulty: 0
+        description: "获得雀士轻库娘"
+        completed: false
+      - name: "与莎拉的邂逅"
+        difficulty: 0
+        description: "获得雀士莎拉"
+        completed: false
+      - name: "与二之宫花的邂逅"
+        difficulty: 0
+        description: "获得雀士二之宫花"
+        completed: false
+      - name: "与白石奈奈的邂逅"
+        difficulty: 0
+        description: "获得雀士白石奈奈"
+        completed: false
+      - name: "与小鸟游雏田的邂逅"
+        difficulty: 0
+        description: "获得雀士小鸟游雏田"
+        completed: false
+      - name: "与五十岚阳菜的邂逅"
+        difficulty: 0
+        description: "获得雀士五十岚阳菜"
+        completed: false
+      - name: "与凉宫杏树的邂逅"
+        difficulty: 0
+        description: "获得雀士凉宫杏树"
+        completed: false
+      - name: "与约瑟夫的邂逅"
+        difficulty: 0
+        description: "获得雀士约瑟夫"
+        completed: false
+      - name: "与斋藤治的邂逅"
+        difficulty: 0
+        description: "获得雀士斋藤治"
+        completed: false
+      - name: "与北见纱和子的邂逅"
+        difficulty: 0
+        description: "获得雀士北见纱和子"
+        completed: false
+      - name: "与艾因的邂逅"
+        difficulty: 0
+        description: "获得雀士艾因"
+        completed: false
+      - name: "与雏桃的邂逅"
+        difficulty: 0
+        description: "获得雀士雏桃"
+        completed: false
+      - name: "与月见山的邂逅"
+        difficulty: 0
+        description: "获得雀士月见山"
+        completed: false
+      - name: "与藤本绮罗的邂逅"
+        difficulty: 0
+        description: "获得雀士藤本绮罗"
+        completed: false
+      - name: "与辉夜姬的邂逅"
+        difficulty: 0
+        description: "获得雀士辉夜姬"
+        completed: false
+      - name: "与如月莲的邂逅"
+        difficulty: 0
+        description: "获得雀士如月莲"
+        completed: false
+      - name: "与石原碓海的邂逅"
+        difficulty: 0
+        description: "获得雀士石原碓海"
+        completed: false
+      - name: "与艾丽莎的邂逅"
+        difficulty: 0
+        description: "获得雀士艾丽莎"
+        completed: false
+      - name: "与寺崎千穗理的邂逅"
+        difficulty: 0
+        description: "获得雀士寺崎千穗理"
+        completed: false
+      - name: "与福姬的邂逅"
+        difficulty: 0
+        description: "获得雀士福姬"
+        completed: false
+      - name: "与七夕的邂逅"
+        difficulty: 0
+        description: "获得雀士七夕"
+        completed: false
+      - name: "与的邂逅"
+        difficulty: 0
+        description: "获得雀士"
+        completed: false
+      - name: "与七海礼奈的邂逅"
+        difficulty: 0
+        description: "获得雀士七海礼奈"
+        completed: false
+      - name: "与A-37的邂逅"
+        difficulty: 0
+        description: "获得雀士A-37"
+        completed: false
+      - name: "与姬川响的邂逅"
+        difficulty: 0
+        description: "获得雀士姬川响"
+        completed: false
+      - name: "与莱恩的邂逅"
+        difficulty: 0
+        description: "获得雀士莱恩"
+        completed: false
+      - name: "与森川绫子的邂逅"
+        difficulty: 0
+        description: "获得雀士森川绫子"
+        completed: false
+      - name: "与泷川夏彦的邂逅"
+        difficulty: 0
+        description: "获得雀士泷川夏彦"
+        completed: false
+      - name: "与西园寺一羽的邂逅"
+        difficulty: 1
+        description: "获得雀士西园寺一羽"
+        completed: false
+      - name: "与小野寺七羽的邂逅"
+        difficulty: 0
+        description: "获得雀士小野寺七羽"
+        completed: false
+      - name: "与夏弥尔的邂逅"
+        difficulty: 0
+        description: "获得雀士夏弥尔"
+        completed: false
+      - name: "一姬的契约者"
+        difficulty: 0
+        description: "与一姬签订契约"
+        completed: false
+      - name: "二阶堂美树的契约者"
+        difficulty: 0
+        description: "与二阶堂美树签订契约"
+        completed: false
+      - name: "藤田佳奈的契约者"
+        difficulty: 0
+        description: "与藤田佳奈签订契约"
+        completed: false
+      - name: "三上千织的契约者"
+        difficulty: 0
+        description: "与三上千织签订契约"
+        completed: false
+      - name: "相原舞的契约者"
+        difficulty: 0
+        description: "与相原舞签订契约"
+        completed: false
+      - name: "抚子的契约者"
+        difficulty: 0
+        description: "与抚子签订契约"
+        completed: false
+      - name: "八木唯的契约者"
+        difficulty: 0
+        description: "与八木唯签订契约"
+        completed: false
+      - name: "九条璃雨的契约者"
+        difficulty: 0
+        description: "与九条璃雨签订契约"
+        completed: false
+      - name: "泽尼娅的契约者"
+        difficulty: 0
+        description: "与泽尼娅签订契约"
+        completed: false
+      - name: "卡维的契约者"
+        difficulty: 0
+        description: "与卡维签订契约"
+        completed: false
+      - name: "四宫夏生的契约者"
+        difficulty: 0
+        description: "与四宫夏生签订契约"
+        completed: false
+      - name: "汪次郎的契约者"
+        difficulty: 0
+        description: "与汪次郎签订契约"
+        completed: false
+      - name: "一之濑空的契约者"
+        difficulty: 0
+        description: "与一之濑空签订契约"
+        completed: false
+      - name: "明智英树的契约者"
+        difficulty: 0
+        description: "与明智英树签订契约"
+        completed: false
+      - name: "轻库娘的契约者"
+        difficulty: 0
+        description: "与轻库娘签订契约"
+        completed: false
+      - name: "莎拉的契约者"
+        difficulty: 0
+        description: "与莎拉签订契约"
+        completed: false
+      - name: "二之宫花的契约者"
+        difficulty: 0
+        description: "与二之宫花签订契约"
+        completed: false
+      - name: "白石奈奈的契约者"
+        difficulty: 0
+        description: "与白石奈奈签订契约"
+        completed: false
+      - name: "小鸟游雏田的契约者"
+        difficulty: 0
+        description: "与小鸟游雏田签订契约"
+        completed: false
+      - name: "五十岚阳菜的契约者"
+        difficulty: 0
+        description: "与五十岚阳菜签订契约"
+        completed: false
+      - name: "凉宫杏树的契约者"
+        difficulty: 0
+        description: "与凉宫杏树签订契约"
+        completed: false
+      - name: "约瑟夫的契约者"
+        difficulty: 0
+        description: "与约瑟夫签订契约"
+        completed: false
+      - name: "斋藤治的契约者"
+        difficulty: 0
+        description: "与斋藤治签订契约"
+        completed: false
+      - name: "北见纱和子的契约者"
+        difficulty: 0
+        description: "与北见纱和子签订契约"
+        completed: false
+      - name: "艾因的契约者"
+        difficulty: 0
+        description: "与艾因签订契约"
+        completed: false
+      - name: "雏桃的契约者"
+        difficulty: 0
+        description: "与雏桃签订契约"
+        completed: false
+      - name: "月见山的契约者"
+        difficulty: 0
+        description: "与月见山签订契约"
+        completed: false
+      - name: "藤本绮罗的契约者"
+        difficulty: 0
+        description: "与藤本绮罗签订契约"
+        completed: false
+      - name: "辉夜姬的契约者"
+        difficulty: 0
+        description: "与辉夜姬签订契约"
+        completed: false
+      - name: "如月莲的契约者"
+        difficulty: 0
+        description: "与如月莲签订契约"
+        completed: false
+      - name: "石原碓海的契约者"
+        difficulty: 0
+        description: "与石原碓海签订契约"
+        completed: false
+      - name: "艾丽莎的契约者"
+        difficulty: 0
+        description: "与艾丽莎签订契约"
+        completed: false
+      - name: "寺崎千穗理的契约者"
+        difficulty: 0
+        description: "与寺崎千穗理签订契约"
+        completed: false
+      - name: "福姬的契约者"
+        difficulty: 0
+        description: "与福姬签订契约"
+        completed: false
+      - name: "七夕的契约者"
+        difficulty: 0
+        description: "与七夕签订契约"
+        completed: false
+      - name: "七海礼奈的契约者"
+        difficulty: 0
+        description: "与七海礼奈签订契约"
+        completed: false
+      - name: "A-37的契约者"
+        difficulty: 0
+        description: "与A-37签订契约"
+        completed: false
+      - name: "姬川响的契约者"
+        difficulty: 0
+        description: "与姬川响签订契约"
+        completed: false
+      - name: "莱恩的契约者"
+        difficulty: 0
+        description: "与莱恩签订契约"
+        completed: false
+      - name: "森川绫子的契约者"
+        difficulty: 0
+        description: "与森川绫子签订契约"
+        completed: false
+      - name: "泷川夏彦的契约者"
+        difficulty: 0
+        description: "与泷川夏彦签订契约"
+        completed: false
+      - name: "西园寺一羽的契约者"
+        difficulty: 1
+        description: "与西园寺一羽签订契约"
+        completed: false
+      - name: "小野寺七羽的契约者"
+        difficulty: 0
+        description: "与小野寺七羽签订契约"
+        completed: false
+      - name: "夏弥尔的契约者"
+        difficulty: 0
+        description: "与夏弥尔签订契约"
+        completed: false
+      - name: "一姬的守护者"
+        difficulty: 0
+        description: "解锁一姬传记中的所有结局"
+        completed: false
+      - name: "二阶堂美树的守护者"
+        difficulty: 0
+        description: "解锁二阶堂美树传记中的所有结局"
+        completed: false
+      - name: "凉宫杏树的守护者"
+        difficulty: 0
+        description: "解锁凉宫杏树传记中的所有结局"
+        completed: false

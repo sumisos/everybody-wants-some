@@ -105,7 +105,21 @@ related: true
 > 感谢 Hugo 强大的 [shortcode 功能](https://gohugo.io/templates/shortcode-templates/#custom-shortcode-examples) 支持高度客制化玩法，允许我轻松实现下面的呈现效果。\
 > 卡查用的 [百鸽](https://www.ygocdb.com/)；卡图来自 `momobako.com` 这个域名的 CDN（由知乎用户 [Nanahira](https://www.zhihu.com/people/nanahira) 提供）。
 
-{{< ygo-deck "白龙卡组" >}}
+> 2022.5 更新：
+>
+> - 重构：解析方式使用 Markdown 代码块代替之前的 Hugo shortcode\
+>    （混合 Go 的 HTML → JavaScript）
+> - 样式：改进边框，利用 CSS 实现 3D 悬浮卡片特效
+> - 样式：改进排版，换用 SVG 强制规定尺寸和位置，支持无极缩放 & 动态自适应容器大小
+> - 优化：现在真的有检测图片，如果不存在则自动回退（fallback）的机制了（红色占位图）
+> - 优化：辅助排版时的占位图现在使用的是本地图片了（蓝色占位图），之前是第三方接口生成的
+> - 优化：占位图没有点击跳转的超链接，鼠标指针 hover 也不会变
+> - 优化：卡组信息不再解析所谓的「评论」，卡组就是卡组，就你话多，要评自己另外找地方 BB
+> - [ ] TODO：生成按钮，支持一键复制 `ydk` 代码
+> - [ ] TODO：自动生成外链，允许新窗口打开卡组（[类似这样](http://deck.ourygo.top/ydk/show.html?ygotype=deck&v=1&d=B0Lh39z6rXHNuq9TRqS7vpSt-90tNgLdKDZaCCB-5lr07AzkNA1k4Gymk7KKdUnNu4A)）
+
+```ydk
+#白龙卡组
 #main
 71039903
 71039903
@@ -119,6 +133,8 @@ related: true
 55410871
 24094653
 21082832
+123
+0
 #extra
 2129638
 56532353
@@ -129,7 +145,7 @@ related: true
 !side
 20654247
 43228023
-{{< /ygo-deck >}}
+```
 
 ### 处理 ydk
 
