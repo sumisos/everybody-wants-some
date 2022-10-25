@@ -110,7 +110,7 @@ uglyURLs = false
     # 网站（默认值：baseURL）
     website = "https://ews.ink/"
     # 推特
-    twitter = "sum1sos"
+    twitter = ""
 
 # 相关文章
 [related]
@@ -1245,7 +1245,7 @@ uglyURLs = false
     displaySiteCopyright = true
 
     # 自定义页脚（支持 Markdown）
-    customFooter = "[蜀ICP备17037841号-1](http://www.beian.miit.gov.cn/)"
+    customFooter = "[蜀ICP备17037841号-1](//beian.miit.gov.cn/)"
 
     displayBusuanziSiteUVAndPV = false
     busuanziSiteUVText = "本站访客数"
